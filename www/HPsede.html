@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
+    <link rel="stylesheet" href="list_thumbnails.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script>
+      ons.bootstrap();
+    </script>
+    <style>
+    .list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+   font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.desc {
+   font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+    #sede {
+   width: 90%;
+    background-color: #1E90FF;
+    border-radius: 10px 10px 10px 10px; 
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left:20px;
+    
+    }
+</style>
+  </head>
+
+  <body>
+    <ons-page>
+      <ons-toolbar>
+         <div class="left"><ons-back-button>Back</ons-back-button></div>
+                <div class="center">JoyFood</div>
+      </ons-toolbar>
+      <img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood" style="display: block; margin: 0 auto; width: 80%; ">
+<div class="pag">
+      <br><br>
+  <ons-label>Le mie donazioni in corso:</ons-label>       
+      <ons-list>
+       
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="images/images.jpg" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                   <ons-label>Donazione: Titolo 1</ons-label>
+              </div>
+               <div class="location">
+                   <ons-label>Ricevente: Tizio 1</ons-label>
+               </div>
+              <div class="desc">
+                    <ons-label>Ora di consegna: aa:bb</ons-label>
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="images/images.jpg" class="thumbnail">
+            </ons-col>
+             <ons-col>
+              <div class="name">
+                   <ons-label>Donazione: Titolo 2</ons-label>
+              </div>
+                <div class="location">
+                   <ons-label>Ricevente: Tizio 2</ons-label>
+               </div>
+              <div class="desc">
+                    <ons-label>Ora di consegna: aa:bb</ons-label>
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="images/images.jpg" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                   <ons-label>Donazione: Titolo 3</ons-label>
+              </div>
+                 <div class="location">
+                   <ons-label>Ricevente: Tizio 3</ons-label>
+               </div>
+              <div class="desc">
+                    <ons-label>Ora di consegna: aa:bb</ons-label>
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="images/images.jpg" class="thumbnail">
+            </ons-col>
+             <ons-col>
+              <div class="name">
+                   <ons-label>Donazione: Titolo 4</ons-label>
+              </div>
+                <div class="location">
+                   <ons-label>Ricevente: Tizio 4</ons-label>
+               </div>
+              <div class="desc">
+                    <ons-label>Ora di consegna: aa:bb</ons-label>
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+        <ons-button id="sede" class="NuovaDon">Effettua una nuova donazione</ons-button> 
+      </ons-list> 
+    </div>
+    </ons-page>
+
+ 
+  </body>
+</html>
