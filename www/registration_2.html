@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+      <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+        <link rel="stylesheet" href="css/signup.css">
+        <script src="lib/onsenui/js/angular/angular.js"></script>
+        <script src="lib/onsenui/js/onsenui.js"></script>
+          <script src="components/monaca-jquery/jquery.js"></script>
+    <script>
+      //ons.bootstrap();
+    </script>
+
+  </head>
+  <body>
+    
+        <ons-page>
+          <ons-toolbar>
+           <div class="left"><a href="registration.html" style="text-decoration:none;"><ons-back-button>Back</ons-back-button></a></div>
+            <div class="center">Sign up</div>
+          </ons-toolbar>
+          
+          <form action="registration_3.html" method="get">
+    
+          <div class="formarea">
+            <div class="form-row">
+              <input type="text" class="text-input--underbar width-full" placeholder="&#xf007; Nome" value="" style="font-family:Arial, FontAwesome" required>
+            </div>
+            
+            <div class="form-row">
+              <input type="text" class="text-input--underbar width-full" placeholder="&#xf007; Cognome" value="" required style="font-family:Arial, FontAwesome">
+            </div>
+            
+            <div class="form-row">
+             <input type="text" onfocus="(this.type='date')" class="text-input--underbar width-full" placeholder="&#xf073; Data di Nascita" value="" required style="font-family:Arial, FontAwesome"/>
+            </div>
+            
+            <div class="form-row" style="padding-top:10px;">
+            
+     <ul class="list">
+  <li class="list__item list__item--tappable">
+    <label class="radio-button radio-button--list-item">
+      <input type="radio" name="b" checked="checked">
+      <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+      <ons-icon
+  icon="fa-male"
+  size="15px"
+  fixed-width="false"
+  style="color: grey">
+</ons-icon>Male
+    </label>
+  </li>
+  <li class="list__item list__item--tappable">
+    <label class="radio-button radio-button--list-item">
+      <input type="radio" name="b">
+      <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+      <ons-icon
+  icon="fa-female"
+  size="15px"
+  fixed-width="false"
+  style="color: grey">
+</ons-icon>Female
+    </label>
+  </li>
+</ul>
+
+
+
+            </div>
+            
+            
+    
+            
+               
+            <button type="submit" class="button--large--cta">Next</button>
+            
+           <br/>
+            
+           <button type="button" class="button--large--cta reset">Reset</button>
+              
+          
+          </div>
+          
+          
+          </form>
+          
+          
+           <script>
+        ons.ready(function() {
+            console.log("Onsen UI is ready!");
+        });
+        
+        /*
+        $("ons-button.signin").click(function(){
+            document.querySelector('#myNavigator').pushPage('registration.html',{ animation : 'slide' });
+        });
+        $("ons-button.login-button").click(function(){
+            console.log($("#id").val()+" "+$("#psw").val());
+            var query="https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$("#id").val()+"&password="+$("#psw").val();
+            console.log(query);
+            var jqxhr = $.ajax( query )
+            .done(function(data) {
+                var obj=JSON.parse(data);
+                if(obj.result=="ok"){
+                    alert("Benvenuto  "+obj.name);
+                    document.querySelector('#myNavigator').pushPage('home.html',{ animation : 'slide' });
+                }else{
+                    alert("Utente e/o password errati");
+                }
+            })
+            .fail(function(err) {
+                alert( "error"+err );
+            });
+        }); */
+    </script>
+          
+          
+          
+          
+          
+          <script>
+          
+    
+	$(document).ready(function(){
+            console.log("reset!!!")
+   $(".reset").on('click',function(){
+    console.log
+    $("input").val("");
+	
+	});
+    
+	});
+	</script>
+          
+         
+    
+        </ons-page>
+    
+   
+
+  </body>
+</html>

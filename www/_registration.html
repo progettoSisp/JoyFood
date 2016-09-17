@@ -1,0 +1,62 @@
+<ons-page ng-controller="registrationController" >
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Sign up</div>
+    </ons-toolbar>
+<form class="formarea" name="registrationForm">
+        <div class="form-row">
+            <input type="text" class="text-input--underbar width-full" placeholder="Username" ng-model="username" name="username" value="" required>
+            <span style="color:red" ng-show="registrationForm.username.$dirty && registrationForm.username.$invalid">
+                <span  ng-show="registrationForm.username.$error.required">Username is required.</span>
+            </span>
+        </div>
+
+        <div class="form-row">
+            <input type="password" class="text-input--underbar width-full" placeholder="Password" ng-model="password" name="password"  value="" required>
+            <span style="color:red" ng-show="registrationForm.password.$dirty && registrationForm.username.$invalid">
+                <span ng-show="registrationForm.password.$error.required">Password is required.</span>
+            </span>
+        </div>
+
+        <div class="form-row">
+            <input type="password" class="text-input--underbar width-full" placeholder="Retype Password" ng-model="password2"  name="password2" value="" required>
+        </div>
+
+        <div class="lucent">
+            <p class="note">Password - 6 characters or more</p>
+        </div>
+
+        <div class="form-row">
+            <input type="text" class="text-input--underbar width-full" placeholder="Comune di Nascita" ng-model="comune" name="comune" value="" required>
+        </div>
+
+        <div class="form-row">
+            <input type="password" class="text-input--underbar width-full" placeholder="Codice Fiscale"  ng-model="cf" name="cf" value="" required>
+        </div>
+
+        <div class="form-row">
+            <input type="password" class="text-input--underbar width-full" placeholder="Telefono"  name="tel" ng-model="tel" value="" required>
+        </div>
+
+        <div class="form-row">
+            <input type="password" class="text-input--underbar width-full" placeholder="Email"  ng-model="mail" name="mail" value="" required>
+        </div>
+
+        <div class="form-row">
+            <input type="password" class="text-input--underbar width-full" placeholder="Retype Email"  ng-model="mail2" name="mail2" value="" required>
+        </div>
+
+
+            <p class="note">Privacy</p>
+
+            <div class=" form-row">
+                <ons-button modifier="large--cta" ng-click="signUp()" >Sign Up</ons-button>
+            </div>
+
+            <div class=" form-row reset">
+                <ons-button modifier="large--cta" ng-click="reset" class="reset">Reset</ons-button>
+            </div>
+
+</form>
+    <ons-button modifier="large--cta" ng-click="signIn" >Sign Up</ons-button>
+</ons-page>
