@@ -1,6 +1,6 @@
-/*! onsenui - v1.3.17 - 2016-06-29 */
+/*! onsenui - v1.2.1 - 2014-12-01 */
 /*
-Copyright 2013-2015 ASIAL CORPORATION
+Copyright 2013-2014 ASIAL CORPORATION
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -33,7 +33,6 @@ ons-tabbar {
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: hidden;
 }
 
 ons-page, ons-navigator, ons-tabbar, ons-sliding-menu, ons-split-view {
@@ -60,25 +59,25 @@ input, textarea {
   background: transparent !important;
 }
 
-.page__status-bar-fill + .page__background + .page__content {
+.page__status-bar-fill ~ .page__content {
   padding-top: 20px;
 }
 
-ons-toolbar + .page__background + .page__content {
+ons-toolbar ~ .page__content {
   top: 44px;
 }
 
-.page__status-bar-fill + ons-toolbar {
+.page__status-bar-fill ~ ons-toolbar {
   height: 64px;
 }
 
-.page__status-bar-fill + ons-toolbar > .center,
-.page__status-bar-fill + ons-toolbar > .left,
-.page__status-bar-fill + ons-toolbar > .right {
+.page__status-bar-fill ~ ons-toolbar > .center,
+.page__status-bar-fill ~ ons-toolbar > .left,
+.page__status-bar-fill ~ ons-toolbar > .right {
   padding-top: 20px;
 }
 
-.page__status-bar-fill + ons-toolbar + .page__background + .page__content {
+.page__status-bar-fill ~ ons-toolbar ~ .page__content {
   top: 64px;
   padding-top: 0px;
 }
@@ -87,7 +86,6 @@ ons-toolbar + .page__background + .page__content {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
-  -ms-touch-action: pan-y;
 }
 
 .page__bottom-bar-fill ~ .page__content {
@@ -113,17 +111,8 @@ ons-popover[disabled] {
   opacity: 0.75;
 }
 
-ons-pull-hook {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
-}
-
-
 /*
-Copyright 2013-2015 ASIAL CORPORATION
+Copyright 2013-2014 ASIAL CORPORATION
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -583,6 +572,7 @@ ons-carousel[disabled] {
 }
 
 .row + .row {
+  margin-top: -5px;
   padding-top: 0;
 }
 
@@ -604,7 +594,6 @@ ons-carousel[disabled] {
 /* .row-* vertically aligns every .col in the .row */
 .row-top {
   -webkit-box-align: start;
-  box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   -moz-align-items: flex-start;
@@ -614,7 +603,6 @@ ons-carousel[disabled] {
 
 .row-bottom {
   -webkit-box-align: end;
-  box-align: end;
   -ms-flex-align: end;
   -webkit-align-items: flex-end;
   -moz-align-items: flex-end;
@@ -624,13 +612,11 @@ ons-carousel[disabled] {
 
 .row-center {
   -webkit-box-align: center;
-  box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
   -moz-box-align: center;
   align-items: center;
-  text-align: inherit;
 }
 
 /* .col-* vertically aligns an individual .col */
@@ -650,8 +636,7 @@ ons-carousel[disabled] {
   -webkit-align-self: center;
   -moz-align-self: center;
   -ms-flex-item-align: center;
-  text-align: inherit;
-}
+  align-self: center; }
 
 /* Column Offsets */
 .col-offset-10 {
@@ -697,7 +682,7 @@ ons-carousel[disabled] {
 }
 
 /*
-Copyright 2013-2015 ASIAL CORPORATION
+Copyright 2013-2014 ASIAL CORPORATION
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -850,7 +835,7 @@ ons-icon[fixed-width="true"] {
 }
 
 /*
-Copyright 2013-2015 ASIAL CORPORATION
+Copyright 2013-2014 ASIAL CORPORATION
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -866,25 +851,19 @@ limitations under the License.
 
 */
 
-ons-scroller {
+.ons-scroller {
   display: block;
-  height: 100%;
   overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;   
 }
 
-ons-scroller::-webkit-scrollbar {
+.ons-scroller::-webkit-scrollbar,
+.ons-scroller__content::-webkit-scrollbar {
   display: none;
 }
 
-.ons-scroller__content {
-  height: 100%;
-  overflow: scroll;
-}
-
 /*
-Copyright 2013-2015 ASIAL CORPORATION
+Copyright 2013-2014 ASIAL CORPORATION
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -906,8 +885,8 @@ ons-sliding-menu {
   right: 0px;
   top: 0px;
   bottom: 0px;
+  overflow: hidden;
   z-index: 0;
-  overflow-x: hidden;
 }
 
 .onsen-sliding-menu__menu,
@@ -928,7 +907,7 @@ ons-sliding-menu {
 
 
 /*
-Copyright 2013-2015 ASIAL CORPORATION
+Copyright 2013-2014 ASIAL CORPORATION
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -967,5 +946,4 @@ ons-split-view {
   bottom: 0px;
   right: 0px;
   z-index: 0;
-  overflow-x: hidden; 
 }

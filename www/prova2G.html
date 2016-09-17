@@ -1,0 +1,70 @@
+<ons-modal var="modal">
+   <ons-list>
+
+        <ons-list-header>Browsers</ons-list-header>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a" checked="checked">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Chrome
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Safari
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Internet Explorer
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Opera
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Firefox
+          </label>
+        </ons-list-item>
+      </ons-list>
+</ons-modal>
+
+<ons-navigator>
+  <ons-page id="my-page">
+<ons-toolbar>
+        <div class="center">Toolbars</div>
+        <div class="right">
+          <ons-toolbar-button id="show-modal">
+            <ons-icon icon="ion-ios7-plus" style="font-size: 32px; width: 1em"> 
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+  </ons-page>
+</ons-navigator>
+
+
+<script>
+ons.bootstrap();
+
+$(document.body).on("pageinit", '#my-page', function() {
+  $("#show-modal", this).click(function() {
+    modal.show();
+  });
+});
+</script>

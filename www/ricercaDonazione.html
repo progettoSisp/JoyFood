@@ -1,0 +1,157 @@
+ <ons-page ng-controller="ricercaDonazioneController">
+	 <ons-toolbar>
+	<div class="left">
+		<ons-toolbar-button ng-click="open()"> <ons-icon
+			icon="md-menu"></ons-icon> </ons-toolbar-button>
+	</div>
+	<div class="center">JoyFood</div>
+	</ons-toolbar>
+	<p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+		Ciao Pippo, <br /> procedi creando il tuo carrello
+	</p>
+	<div class="ricerca-form">
+
+		<!-- CAMPO Tipo -->
+		<div id="affinaricerca" ng-show="goOpzioniTipo">
+			<ons-list >
+			<div ng-repeat="group in groups">
+				<ons-list-item ng-click="toggleGroup(group)" class="title"
+					ng-class="{active:isGroupShown(group)}"> <ons-icon
+					icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+					icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+				&nbsp;Group {{group.name}} </ons-list-item>
+				<ons-list-item class="item-accordion"
+					ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+				<label class="checkbox checkbox--list-item"> <input
+					type="checkbox">
+					<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+					{{item}}
+				</label> </ons-list-item>
+			</div>
+		</div>
+		<br>
+		<ons-button ng-click="chiudiTipo()" id="opzioni"
+			modifier="large" class="search-button">Tipo</ons-button>
+		<br>
+
+		<!-- CAMPO Classificazione -->
+		<div id="affinaricerca" ng-show="goOpzioniClassificazione">
+			<ons-list ng-controller="AppController">
+			<div ng-repeat="group in groups">
+				<ons-list-item ng-click="toggleGroup(group)" class="title"
+					ng-class="{active:isGroupShown(group)}"> <ons-icon
+					icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+					icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+				&nbsp;Group {{group.name}} </ons-list-item>
+				<ons-list-item class="item-accordion"
+					ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+				<label class="checkbox checkbox--list-item"> <input
+					type="checkbox">
+					<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+					{{item}}
+				</label> </ons-list-item>
+			</div>
+		</div>
+		<br>
+		<ons-button
+			ng-click="goOpzioniClassificazione = !goOpzioniClassificazione"
+			id="opzioni" modifier="large" class="search-button">Classificazione</ons-button>
+		<br>
+
+		<!-- CAMPO Allergeni -->
+		<div id="affinaricerca" ng-show="goOpzioniAllergeni">
+			<ons-list ng-controller="AppController">
+			<div ng-repeat="group in groups">
+				<ons-list-item ng-click="toggleGroup(group)" class="title"
+					ng-class="{active:isGroupShown(group)}"> <ons-icon
+					icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+					icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+				&nbsp;Group {{group.name}} </ons-list-item>
+				<ons-list-item class="item-accordion"
+					ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+				<label class="checkbox checkbox--list-item"> <input
+					type="checkbox">
+					<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+					{{item}}
+				</label> </ons-list-item>
+			</div>
+		</div>
+		<br>
+		<ons-button ng-click="goOpzioniAllergeni = !goOpzioniAllergeni"
+			id="opzioni" modifier="large" class="search-button">Allergeni</ons-button>
+		<br>
+
+		<!-- CAMPO Prodotto -->
+		<div id="affinaricerca" ng-show="goOpzioniProdotto">
+			<ons-list ng-controller="AppController">
+			<div ng-repeat="group in groups">
+				<ons-list-item ng-click="toggleGroup(group)" class="title"
+					ng-class="{active:isGroupShown(group)}"> <ons-icon
+					icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+					icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+				&nbsp;Group {{group.name}} </ons-list-item>
+				<ons-list-item class="item-accordion"
+					ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+				<label class="checkbox checkbox--list-item"> <input
+					type="checkbox">
+					<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+					{{item}}
+				</label> </ons-list-item>
+			</div>
+		</div>
+		<br>
+		<ons-button ng-click="goOpzioniProdotto = !goOpzioniProdotto"
+			id="opzioni" modifier="large" class="search-button">Prodotto</ons-button>
+		<br>
+
+		<!-- CAMPO Categoria -->
+		<div id="affinaricerca" ng-show="goOpzioniCategoria">
+			<ons-list ng-controller="AppController">
+			<div ng-repeat="group in groups">
+				<ons-list-item ng-click="toggleGroup(group)" class="title"
+					ng-class="{active:isGroupShown(group)}"> <ons-icon
+					icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+					icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+				&nbsp;Group {{group.name}} </ons-list-item>
+				<ons-list-item class="item-accordion"
+					ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+				<label class="checkbox checkbox--list-item"> <input
+					type="checkbox">
+					<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+					{{item}}
+				</label> </ons-list-item>
+			</div>
+		</div>
+		<br>
+		<ons-button ng-click="goOpzioniCategoria = !goOpzioniCategoria"
+			id="opzioni" modifier="large" class="search-button">Categoria</ons-button>
+		<br>
+
+		<!-- CAMPO Sottocategoria -->
+		<div id="affinaricerca" ng-show="goOpzioniSottocategoria">
+			<ons-list ng-controller="AppController">
+			<div ng-repeat="group in groups">
+				<ons-list-item ng-click="toggleGroup(group)" class="title"
+					ng-class="{active:isGroupShown(group)}"> <ons-icon
+					icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+					icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+				&nbsp;Group {{group.name}} </ons-list-item>
+				<ons-list-item class="item-accordion"
+					ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+				<label class="checkbox checkbox--list-item"> <input
+					type="checkbox">
+					<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+					{{item}}
+				</label> </ons-list-item>
+			</div>
+		</div>
+		<br>
+		<ons-button
+			ng-click="goOpzioniSottocategoria = !goOpzioniSottocategoria"
+			id="opzioni" modifier="large" class="search-button">Sottocategoria</ons-button>
+		<br>
+
+		<ons-button modifier="large" class="search-button"
+			ng-click="myNavigator.pushPage('risultatiRicerca.html');">Ricerca</ons-button>
+        </div>
+ </ons-page>
