@@ -72,7 +72,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http) {
             $scope.goOpzioniSottocategoria = false;
         }
     }
-
+    
     $scope.chiudiCategoria=function(){
 
         //$scope.goOpzioniClassificazione = false;
