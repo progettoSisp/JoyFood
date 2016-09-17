@@ -7,11 +7,13 @@
 	<div class="center">JoyFood</div>
 	</ons-toolbar>
 	<p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-		Ciao Pippo, <br /> procedi creando il tuo carrello
+		Ciao Pippo, <br /> Crea il tuo carello
 	</p>
 	<div class="ricerca-form">
 
 		<!-- CAMPO Tipo -->
+		<ons-button ng-click="chiudiTipo()" id="opzioni"
+			modifier="large" class="search-button">Tipo</ons-button>
 		<div id="affinaricerca" ng-show="goOpzioniTipo">
 			<ons-list >
 			<div ng-repeat="group in groups">
@@ -30,13 +32,14 @@
 			</div>
 		</div>
 		<br>
-		<ons-button ng-click="chiudiTipo()" id="opzioni"
-			modifier="large" class="search-button">Tipo</ons-button>
+		
 		<br>
 
 		<!-- CAMPO Classificazione -->
+		<ons-button ng-click="chiudiClassificazione()" id="opzioni"
+			modifier="large" class="search-button">Classificazione</ons-button>
 		<div id="affinaricerca" ng-show="goOpzioniClassificazione">
-			<ons-list ng-controller="AppController">
+			<ons-list >
 			<div ng-repeat="group in groups">
 				<ons-list-item ng-click="toggleGroup(group)" class="title"
 					ng-class="{active:isGroupShown(group)}"> <ons-icon
@@ -53,14 +56,14 @@
 			</div>
 		</div>
 		<br>
-		<ons-button
-			ng-click="goOpzioniClassificazione = !goOpzioniClassificazione"
-			id="opzioni" modifier="large" class="search-button">Classificazione</ons-button>
+		
 		<br>
 
-		<!-- CAMPO Allergeni -->
-		<div id="affinaricerca" ng-show="goOpzioniAllergeni">
-			<ons-list ng-controller="AppController">
+		<!-- CAMPO Allergene -->
+		<ons-button ng-click="chiudiAllergene()" id="opzioni"
+			modifier="large" class="search-button">Allergene</ons-button>
+		<div id="affinaricerca" ng-show="goOpzioniAllergene">
+			<ons-list >
 			<div ng-repeat="group in groups">
 				<ons-list-item ng-click="toggleGroup(group)" class="title"
 					ng-class="{active:isGroupShown(group)}"> <ons-icon
@@ -77,13 +80,14 @@
 			</div>
 		</div>
 		<br>
-		<ons-button ng-click="goOpzioniAllergeni = !goOpzioniAllergeni"
-			id="opzioni" modifier="large" class="search-button">Allergeni</ons-button>
+		
 		<br>
 
 		<!-- CAMPO Prodotto -->
+		<ons-button ng-click="chiudiProdotto()" id="opzioni"
+			modifier="large" class="search-button">Prodotto</ons-button>
 		<div id="affinaricerca" ng-show="goOpzioniProdotto">
-			<ons-list ng-controller="AppController">
+			<ons-list >
 			<div ng-repeat="group in groups">
 				<ons-list-item ng-click="toggleGroup(group)" class="title"
 					ng-class="{active:isGroupShown(group)}"> <ons-icon
@@ -100,13 +104,14 @@
 			</div>
 		</div>
 		<br>
-		<ons-button ng-click="goOpzioniProdotto = !goOpzioniProdotto"
-			id="opzioni" modifier="large" class="search-button">Prodotto</ons-button>
+		
 		<br>
 
 		<!-- CAMPO Categoria -->
+		<ons-button ng-click="chiudiCategoria()" id="opzioni"
+			modifier="large" class="search-button">Categoria</ons-button>
 		<div id="affinaricerca" ng-show="goOpzioniCategoria">
-			<ons-list ng-controller="AppController">
+			<ons-list >
 			<div ng-repeat="group in groups">
 				<ons-list-item ng-click="toggleGroup(group)" class="title"
 					ng-class="{active:isGroupShown(group)}"> <ons-icon
@@ -123,13 +128,14 @@
 			</div>
 		</div>
 		<br>
-		<ons-button ng-click="goOpzioniCategoria = !goOpzioniCategoria"
-			id="opzioni" modifier="large" class="search-button">Categoria</ons-button>
+		
 		<br>
 
-		<!-- CAMPO Sottocategoria -->
+		<!-- CAMPO SottoCategoria -->
+		<ons-button ng-click="chiudiSottocategoria()" id="opzioni"
+			modifier="large" class="search-button">Sottocategoria</ons-button>
 		<div id="affinaricerca" ng-show="goOpzioniSottocategoria">
-			<ons-list ng-controller="AppController">
+			<ons-list >
 			<div ng-repeat="group in groups">
 				<ons-list-item ng-click="toggleGroup(group)" class="title"
 					ng-class="{active:isGroupShown(group)}"> <ons-icon
@@ -146,9 +152,7 @@
 			</div>
 		</div>
 		<br>
-		<ons-button
-			ng-click="goOpzioniSottocategoria = !goOpzioniSottocategoria"
-			id="opzioni" modifier="large" class="search-button">Sottocategoria</ons-button>
+		
 		<br>
 
 		<ons-button modifier="large" class="search-button"
