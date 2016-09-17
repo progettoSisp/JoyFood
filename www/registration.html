@@ -10,7 +10,7 @@
         <script src="lib/onsenui/js/onsenui.js"></script>
           <script src="components/monaca-jquery/jquery.js"></script>
     <script>
-      ons.bootstrap();
+     //ons.bootstrap();
     </script>
 
   </head>
@@ -21,18 +21,17 @@
             <div class="left"><ons-back-button>Back</ons-back-button></div>
             <div class="center">Sign up</div>
           </ons-toolbar>
-    
- 
 
 
-    <form action="registration_2.html" method="get">
+
+    <form id="myForm" action="registration_2.html" method="get">
         
           <div class="formarea">
             <div class="form-row">
             
               <!-- <input type="text" class="text-input--underbar width-full" placeholder="Username" value="" required> --> 
         
-            <input type="text" class="text-input--underbar width-full" placeholder="&#xf007; Username" style="font-family:Arial, FontAwesome" required>
+            <input id="username" type="text" class="text-input--underbar width-full has_validation" placeholder="&#xf007; Username" style="font-family:Arial, FontAwesome" required>
             
             
 </input>
@@ -41,11 +40,11 @@
             </div>
             
             <div class="form-row">
-              <input type="password" class="text-input--underbar width-full" placeholder="&#xf084; Password" value="" required style="font-family:Arial, FontAwesome">
+              <input id="password1" type="password" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Password" value="" required style="font-family:Arial, FontAwesome">
             </div>
             
             <div class="form-row">
-              <input type="password" class="text-input--underbar width-full" placeholder="&#xf084; Retype Password" value="" required style="font-family:Arial, FontAwesome">
+              <input id="password2" type="password" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Retype Password" value="" required style="font-family:Arial, FontAwesome">
             </div>
     
             <div class="lucent">
@@ -57,8 +56,10 @@
               <a href="/registration_2.html" style="text-decoration:none;"><ons-button modifier="large--cta">Next</ons-button></a>
             </div>-->
             
-            <button type="submit" class="button--large--cta">Next</button>
+            <button id="submit2" type="button" class="button--large--cta">Next</button>
             
+            <input type="submit" style="display:none;"></input>
+            <br/>
             
             <button type="button" class="button--large--cta reset">Reset</button>
              
@@ -69,16 +70,76 @@
     
     </form>
     
-        </ons-page>
-    </ons-navigator>
     
     <script>
+    
+	jQuery(document).ready(function(){
+        
+        var placeholderUsername = $("#username").attr("placeholder");
+        var placeholderPassword1 = $("#password1").attr("placeholder");
+        var placeholderPassword2 = $("#password2").attr("placeholder");
+        
+        $("#submit2").on('click',function(){
+           
+       var validazione = true; 
+       
+       
+        if($("#username").val().length < 3){
+        
+        $("#username").val("");
+        $("#username").attr("placeholder","L\'username non è valido");
+        validazione= false;}
+        else{
+        $("#username").css("color","black");
+            
+        }
+        
+        if($("#password1").val() != $("#password2").val() || ($("#password1").val().length<3 || $("#password2").val().length<3) ){
+       
+        $("#password2").attr("placeholder","Le password non corrispondono");
+        $("#password1").attr("placeholder","Le password non corrispondono");
+        $("#password2").val("");
+        $("#password1").val("");
+        validazione = false;
+        }else{
+            $("#password1").css("color","black");
+        $("#password2").css("color","black");
+            
+            
+        }
+        if(validazione == true){
+            console.log("submit");
+        document.getElementById("myForm").submit();} });
+        
+        
+            
+   $(".reset").on('click',function(){
+
+    $("input").val("");
+    $("#username").attr("placeholder",placeholderUsername);
+	 $("#password1").attr("placeholder",placeholderPassword1);
+     $("#password2").attr("placeholder",placeholderPassword2);
+	});
+    
+    
+    
+    });
+	</script>
+    
+   
+    <script>
+    
+    
         ons.ready(function() {
             
             
             console.log("Onsen UI is ready!");
         });
-        $("ons-button.signin").click(function(){
+    
+    
+    /*
+    
+    $("ons-button.signin").click(function(){
             document.querySelector('#myNavigator').pushPage('registration.html',{ animation : 'slide' });
         });
         $("ons-button.login-button").click(function(){
@@ -99,22 +160,17 @@
                 alert( "error"+err );
             });
         });
+        
+        */
+        
+        
     </script>
 
 
-    
-    <script>
-	
-	$(document).ready(function(){
-            
-   $(".reset").on('click',function(){
-
-    $("input").val("");
-	
-	});
-    
-	});
-	</script>
+        
+     
+    </ons-navigator>
+    </ons-page>
 	
   </body>
 </html>
