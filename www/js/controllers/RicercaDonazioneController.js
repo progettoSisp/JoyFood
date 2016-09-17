@@ -5,8 +5,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http) {
 	
     $scope.chiudiTipo=function(){
 
-
-       // $scope.goOpzioniClassificazione = false;
+    	 // $scope.goOpzioniClassificazione = false;
         $scope.goOpzioniTipo = ! $scope.goOpzioniTipo;
         
 //        console.log("CLASS: "+$scope.goOpzioniClassificazione);
