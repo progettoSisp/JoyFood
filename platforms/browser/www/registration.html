@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+      <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+        <link rel="stylesheet" href="css/signup.css">
+        <script src="lib/onsenui/js/angular/angular.js"></script>
+        <script src="lib/onsenui/js/onsenui.js"></script>
+          <script src="components/monaca-jquery/jquery.js"></script>
+    <script>
+     //ons.bootstrap();
+    </script>
+
+  </head>
+  <body>
+    <ons-navigator id="myNavigator" title="Navigator" var="myNavigator">
+        <ons-page>
+          <ons-toolbar>
+            <div class="left"><ons-back-button>Back</ons-back-button></div>
+            <div class="center">Sign up</div>
+          </ons-toolbar>
+
+
+
+    <form id="myForm" action="registration_2.html" method="get">
+        
+          <div class="formarea">
+            <div class="form-row">
+            
+              <!-- <input type="text" class="text-input--underbar width-full" placeholder="Username" value="" required> --> 
+        
+            <input id="username" type="text" class="text-input--underbar width-full has_validation" placeholder="&#xf007; Username" style="font-family:Arial, FontAwesome" required>
+            
+            
+</input>
+               
+                
+            </div>
+            
+            <div class="form-row">
+              <input id="password1" type="password" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Password" value="" required style="font-family:Arial, FontAwesome">
+            </div>
+            
+            <div class="form-row">
+              <input id="password2" type="password" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Retype Password" value="" required style="font-family:Arial, FontAwesome">
+            </div>
+    
+            <div class="lucent">
+              <p class="note">Password - 6 characters or more</p>
+            </div>
+                    
+            <!--<div class="vspc form-row">
+             <button type="submit" class="button--large--cta reset">Reset</button>
+              <a href="/registration_2.html" style="text-decoration:none;"><ons-button modifier="large--cta">Next</ons-button></a>
+            </div>-->
+            
+            <button type="submit" class="button--large--cta">Next</button>
+            
+            
+            <br/>
+            
+            <button type="button" class="button--large--cta reset">Reset</button>
+             
+           
+            
+          </div>
+    
+    
+    </form>
+    
+    
+    <script>
+    
+	jQuery(document).ready(function(){
+        
+        /* var placeholderUsername = $("#username").attr("placeholder");
+        var placeholderPassword1 = $("#password1").attr("placeholder");
+        var placeholderPassword2 = $("#password2").attr("placeholder");
+        
+        $("#submit2").on('click',function(){
+           
+       var validazione = true; 
+       
+       
+        if($("#username").val().length < 3){
+        
+        $("#username").val("");
+        $("#username").attr("placeholder","L\'username non è valido");
+        validazione= false;}
+        else{
+        $("#username").css("color","black");
+            
+        }
+        
+        if($("#password1").val() != $("#password2").val() || ($("#password1").val().length<3 || $("#password2").val().length<3) ){
+       
+        $("#password2").attr("placeholder","Le password non corrispondono");
+        $("#password1").attr("placeholder","Le password non corrispondono");
+        $("#password2").val("");
+        $("#password1").val("");
+        validazione = false;
+        }else{
+            $("#password1").css("color","black");
+        $("#password2").css("color","black");
+            
+            
+        }
+        if(validazione == true){
+            console.log("submit");
+        document.getElementById("myForm").submit();} });
+        */
+        
+        
+        
+        
+        
+            
+   $(".reset").on('click',function(){
+
+    $("input").val("");
+    //$("#username").attr("placeholder",placeholderUsername);
+	// $("#password1").attr("placeholder",placeholderPassword1);
+    // $("#password2").attr("placeholder",placeholderPassword2);
+	});
+    
+    
+    
+    });
+	</script>
+    
+   
+    <script>
+    
+    
+        ons.ready(function() {
+            
+            
+            console.log("Onsen UI is ready!");
+        });
+    
+    
+    /*
+    
+    $("ons-button.signin").click(function(){
+            document.querySelector('#myNavigator').pushPage('registration.html',{ animation : 'slide' });
+        });
+        $("ons-button.login-button").click(function(){
+            console.log($("#id").val()+" "+$("#psw").val());
+            var query="https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$("#id").val()+"&password="+$("#psw").val();
+            console.log(query);
+            var jqxhr = $.ajax( query )
+            .done(function(data) {
+                var obj=JSON.parse(data);
+                if(obj.result=="ok"){
+                    alert("Benvenuto  "+obj.name);
+                    document.querySelector('#myNavigator').pushPage('home.html',{ animation : 'slide' });
+                }else{
+                    alert("Utente e/o password errati");
+                }
+            })
+            .fail(function(err) {
+                alert( "error"+err );
+            });
+        });
+        
+        */
+    
+        
+    </script>
+
+
+        
+     
+    </ons-navigator>
+    </ons-page>
+	
+  </body>
+</html>

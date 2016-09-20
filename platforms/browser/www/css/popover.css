@@ -1,0 +1,161 @@
+.popover-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+}
+.popover {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  position: absolute;
+  width: 220px;
+  min-height: 100px;
+}
+.popover__content {
+  background-color: white;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  color: #1f1f21;
+  overflow: hidden;
+  min-height: 100px;
+  height: 100%;
+}
+.popover__content > * {
+  overflow: hidden;
+}
+.popover__bottom-arrow {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  -o-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -moz-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -o-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: linear-gradient(45deg, white, white 50%, transparent 50%);
+  -webkit-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  bottom: 0;
+  left: 50%;
+  margin-left: -9px;
+  margin-bottom: -9px;
+}
+.popover__top-arrow {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  -o-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -moz-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -o-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: linear-gradient(45deg, white, white 50%, transparent 50%);
+  -webkit-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  top: 0;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: -9px;
+}
+.popover__left-arrow {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  -o-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -moz-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -o-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: linear-gradient(45deg, white, white 50%, transparent 50%);
+  -webkit-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 50%;
+  left: 0;
+  margin-left: -9px;
+  margin-top: -9px;
+}
+.popover__right-arrow {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  -o-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -moz-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: -o-linear-gradient(45deg, white, white 50%, transparent 50%);
+  background-image: linear-gradient(45deg, white, white 50%, transparent 50%);
+  -webkit-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+  top: 50%;
+  right: 0;
+  margin-right: -9px;
+  margin-top: -9px;
+}
+.popover__content--android {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
