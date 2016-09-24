@@ -37,6 +37,11 @@
     <script src="js/controllers/MenuController.js"></script>
     <script src="js/controllers/DonazioneController.js"></script>
     <script src="js/controllers/RicercaDonazioneController.js"></script>
+    <script src="js/controllers/InserimentoNuovoProdottoController.js"></script>
+    <script src="js/controllers/ModificaDonazioneController.js"></script>
+    <script src="js/controllers/DettaglioProdottoController.js"></script>
+    <script src="js/controllers/ConfermaController.js"></script>
+
 
 </head>
 <body>
@@ -47,10 +52,10 @@
                 <input id="id" class="text-input--underbar" placeholder="Email" value="utente3" ng-model="field1" >
                 <input id="psw" type="password" class="text-input--underbar" placeholder="Password" value="sisp" ng-model="field2" >
                 <br><br>
-                <ons-button modifier="large" class="login-button" ng-click="T()" >Log In</ons-button>
+                <ons-button modifier="large" class="login-button" ng-click="login()" >Log In</ons-button>
                 <br><br>
                 <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
-                <ons-button onclick="myNavigator.pushPage('registration.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
+                <ons-button ng-click="myNavigator.pushPage('dettaglioProdotto.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
             </div>
         </ons-page>
 	</ons-navigator>

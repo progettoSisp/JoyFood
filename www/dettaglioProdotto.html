@@ -1,20 +1,5 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
-    <link rel="stylesheet" href="lib/onsenui/css/list_thumbnails.css"> 
-    <script src="lib/onsenui/js/angular/angular.js"></script>    
-    <script src="components/monaca-jquery/jquery.js"></script>
-    <script src="lib/onsenui/js/angular-onsenui.js"></script>
-    <script src="lib/onsenui/js/onsenui.js"></script>
-    <script>
-      ons.bootstrap();
-    </script>
-  </head>
 
-  <body>
+ <ons-page ng-controller="dettaglioProdottoController">
       <ons-tabbar>
       <ons-tab page="dettaglio_donazione.html" icon="ion-search" label="Find a place" active="true">
       </ons-tab>
@@ -49,13 +34,17 @@
           
         </ons-list-item></ons-list>
 
+
+	
+
         <ons-list style="margin-top: 12px;">
           <ons-list-item>
             <div class="prop-desc">
               Id Prodotto: 
-              <label id="id"></label>
+              <label id= ></label>
             </div>
           </ons-list-item>
+          
           <ons-list-item>
             <div class="prop-desc">
               Descrizione: 
@@ -102,37 +91,5 @@
       </ons-page>
     </ons-navigator>
 
-<script>
-             ons.ready(function() {
-                console.log("Onsen UI is ready!");
-                /*var query2="https://joyfoodamministratore-sisp.rhcloud.com/detailProduct?id=$";*/
-                var query2="https://joyfoodamministratore-sisp.rhcloud.com/detailProduct?id=1";       
-                console.log(query2);
-                var jqxhr = $.ajax( query2 )
-                    .done(function(data) {
-                        var obj=JSON.parse(data);
-                        var id = obj.id;
-                        var nome = obj.nome;
-                        var descrizione = obj.descrizione;
-                        var descrizioneEstesa = obj.descrizioneEstesa;
-                        var sottocategoria = obj.sottocategoria;
-                        var classificazione = obj.classificazione;
-                        var tipologia = obj.tipologia;
-                        var allergene = obj.allergene;
-                        var datacreazione = obj.datacreazione;
-                        document.getElementById('id').innerHTML = id;
-                        document.getElementById('nome').innerHTML = nome;
-                        document.getElementById('descrizione').innerHTML = descrizione;
-                        document.getElementById('descrizioneEstesa').innerHTML = descrizioneEstesa;
-                        document.getElementById('sottocategoria').innerHTML = sottocategoria;
-                        document.getElementById('classificazione').innerHTML = classificazione;
-                        document.getElementById('tipologia').innerHTML = tipologia;
-                        document.getElementById('allergene').innerHTML = allergene;
-                        document.getElementById('datacreazione').innerHTML = datacreazione;
-                    })
-            });
-                 
-            </script>
 
-  </body>
-</html>
+            
