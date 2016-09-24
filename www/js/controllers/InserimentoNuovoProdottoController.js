@@ -110,6 +110,7 @@ myApp.controller('inserimentoNuovoProdottoController', function($scope,$http) {
             name: i,
             items: []
         };
+        
         for (var j = 0; j < 3; j++) { 
             $scope.groups[i].items.push(i + '-' + j);
         }

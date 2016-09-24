@@ -1,5 +1,6 @@
 
  <ons-page ng-controller="dettaglioProdottoController">
+ 
       <ons-tabbar>
       <ons-tab page="dettaglio_donazione.html" icon="ion-search" label="Find a place" active="true">
       </ons-tab>
@@ -9,22 +10,21 @@
       </ons-tab>
     </ons-tabbar>
     
+    
     <ons-navigator id="myNavigator" title="Navigator" var="myNavigator">
       <ons-page modifier="shop-details" >
-        <ons-toolbar modifier="transparent" >                        
-          <div class="right">
-            <ons-toolbar-button><ons-icon icon="ion-ios-chatboxes" style="color: white"></ons-icon></ons-toolbar-button>
-          </div>
-          <div class="left">
-            <ons-toolbar-button><ons-icon icon="ion-arrow-left-c" style="color: white; font-size: 28px;" fixed-width="false"></ons-icon></ons-toolbar-button>
-          </div>
-
-        </ons-toolbar>
-        <div class="card">
-          <div class="card-name">Pane e cereali</div>
-          <div class="card-desc">Pane tradizionale ai cereali</div>
-        </div>      
-        <ons-list style="border-top: none"><ons-list-item style="line-height: 1; padding: 0;">
+      
+      <ons-toolbar fixed-style>
+		<div class="left"><ons-back-button>Back</ons-back-button></div>
+		<div class="center"> Dettaglio Prodotto </div>
+        <div class="right">
+			
+        </div>
+	</ons-toolbar>
+	
+	
+       <br>
+       style="border-top: none"><ons-list-item style="line-height: 1; padding: 0;">
           
           <ons-col >
           <center>
@@ -34,14 +34,11 @@
           
         </ons-list-item></ons-list>
 
-
-	
-
         <ons-list style="margin-top: 12px;">
           <ons-list-item>
             <div class="prop-desc">
               Id Prodotto: 
-              <label id= ></label>
+              <label id= "id"></label>
             </div>
           </ons-list-item>
           
