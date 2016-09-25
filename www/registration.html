@@ -9,6 +9,9 @@
         <script src="lib/onsenui/js/angular/angular.js"></script>
         <script src="lib/onsenui/js/onsenui.js"></script>
           <script src="components/monaca-jquery/jquery.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          
+          
     <script>
      //ons.bootstrap();
     </script>
@@ -31,24 +34,43 @@
             
               <!-- <input type="text" class="text-input--underbar width-full" placeholder="Username" value="" required> --> 
         
-            <input id="username" type="text" class="text-input--underbar width-full has_validation" placeholder="&#xf007; Username" style="font-family:Arial, FontAwesome" required>
+            <input id="username" name="username" type="text" class="text-input--underbar width-full has_validation" placeholder="&#xf007; Username" style="font-family:Arial, FontAwesome" required>
             
             
-</input>
+
                
                 
             </div>
             
             <div class="form-row">
-              <input id="password1" type="password" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Password" value="" required style="font-family:Arial, FontAwesome">
+              <input id="password1" name="password" type="password" minlength="6" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Password" value="" required style="font-family:Arial, FontAwesome">
             </div>
             
-            <div class="form-row">
+            <div class="form-row" minlength="6">
               <input id="password2" type="password" class="text-input--underbar width-full has_validation" placeholder="&#xf084; Retype Password" value="" required style="font-family:Arial, FontAwesome">
             </div>
     
             <div class="lucent">
               <p class="note">Password - 6 characters or more</p>
+            </div>
+            
+            
+            
+           
+            <div class="form-row">
+              <input type="text" name="nome" class="text-input--underbar width-full" placeholder="&#xf007; Nome" value="" style="font-family:Arial, FontAwesome" required>
+            </div>
+            
+            <div class="form-row">
+              <input type="text" name="cognome" class="text-input--underbar width-full" placeholder="&#xf007; Cognome" value="" required style="font-family:Arial, FontAwesome">
+            </div>
+            
+            
+            <div class="form-row">
+            
+            
+            <br/>
+            
             </div>
                     
             <!--<div class="vspc form-row">
@@ -56,7 +78,7 @@
               <a href="/registration_2.html" style="text-decoration:none;"><ons-button modifier="large--cta">Next</ons-button></a>
             </div>-->
             
-            <button type="submit" class="button--large--cta">Next</button>
+            <button id="next" type="submit" class="button--large--cta">Next</button>
             
             
             <br/>
@@ -114,7 +136,25 @@
         
         
         
-        
+        $("#next").on('click',function(){
+            
+            if($("#password1").val()!=$("#password2").val()){
+                document.getElementById("password1").setCustomValidity("Le password non corrispondono");
+                
+                
+            }else{
+                
+               
+                document.getElementById("password1").setCustomValidity("");
+                
+                
+            
+                
+                
+            }
+            
+            
+        });
         
             
    $(".reset").on('click',function(){
@@ -128,6 +168,9 @@
     
     
     });
+    
+    
+    
 	</script>
     
    
@@ -172,9 +215,9 @@
 
 
         
-     
+     </ons-page>
     </ons-navigator>
-    </ons-page>
+    
 	
   </body>
 </html>
