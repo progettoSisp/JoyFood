@@ -3,7 +3,7 @@ myApp.controller('dettaglioProdottoController', function($scope,$http) {
 
 	console.log("Onsen UI is ready! 1 ");
 	
-	$scope.ready=function() {
+
 		console.log("Onsen UI is ready! 2");
 	
 		
@@ -11,25 +11,24 @@ myApp.controller('dettaglioProdottoController', function($scope,$http) {
 		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/detailProduct?id=1")
 	    
 		.then(function(response) {
-		$scope.myData = response.data.result;
-		
+		$scope.myData = response.data;
+		console.log(response.data);
 		 if($scope.myData){
-			 
+			 $scope.image=response.data.immagine;
 			 console.log("ciao");
-			
-					document.getElementById('id').innerHTML = id;
-					document.getElementById('nome').innerHTML = nome;
-					document.getElementById('descrizione').innerHTML = descrizione;
-					document.getElementById('descrizioneEstesa').innerHTML = descrizioneEstesa;
-					document.getElementById('sottocategoria').innerHTML = sottocategoria;
-					document.getElementById('classificazione').innerHTML = classificazione;
-					document.getElementById('tipologia').innerHTML = tipologia;
-					document.getElementById('allergene').innerHTML = allergene;
-					document.getElementById('datacreazione').innerHTML = datacreazione;
+			 $scope.id=response.data.id;
+			 $scope.nome = response.data.nome;
+			 $scope.descrizione = response.data.descrizione;
+			 $scope.descrizioneEstesa = response.data.descrizioneEstesa;
+			 $scope.sottocategoria = response.data.sottocategoria;
+			 $scope.classificazione = response.data.classificazione;
+			 $scope.tipologia = response.data.tipologia;
+			 $scope.allergene = response.data.allergene;
+			 $scope.datacreazione = response.data.dataCreazione;
 			 }
 		 
 		 });
-	};
+
 });   
 	
 

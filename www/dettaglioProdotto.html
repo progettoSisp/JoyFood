@@ -32,55 +32,57 @@
           </ons-col>
           
         </ons-list-item></ons-list>
-
+		
+		<img ng-src="data:image/JPEG;base64,{{image}}">
+		
         <ons-list style="margin-top: 12px;">
           <ons-list-item>
             <div class="prop-desc">
               Id Prodotto: 
-              <label id= "id"></label>
+              <label id= "id" ng-bind="id"></label>
             </div>
           </ons-list-item>
           
           <ons-list-item>
             <div class="prop-desc">
               Descrizione: 
-              <label id="descrizione"></label>
+              <label id="descrizione" ng-bind="descrizione"></label>
             </div>
           </ons-list-item>
           <ons-list-item>
             <div class="prop-desc">
               Descrizione estesa: 
-              <label id="descrizioneEstesa"></label>
+              <label id="descrizioneEstesa" ng-bind="descrizioneEstesa"></label>
             </div>
           </ons-list-item>
           <ons-list-item>
             <div class="prop-desc">
               Sottocategoria: 
-              <label id="sottocategoria"></label>
+              <label id="sottocategoria"ng-bind="sottocategoria"></label>
             </div>
           </ons-list-item>
           <ons-list-item>
             <div class="prop-desc">
               Classificazione: 
-              <label id="classificazione"></label>
+              <label id="classificazione" ng-bind="classificazione" ></label>
             </div>
           </ons-list-item>
           <ons-list-item>
             <div class="prop-desc">
               Tipologia: 
-              <label id="tipologia"></label>
+              <label id="tipologia" ng-bind="tipologia"></label>
             </div>
           </ons-list-item>
           <ons-list-item>
             <div class="prop-desc">
               Allergene: 
-              <label id="allergene"></label>
+              <label id="allergene" ng-bind="allergene" ></label>
             </div>
           </ons-list-item>
           <ons-list-item>
             <div class="prop-desc">
               Data creazione: 
-              <label id="datacreazione"></label>
+              <label id="datacreazione" ng-bind="datacreazione"></label>
             </div>
           </ons-list-item>
         
