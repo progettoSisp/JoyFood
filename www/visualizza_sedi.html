@@ -1,0 +1,22 @@
+<ons-page ng-controller="visualizzaSediController">
+             <ons-toolbar>
+                    <div class="center">Lista sedi</div>
+                </ons-toolbar>
+                <br>
+                    <img src="images/images.jpg" title="Lista sedi" alt="Lista sedi" style="display: block; margin: 0 auto; width: 30%; ">
+                
+               <div class="sedi">
+
+                 <ons-list id="listaSediEl" modifier="inset">
+                 <ons-list-item modifier="tappable" ng-repeat="x in sedi">
+                 <div>
+                 {{x.denominazioneSede}}
+                 <br>
+                 {{x.comuneSede}} {{x.indirizzoSede}}
+                 </div>
+                 </ons-list-item>
+                 </ons-list>
+                 </div>
+</ons-page>
+ 
+
