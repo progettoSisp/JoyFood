@@ -105,21 +105,29 @@ myApp.controller('inserimentoNuovoProdottoController', function($scope,$http) {
     }
     
     $scope.groups = [];
-    for (var i = 0; i < 1; i++) { //5
-        $scope.groups[i] = {
-            name: i,
-            items: []
-        };
-        
-        for (var j = 0; j < 3; j++) { 
-            $scope.groups[i].items.push(i + '-' + j);
-        }
-    }
+ $http.get("https://joyfoodamministratore-sisp.rhcloud.com/listAllTipo")
+    
+	.then(function(response) {
+	$scope.myData = response.data;
+	console.log(response.data);
+		 $scope.groups[0] = {
+		            name: "Tipo",
+		            items: []
+		        };
+		 for(var i=0;i<response.data.length;i++){
+			  $scope.groups[0].items.push(response.data[i].descrizione);
+		 }
+		 
+	 });
+   
 
     /*
      * if given group is the selected group, deselect it
      * else, select the given group
      */
+    
+   
+    
     $scope.toggleGroup = function(group) {
         if ($scope.isGroupShown(group)) {
             $scope.shownGroup = null;
