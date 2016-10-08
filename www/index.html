@@ -30,28 +30,30 @@
     </script>
 
 
-	<script src="js/models/Memo.js"></script>
-	<script src="js/services/MemoService.js"></script>
-	<script src="js/controllers/AddItemController.js"></script>
 	<script src="js/controllers/MenuController.js"></script>
-	<script src="js/controllers/DetailsController.js"></script>
-	<script src="js/controllers/MemoController.js"></script>
-	<script src="js/controllers/SlidingMenuController.js"></script>
-
 	<script src="js/controllers/HomeController.js"></script>
     <script src="js/controllers/LoginController.js"></script>
-    <script src="js/controllers/RegistrationController.js"></script>
-    <script src="js/controllers/MenuController.js"></script>
-    <script src="js/controllers/DonazioneController.js"></script>
-    <script src="js/controllers/RicercaDonazioneController.js"></script>
-    <script src="js/controllers/InserimentoNuovoProdottoController.js"></script>
-    <script src="js/controllers/ModificaDonazioneController.js"></script>
-    <script src="js/controllers/DettaglioProdottoController.js"></script>
-    <script src="js/controllers/ConfermaController.js"></script>
-    <script src="js/controllers/DatiAziendaController.js"></script>
-    <script src="js/controllers/DatiSedeController.js"></script>
-    <script src="js/controllers/VisualizzaSediController.js"></script>
-        <script src="js/controllers/dettaglioDonazioneController.js"></script>
+    
+    <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
+    <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>    
+    
+    <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
+    <script src="js/controllers/AndreaGianmarco/ModificaDonazioneController.js"></script>
+        
+    <script src="js/controllers/AngeloFrancesco/RicercaDonazioneController.js"></script>
+    <script src="js/controllers/AngeloFrancesco/dettaglioDonazioneController.js"></script>
+        
+    <script src="js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js"></script> 
+    <script src="js/controllers/SilviaVincenzo/DettaglioProdottoController.js"></script>
+    
+    
+ 	<script src="js/controllers/AlbertoChiara/DatiAziendaController.js"></script>
+    <script src="js/controllers/AlbertoChiara/DatiSedeController.js"></script>
+    <script src="js/controllers/AlbertoChiara/VisualizzaSediController.js"></script>
+    
+    
+   
+        
 
 
 </head>
@@ -66,7 +68,7 @@
                 <ons-button modifier="large" class="login-button" ng-click="login()" >Log In</ons-button>
                 <br><br>
                 <ons-button modifier="quiet" class="forgot-password" ng-click="myNavigator.pushPage('forgotPassword.html')">Forgot password?</ons-button>
-                <ons-button ng-click="myNavigator.pushPage('registration.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
+                <ons-button ng-click="myNavigator.pushPage('html/MarcoNicola/registration.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
             </div>
         </ons-page>
 	</ons-navigator>
