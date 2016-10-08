@@ -1,9 +1,38 @@
-  <ons-page ng-controller="">
+   <ons-page ng-controller="inserimentoDatiSedeController">
   <div class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__center navigation-bar--material__center">
-   Inserire titolo
+   Aggiungi Sede
   </div>
 </div>
    
-      
+   <br>
+                    <img src="images/JoyFood.jpg" title="Sede" alt="Sede" style="display: block; margin: 0 auto; width: 30%; ">
+                    <br><br>
+                <div class="sede">
+                    <span>Denominazione:</span>
+                    <input id="Denominazione" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    <span>Indirizzo Sede:</span>
+                    <input id="CF" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    <span>Nome Referente:</span>
+                    <input id="SedeLegale" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    <span>Cognome Referente:</span>
+                    <input id="SedeLegale" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    <span>Cellulare:</span>
+                    <input id="SedeLegale" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                   
+                    
+                    
+      <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato" >Aggiungi</ons-button>
+                    
+    
+             
+  </body>
+     
   </ons-page>
+  
+  
