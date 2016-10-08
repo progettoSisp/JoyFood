@@ -41,6 +41,10 @@ myApp.controller('datiSedeController', function($scope,$http) {
     	$scope.inputDisabilitato = true;
     	$scope.salvaDisabilitato = true;
     	$scope.modificaDisabilitato = false;
+      	 ons.notification.alert({
+      	   	  message: 'Dati salvati con successo',
+      	   		  title: 'JoyFood'
+      	   	  });
     };
     
  

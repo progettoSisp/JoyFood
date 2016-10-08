@@ -14,10 +14,10 @@
 	</div>
 </div>
 <br>
-<img src="images/images.jpg" title="Sede" alt="Sede"
+<img src="images/JoyFood.jpg" title="Sede" alt="Sede"
 	style="display: block; margin: 0 auto; width: 30%;">
 <div class="sede">
-	<span>Denominazione:</span> <input id="Denominazione" type="text"
+	<span>Denominazione</span> <input id="Denominazione" type="text"
 		class="text-input--underbar" ng-disabled="inputDisabilitato"
 		value={{denominazioneSede}}> <br> <br> <span>Indirizzo
 		Sede:</span> <input id="Sede" type="text" class="text-input--underbar"
@@ -31,8 +31,8 @@
 		type="text" class="text-input--underbar"
 		ng-disabled="inputDisabilitato"> <br> <br>
 	<ons-button id="modificabutton" ng-click="clickModifica()"
-		modifier="large--cta" ng-attr-disabled=" {{modificaDisabilitato}}">Modifica</ons-button>
+		modifier="large--cta" ng-disabled="modificaDisabilitato">Modifica</ons-button>
 	<ons-button id="salvabutton" ng-click="clickSalva()"
-		modifier="large--cta" ng-attr-disabled=" {{salvaDisabilitato}}">Salva</ons-button>
+		modifier="large--cta" ng-disabled="salvaDisabilitato">Salva</ons-button>
 </ons-page>
 
