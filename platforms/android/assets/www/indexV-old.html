@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+    <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ricerca.css">
+    <script src="components/monaca-jquery/jquery.js"></script>
+
+    <script>
+        ons.bootstrap()
+          .controller('AppController', function($scope) {
+             $scope.opzioni="Più Opzioni";
+             $scope.goOpzioni = false;
+
+            $scope.cambio=function(){
+                 
+                      
+                      $scope.goOpzioni = ! $scope.goOpzioni;
+                      if( $scope.goOpzioni){
+                           $scope.opzioni="Meno Opzioni";
+                      }else{
+                            $scope.opzioni="Più Opzioni";  
+                      }
+             }
+            
+            $scope.load = function(page) {
+              $scope.mySplitterContent.load(page)
+            }
+            $scope.open = function() {
+              $scope.mySplitterSide.open();
+            }
+           $scope.groups = [];
+  for (var i = 0; i < 5; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    for (var j = 0; j < 3; j++) {
+      $scope.groups[i].items.push(i + '-' + j);
+    }
+  }
+
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+   $scope.toggleoptions = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+          });
+       
+        ons.ready(function() {
+            console.log("Onsen UI is ready!");
+        });
+    </script>
+</head>
+<body ng-controller="AppController as app">
+
+<ons-navigator id="myNavigator" title="Navigator" var="myNavigator">
+  <ons-splitter>
+    <ons-splitter-side var="mySplitterSide" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item ng-click="load('home.html')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item ng-click="myNavigator.pushPage('risultatiRicerca.html');" tappable>
+            Risultati
+          </ons-list-item>
+          <ons-list-item ng-click="load('about.html')" tappable>
+            About
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content var="mySplitterContent" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+</ons-navigator>
+  <ons-template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button ng-click="open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          JoyFood
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+       <img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood" style="display: block; margin: 0 auto; width: 80%; ">
+      </p>
+      <div class="ricerca-form">
+                    <input type="search" value="" placeholder="Ricerca" class="search-input">
+                    <br>
+                    <input type="text" value="" placeholder="Indirizzo" class="text-input">
+                    <br><br>
+              
+                    
+    
+           
+      <div id="affinaricerca" ng-show="goOpzioni" ng-animate="'box'">        
+      <ons-list ng-controller="AppController">
+      <div ng-repeat="group in groups">
+        <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
+          <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+           &nbsp;Group {{group.name}}
+        </ons-list-item>
+       <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
+    <label class="checkbox checkbox--list-item">
+      <input type="checkbox">
+      <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+      {{item}}
+    </label>
+    </ons-list-item>
+   </div>
+    </div>
+   
+   
+    <br>
+      <ons-button  ng-click="cambio()" id="opzioni" modifier="large" class="search-button">{{opzioni}}</ons-button>
+   <br>
+   <ons-button modifier="large" class="search-button" ng-click="myNavigator.pushPage('risultatiRicerca.html');">Ricerca</ons-button>
+                    
+    </ons-page>
+  </ons-template>
+
+
+
+  <ons-template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button ng-click="open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>  
+</body>
+</html>

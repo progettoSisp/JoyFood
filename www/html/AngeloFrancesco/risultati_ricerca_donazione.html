@@ -1,0 +1,89 @@
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">Lista Prodotti</div>
+      </ons-toolbar>
+
+      <ons-list onclick="myNavigator.pushPage('index.html', { animation : 'slide' } )">
+
+        <ons-list-item tappable onclick="myNav.pushPage('dettaglioProdotto.html', { animation : 'slide' })" modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="immagini/parmigiana-napoletana.png" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                Parmigiana
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> Paris, France
+              </div>
+              <div class="desc">
+                lorem ipsum..
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item tappable modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="immagini/riso.png" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                Riso
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> Utah, USA
+              </div>
+              <div class="desc">
+                lorem ipsum..
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item tappable modifier="chevron" class="list-item-container">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="immagini/lattebott.png" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                latte
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> Japan
+              </div>
+              <div class="desc">
+                lorem ipsum..
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item tappable modifier="chevron"  >
+          <ons-row>
+            <ons-col width="95px">
+              <img src="immagini/Pane-e-cereali.png" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                pane 
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> Tokyo, Japan
+              </div>
+              <div class="desc">
+                lorem ipsum..
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+
+    </ons-page>

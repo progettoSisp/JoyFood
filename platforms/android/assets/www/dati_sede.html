@@ -1,0 +1,27 @@
+ <ons-page ng-controller="datiSedeController">
+                <ons-toolbar>
+                    <div class="center">Dati sede</div>
+                </ons-toolbar>
+                <br>
+                    <img src="images/images.jpg" title="Sede" alt="Sede" style="display: block; margin: 0 auto; width: 30%; ">
+                <div class="sede">
+                    <span>Denominazione:</span>
+                    <input id="Denominazione" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato" value={{denominazioneSede}}>
+                    <br> <br>
+                    <span>Indirizzo Sede:</span>
+                    <input id="Sede" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato" value={{indirizzoSede}}>
+                    <br> <br>
+                    <span>Nome referente:</span>
+                    <input id="NomeReferente" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato">
+                    <br> <br>
+                    <span>Cognome referente:</span>
+                    <input id="CognomeReferente" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato">
+                    <br> <br>
+                    <span>Cellulare:</span>
+                    <input id="Cellulare" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato">
+                    <br> <br>
+                    <ons-button id="modificabutton" ng-click="clickModifica()" modifier="large--cta" ng-attr-disabled=" {{modificaDisabilitato}}">Modifica</ons-button>
+                    <ons-button id="salvabutton" ng-click="clickSalva()" modifier="large--cta" ng-attr-disabled=" {{salvaDisabilitato}}">Salva</ons-button>
+                    
+            </ons-page>
+

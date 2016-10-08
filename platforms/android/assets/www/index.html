@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!-- Apply Module -->
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+    <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css"> <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+ <script src="lib/jquery/jquery-3.1.0.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"><!-- bootstrap-CSS -->
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inputlogin.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/registrazione.css">
+   <script>
+		var myApp = angular.module('myApp', ['onsen']);
+		var ALL = '*', FILTER = '=', COMPLETED = '~';
+	</script>
+
+	
+	<script src="js/models/Memo.js"></script>
+	<script src="js/services/MemoService.js"></script>
+	<script src="js/controllers/AddItemController.js"></script>
+	<script src="js/controllers/MenuController.js"></script>
+	<script src="js/controllers/DetailsController.js"></script>
+	<script src="js/controllers/MemoController.js"></script>
+	<script src="js/controllers/SlidingMenuController.js"></script>
+
+    <script src="js/controllers/LoginController.js"></script>
+    <script src="js/controllers/RegistrationController.js"></script>
+    <script src="js/controllers/MenuController.js"></script>
+    <script src="js/controllers/DonazioneController.js"></script>
+    <script src="js/controllers/RicercaDonazioneController.js"></script>
+    <script src="js/controllers/InserimentoNuovoProdottoController.js"></script>
+    <script src="js/controllers/ModificaDonazioneController.js"></script>
+    <script src="js/controllers/DettaglioProdottoController.js"></script>
+    <script src="js/controllers/ConfermaController.js"></script>
+    <script src="js/controllers/DatiAziendaController.js"></script>
+    <script src="js/controllers/DatiSedeController.js"></script>
+    <script src="js/controllers/VisualizzaSediController.js"></script>
+        <script src="js/controllers/dettaglioDonazioneController.js"></script>
+
+
+</head>
+<body>
+	<ons-navigator var="myNavigator">
+        <ons-page  ng-controller="loginController" id="login.html">
+            <img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood" style="display: block; margin: 0 auto; width: 80%; ">
+            <div class="login-form">
+                <input id="id" class="text-input--underbar" placeholder="Email" value="utente3" ng-model="field1" >
+                <input id="psw" type="password" class="text-input--underbar" placeholder="Password" value="sisp" ng-model="field2" >
+                <br><br>
+                <ons-button modifier="large" class="login-button" ng-click="login()" >Log In</ons-button>
+                <br><br>
+                <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
+                <ons-button ng-click="myNavigator.pushPage('inserimentoNuovoProdotto.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
+            </div>
+        </ons-page>
+	</ons-navigator>
+
+
+	<ons-template id="slidingmenu.html">
+		<ons-page>
+			<ons-sliding-menu var="slidingMenu" swipeable="false" menu-page="menu.html" main-page="HPsede.html"  side="left" type="overlay" max-slide-distance="200px">
+			</ons-sliding-menu>
+		</ons-page>
+	</ons-template>
+
+	<!-- MENU -->
+	<ons-template id="menu.html">
+		<ons-page fixed-style style="background-color: white">
+			<ons-toolbar fixed-style>
+				<div class="center">Categories</div>
+				<div class="right" style="margin-top:5px"><ons-button modifier="quiet" ng-click="slidingMenu.closeMenu()"><ons-icon icon="fa-chevron-left" size="25px" fixed-width="false" style="color: #5087c3"></ons-icon></ons-button></div>
+			</ons-toolbar>
+			<ons-list id="categoryList" ng-controller="menuController">
+		        <ons-list-item
+		            modifier="tappable" class="list__item__line-height"
+		            ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('home.html');">
+		            &nbsp; Home
+		        </ons-list-item>
+		        <ons-list-item
+		            modifier="tappable" class="list__item__line-height"
+		            ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('ricercaDonazione.html');">
+		            &nbsp; Cerca donazione
+		        </ons-list-item>
+                <ons-list-item
+                        modifier="tappable" class="list__item__line-height"
+                        ng-click="slidingMenu.closeMenu(); myNavigator.pushPage('NuovaDonazione.html');">
+                    &nbsp; Storico donazioni
+                </ons-list-item>
+                <ons-list-item
+                        modifier="tappable" class="list__item__line-height"
+                        ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('StoricoDonazioni.html');">
+                    &nbsp; Storico richieste
+                  </ons-list-item>
+                <ons-list-item
+                        modifier="tappable" class="list__item__line-height"
+                        ng-click="setViewRefresh('=', ' '); slidingMenu.closeMenu();">
+                    &nbsp; Inserisci donazione
+                </ons-list-item>
+		        <ons-list-header>
+		        	<div style="text-align: center;"><ons-icon icon="ion-minus-round"></ons-icon></div>
+		        </ons-list-header>
+                <ons-list-item
+                        modifier="tappable" class="list__item__line-height"
+                        ng-click="setViewRefresh('=', ' '); slidingMenu.closeMenu();">
+                    &nbsp; Inserisci azienda
+                </ons-list-item>
+                <ons-list-item
+                        modifier="tappable" class="list__item__line-height"
+                        ng-click="setViewRefresh('=', ' '); slidingMenu.closeMenu();">
+                    &nbsp; Gestisci azienda
+                </ons-list-item>
+                <ons-list-item
+                        modifier="tappable" class="list__item__line-height"
+                        ng-click="setViewRefresh('=', ' '); slidingMenu.closeMenu();">
+                    &nbsp; Profilo Utente
+                </ons-list-item>
+		        <ons-list-item
+		            modifier="tappable" class="list__item__line-height"
+		            ng-click="setViewRefresh('=', ' '); slidingMenu.closeMenu();">
+		            &nbsp; Impostazioni
+		        </ons-list-item>
+		    </ons-list>
+		</ons-page>
+	</ons-template>
+
+</body>
+</html>

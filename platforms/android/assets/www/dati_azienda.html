@@ -1,0 +1,26 @@
+            <ons-page ng-controller="datiAziendaController">
+                <ons-toolbar>
+                    <div class="center">Dati azienda</div>
+                </ons-toolbar>
+                <br>
+                    <img src="images/images.jpg" title="Azienda" alt="Azienda" style="display: block; margin: 0 auto; width: 30%; ">
+     
+                <div class="azienda">
+                    <span>Denominazione:</span>
+                    <input id="Denominazione" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato" value={{denominazione}} >
+                    <br> <br>
+                    <span>Codice fiscale:</span>
+                    <input id="CF" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato" value={{cf}}>
+                    <br> <br>
+                    <span>Indirizzo Sede Legale:</span>
+                    <input id="SedeLegale" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato" value={{sedeLegale}}>
+                    <br> <br>
+                    <span>Categoria:</span>
+                    <input id="Categoria" type="text" class="text-input--underbar" ng-disabled="inputDisabilitato" value={{categoria}}>
+                    <br> <br>
+                    <ons-button id="modificabutton"  ng-click ="clickModifica()" modifier="large--cta" ng-attr-disabled=" {{modificaDisabilitato}} ">Modifica</ons-button>
+
+                    <ons-button id="salvabutton" ng-click="clickSalva()" modifier="large--cta" ng-attr-disabled=" {{salvaDisabilitato}} ">Salva</ons-button>
+     </div>              
+  </body>
+</ons-page>

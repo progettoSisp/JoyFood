@@ -1,0 +1,55 @@
+<style>
+#sede {
+	width: 100%;
+	background-color: #1E90FF;
+	border-radius: 10px 10px 10px 10px;
+	text-align: center;
+}
+
+.aaa {
+	text-align: center;
+	width: 80%;
+	margin: 60px auto 0;
+}
+
+#bbb {
+	margin-left: 20px;
+}
+</style>
+<ons-page>
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Inserire titolo</div>
+	<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search"></i>
+		</span>
+	</div>
+</div>
+<img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood"
+	style="display: block; margin: 0 auto; width: 80%;">
+<div class="Sel-sede">
+	<br>
+	<br>
+	<div id="bbb">
+		<ons-label class="label">Ciao Gianmarco,</ons-label>
+		<br>
+		<br>
+		<ons-label class="label">Seleziona una tra le tue sedi</ons-label>
+	</div>
+	<div class="aaa">
+		<ons-button id="sede" class="sede1">Sede 1</ons-button>
+		<br>
+		<br>
+		<ons-button id="sede" class="sede2">Sede 2</ons-button>
+		<br>
+		<br>
+		<ons-button id="sede" class="sede3">Sede 3</ons-button>
+	</div>
+</div>
+</ons-page>
