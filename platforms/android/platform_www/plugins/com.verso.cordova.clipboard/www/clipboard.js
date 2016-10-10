@@ -1,5 +1,4 @@
-cordova.define("com.verso.cordova.clipboard.Clipboard", function(require, exports, module) {
-var cordova = require('cordova');
+cordova.define("com.verso.cordova.clipboard.Clipboard", function(require, exports, module) { var cordova = require('cordova');
 
 /**
  * Clipboard plugin for Cordova

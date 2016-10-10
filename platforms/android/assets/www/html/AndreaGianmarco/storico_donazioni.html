@@ -1,0 +1,120 @@
+
+<style>
+.list-item-container {
+	line-height: 1;
+	padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+	width: 80px;
+	height: 80px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.name {
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+.location {
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+.desc {
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+#sede {
+	width: 90%;
+	background-color: #1E90FF;
+	border-radius: 10px 10px 10px 10px;
+	text-align: center;
+	margin-bottom: 40px;
+	margin-left: 20px;
+}
+</style>
+<ons-page>
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Inserire titolo</div>
+	<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search"></i>
+		</span>
+	</div>
+</div>
+
+<div class="pag">
+	<br>
+	<br>
+	<ons-label>Le mie donazioni in corso:</ons-label>
+	<ons-list> <ons-list-item modifier="chevron"
+		class="list-item-container"> <ons-row> <ons-col
+		width="95px"> <img src="images/images.jpg" class="thumbnail">
+	</ons-col> <ons-col>
+	<div class="name">
+		<ons-label>Donazione: Titolo 1</ons-label>
+	</div>
+	<div class="location">
+		<ons-label>Ricevente: Tizio 1</ons-label>
+	</div>
+	<div class="desc">
+		<ons-label>Ora di consegna: aa:bb</ons-label>
+	</div>
+	</ons-col> <ons-col width="40px"></ons-col> </ons-row> </ons-list-item> <ons-list-item modifier="chevron"
+		class="list-item-container"> <ons-row> <ons-col
+		width="95px"> <img src="images/images.jpg" class="thumbnail">
+	</ons-col> <ons-col>
+	<div class="name">
+		<ons-label>Donazione: Titolo 2</ons-label>
+	</div>
+	<div class="location">
+		<ons-label>Ricevente: Tizio 2</ons-label>
+	</div>
+	<div class="desc">
+		<ons-label>Ora di consegna: aa:bb</ons-label>
+	</div>
+	</ons-col> <ons-col width="40px"></ons-col> </ons-row> </ons-list-item> <ons-list-item modifier="chevron"
+		class="list-item-container"> <ons-row> <ons-col
+		width="95px"> <img src="images/images.jpg" class="thumbnail">
+	</ons-col> <ons-col>
+	<div class="name">
+		<ons-label>Donazione: Titolo 3</ons-label>
+	</div>
+	<div class="location">
+		<ons-label>Ricevente: Tizio 3</ons-label>
+	</div>
+	<div class="desc">
+		<ons-label>Ora di consegna: aa:bb</ons-label>
+	</div>
+	</ons-col> <ons-col width="40px"></ons-col> </ons-row> </ons-list-item> <ons-list-item modifier="chevron"
+		class="list-item-container"> <ons-row> <ons-col
+		width="95px"> <img src="images/images.jpg" class="thumbnail">
+	</ons-col> <ons-col>
+	<div class="name">
+		<ons-label>Donazione: Titolo 4</ons-label>
+	</div>
+	<div class="location">
+		<ons-label>Ricevente: Tizio 4</ons-label>
+	</div>
+	<div class="desc">
+		<ons-label>Ora di consegna: aa:bb</ons-label>
+	</div>
+	</ons-col> <ons-col width="40px"></ons-col> </ons-row> </ons-list-item> <ons-button id="sede"
+		class="NuovaDon">Effettua una nuova donazione</ons-button> </ons-list>
+</div>
+</ons-page>

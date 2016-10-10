@@ -1,85 +1,19 @@
-<style>
-.bgimg {
-    background-image: url('/images/images.jpg');
-}
-</style>
-  <ons-page>
-    <ons-toolbar>
-        <div class="left"><ons-toolbar-button ng-click="slidingMenu.openMenu();"><ons-icon icon="bars"></ons-icon></ons-toolbar-button></div>
-      <div class="center">
-        Main
-      </div>
-    </ons-toolbar>
-    
-        <div class="card bgimg">
-          <img src="images/images.jpg" alt="" />
-          <div class="card-name">Onsen Sushi</div>
-          <div class="card-desc">Traditional Japanese Sushi<br>Open until 10:30pm</div>
-
-        </div>
-
-        <div class="rating"><div class="rating-num">
-            <ons-icon icon="fa-star" fixed-width="false"></ons-icon>
-            <ons-icon icon="fa-star" fixed-width="false"></ons-icon>
-            <ons-icon icon="fa-star" fixed-width="false"></ons-icon>
-            <ons-icon icon="fa-star" fixed-width="false"></ons-icon>
-            <ons-icon icon="fa-star-half" fixed-width="false"></ons-icon>
-            4.5
-        </div></div>
-
-        <ons-list style="border-top: none"><ons-list-item style="line-height: 1; padding: 0;">
-          <ons-row class="action">
-
-            <ons-col class="action-col">
-              <div class="action-icon"><ons-icon icon="ion-ios-star-half"></ons-icon></div>
-              <div class="action-label">Rate</div>
-            </ons-col>
-
-            <ons-col class="action-col">
-              <div class="action-icon"><ons-icon icon="ion-bookmark"></ons-icon></div>
-              <div class="action-label">Favorite</div>
-            </ons-col>
-
-            <ons-col class="action-col">
-              <div class="action-icon"><ons-icon icon="ion-share"></ons-icon></div>
-              <div class="action-label">Share</div>
-            </ons-col>
-
-            <ons-col class="action-col">
-              <div class="action-icon"><ons-icon icon="ion-compose"></ons-icon></div>
-              <div class="action-label">Check In</div>
-            </ons-col>
-
-          </ons-row>
-        </ons-list-item></ons-list>
-
-        <ons-list style="margin-top: 12px;">
-          <ons-list-item modifier="chevron">
-            <div class="prop-desc">
-              <ons-icon icon="fa-map-marker"></ons-icon>
-              2-15-13 Hongo Bunkyo Tokyo
-            </div>
-          </ons-list-item>
-
-          <ons-list-item modifier="chevron">
-            <div class="prop-desc">
-              <ons-icon icon="fa-mobile"></ons-icon>
-              (111) 123-4567
-            </div>
-          </ons-list-item>
-
-          <ons-list-item modifier="chevron">
-            <div class="prop-desc">
-              <ons-icon icon="fa-book"></ons-icon>
-              Store Photos and Menus
-            </div>
-          </ons-list-item>
-
-          <ons-list-item modifier="chevron">
-            <div class="prop-desc">
-              <ons-icon icon="fa-clock-o"></ons-icon>
-              Make a Reservation
-            </div>
-          </ons-list-item>
-        </ons-list>
+  <ons-page ng-controller="homeController">
+  <div class="navigation-bar navigation-bar--material">
+  <div class="navigation-bar__left navigation-bar--material__left">
+    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+      <i class="zmdi zmdi-menu"></i>
+    </span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--material__center">
+    Main
+  </div>
+  <div class="navigation-bar__right navigation-bar--material__right">
+    <span class="toolbar-button toolbar-button--material">
+      <i class="zmdi zmdi-search"></i>
+    </span>
+  </div>
+</div>
+<div id="map_canvas" style="height: 50%; width: 100%;"></div>   
+      
   </ons-page>
