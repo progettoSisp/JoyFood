@@ -1,0 +1,104 @@
+  <ons-page ng-controller="inserimentoDatiAziendaController">
+  <div class="navigation-bar navigation-bar--material">
+  <div class="navigation-bar__center navigation-bar--material__center">
+   Aggiungi Azienda
+  </div>
+</div>
+   
+   <br>
+                    <img src="images/JoyFood.jpg" title="Azienda" alt="Azienda" style="display: block; margin: 0 auto; width: 30%; ">
+                <div class="azienda">
+                    <span>Denominazione:</span>
+                    <input id="Denominazione" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    <span>Codice fiscale:</span>
+                    <input id="CF" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    <span>Indirizzo Sede Legale:</span>
+                    <input id="SedeLegale" type="text" class="text-input--underbar" ng-disabled="campoDisabilitato">
+                    <br> <br>
+                    
+          
+      <ons-button id="categoriebutton"  ng-click ="chiudiCategoria()">Categoria</ons-button>        
+        <div id="Categoria" ng-show="showCategoria">
+    <ons-list >
+        <ons-list-item class="categoria" tappable ng-disabled="campoDisabilitato" >
+      <label class="left">
+        <ons-input type="radio" input-id="radio-1" name="categoria"></ons-input>
+      </label>
+      <label for="radio-1" class="center">
+        Categoria 1
+      </label>
+    </ons-list-item>
+    <ons-list-item class="categoria" tappable ng-disabled="campoDisabilitato">
+      <label class="left">
+        <ons-input  type="radio" input-id="radio-2" name="categoria" ></ons-input>
+      </label>
+      <label for="radio-2" class="center">
+        Categoria 2
+      </label>
+    </ons-list-item>
+  </ons-list>
+  </div>
+  
+  <br><br>
+  <ons-button id="naturagiuridicabutton"  ng-click ="chiudiNaturaGiuridicaI()" >Natura Giuridica I livello</ons-button>        
+        <div id="NaturaGiuridicaI" ng-show="showNaturaGiuridicaI">
+    <ons-list >
+        <ons-list-item class="natgiuridicaI" tappable ng-disabled="campoDisabilitato">
+      <label class="left">
+        <ons-input  type="radio" input-id="radio-1" name="natI" ></ons-input>
+      </label>
+      <label for="radio-1" class="center">
+        Natura giuridica 1
+      </label>
+    </ons-list-item>
+    <ons-list-item class="natgiuridicaI" tappable ng-disabled="campoDisabilitato">
+      <label class="left">
+        <ons-input  type="radio" input-id="radio-2" name="natI"></ons-input>
+      </label>
+      <label for="radio-2" class="center">
+        Natura giuridica 2
+      </label>
+    </ons-list-item>
+  </ons-list>
+  </div>
+  <br><br>
+  <ons-button id="naturagiuridicabutton"  ng-click ="chiudiNaturaGiuridicaII()" >Natura Giuridica II livello</ons-button>        
+        <div id="NaturaGiuridicaII" ng-show="showNaturaGiuridicaII">
+    <ons-list >
+        <ons-list-item class="natgiuridicaII" tappable ng-disabled="campoDisabilitato">
+      <label class="left">
+        <ons-input  type="radio" input-id="radio-1" name ="natII"></ons-input>
+      </label>
+      <label for="radio-1" class="center">
+        Natura giuridica X.1
+      </label>
+    </ons-list-item>
+    <ons-list-item class="natgiuridicaII" tappable ng-disabled="campoDisabilitato">
+      <label class="left">
+        <ons-input  type="radio" input-id="radio-2" name="natII"></ons-input>
+      </label>
+      <label for="radio-2" class="center">
+        Natura giuridica X.2
+      </label>
+    </ons-list-item>
+  </ons-list>
+  </div>
+                    <label class="left">
+                    </label>
+                    <br>
+                     <ons-input type="checkbox" input-id="check-1" ng-disabled="campoDisabilitato">Certificazione tutela</ons-input>
+                   <br><br><br>
+                   
+                    
+                    
+      <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato">Aggiungi</ons-button>
+                    
+    
+             
+  </body>
+     
+  </ons-page>
+  
+  

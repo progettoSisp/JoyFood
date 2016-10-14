@@ -1,0 +1,38 @@
+<ons-page ng-controller="datiSedeController">
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Dati sede</div>
+	<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search"></i>
+		</span>
+	</div>
+</div>
+<br>
+<img src="images/JoyFood.jpg" title="Sede" alt="Sede"
+	style="display: block; margin: 0 auto; width: 30%;">
+<div class="sede">
+	<span>Denominazione</span> <input id="Denominazione" type="text"
+		class="text-input--underbar" ng-disabled="inputDisabilitato"
+		value={{denominazioneSede}}> <br> <br> <span>Indirizzo
+		Sede:</span> <input id="Sede" type="text" class="text-input--underbar"
+		ng-disabled="inputDisabilitato" value={{indirizzoSede}}> <br>
+	<br> <span>Nome referente:</span> <input id="NomeReferente"
+		type="text" class="text-input--underbar"
+		ng-disabled="inputDisabilitato"> <br> <br> <span>Cognome
+		referente:</span> <input id="CognomeReferente" type="text"
+		class="text-input--underbar" ng-disabled="inputDisabilitato">
+	<br> <br> <span>Cellulare:</span> <input id="Cellulare"
+		type="text" class="text-input--underbar"
+		ng-disabled="inputDisabilitato"> <br> <br>
+	<ons-button id="modificabutton" ng-click="clickModifica()"
+		modifier="large--cta" ng-disabled="modificaDisabilitato">Modifica</ons-button>
+	<ons-button id="salvabutton" ng-click="clickSalva()"
+		modifier="large--cta" ng-disabled="salvaDisabilitato">Salva</ons-button>
+</ons-page>
+
