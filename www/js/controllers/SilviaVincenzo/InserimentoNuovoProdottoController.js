@@ -104,29 +104,59 @@ myApp.controller('inserimentoNuovoProdottoController', function($scope,$http) {
         $scope.mySplitterSide.open();
     }
     
-    $scope.groups = [];
- $http.get("https://joyfoodamministratore-sisp.rhcloud.com/listAllTipo")
-    
-	.then(function(response) {
-	$scope.myData = response.data;
-	console.log(response.data);
-		 $scope.groups[0] = {
-		            name: "Tipo",
-		            items: []
-		        };
-		 for(var i=0;i<response.data.length;i++){
-			  $scope.groups[0].items.push(response.data[i].descrizione);
-		 }
-		 
-	 });
+//    $scope.groups = [];
+// $http.get("https://joyfoodamministratore-sisp.rhcloud.com/listAllTipo")
+//    
+//	.then(function(response) {
+//	$scope.myData = response.data;
+//	console.log(response.data);
+//		 $scope.groups[0] = {
+//		            name: "Tipo",
+//		            items: []
+//		        };
+//		 for(var i=0;i<response.data.length;i++){
+//			  $scope.groups[0].items.push(response.data[i].descrizione);
+//		 }
+//		 
+//	 });
+//   
+//
+//    /*
+//     * if given group is the selected group, deselect it
+//     * else, select the given group
+//     */
+//    
    
+    
+    
+    $scope.accordionPrimoLivello = ['Tipo','Classificazione', 'Categoria','Sottocategoria','Allergeni'];
+    
+    
+    $scope.accordionSecondoLivello =
+    	[['Carne','Pesce','Frutta e verdura','Grano e cereali','Latticini'],
+    	 ['Vegano','Vegetariano','Celiaco','Non Specificato'],
+    	 ['Prodotti sfusi e pronti per il consumo', 'Prodotti confezionati e pronti per il consumo', 'Prodotti confezionati'],
+    	 ['n.d.'],
+         ['Mais','Latteria','Uovo','Pesce','Aromi','Glutine','MSG','Arachidi','Solanaceae','Molluschi','Soia','Solfiti','Grassi Trans','Frutta a guscio','Grano']];
+    
+      
+    
+$scope.groups = [];
+for (var i = 0; i < $scope.accordionPrimoLivello.length; i++) {
+	
+$scope.groups[i] = {
+name: $scope.accordionPrimoLivello[i],
+items: []
+};
 
-    /*
-     * if given group is the selected group, deselect it
-     * else, select the given group
-     */
+for (var j = 0; j < $scope.accordionSecondoLivello[i].length; j++) {
+$scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
+
+}
+}
+
+
     
-   
     
     $scope.toggleGroup = function(group) {
         if ($scope.isGroupShown(group)) {
