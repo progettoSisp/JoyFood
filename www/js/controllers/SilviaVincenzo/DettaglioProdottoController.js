@@ -8,7 +8,7 @@ myApp.controller('dettaglioProdottoController', function($scope,$http) {
 	
 		
 		// $http.get("https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$scope.field1+"&password="+$scope.field2)
-		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/detailProduct?id=1")
+		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/detailProduct?id=1")
 	    
 		.then(function(response) {
 		$scope.myData = response.data;
