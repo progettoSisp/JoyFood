@@ -179,4 +179,10 @@ $scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
     };
 
 
+    
+    $scope.
+    
+    
+    
+    
 });
