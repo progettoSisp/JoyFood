@@ -5,16 +5,16 @@ myApp.controller('datiAziendaController', function($scope,$http) {
 	//QUERY SEDI http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1
 	//QUERY AZIENDA "https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123"
 	 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/detailCompany?id=123")
-//	    
-//		.then(function(response) {
-//			//var aaa = response.data[0].denominazioneSede+" "+response.data[1].denominazioneSede;
-//			$scope.denominazione = response.data.denominazione;
-//			$scope.cf = response.data.cf;
-//			$scope.sedeLegale = response.data.sedeLegale;
-//			$scope.categoria = response.data.categoria;
-//
-//		 
-//		 });
+	    
+		.then(function(response) {
+			//var aaa = response.data[0].denominazioneSede+" "+response.data[1].denominazioneSede;
+			$scope.denominazione = response.data.denominazione;
+			$scope.cf = response.data.cf;
+			$scope.sedeLegale = response.data.sedeLegale;
+			$scope.categoria = response.data.categoria;
+
+		 
+		 });
 	
 	
 
