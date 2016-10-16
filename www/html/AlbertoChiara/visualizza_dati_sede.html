@@ -13,23 +13,29 @@
 		</span>
 	</div>
 </div>
-<br>
-<img src="images/JoyFood.jpg" title="Sede" alt="Sede"
-	style="display: block; margin: 0 auto; width: 30%;">
-<div class="sede">
-	<span>Denominazione</span> <input id="Denominazione" type="text"
-		class="text-input--underbar" ng-disabled="inputDisabilitato"
-		value={{denominazioneSede}}> <br> <br> <span>Indirizzo
-		Sede:</span> <input id="Sede" type="text" class="text-input--underbar"
-		ng-disabled="inputDisabilitato" value={{indirizzoSede}}> <br>
-	<br> <span>Nome referente:</span> <input id="NomeReferente"
-		type="text" class="text-input--underbar"
-		ng-disabled="inputDisabilitato"> <br> <br> <span>Cognome
-		referente:</span> <input id="CognomeReferente" type="text"
-		class="text-input--underbar" ng-disabled="inputDisabilitato">
-	<br> <br> <span>Cellulare:</span> <input id="Cellulare"
-		type="text" class="text-input--underbar"
-		ng-disabled="inputDisabilitato"> <br> <br>
+
+<div class="formarea">
+<form name = "formSede">
+	
+	    
+	    <div class="form-row">
+            <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" placeholder="Denominazione"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  value={{denominazioneSede}}>
+         </div>
+         <div class="form-row">
+            <input id="indirizzosede" name="indirizzosede" type="text" class="text-input--underbar" placeholder="Indirizzosede"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  value={{indirizzoSede}}>
+         </div>
+         <div class="form-row">
+            <input id="nomereferente" name="nomereferente" type="text" class="text-input--underbar" placeholder="Nomereferente"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" >
+         </div>
+         <div class="form-row">
+            <input id="cognomereferente" name="cognomereferente" type="text" class="text-input--underbar" placeholder="Cognomereferente"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  >
+         </div>
+         <div class="form-row">
+            <input id="Cell" name="Cell" type="text" class="text-input--underbar" placeholder="Cellulare"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" ng-model="modelCell" ng-pattern="/^[1-9]{1}[0-9]{9}$/" >
+         </div>
+         <div ng-show="!formSede.Cell.$valid" style="color:red;">Cell non valido</div>
+	 </form>
+	     <br> 
 	<ons-button id="modificabutton" ng-click="clickModifica()"
 		modifier="large--cta" ng-disabled="modificaDisabilitato">Modifica</ons-button>
 	<ons-button id="salvabutton" ng-click="clickSalva()"

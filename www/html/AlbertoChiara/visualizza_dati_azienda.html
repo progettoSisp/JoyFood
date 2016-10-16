@@ -13,94 +13,52 @@
 		</span>
 	</div>
 </div>
-<br>
-<img src="images/JoyFood.jpg" title="Azienda" alt="Azienda"
-	style="display: block; margin: 0 auto; width: 30%;">
+   
 
-<div class="azienda">
-	<span>Denominazione:</span>
-	<input id="Denominazione" type="text"
-		class="text-input--underbar" ng-disabled="inputDisabilitato"
-		value={{denominazione}}> <br> <br> 
+<div class="formarea">
+ <form name="form2">
+ 
 		
-		<span>Codice
-		fiscale:</span> <input id="CF" type="text" class="text-input--underbar"
-		ng-disabled="inputDisabilitato" value={{cf}}> <br> <br>
-		
-	<span>Indirizzo Sede Legale:</span>
-	<input id="SedeLegale" type="text"
-		class="text-input--underbar" ng-disabled="inputDisabilitato"
-		value={{sedeLegale}}> <br> <br>
-		
-		<span>Categoria:</span>
-	<input id="Categoria" type="text" class="text-input--underbar"
-		ng-disabled="inputDisabilitato" value={{categoria}}> 
-		
-		
- <ons-button id="nat1LivButton"  ng-click ="clickNat1Liv()">Nat.Giuridica 1 Livello</ons-button>        
-    
-    
-    <div id="Nat1Livello" ng-show="showNat1Livello">
-    
-    <ons-list>
-    
-      <ons-list-item class="nat1livello" ng-disabled = "inputDisabilitato" tappable>
-      <label class="left">
-        <ons-input type="radio" input-id="radio-1" name="nat1Livello" checked></ons-input>
-      </label>
-      <label for="radio-1" class="center">
-        Nat1Livello 1
-      </label>
-    </ons-list-item>
-    
-    <ons-list-item class="nat1livello" ng-disabled = "inputDisabilitato" tappable>
-      <label class="left">
-        <ons-input type="radio" input-id="radio-2" name="nat1Livello"></ons-input>
-      </label>
-      <label for="radio-2" class="center">
-        Nat1Livello 2
-      </label>
-    </ons-list-item>
-    
-  </ons-list>
-  </div>
+		<div class="form-row">
+            <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" placeholder="Denominazione"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  value={{denominazione}}>
+         </div>
+         <div class="form-row" >
+            <input id="CF" name="CF2" type="text" class="text-input--underbar" placeholder="Codice fiscale"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  ng-model="model" value={{cf}} ng-pattern="/^[A-Za-z]{6}[0-9]{2}[A-Za-z]{1}[0-9]{2}[A-Za-z]{1}[0-9]{3}[A-Za-z]{1}$/">
+         </div>
+<!--          <div ng-show="!form2.CF2.$valid" style="color:red;">cf non valido</div> -->
+         <div class="form-row">
+            <input id="indirizzosedelegale" name="indirizzosedelegale" type="text" class="text-input--underbar" placeholder="Indirizzo sede legale"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" value={{sedeLegale}}>
+         </div>
+         <div class="form-row">
+            <input id="categoria" name="categoria" type="text" class="text-input--underbar" placeholder="Categoria"  required style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  value={{categoria}}>
+         </div>
   
-  		<br>
-	<br>
-   <ons-button id="nat2LivButton"  ng-click ="clickNat2Liv()">Nat.Giuridica 2 Livello</ons-button>    
-   <div id="Nat2Livello" ng-show="showNat2Livello">
-    
-    <ons-list>
-    
-      <ons-list-item class="nat2livello" ng-disabled = "inputDisabilitato" tappable>
-      <label class="left">
-        <ons-input type="radio" input-id="radio-3" name="nat2Livello" checked></ons-input>
-      </label>
-      <label for="radio-3" class="center">
-        Nat2Livello 1
-      </label>
+  
+  <div id="affinaricerca" ng-show="true" ng-animate="'box'">        
+      <ons-list>
+      <div ng-repeat="group in groups">
+        <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
+          <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+           &nbsp; {{group.name}}
+        </ons-list-item>
+       <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
+    <label class="checkbox checkbox--list-item">
+      <input class="checkbox__input" type="radio" name={{group.name}} checked ng-disabled="inputDisabilitato">
+      <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+      {{item}}
+    </label>
     </ons-list-item>
-    
-    <ons-list-item class="nat2livello" ng-disabled = "inputDisabilitato" tappable>
-      <label class="left">
-        <ons-input type="radio" input-id="radio-4" name="nat2Livello"></ons-input>
-      </label>
-      <label for="radio-4" class="center">
-        Nat2Livello2
-      </label>
-    </ons-list-item>
-    
-  </ons-list>
+   </div>
   </div>
-
-		
-		<br>
-	<br>
+</form>
+<br>
 	<ons-button id="modificabutton" ng-click="clickModifica()"
 		modifier="large--cta" ng-disabled="modificaDisabilitato">Modifica</ons-button>
 
 	<ons-button id="salvabutton" ng-click="clickSalva()"
 		modifier="large--cta" ng-disabled="salvaDisabilitato">Salva</ons-button>
+		
 </div>
 </body>
 </ons-page>
