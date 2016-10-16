@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
+    <feature name="Clipboard">
+        <param name="android-package" value="com.verso.cordova.clipboard.Clipboard" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="SQLitePlugin">
+        <param name="android-package" value="io.sqlc.SQLitePlugin" />
+    </feature>
     <icon density="ldpi" src="/res/android/icon/ldpi.png" />
     <icon density="mdpi" src="/res/android/icon/mdpi.png" />
     <icon density="hdpi" src="/res/android/icon/hdpi.png" />
@@ -48,13 +57,4 @@
     <preference name="monaca:AndroidIsPackageNameSeparate" value="false" />
     <preference name="monaca:targetFamilyiPhone" value="1" />
     <preference name="monaca:targetFamilyiPad" value="1" />
-    <feature name="Clipboard">
-        <param name="android-package" value="com.verso.cordova.clipboard.Clipboard" />
-    </feature>
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-    </feature>
-    <feature name="SQLitePlugin">
-        <param name="android-package" value="io.sqlc.SQLitePlugin" />
-    </feature>
 </widget>

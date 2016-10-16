@@ -27,6 +27,20 @@
     <script>
       var myApp = angular.module('my-app', ['onsen']);
       myApp.controller('AppController', function($scope) { });
+
+      myApp.service('userService', function() {
+    	  var user = {};
+
+    	  this.saveUser = function(temp) {
+    	      user=angular.copy(temp);
+    	      console.log(user);
+    	  };
+
+    	  this.getUser = function(){
+    	      return user;
+    	  };
+
+    	});
     </script>
 
 
@@ -34,12 +48,15 @@
 	<script src="js/controllers/HomeController.js"></script>
     <script src="js/controllers/LoginController.js"></script>
     
+     <script src="js/controllers/AndreaGianmarco/forgotPasswordController.js"></script>
+     
     <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
-    <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>    
+   <!--  <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>    
     
     <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
     <script src="js/controllers/AndreaGianmarco/ModificaDonazioneController.js"></script>
-        
+   
+       
     <script src="js/controllers/AngeloFrancesco/RicercaDonazioneController.js"></script>
     <script src="js/controllers/AngeloFrancesco/dettaglioDonazioneController.js"></script>
         
@@ -53,7 +70,7 @@
     <script src="js/controllers/AlbertoChiara/InserimentoDatiAziendaController.js"></script>
     <script src="js/controllers/AlbertoChiara/InserimentoDatiSedeController.js"></script>
    
-   
+   -->
         
 
 
@@ -68,10 +85,10 @@
                 <br><br>
                 <ons-button modifier="large" class="login-button" ng-click="login()" >Log In</ons-button>
                 <br><br>
-                <ons-button modifier="quiet" class="forgot-password" ng-click="myNavigator.pushPage('forgotPassword.html')">Forgot password?</ons-button>
+                <ons-button modifier="quiet" class="forgot-password" ng-click="myNavigator.pushPage('html/AndreaGianmarco/forgotPassword.html')">Forgot password?</ons-button>
                 <ons-button ng-click="myNavigator.pushPage('html/MarcoNicola/registration.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
-            	  
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_azienda.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_azienda.html</ons-button>
+              	 
+         <!--     	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_azienda.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_azienda.html</ons-button>
             	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_sede.html</ons-button>
             	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')" modifier="quiet" class="signin forgot-password">visualizza_dati_azienda.html</ons-button>
             	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_sede.html')" modifier="quiet" class="signin forgot-password">visualizza_dati_sede.html</ons-button>
@@ -90,7 +107,7 @@
       			<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/seleziona_sede.html')" modifier="quiet" class="signin forgot-password">seleziona_sede.html</ons-button>
       			<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/nuova_donazione.html')" modifier="quiet" class="signin forgot-password">nuova_donazione.html</ons-button>
 				<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/modifica_donazione.html')" modifier="quiet" class="signin forgot-password">modifica_donazione.html</ons-button>
-      
+      -->
             </div>
         </ons-page>
 	</ons-navigator>
