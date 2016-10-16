@@ -4,7 +4,7 @@ myApp.controller('datiAziendaController', function($scope,$http) {
 	console.log("datiAziendaController");
 	//QUERY SEDI http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1
 	//QUERY AZIENDA "https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123"
-//	 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123")
+	 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/detailCompany?id=123")
 //	    
 //		.then(function(response) {
 //			//var aaa = response.data[0].denominazioneSede+" "+response.data[1].denominazioneSede;
@@ -64,5 +64,45 @@ myApp.controller('datiAziendaController', function($scope,$http) {
     };
 	
 
+    $scope.accordionPrimoLivello = ['Tipo azienda','Natura giuridica I livello','Natura giuridica II livello'];
 
+//    $scope.accordionSecondoLivello = [[tipi_azienda],['Natura 1','Natura 2','Natura 3'],['x.1','x.2','x.3']];
+    $scope.accordionSecondoLivello = [['Categoria 1','Categoria 2','Categoria 3'],['Natura 1','Natura 2','Natura 3'],['x.1','x.2','x.3']];
+    
+    
+  $scope.groups = [];
+  
+for (var i = 0; i < $scope.accordionPrimoLivello.length; i++) {
+$scope.groups[i] = {
+name: $scope.accordionPrimoLivello[i],
+items: []
+};
+for (var j = 0; j < $scope.accordionSecondoLivello[i].length; j++) {
+$scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
+
+}
+    
+    $scope.toggleGroup = function(group) {
+    	if ($scope.isGroupShown(group)) {
+    	$scope.shownGroup = null;
+    	} else {
+    	$scope.shownGroup = group;
+    	}
+    	};
+    	
+    $scope.toggleoptions = function(group) {
+    	if ($scope.isGroupShown(group)) {
+    	$scope.shownGroup = null;
+    	} else {
+    	$scope.shownGroup = group;
+    	}
+    	};
+
+    	$scope.isGroupShown = function(group) {
+    	return $scope.shownGroup === group;
+    	};
+ 
+ 
+}
 });
+
