@@ -10,20 +10,30 @@ myApp.controller('loginController', function($scope,$http) {
 	$scope.field1;
 	$scope.field2;
     $scope.login= function(){  	
-    	 db= window.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
-    	 myNavigator.resetToPage('slidingmenu.html');
-    	console.log("https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$scope.field1+"&password="+$scope.field2);
-    	 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$scope.field1+"&password="+$scope.field2)
-         .then(function(response) {
-        	 console.log(response);
-        	 console.log(angular.fromJson(response.data));
-        	 var status=angular.fromJson(response.data);
-        	 console.log(status.result);
-             if(status.result==="ok"){
+    	var settings = {
+    			  "async": true,
+    			  "crossDomain": true,
+    			  "url": "https://joyfoodamministratore-sisp.rhcloud.com/user/login",
+    			  "method": "POST",
+    			  "headers": {
+    			    "content-type": "application/x-www-form-urlencoded",
+    			    "cache-control": "no-cache",
+    			    "postman-token": "12636e7f-1f18-a26d-29f6-6984ed1bd229"
+    			  },
+    			  "data": {
+    			    "user":$scope.field1,
+    			    "password": $scope.field2
+    			  }
+    			}
+    	$.ajax(settings).done(function (response) {
+    		console.log(response);
                  myNavigator.resetToPage('slidingmenu.html')
                  console.log("LOGIN "+response.data.result);
                  db= window.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
              	db.transaction(function(transaction) {
+             		transaction.executeSql('DROP TABLE IF EXISTS UTENTE');
+             		transaction.executeSql('CREATE TABLE IF NOT EXISTS Utente (id INTEGER PRIMARY KEY ASC,descrizione)');
+             		transaction.executeSql('INSERT INTO Utente  VALUES (?,?)', [data[i].id, data[i].descrizione]);
              		transaction.executeSql('CREATE TABLE IF NOT EXISTS Classificazione (id INTEGER PRIMARY KEY ASC,descrizione)');
              		transaction.executeSql('CREATE TABLE IF NOT EXISTS Tipo (id INTEGER PRIMARY KEY ASC,descrizione)');
              		transaction.executeSql('CREATE TABLE IF NOT EXISTS Categoria (id INTEGER PRIMARY KEY ASC,descrizione)');
@@ -35,10 +45,6 @@ myApp.controller('loginController', function($scope,$http) {
              		updateSottoCategoria('http://joyfoodamministratore-sisp.rhcloud.com/listAllSottoCategoria')
              		updateAllergene('http://joyfoodamministratore-sisp.rhcloud.com/listAllAllergene')
              	});
-             }else{
-                 console.log("LOGIN "+response.data.error);
-             }
-
          });      
     }
     

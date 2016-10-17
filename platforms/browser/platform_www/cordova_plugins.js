@@ -52,8 +52,8 @@ module.exports.metadata =
 {
     "cordova-sqlite-storage": "1.4.7",
     "com.verso.cordova.clipboard": "0.1.0",
-    "cordova-plugin-compat": "1.0.0",
-    "cordova-plugin-camera": "2.2.0"
+    "cordova-plugin-camera": "2.2.0",
+    "cordova-plugin-compat": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

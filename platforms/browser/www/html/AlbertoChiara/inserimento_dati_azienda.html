@@ -1,0 +1,68 @@
+<ons-page ng-controller="inserimentoDatiAziendaController">
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Dati azienda</div>
+	<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search"></i>
+		</span>
+	</div>
+</div>
+   
+                   
+                <div class="formarea">
+                
+                  <div class="form-row">
+                      <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" placeholder="Denominazione" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                  </div>
+                  <div class="form-row">
+                      <input id="codicefiscale" name="codicefiscale" type="text" class="text-input--underbar" placeholder="Codice Fiscale" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                  </div>
+                  <div class="form-row">
+                      <input id="sedelegale" name="sedelegale" type="text" class="text-input--underbar" placeholder="Sede Legale" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" >
+                  </div>      
+                  
+                  <br>
+                
+       
+  
+        <div id="affinaricerca" ng-show="true" ng-animate="'box'">        
+      <ons-list>
+      <div ng-repeat="group in groups">
+        <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
+          <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+           &nbsp; {{group.name}}
+        </ons-list-item>
+       <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
+    <label class="checkbox checkbox--list-item">
+      <input class="checkbox__input" type="radio" name={{group.name}} ng-disabled="campoDisabilitato">
+      <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+      {{item}}
+    </label>
+    </ons-list-item>
+   </div>
+   
+    <label class="left">
+                    </label>
+                    <br>
+                     <ons-input type="checkbox" input-id="check-1" ng-disabled="campoDisabilitato"> Certificazione tutela</ons-input>
+                   <br><br><br>
+   
+   <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato">Aggiungi</ons-button>
+
+    </div>
+  
+
+  
+             
+  </body>
+     
+  </ons-page>
+  
+  

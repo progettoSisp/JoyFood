@@ -1,0 +1,31 @@
+<ons-page ng-controller="visualizzaSediController">
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Lista sedi</div>
+	<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search"></i>
+		</span>
+	</div>
+</div>
+<br>
+<img src="images/images.jpg" title="Lista sedi" alt="Lista sedi"
+	style="display: block; margin: 0 auto; width: 30%;">
+
+<div class="sedi">
+
+	<ons-list id="listaSediEl" modifier="inset"> <ons-list-item
+		modifier="tappable" ng-repeat="x in sedi">
+	<div>
+		{{x.denominazioneSede}} <br> {{x.comuneSede}} {{x.indirizzoSede}}
+	</div>
+	</ons-list-item> </ons-list>
+</div>
+</ons-page>
+
+

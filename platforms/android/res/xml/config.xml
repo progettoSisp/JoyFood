@@ -21,7 +21,7 @@
     <splash density="port-xhdpi" src="/res/android/screen/splash-port-xhdpi.9.png" />
     <splash density="port-xxhdpi" src="/res/android/screen/splash-port-xxhdpi.9.png" />
     <splash density="port-xxxhdpi" src="/res/android/screen/splash-port-xxxhdpi.9.png" />
-    <name>helloworld</name>
+    <name>Joy Food</name>
     <description />
     <author />
     <content src="index.html" />

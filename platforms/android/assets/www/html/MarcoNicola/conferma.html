@@ -1,53 +1,17 @@
-        <ons-page>
-          <ons-toolbar>
-            <div class="left"><ons-back-button>Back</ons-back-button></div>
-            <div class="center">Sign up</div>
-          </ons-toolbar>
-    
-    
+<ons-page ng-controller="registrationController">
+ <div class="navigation-bar navigation-bar--material">
+
+  <div class="navigation-bar__center navigation-bar--material__center">
+   Conferma
+  </div>
+  <div class="navigation-bar__right navigation-bar--material__right">
+  </div>
+</div>
+<div class="login-form">    
+ <br>
         <p> La tua registrazione è andata a buon fine, riceverai una mail di conferma </p>
-    
-        </ons-page>   
-    <script>
-        ons.ready(function() {
-            
-            
-            console.log("Onsen UI is ready!");
-        });
-        $("ons-button.signin").click(function(){
-            document.querySelector('#myNavigator').pushPage('registration.html',{ animation : 'slide' });
-        });
-        $("ons-button.login-button").click(function(){
-            console.log($("#id").val()+" "+$("#psw").val());
-            var query="https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$("#id").val()+"&password="+$("#psw").val();
-            console.log(query);
-            var jqxhr = $.ajax( query )
-            .done(function(data) {
-                var obj=JSON.parse(data);
-                if(obj.result=="ok"){
-                    alert("Benvenuto  "+obj.name);
-                    document.querySelector('#myNavigator').pushPage('home.html',{ animation : 'slide' });
-                }else{
-                    alert("Utente e/o password errati");
-                }
-            })
-            .fail(function(err) {
-                alert( "error"+err );
-            });
-        });
-    </script>
+    <br>
+    <button ng-click="myNavigator.resetToPage('index.html')" class="button--large--cta reset">Registrazione completata</button>
+</div>
+</ons-page>   
 
-
-    
-    <script>
-    
-	$(document).ready(function(){
-            
-   $(".reset").on('click',function(){
-
-    $("input").val("");
-	
-	});
-    
-	});
-	</script>

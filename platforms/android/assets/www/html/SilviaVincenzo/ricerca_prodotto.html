@@ -1,4 +1,4 @@
-  <ons-page ng-controller="">
+<ons-page ng-controller="ricercaProdottoController">
   <div class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__left navigation-bar--material__left">
     <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
@@ -6,7 +6,7 @@
     </span>
   </div>
   <div class="navigation-bar__center navigation-bar--material__center">
-   Inserire titolo
+    Ricerca Prodotto
   </div>
   <div class="navigation-bar__right navigation-bar--material__right">
     <span class="toolbar-button toolbar-button--material">
@@ -14,6 +14,35 @@
     </span>
   </div>
 </div>
-<div id="map_canvas" style="height: 50%; width: 100%;"></div>   
+ <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      </p>
+      <div class="ricerca-form">
       
+                    <input type="search" value="" placeholder="Ricerca" class="search-input">
+                    <br>
+                    
+              
+      <div id="affinaricerca" ng-show="true" ng-animate="'box'">        
+      <ons-list>
+      <div ng-repeat="group in groups">
+        <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
+          <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
+           &nbsp; {{group.name}}
+        </ons-list-item>
+       <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
+    <label class="checkbox checkbox--list-item">
+      <input type="checkbox">
+      <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+      {{item}}
+    </label>
+    </ons-list-item>
+   </div>
+   <br>
+   
+    </div>
+   
+      <br>
+
+   <ons-button modifier="large" class="search-button" ng-click="myNavigator.pushPage('html/SilviaVIncenzo/lista_prodotti.html');">Ricerca</ons-button>
   </ons-page>

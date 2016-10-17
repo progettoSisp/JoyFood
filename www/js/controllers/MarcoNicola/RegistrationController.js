@@ -1,7 +1,7 @@
 /**
  * Created by Aerdna on 13-Sep-16.
  */
-myApp.controller('registrationController', function(userService,$scope,$http) {
+myApp.controller('registrationController', function(registrationService,$scope,$http) {
 	
 	ons.ready(function() {
 	       console.log("REG");

@@ -1,0 +1,35 @@
+
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">Lista Prodotti</div>
+      </ons-toolbar>
+
+    
+         
+        <ons-list-item tappable onclick="myNavigator.pushPage('html/SilviaVIncenzo/dettaglio_prodotto.html', { animation : 'slide' })" modifier="chevron" class="list-item-container">
+         <div ng-repeat="group in groups">
+          
+          <ons-row>
+            <ons-col width="95px">
+              <img src="immagini/parmigiana-napoletana.png" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                Parmigiana
+              </div>
+              
+              <div class="desc">
+                lorem ipsum..
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+          </div>
+        </ons-list-item>
+
+       
+     
+
+   
+
+    </ons-page>

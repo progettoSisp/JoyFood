@@ -27,30 +27,19 @@
     <script>
       var myApp = angular.module('my-app', ['onsen']);
       myApp.controller('AppController', function($scope) { });
+   </script>
 
-      myApp.service('userService', function() {
-    	  var user = {};
-
-    	  this.saveUser = function(temp) {
-    	      user=angular.copy(temp);
-    	      console.log(user);
-    	  };
-
-    	  this.getUser = function(){
-    	      return user;
-    	  };
-
-    	});
-    </script>
-
-
+    <script src="js/services/RegistrationService.js"></script>
 	<script src="js/controllers/MenuController.js"></script>
 	<script src="js/controllers/HomeController.js"></script>
     <script src="js/controllers/LoginController.js"></script>
     
      <script src="js/controllers/AndreaGianmarco/forgotPasswordController.js"></script>
-     
+
     <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
+    <script src="js/controllers/MarcoNicola/UserService.js"></script>
+    <script src="js/controllers/MarcoNicola/RegistrationService.js"></script>
+    <script src="js/controllers/MarcoNicola/LocalDbService.js"></script>
    <!--  <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>    
     
     <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>

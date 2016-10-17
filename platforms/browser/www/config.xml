@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>helloworld</name>
+    <feature name="Camera">
+        <param name="browser-package" value="Camera" />
+    </feature>
+    <name>Joy Food</name>
     <description />
     <author />
     <content src="index.html" />
@@ -8,11 +11,11 @@
     <allow-navigation href="*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
-    <preference name="ErrorUrl" value="" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="default" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="ErrorUrl" value="" />
     <preference name="Fullscreen" value="false" />
     <preference name="KeepRunning" value="true" />
     <preference name="SplashScreen" value="screen" />
