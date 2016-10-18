@@ -26,6 +26,20 @@
     <link rel="stylesheet" href="css/registrazione.css">
     <script>
       var myApp = angular.module('my-app', ['onsen']);
+
+	   myApp.factory('myInterceptor', [ 'userService', function() {
+            var requestInterceptor = {
+                request: function(config) {
+                   config.headers.common['X-AUTH-TOKEN']=userService.getUser().token;
+                   return config;
+                }
+            };
+            return requestInterceptor;
+        }]);
+		module.config(['$httpProvider', function($httpProvider) {
+		    $httpProvider.interceptors.push('myInterceptor');
+		}]);
+
       myApp.controller('AppController', function($scope) { });
    </script>
 

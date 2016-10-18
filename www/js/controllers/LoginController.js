@@ -1,7 +1,7 @@
 /**
  * Created by Aerdna on 13-Sep-16.
  */
-myApp.controller('loginController', function($scope,$http) {
+myApp.controller('loginController', function($scope,$http,remoteService) {
 	var data;
 	var db; 
 	ons.ready(function() {
@@ -9,7 +9,8 @@ myApp.controller('loginController', function($scope,$http) {
       });
 	$scope.field1;
 	$scope.field2;
-    $scope.login= function(){  	
+    $scope.login= function(){
+        remoteService.getClassificazioni();
     	var settings = {
     			  "async": true,
     			  "crossDomain": true,
