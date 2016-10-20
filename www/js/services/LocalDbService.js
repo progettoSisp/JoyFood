@@ -1,5 +1,5 @@
- myApp.service('localDbService', function(remoteService) {
-    	  var  db= window.sqlitePlugin.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
+ myApp.service('localDbService', function(remoteAppService) {
+    	  var  db= window.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
 
     	  this.Init= function() {
     	      db.transaction(function(transaction) {
@@ -37,7 +37,7 @@
             };
 
         this.updateTipo=function(){
-            	 var response=remoteService.getClassificazione()
+            	 var response=remoteService.getClassificazione();
                  if(response!=null && response.data!=null){
                      data = response.data;
                     if(data){
@@ -51,7 +51,7 @@
                         console.log("ERROR Tipo  "+response.data.error);
                     }
 
-        	  });
+        	  };
             };
 
          this.updateCategoria=function(){
@@ -215,7 +215,7 @@
                  var cat="";
                  if(categoria && categoria.length>0){
                         cat="("
-                        for(int i=0;i<categoria.length-1;i++){
+                        for(var i=0;i<categoria.length-1;i++){
                            cat=cat+"categoria="+categoria[i]+" OR ";
                         }
                       cat=cat+categoria[categoria.length-1]+")"
@@ -226,8 +226,8 @@
                        query=cat+" AND ";
                     }
                     cat="("
-                    for(int i=0;i<classificazione.length-1;i++){
-                        cat=cat+"classificazione="classificazione[i]+" OR ";
+                    for(var i=0;i<classificazione.length-1;i++){
+                        cat=cat+"classificazione="+classificazione[i]+" OR ";
                     }
                        cat=cat+classificazione[classificazione.length-1]+")"
                 }
@@ -236,7 +236,7 @@
                         query=cat+" AND ";
                      }
                      cat="("
-                     for(int i=0;i<allergene.length-1;i++){
+                     for(var i=0;i<allergene.length-1;i++){
                          cat="allergene="+allergene[i]+" OR ";
                      }
                    cat=allergene[allergene.length-1]+")"
@@ -247,7 +247,7 @@
                     query=cat+" AND ";
                   }
                      cat="("
-                     for(int i=0;i<tipo.length-1;i++){
+                     for(var i=0;i<tipo.length-1;i++){
                          cat=tipo[i]+" OR ";
                      }
                    cat=tipo[tipo.length-1]+")"
@@ -257,7 +257,7 @@
                     query=cat+" AND ";
                     }
                       cat="("
-                      for(int i=0;i<sottoCategoria.length-1;i++){
+                      for(var i=0;i<sottoCategoria.length-1;i++){
                           cat=sottoCategoria[i]+" OR";
                       }
                     cat=sottoCategoria[sottoCategoria.length-1]+")"
@@ -273,4 +273,4 @@
             };
 
 
-}
+});

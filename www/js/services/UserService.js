@@ -1,4 +1,4 @@
-myApp.service('userService', function($http,$status) {
+myApp.service('userService', function() {
     	  var user = {};
 
           this.setUser= function(user) {

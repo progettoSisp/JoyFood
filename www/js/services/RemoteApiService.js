@@ -1,4 +1,4 @@
-myApp.service('remoteApiService', function($q,$http,$status,userService) {
+myApp.service('remoteApiService', function($q,$http,userService) {
     var user = {};
 
     this.login = function(username,password) {
@@ -74,7 +74,7 @@ myApp.service('remoteApiService', function($q,$http,$status,userService) {
             deferred.resolve(response);
         });
         return deferred.promise;
-    });
+    };
 
 
     this.getAzienda= function(){
@@ -106,7 +106,7 @@ myApp.service('remoteApiService', function($q,$http,$status,userService) {
             deferred.resolve(response);
         });
         return deferred.promise;
-    });
+    };
 
     this.updateAzienda= function(azienda){
         var deferred = $q.defer();
@@ -125,7 +125,7 @@ myApp.service('remoteApiService', function($q,$http,$status,userService) {
             deferred.resolve(response);
         });
         return deferred.promise;
-    });
+    };
 
     this.insertSede= function(sede){
       var deferred = $q.defer();
@@ -149,7 +149,7 @@ myApp.service('remoteApiService', function($q,$http,$status,userService) {
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
 this.updateSede= function(sede){
       var deferred = $q.defer();
@@ -173,7 +173,7 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.getSedi= function(){
       var deferred = $q.defer();
@@ -185,7 +185,7 @@ this.updateSede= function(sede){
             deferred.resolve(response);
         });
         return deferred.promise;
-    });
+    };
 
     this.getDonazioni= function(){
         var deferred = $q.defer();
@@ -197,12 +197,12 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.donazioniByAzienda= function(id){
       var deferred = $q.defer();
       $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniByAzienda",{
-           codAzienda=id
+           codAzienda:id
       })
          .success(function(response) {
              deferred.resolve(response);
@@ -211,11 +211,11 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.donazioniBySede= function(id){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniBySede",{ idSede=id })
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniBySede",{ idSede:id })
          .success(function(response) {
              deferred.resolve(response);
          })
@@ -223,11 +223,11 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.listRichiesteByDonazione== function(id){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniBySede",{ idDonazione=id })
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniBySede",{ idDonazione:id })
          .success(function(response) {
              deferred.resolve(response);
          })
@@ -235,7 +235,7 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.insertDonazione== function(donazione){
       var deferred = $q.defer();
@@ -257,7 +257,7 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.accettaRichiesta== function(id){
       var deferred = $q.defer();
@@ -271,7 +271,7 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.inserimentoRichiesta== function(richiesta){
       var deferred = $q.defer();
@@ -286,7 +286,7 @@ this.updateSede= function(sede){
              deferred.resolve(response);
          });
          return deferred.promise;
-    });
+    };
 
     this.ricercaDonazione== function(richiesta){
           var deferred = $q.defer();
@@ -300,4 +300,6 @@ this.updateSede= function(sede){
          .error(function(response) {
               deferred.resolve(response);
         });
-})
+    };
+
+});
