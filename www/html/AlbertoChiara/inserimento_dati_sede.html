@@ -15,30 +15,38 @@
 </div>
    
                 <div class="formarea">
-                    
+                    <form name="formsede">
                     <div class="form-row">
-                      <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" placeholder="Denominazione" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                      <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" ng-model="denominazione" placeholder="Denominazione" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   <div class="form-row">
-                      <input id="indirizzo sede" name="indirizzosede" type="text" class="text-input--underbar" placeholder="Indirizzo sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                      <input id="indirizzo sede" name="indirizzosede" type="text" class="text-input--underbar" ng-model="indirizzosede" placeholder="Indirizzo sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   <div class="form-row">
-                      <input id="nomereferente" name="nomereferente" type="text" class="text-input--underbar" placeholder="Nome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                      <input id="nomereferente" name="nomereferente" type="text" class="text-input--underbar" ng-model="nomereferente" placeholder="Nome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   <div class="form-row">
-                      <input id="cognomereferente" name="cognomereferente" type="text" class="text-input--underbar" placeholder="Cognome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                      <input id="cognomereferente" name="cognomereferente" type="text" class="text-input--underbar" ng-model="cognomereferente" placeholder="Cognome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   <div class="form-row">
-                      <input id="cellulare" name="cellulare" type="text" class="text-input--underbar" placeholder="Cellulare" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato">
+                      <input id="cellulare" name="cellulare" type="text" class="text-input--underbar" ng-model="cellulare" placeholder="Cellulare" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" ng-pattern="/^[3]{1}[0-9]{9}$/" required>
+                   <div ng-show="!formsede.cellulare.$valid && formsede.cellulare.$dirty" style="color:red;font-size: 12px;">Formato del Cell non corretto</div>
                   </div>
-                   
-                 <br>   
-                 </div>   
-      <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato" >Aggiungi</ons-button>
+                  
+                  <div class="form-row">
+                   <ons-input type="checkbox" id="checkboxVeridicita" name="checkboxVeridicita" ng-model="checkboxVeridicita" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">Flag veridicita'</ons-input>
+                   </div>
+                   <div ng-show="!formsede.$valid || !checkboxVeridicita" style="color:red;font-size: 12px;">Riempire tutti i campi</div>   
+                    
+                    
+                    </form>
+                    </div>
+      <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formsede.$valid || !checkboxVeridicita)"  >Aggiungi</ons-button>
                     
     
              
   </body>
+
      
   </ons-page>
   
