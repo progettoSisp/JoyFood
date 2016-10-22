@@ -5,7 +5,7 @@ myApp.service('userService', function() {
                 this.user=angular.copy(user);
     	  }
 
-    	  this.getUSer= function(){
+    	  this.getUser= function(){
     	    return this.user
     	  }
 

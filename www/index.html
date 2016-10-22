@@ -27,11 +27,15 @@
     <script>
       var myApp = angular.module('my-app', ['onsen']);
 
-	   myApp.factory('myInterceptor', [ 'userService', function() {
+	   myApp.factory('myInterceptor', [ 'userService', function(userService) {
+	   console.log(userService);
             var requestInterceptor = {
                 request: function(config) {
-                   config.headers.common['X-AUTH-TOKEN']=userService.getUser().token;
-                   return config;
+                if(userService.getUser() && userService.getUser().token){
+                 console.log("TOKEN "+userService.getUser().token);
+                   config.headers['X-AUTH-TOKEN']=userService.getUser().token;
+                }
+                    return config;
                 }
             };
             return requestInterceptor;
