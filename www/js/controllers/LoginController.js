@@ -1,7 +1,7 @@
 /**
  * Created by Aerdna on 13-Sep-16.
  */
-myApp.controller('loginController', function($scope,$http,remoteApiService,localDbService) {
+myApp.controller('loginController', function($scope,$http,remoteApiService,localDbService,filtriService) {
 	var data;
 	var db; 
 	ons.ready(function() {
@@ -18,6 +18,7 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
             console.log(user);
             if(user.tipoUtente){
                  localDbService.Init();
+                  filtriService.Init();
                  if(user.tipoUtente.idTipoUtente==1){
                       myNavigator.resetToPage("slidingmenuDonatore.html");
                  }else{

@@ -1,20 +1,20 @@
 
-myApp.controller('homeController', function($scope,$http, $timeout,localDbService) {
+myApp.controller('homeController', function($scope,$http, $timeout,filtriService) {
 	var data;
 	var db; 
 	var map;
 	 $scope.map;
      $scope.markers = [];
      $scope.markerId = 1;
-     
+     $scope.prova
      ons.ready(function() {
     	 //navigator.geolocation.getCurrentPosition(onSuccess,onError);
-    	 localDbService.getClassificazione().then(function (result) {
-             console.log(result);
-    	 });
-
+    	 console.log(filtriService.getClassificazione());
     });
-     
+
+     $scope.print=function(){
+        console.log(filtriService.getClassificazione());
+     };
      
 
 	
