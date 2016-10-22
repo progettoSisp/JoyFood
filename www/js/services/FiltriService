@@ -1,0 +1,11 @@
+myApp.service('filtriService', function() {
+    classificazione;
+    tipo;
+    categoria;
+    sottoCategoria;
+    allergene;
+
+
+
+
+}

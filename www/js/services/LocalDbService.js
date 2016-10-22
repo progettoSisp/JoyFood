@@ -1,212 +1,244 @@
- myApp.service('localDbService', function(remoteAppService) {
+ myApp.service('localDbService', function(remoteAppService,$q) {
     	  var  db= window.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
 
     	  this.Init= function() {
     	      db.transaction(function(transaction) {
-                           		transaction.executeSql('DROP TABLE IF EXISTS UTENTE');
-                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Utente (id INTEGER PRIMARY KEY ASC,descrizione)');
-                           		transaction.executeSql('INSERT INTO Utente  VALUES (?,?)', [data[i].id, data[i].descrizione]);
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Classificazione (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Tipo (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Categoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS SottoCategoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Allergene (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,descrizione)');
-                           		updateClassificazione();
-                           		updateTipo();
-                           		updateCategoria();
-                           		updateSottoCategoria();
-                           		updateAllergene();
-                           		updateProdotti();
-                           	});
+              });
+              this.updateClassificazione();
+              this.updateTipo();
+              this.updateCategoria();
+              this.updateSottoCategoria();
+              this.updateAllergene();
+             // this.updateProdotti();
     	  };
+    	this.updateClassificazione= function(){
+    	            var response=remoteAppService.getClassificazione().then(function (response) {
+    	            console.log(response);
+    	                if(response!=null){
+                                 var data=response;
+                             db.transaction(function(transaction) {
+                             		for(var i=0;i<data.length;i++){
+                             			transaction.executeSql('INSERT INTO Classificazione  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                             		}
 
-    	this.updateClassificazione=function(){
-    	            var response=remoteService.getClassificazione()
-                    if(response!=null && response.data!=null){
-                        var data=response.data;
-                    	db.transaction(function(transaction) {
-                    		for(var i=0;i<data.length;i++){
-                    			transaction.executeSql('INSERT INTO Classificazione  VALUES (?,?)', [data[i].id, data[i].descrizione]);
-                    		}
-
-                    	});
-                    }else{
-                        console.log("ERROR Classificazione "+response.status);
-                    }
+                             	});
+                             }else{
+                                 console.log("ERROR Classificazione "+response.status);
+                             }
+    	            });
             };
 
         this.updateTipo=function(){
-            	 var response=remoteService.getClassificazione();
-                 if(response!=null && response.data!=null){
-                     data = response.data;
-                    if(data){
-                    	db.transaction(function(transaction) {
-                    		for(var i=0;i<data.length;i++){
-                    			transaction.executeSql('INSERT INTO Tipo VALUES (?,?)', [data[i].id, data[i].descrizione]);
-                    		}
+            	 remoteAppService.getClassificazione().then(function (response) {
+            	        if(response!=null ){
+                            data = response;
+                           if(data){
+                           	db.transaction(function(transaction) {
+                           		for(var i=0;i<data.length;i++){
+                           			transaction.executeSql('INSERT INTO Tipo VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                           		}
 
-                    	});
-                    }else{
-                        console.log("ERROR Tipo  "+response.data.error);
-                    }
+                           	});
+                           }else{
+                               console.log("ERROR Tipo  "+response);
+                           }
 
-        	  };
+                     };
+            	 });
             };
 
          this.updateCategoria=function(){
-            	 var response=remoteService.getClassificazione()
-                      if(response!=null && response.data!=null){
-                        data = response.data;
-                    	db.transaction(function(transaction) {
-                    		for(var i=0;i<data.length;i++){
-                    			transaction.executeSql('INSERT INTO Categoria VALUES (?,?)', [data[i].id, data[i].descrizione]);
-                    		}
+            	remoteAppService.getClassificazione().then(function(response){
+            	    if(response!=null){
+                            data = response;
+                         	db.transaction(function(transaction) {
+                         		for(var i=0;i<data.length;i++){
+                         			transaction.executeSql('INSERT INTO Categoria VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                         		}
 
-                    	});
-                    }else{
-                        console.log("ERROR Categoria  "+response.data.error);
-                    }
-            };
+                         	});
+                         }else{
+                             console.log("ERROR Categoria  "+response);
+                         }
+            	});
+            	};
 
           this.updateSottoCategoria=  function(){
-            var response=remoteService.getClassificazione()
-                  if(response!=null && response.data!=null){
-                      data = response.data;
-                    if(data){
-                    	db.transaction(function(transaction) {
-                    		for(var i=0;i<data.length;i++){
-                    			transaction.executeSql('INSERT INTO SottoCategoria VALUES (?,?,?)', [data[i].id, data[i].descrizione,data[i].descrizione,data[i].categoria.id]);
-                    		}
+               remoteAppService.getSottoCategoria().then(function(response){
+               console.log(response);
+                   if(response!=null ){
+                          data = response;
+                        if(data){
+                            db.transaction(function(transaction) {
+                                for(var i=0;i<data.length;i++){
+                                    transaction.executeSql('INSERT INTO SottoCategoria VALUES (?,?,?)', [data[i].id, data[i].descrizione,data[i].descrizione,data[i].categoria.id]);
+                                }
 
-                    	});
-                    }else{
-                        console.log("ERROR SottoCategoria "+response.data.error);
-                    }
-
-            }
-         };
+                            });
+                        }else{
+                            console.log("ERROR SottoCategoria "+response);
+                        }
+                   }
+               });
+            };
 
           this.updateAllergene=function(){
-             var response=remoteService.getClassificazione()
-                             if(response!=null && response.data!=null){
-                                 data = response.data;
-                 db.transaction(function(transaction) {
-                    for(var i=0;i<data.length;i++){
-                    			transaction.executeSql('INSERT INTO Allergene  VALUES (?,?)', [data[i].id, data[i].descrizione]);
-                    		}
+             var response=remoteAppService.getClassificazione().then(function(response){
+                if(response!=null){
+                     data = response;
+                     db.transaction(function(transaction) {
+                        for(var i=0;i<data.length;i++){
+                        			transaction.executeSql('INSERT INTO Allergene  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                        		}
 
-                    	});
-                    }else{
-                        console.log("ERROR Allergene"+response.data.error);
-                    }
+                        	});
+                        }else{
+                            console.log("ERROR Allergene"+response);
+                        }
+             });
+
             };
 
 
           this.updateNatGiud1lvl= function(){
-                var response=remoteService.getNatGiud2lvl()
-                  if(response!=null && response.data!=null){
-                      data = response.data;
-                db.transaction(function(transaction) {
-                                for(var i=0;i<data.length;i++){
-                                			transaction.executeSql('INSERT INTO NatGiud1lvl  VALUES (?,?)', [data[i].id, data[i].descrizione]);
-                                		}
+                var response=remoteAppService.getNatGiud2lvl().then(function(response){
+                    if(response!=null){
+                        data = respons;
+                        db.transaction(function(transaction) {
+                        for(var i=0;i<data.length;i++){
+                        			transaction.executeSql('INSERT INTO NatGiud1lvl  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                        		}
 
-                                	});
-                                }else{
-                                    console.log("LOGIN "+response.data.error);
-                                }
+                        	});
+                        }else{
+                            console.log("LOGIN "+response);
+                        }
+                });
+
                 };
 
           this.updateNatGiudwlvl= function(){
-                var response=remoteService.getNatGiud2lvl()
-                  if(response!=null && response.data!=null){
-                      data = response.data;
-                db.transaction(function(transaction) {
-                                for(var i=0;i<data.length;i++){
-                                			transaction.executeSql('INSERT INTO NatGiudlvl  VALUES (?,?)', [data[i].id, data[i].descrizione]);
-                                		}
+                remoteAppService.getNatGiud2lvl().then(function(response){
+                        if(response!=null){
+                            data = response;
+                            db.transaction(function(transaction) {
+                            for(var i=0;i<data.length;i++){
+                            			transaction.executeSql('INSERT INTO NatGiudlvl  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                            		}
 
-                                	});
-                                }else{
-                                    console.log("LOGIN "+response.data.error);
-                                }
+                            	});
+                            }else{
+                                console.log("LOGIN "+response);
+                            }
+                });
+
                 };
 
+           this.updateProdotti= function(){
+                          remoteAppService.getProdotto().then(function(response){
+                                  if(response!=null){
+                                      data = response;
+                                      db.transaction(function(transaction) {
+                                      for(var i=0;i<data.length;i++){
+                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                                      		}
+
+                                      	});
+                                      }else{
+                                          console.log("LOGIN "+response);
+                                      }
+                          });
+
+                          };
+var deferred = $q.defer();
             this.getClassificazione= function(){
-                 var result;
-                         db.executeSql('SELECT * FROM Classificazione', [], function(rs) {
-                           result=rs;
-                          }, function(error) {
-                          result=error
+                    db.transaction(function (transaction) {
+                        transaction.executeSql('SELECT * FROM Classificazione', [], function(tx,result) {
+                          deferred.resolve(result.rows);
+                          }, function(result) {
+                          deferred.resolve(result);
                             console.log('SELECT SQL statement ERROR: ' + error.message);
                           });
-                 return result;
+                    });
+                 return deferred.promise;
             };
 
             this.getTipo= function(){
-                             var result;
-                                     db.executeSql('SELECT * FROM Tipo', [], function(rs) {
-                                       result=rs;
-                                      }, function(error) {
-                                      result=error
-                                        console.log('SELECT SQL statement ERROR: ' + error.message);
-                                      });
-                             return result;
+                 db.transaction(function (transaction) {
+                     transaction.executeSql('SELECT * FROM Tipo', [], function(tx,result) {
+                         deferred.resolve(result.rows);
+                         }, function(result) {
+                         deferred.resolve(result);
+                           console.log('SELECT SQL statement ERROR: ' + error.message);
+                         });
+
+                 });
+                 return deferred.promise;
             };
 
             this.getAllergene= function(){
-                             var result;
-                                     db.executeSql('SELECT * FROM Allergene', [], function(rs) {
-                                       result=rs;
+                             db.transaction(function (transaction) {
+                                     transaction.executeSql('SELECT * FROM Allergene', [], function(tx,result) {
+                                       deferred.resolve(result.rows);
                                       }, function(error) {
                                       result=error
                                         console.log('SELECT SQL statement ERROR: ' + error.message);
                                       });
-                             return result;
+                    });
+                 return deferred.promise;
              };
 
             this.getCategoria= function(){
-                 var result;
-                         db.executeSql('SELECT * FROM Categoria', [], function(rs) {
-                           result=rs;
+                  db.transaction(function (transaction) {
+                         transaction.executeSql('SELECT * FROM Categoria', [], function(tx,result) {
+                            deferred.resolve(result.rows);
                           }, function(error) {
                           result=error
                             console.log('SELECT SQL statement ERROR: ' + error.message);
                           });
-                 return result;
+                    });
+                 return deferred.promise;
             };
 
             this.getSottoCategoria= function(){
-                  var result;
-                          db.executeSql('SELECT * FROM SottoCategoria', [], function(rs) {
-                            result=rs;
+                   db.transaction(function (transaction) {
+                          transaction.executeSql('SELECT * FROM SottoCategoria', [], function(tx,result) {
+                            deferred.resolve(result.rows);
                            }, function(error) {
                            result=error
                              console.log('SELECT SQL statement ERROR: ' + error.message);
                            });
-                  return result;
+                    });
+                   return deferred.promise;
              };
             this.getNatGiudlvl= function(){
-                 var result;
-                         db.executeSql('SELECT * FROM NatGiudlvl', [], function(rs) {
-                           result=rs;
+                 db.transaction(function (transaction) {
+                         transaction.executeSql('SELECT * FROM NatGiudlvl', [], function(tx,result) {
+                           deferred.resolve(result.rows);
                           }, function(error) {
                           result=error
                             console.log('SELECT SQL statement ERROR: ' + error.message);
                           });
-                 return result;
+                    });
+                 return deferred.promise;
             };
 
             this.getNatGiudlv2= function(){
-                 var result;
-                         db.executeSql('SELECT * FROM NatGiudlv2', [], function(rs) {
-                           result=rs;
+                 db.transaction(function (transaction) {
+                         transaction.executeSql('SELECT * FROM NatGiudlv2', [], function(tx,result) {
+                            deferred.resolve(result.rows);
                           }, function(error) {
                           result=error
                             console.log('SELECT SQL statement ERROR: ' + error.message);
                           });
-                 return result;
+                    });
+                 return deferred.promise;
             };
 
             this.prodotti= function(categoria,classificazione,allergene,tipo,sottoCategoria){

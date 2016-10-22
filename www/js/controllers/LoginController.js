@@ -16,12 +16,15 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
         console.log("login "+$scope.field1+" "+$scope.field2);
         remoteApiService.login(username,password).then(function (user) {
             console.log(user);
-            console.log(user.tipoUtente);
-            if(user.tipoUtente.idTipoUtente==1){
-                 myNavigator.resetToPage("slidingmenuDonatore.html");
-            }else{
-                 myNavigator.resetToPage("slidingmenu.html");
+            if(user.tipoUtente){
+                 localDbService.Init();
+                 if(user.tipoUtente.idTipoUtente==1){
+                      myNavigator.resetToPage("slidingmenuDonatore.html");
+                 }else{
+                      myNavigator.resetToPage("slidingmenu.html");
+                 }
             }
+
         });
 
     }
