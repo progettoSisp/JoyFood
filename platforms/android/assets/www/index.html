@@ -26,6 +26,24 @@
     <link rel="stylesheet" href="css/registrazione.css">
     <script>
       var myApp = angular.module('my-app', ['onsen']);
+
+	   myApp.factory('myInterceptor', [ 'userService', function(userService) {
+	   console.log(userService);
+            var requestInterceptor = {
+                request: function(config) {
+                if(userService.getUser() && userService.getUser().token){
+                 console.log("TOKEN "+userService.getUser().token);
+                   config.headers['X-AUTH-TOKEN']=userService.getUser().token;
+                }
+                    return config;
+                }
+            };
+            return requestInterceptor;
+        }]);
+	   myApp.config(['$httpProvider', function($httpProvider) {
+		    $httpProvider.interceptors.push('myInterceptor');
+		}]);
+
       myApp.controller('AppController', function($scope) { });
    </script>
 
@@ -35,8 +53,17 @@
     <script src="js/controllers/LoginController.js"></script>
     
      <script src="js/controllers/AndreaGianmarco/forgotPasswordController.js"></script>
-     
+
     <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
+
+    
+    
+    <script src="js/services/UserService.js"></script>
+    <script src="js/services/RegistrationService.js"></script>
+    <script src="js/services/LocalDbService.js"></script>
+     <script src="js/services/RemoteApiService.js"></script>
+      <script src="js/services/RemoteService.js"></script>
+    <script src="js/services/FiltriService.js"></script>
    <!--  <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>    
     
     <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>

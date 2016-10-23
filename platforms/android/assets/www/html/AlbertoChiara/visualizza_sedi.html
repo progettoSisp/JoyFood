@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/visualizza_sedi.css">
 <ons-page ng-controller="visualizzaSediController">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
@@ -13,18 +14,28 @@
 		</span>
 	</div>
 </div>
-<br>
-<img src="images/images.jpg" title="Lista sedi" alt="Lista sedi"
-	style="display: block; margin: 0 auto; width: 30%;">
-
 <div class="sedi">
 
-	<ons-list id="listaSediEl" modifier="inset"> <ons-list-item
-		modifier="tappable" ng-repeat="x in sedi">
-	<div>
-		{{x.denominazioneSede}} <br> {{x.comuneSede}} {{x.indirizzoSede}}
-	</div>
-	</ons-list-item> </ons-list>
+<!-- 	<ons-list id="listaSediEl" modifier="inset">  -->
+<!--         <ons-list-item  modifier="tappable"  ng-repeat="x in sedi"> -->
+
+<!-- 	<div> -->
+<!-- 		{{x.denominazioneSede}} <br> {{x.comuneSede}} {{x.indirizzoSede}} -->
+<!-- 	</div> -->
+<!-- 	</ons-list-item> -->
+<ons-list id="listaSediEl">
+ <ons-list-item modifier="chevron" class="list-item-container"  ng-repeat="x in sedi">
+          <div class="list-item-left">
+            <img src="images/icona_sede.jpg" class="avatar">
+          </div>
+          <div class="list-item-right">
+            <div class="list-item-content">
+              <div class="denominazionesede">{{x.denominazioneSede}}</div>
+              <span class="indirizzosede">{{x.comuneSede}} {{x.indirizzoSede}}.</span>
+            </div>
+          </div>
+        </ons-list-item>
+	</ons-list>
 </div>
 </ons-page>
 

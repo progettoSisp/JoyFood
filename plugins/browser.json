@@ -15,6 +15,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.example.helloworld"
+        },
+        "plugin.google.maps": {
+            "PACKAGE_NAME": "com.example.helloworld"
         }
     },
     "dependent_plugins": {

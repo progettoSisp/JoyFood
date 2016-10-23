@@ -18,6 +18,10 @@
         },
         "cordova-sqlite-storage": {
             "PACKAGE_NAME": "com.example.helloworld"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyAB0MBVcxedJ2eNj-Nbr_2l3WBlLP01MBc",
+            "PACKAGE_NAME": "com.example.helloworld"
         }
     },
     "dependent_plugins": {}

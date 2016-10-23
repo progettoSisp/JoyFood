@@ -4,7 +4,7 @@ myApp.controller('visualizzaSediController', function($scope,$http) {
 	console.log("visualizzaSediController");
 	//QUERY SEDI http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1
 	//QUERY AZIENDA "https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123"
-	 $http.get("http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1")
+	 $http.get("http://joyfoodamministratore-sisp.rhcloud.com/public/listSedeByAzienda?id=1")
 	    
 		.then(function(response) {
 			//var aaa = response.data[0].denominazioneSede+" "+response.data[1].denominazioneSede;

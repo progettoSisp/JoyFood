@@ -19,11 +19,7 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
             if(user.tipoUtente){
                  localDbService.Init();
                   filtriService.Init();
-                 if(user.tipoUtente.idTipoUtente==1){
-                      myNavigator.resetToPage("slidingmenuDonatore.html");
-                 }else{
                       myNavigator.resetToPage("slidingmenu.html");
-                 }
             }
 
         });
