@@ -93,7 +93,7 @@
         <ons-page  ng-controller="loginController" id="login.html">
             <img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood" style="display: block; margin: 0 auto; width: 80%; ">
             <div class="login-form">
-                <input id="id" class="text-input--underbar" placeholder="Email" value="utente3" ng-model="field1" >
+                <input id="id" class="text-input--underbar" placeholder="Username" value="utente3" ng-model="field1" >
                 <input id="psw" type="password" class="text-input--underbar" placeholder="Password" value="sisp" ng-model="field2" >
                 <br><br>
                 <ons-button modifier="large" class="login-button" ng-click="login()" >Log In</ons-button>
@@ -146,7 +146,7 @@
 	  <div class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__right navigation-bar--material__right">
     <span style="color:#ccc;font-size: 17px;" ng-click="slidingMenu.closeMenu();">
-       Chiudi
+       Close
     </span>
   </div>
   </div>
@@ -158,40 +158,42 @@
           </ons-list-item>
           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AngeloFrancesco/ricerca_donazione.html');">
             <ons-icon icon="fa-search"></ons-icon>
-            Cerca donazioni
+              Find donation
           </ons-list-item>
 
-          <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
+          <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AndreaGianmarco/storico_richieste.html');">
             <ons-icon icon="fa-clock-o"></ons-icon>
-           Ultime richieste
+           Last requests
           </ons-list-item>
 
+<!-- 
           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('StoricoDonazioni.html');">
             <ons-icon icon="fa-bookmark"></ons-icon>
             Storico richieste
           </ons-list-item>
-          
-           <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
+           -->
+           
+           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/visualizza_profilo.html');">
             <ons-icon icon="fa-user"></ons-icon>
-            Profilo
+            Profile
           </ons-list-item>
         </ons-list>
 
         <br>
         <ons-list class="bottom-menu-list">
-         <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-            Diventa donatore
+         <ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/inserimento_dati_azienda.html');">
+            Become donor
           </ons-list-item>
           
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-            Impostazioni
+          <ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AndreaGianmarco/impostazioni.html');">
+            Settings
           </ons-list-item>
 
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-           	Informativa
+          <ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('termini.html')">
+           	Policy
           </ons-list-item>
 
-		<ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
+		<ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu();">
            	 <ons-icon icon="fa-sign-out"> </ons-icon>Esci
           </ons-list-item>
         </ons-list>
@@ -204,7 +206,7 @@
 	  <div class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__right navigation-bar--material__right">
     <span style="color:#ccc;font-size: 17px;" ng-click="slidingMenu.closeMenu();">
-       Chiudi
+       Close
     </span>
   </div>
   </div>
@@ -214,41 +216,146 @@
             <ons-icon icon="fa-home"></ons-icon>
            Home
           </ons-list-item>
-          <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('ricercaDonazione.html');">
+          <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('ricerca_donazioni_mappa.html');">
             <ons-icon icon="fa-shopping-cart"></ons-icon>
-            Inserisci donazione
+            Insert donation
           </ons-list-item>
 
-          <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
+          <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('storico_donazioni.html');>
             <ons-icon icon="fa-clock-o"></ons-icon>
-           Ultime Donazioni
+           Old donations
           </ons-list-item>
 
+		   <!-- 
           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('StoricoDonazioni.html');">
             <ons-icon icon="fa-bookmark"></ons-icon>
-            Storico Donazioni
+            Old Donazioni
           </ons-list-item>
+           -->
           
-           <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
+           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('visualizza_profilo.html');">
             <ons-icon icon="fa-user"></ons-icon>
-            Profilo
+            Profile
           </ons-list-item>
         </ons-list>
 
         <br>
         <ons-list class="bottom-menu-list">         
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-            Impostazioni
+          <ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('impostazioni.html');">
+            Settings
           </ons-list-item>
 
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-           	Informativa
+          <ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('termini.html')">
+           	Policy
           </ons-list-item>
 
-		<ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
+		<ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu();">
            	 <ons-icon icon="fa-sign-out"> </ons-icon>Esci
           </ons-list-item>
         </ons-list>
+        
+        <ons-template id="termini.html">
+		<ons-scroller style="height: 200px; width: 100%">
+			<ons-dialog style="height: 75%;" var="dialog" cancelable>
+
+				<div><p>Termini d'uso
+					Condizioni Generali
+					Utilizzando l'applicazione "JoyFood the Joy of Giving" l'utente registrato
+					accetta i seguenti termini e condizioni.
+					L'applicazione permette gratuitamente ad utenti registrati titolari di
+					un'attivitÃ  commerciale, di cedere gratuitamente derrate alimentari ad altri
+					utenti registrati, specificando e descrivendo genere di alimento, quantitï¿½ e
+					data di scadenza. Ciascun utente puï¿½ gratuitamente prenotare il ritiro della
+					merce. Trattandosi di donazione gratuita di alimenti, essa non costituisce in
+					alcun modo un'attivitï¿½ economica ed in nessun caso puï¿½ configurarsi un contratto
+					tra utente donatore e richiedente. L'utente richiedente, presa visione dei
+					prodotti, potrï¿½ comunque decidere di non ritirarli. Per gli stessi motivi, non
+					potrï¿½ ravvisarsi alcuna responsabilitï¿½ nï¿½ commerciale nï¿½ contrattuale a nostro
+					carico.
+					L'utilizzo dell'applicazione " JoyFood the Joy of Giving non trasferisce alcuna
+					proprietÃ  della merce. L'utilizzo dell'applicazione Ã¨ totalmente gratuito.
+					Non Ã¨ garantito l'accesso continuo e ininterrotto ai servizi, che possono essere
+					condizionato da fattori esterni.
+					Si rifiuta qualunque responsabilitÃ  per eventuali perdite economiche, per danni
+					di immagine, per danni diretti, indiretti o conseguenti derivanti dall'utilizzo
+					dell'applicazione.
+
+					L'utilizzo dell'applicazione "JoyFood the Joy of Giving ", Ã¨ vincolato
+					all'accettazione di tutti i termini e le condizioni presenti in questo Accordo
+					per gli utenti e nelle Regole sulla Privacy.
+					L'utilizzo dell'applicazione comporta:
+					Il divieto per lï¿½utente donatore di richiedere qualunque tipo di pagamento
+					Il divieto per lï¿½utente richiedente a procedere a qualsiasi pagamento
+					L'obbligo di segnalare sospette attivitï¿½ illecite sull'applicazione;
+					L'obbligo di accettare la rimozione delle eventuali informazioni relative ad
+					attivitï¿½ ritenute illecite;
+					ï¿½ L'obbligo di accettare che il proprio account possa essere temporaneamente o
+					definitivamente sospeso dal servizio o che gli sia negato l'accesso ai servizi.
+					ï¿½ L'obbligo di accettare il proprio account possa cancellato se non confermato o
+					inattivo da molto tempo;
+					ï¿½ La donazione della merce a discrezione del donatore tra gli utenti
+					richiedenti.
+					ï¿½ Il divieto di pubblicare disponibilitï¿½ di donazioni false;
+					ï¿½ Il divieto di prenotare la donazione senza esserene interessati
+					ï¿½ Lï¿½obbligo a ritirare la merce nei tempi e luoghi definiti dal donatore.
+					ï¿½ La disponibilitï¿½ ad utilizzare feedback per le donazioni effettuate o
+					ricevute;
+					ï¿½ Il divieto di utilizzo dellï¿½applicazione a scopo pubblicitario
+					ï¿½ Il divieto di diffondere qualsiasi altra tecnologia volta a danneggiare
+					l'applicazione o i suoi utenti
+					ï¿½ Copiare, modificare o diffondere il contenuto dell'applicazione e i relativi
+					diritti di proprietï¿½ intellettuale.
+					Responsabilitï¿½
+					Con la registrazione, l'utente ci da qualsiasi responsabilitï¿½ associata a
+					contenuto, attivitï¿½ o inattivitï¿½ o relativa alla qualitï¿½ della merce destinata
+					alla donazione. Lo scopo dellï¿½applicazione ï¿½ quello di fornire un servizio in
+					cui i donatori possono segnalare la disponibilitï¿½ alla donazione di prodotti
+					alimentari eccedenti e gli utenti segnalare il proprio interesse al ritiro. Non
+					abbiamo alcun ruolo nella relazione che intercorre tra donatore e utente,
+					potendo comunque l'utente, per impedimento o anche una volta vista la merce,
+					decidere di non ritirarla e il donatore, per le stesse motivazioni, di non
+					accettare la richiesta. Decliniamo ogni responsabilitï¿½ in merito alla qualitï¿½,
+					sicurezza, liceitï¿½ dei prodotti oggetto di donazione.
+					Accettando il presente Accordo, gli utenti si impegnano ad esonerarci da
+					qualsiasi richiesta di risarcimento di danni o rivendicazione da terzi, che
+					possa derivare dalla violazione delle condizioni contenute in questo Accordo,
+					degli obblighi di legge o dei diritti di terzi.
+					Privacy Policy
+					Accettando le Regole sulla Privacy e le condizioni per gli utenti al momento
+					della registrazione, lï¿½utente acconsente espressamente all'utilizzo,
+					all'archiviazione dei sui dati personali e alla divulgazione dei dati necessari
+					alla messa in essere della donazione.
+					Con la registrazione, lï¿½utente acconsente alla raccolta e all'utilizzo dei dati
+					personali per le finalitï¿½ dell'applicazione.
+					L'utente ï¿½ consapevole ed acconsente che una parte di questi dati possa essere
+					visibile a tutti gli altri utenti registrati dell'applicazione.
+					Ci impegnamo a non vendere, nï¿½ cedere gratuitamente o dietro compenso i dati
+					personali degli utenti a soggetti terzi senza il suo esplicito consenso. I dati
+					possono essere utilizzati internamente per finalitï¿½ di ricerca e personalizzare
+					e migliorare l'applicazione e il raggiungimento delle finalitï¿½ per le quali ï¿½
+					stata realizzata.
+					Condivisione dei dati e protezione dell'account
+					Gli Utenti accettano di utilizzare le informazioni degli utenti esclusivamente
+					per i seguenti scopi:
+					ï¿½ per scopi connessi alla donazione;
+					ï¿½ per altri scopi espressamente indicati da un utente.
+					La combinazione di user name e password ï¿½ l'unico modo di accedere al proprio
+					account ed ai servizi ad esso connessi. Fornendo le proprie credenziali di
+					accesso a terzi, lï¿½utente ï¿½ responsabile per tutti gli atti compiuti con
+					l'utilizzo del proprio account.
+					Invitiamo lï¿½utente ad aggiornare i propri dati personali o i dati inerenti alle
+					donazioni tempestivamente in caso di variazioni o inesattezze.
+					Lï¿½utente ha facoltï¿½ in ogni momento di richiedere la chiusura del proprio
+					account e la cancellazione dal servizio. Ci riserviamo il diritto di conserva i
+					dati personali associati ad account chiusi nel rispetto delle normative vigenti,
+					per prevenire frodi, risolvere controversie e problemi ed offrire assistenza in
+					caso di indagini.
+				</p></div>
+
+			</ons-dialog>
+		</ons-scroller>
+
+	</ons-template>
 	
 		</ons-page>
 	</ons-template>
