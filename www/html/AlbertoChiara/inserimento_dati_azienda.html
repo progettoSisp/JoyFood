@@ -32,7 +32,7 @@
                   <div class="form-row">
                    <ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-model="checkboxTutela" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">Certificazione tutela</ons-input>
                    </div>
-                  <div ng-show="!formAzienda.$valid || !checkboxTutela" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
+                  <div ng-show="(!formAzienda.$valid || !checkboxTutela) && formAzienda.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
 
                  
                   </form>   

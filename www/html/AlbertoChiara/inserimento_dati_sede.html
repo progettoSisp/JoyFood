@@ -36,7 +36,7 @@
                   <div class="form-row">
                    <ons-input type="checkbox" id="checkboxVeridicita" name="checkboxVeridicita" ng-model="checkboxVeridicita" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">Flag veridicita'</ons-input>
                    </div>
-                   <div ng-show="!formsede.$valid || !checkboxVeridicita" style="color:red;font-size: 12px;">Riempire tutti i campi</div>   
+                   <div ng-show="(!formsede.$valid || !checkboxVeridicita) && formsede.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>   
                     
                     
                     </form>

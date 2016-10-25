@@ -29,7 +29,7 @@
          <div class="form-row">
             <input id="indirizzosedelegale" name="indirizzosedelegale" type="text" class="text-input--underbar" placeholder="Indirizzo sede legale" ng-model="sedelegale" style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" value={{sedeLegale}} required>
          </div>
-   <div ng-show="!formazienda.$valid " style="color:red;font-size: 12px;">Riempire tutti i campi</div>
+   <div ng-show="!formazienda.$valid && formazienda.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
   
    </form>   
                   </div>

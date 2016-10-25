@@ -34,7 +34,7 @@
             <input id="Cell" name="Cell" type="text" ng-model="cellulare" class="text-input--underbar" placeholder="Cellulare" style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" ng-model="modelCell" ng-pattern="/^[3]{1}[0-9]{9}$/" required >
          </div>
          <div ng-show="!formSede.Cell.$valid && formSede.Cell.$dirty" style="color:red;font-size: 12px;">Formato del Cell non corretto</div>
-         <div ng-show="!formSede.$valid" style="color:red;font-size: 12px;">Riempire tutti i campi</div>  
+         <div ng-show="(!formSede.$valid) && formSede.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>  
 	 </form>
 	     <br> 
 	<ons-button id="modificabutton" ng-click="clickModifica()"
