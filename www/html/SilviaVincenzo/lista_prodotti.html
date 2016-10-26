@@ -8,7 +8,7 @@
 	</div>
 	<div class="navigation-bar__center navigation-bar--material__center">
 		Products</div>
-		<!-- 
+	<!-- 
 	<div class="navigation-bar__right navigation-bar--material__right">
 		<span class="toolbar-button toolbar-button--material"> <i
 			class="zmdi zmdi-search"></i>
@@ -18,16 +18,18 @@
 </div>
 <div class="prodotti">
 
-	<ons-list id="listaProdotti"> <ons-list-item
-		modifier="chevron" class="list-item-container"
+	<ons-list id="listaProdotti"
+		ng-click="myNavigator.pushPage('')">
+	<ons-list-item modifier="chevron" class="list-item-container"
 		ng-repeat="prodotto in prodotti">
 	<div class="list-item-left">
-	<img width="40" height="40" ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
+		<img width="40" height="40"
+			ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
 		<!-- <img src="images/icona_sede.jpg" class="avatar"> -->
 	</div>
 	<div class="list-item-right">
 		<div class="list-item-content">
-			<div class="nomeprodotto">{{prodotto.nome}}</div>
+			<div class="nomeprodotto"><strong>{{prodotto.nome}}</strong></div>
 			<span class="descrizioneprodotto">{{prodotto.descrizione}}.</span>
 		</div>
 	</div>
