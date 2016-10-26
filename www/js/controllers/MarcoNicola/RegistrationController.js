@@ -103,8 +103,8 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				  },
 				  "data": {
 				    "user": user.username,
-				    "password": user.password,
-				    "mail": temp.email,
+				    "password": user.password1,
+				    "mail": temp.email1,
 				    "nome": user.nome,
 				    "cognome": user.cognome,
 				    "sesso": "M",
