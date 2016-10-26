@@ -115,7 +115,9 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				    "comuneResidenza": "Misinto",
 				    "indirizzoResidenza": "Via G. Garibaldi 29",
 				    "capResidenza": "20826",
-				    "telefono": temp.telefono
+				    "telefono": temp.telefono,
+				    "statoUtente": "1",
+				    "tipoUtente": "1"
 				  }
 				}
 		 		console.log(settings);
