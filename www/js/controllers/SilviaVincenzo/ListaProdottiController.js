@@ -5,6 +5,8 @@ myApp.controller('listaProdottiController', function($scope,$http) {
 
 	.then(function(response) {
 		console.log('prodotti = '+response.data.length);
+		
 		$scope.prodotti = response.data;
+		
 	});
 });
