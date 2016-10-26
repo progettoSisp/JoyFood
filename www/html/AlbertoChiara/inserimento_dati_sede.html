@@ -22,6 +22,7 @@
                   <div class="form-row">
                       <input id="indirizzo sede" name="indirizzosede" type="text" class="text-input--underbar" ng-model="indirizzosede" placeholder="Indirizzo sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
+                  
                   <div class="form-row">
                       <input id="nomereferente" name="nomereferente" type="text" class="text-input--underbar" ng-model="nomereferente" placeholder="Nome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
@@ -36,7 +37,7 @@
                   <div class="form-row">
                    <ons-input type="checkbox" id="checkboxVeridicita" name="checkboxVeridicita" ng-model="checkboxVeridicita" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">Flag veridicita'</ons-input>
                    </div>
-                   <div ng-show="!formsede.$valid || !checkboxVeridicita" style="color:red;font-size: 12px;">Riempire tutti i campi</div>   
+                   <div ng-show="(!formsede.$valid || !checkboxVeridicita) && formsede.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>   
                     
                     
                     </form>

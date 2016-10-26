@@ -1,41 +1,40 @@
-<ons-page>
-    <ons-toolbar>
-        <div class='left'>
-            <ons-back-button>Back</ons-back-button>
-        </div>
-        <div class="center">Lista Prodotti</div>
+<ons-page ng-controller="listaProdottiController">
+<link rel="stylesheet" href="css/visualizza_sedi.css">
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Products</div>
+	<!-- 
+	<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search"></i>
+		</span>
+	</div>
+	 -->
+</div>
+<div class="prodotti">
 
-    </ons-toolbar>
-
-    <!--onclick="myNavigator.pushPage('html/SilviaVIncenzo/dettaglio_prodotto.html', { animation : 'slide' })" -->
-
-
-    <!-- come si recupera il risultato della ricerca della pagina precedente? -->
-
-    <ons-list-item tappable
-
-                   modifier="chevron" class="list-item-container">
-
-        <div ng-repeat="group in groups" ng-click=dettaglioProdotto()>
-            <!-- come si accede alla pagina esatta del prodotto selezionato? -->
-
-            <ons-row>
-                <ons-col width="95px">
-                    <img class="thumbnail" name='immagine' ng-model="lista_prodotti.immagine">
-                </ons-col>
-                <ons-col>
-
-                    <div class="nome">
-                        <input type="text" name="nome" ng-model="lista_prodotti.nome">
-                    </div>
-
-                    <div class="descrizione">
-                        <input type="text" name="descrizione" ng-model="lista_prodotti.descrizione">
-                    </div>
-                </ons-col>
-                <ons-col width="40px"></ons-col>
-            </ons-row>
-
-        </div>
-    </ons-list-item>
+	<ons-list id="listaProdotti"
+		ng-click="myNavigator.pushPage('')">
+	<ons-list-item modifier="chevron" class="list-item-container"
+		ng-repeat="prodotto in prodotti">
+	<div class="list-item-left">
+		<img width="40" height="40"
+			ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
+		<!-- <img src="images/icona_sede.jpg" class="avatar"> -->
+	</div>
+	<div class="list-item-right">
+		<div class="list-item-content">
+			<div class="nomeprodotto"><strong>{{prodotto.nome}}</strong></div>
+			<span class="descrizioneprodotto">{{prodotto.descrizione}}.</span>
+		</div>
+	</div>
+	</ons-list-item> </ons-list>
+</div>
 </ons-page>
+
+
