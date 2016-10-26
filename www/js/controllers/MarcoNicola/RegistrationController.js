@@ -106,7 +106,7 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				    "nome": user.nome,
 				    "cognome": user.cognome,
 				    "sesso": "M",
-				    "codFiscale": user.codiceFiscale,
+				    "codFiscale": temp.codiceFiscale,
 				    "statoNascita": "Italia",
 				    "provinciaNascita": "MI",
 				    "comuneNascita": temp.comuneNascita,
