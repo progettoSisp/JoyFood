@@ -12,7 +12,7 @@
     	<script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKG94lIZ0mgTGMsBbm70kifycrYTcXk0A">
     </script>
-    
+
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="css/inputlogin.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/toolbar.css">
- 	<link rel="stylesheet" href="css/signup.css">
-     <link rel="stylesheet" href="css/menu1.css">
-    <link rel="stylesheet" href="css/registrazione.css">
+    <!--      <link rel="stylesheet" href="css/signup.css">
+         <link rel="stylesheet" href="css/menu1.css">
+        <link rel="stylesheet" href="css/registrazione.css">-->
     <script>
       var myApp = angular.module('my-app', ['onsen']);
 
@@ -64,7 +64,7 @@
      <script src="js/services/RemoteApiService.js"></script>
       <script src="js/services/RemoteService.js"></script>
     <script src="js/services/FiltriService.js"></script>
-   <!--  <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>    
+    <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>
     
     <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
     <script src="js/controllers/AndreaGianmarco/ModificaDonazioneController.js"></script>
@@ -83,7 +83,7 @@
     <script src="js/controllers/AlbertoChiara/InserimentoDatiAziendaController.js"></script>
     <script src="js/controllers/AlbertoChiara/InserimentoDatiSedeController.js"></script>
    
-   -->
+
         
 
 
@@ -100,13 +100,28 @@
                 <br><br>
                 <ons-button modifier="quiet" class="forgot-password" ng-click="myNavigator.pushPage('html/AndreaGianmarco/forgotPassword.html')">Forgot password?</ons-button>
                 <ons-button ng-click="myNavigator.pushPage('html/MarcoNicola/registration.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
-              	 
-         <!--     	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_azienda.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_azienda.html</ons-button>
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_sede.html</ons-button>
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')" modifier="quiet" class="signin forgot-password">visualizza_dati_azienda.html</ons-button>
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_sede.html')" modifier="quiet" class="signin forgot-password">visualizza_dati_sede.html</ons-button>
-              	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_sedi.html')" modifier="quiet" class="signin forgot-password">visualizza_sedi.html</ons-button>
-            	  
+
+                <ons-button
+                        ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_azienda.html')"
+                        modifier="quiet" class="signin forgot-password">
+                    inserimento_dati_azienda.html
+                </ons-button>
+                <ons-button
+                        ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')"
+                        modifier="quiet" class="signin forgot-password">inserimento_dati_sede.html
+                </ons-button>
+                <ons-button
+                        ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')"
+                        modifier="quiet" class="signin forgot-password">visualizza_dati_azienda.html
+                </ons-button>
+                <ons-button
+                        ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_sede.html')"
+                        modifier="quiet" class="signin forgot-password">visualizza_dati_sede.html
+                </ons-button>
+                <ons-button
+                        ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_sedi.html')"
+                        modifier="quiet" class="signin forgot-password">visualizza_sedi.html
+                </ons-button>
             	  <ons-button ng-click="myNavigator.pushPage('html/AngeloFrancesco/dettaglio_donazione.html')" modifier="quiet" class="signin forgot-password">dettaglio_donazione.html</ons-button>
       			  <ons-button ng-click="myNavigator.pushPage('html/AngeloFrancesco/ricerca_donazione.html')" modifier="quiet" class="signin forgot-password">ricerca_donazione.html</ons-button>
       		      <ons-button ng-click="myNavigator.pushPage('html/AngeloFrancesco/risultati_ricerca_donazione.html')" modifier="quiet" class="signin forgot-password">risultati_ricerca_donazione.html</ons-button>
@@ -120,7 +135,6 @@
       			<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/seleziona_sede.html')" modifier="quiet" class="signin forgot-password">seleziona_sede.html</ons-button>
       			<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/nuova_donazione.html')" modifier="quiet" class="signin forgot-password">nuova_donazione.html</ons-button>
 				<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/modifica_donazione.html')" modifier="quiet" class="signin forgot-password">modifica_donazione.html</ons-button>
-      -->
             </div>
         </ons-page>
 	</ons-navigator>
@@ -179,7 +193,8 @@
 
         <br>
         <ons-list class="bottom-menu-list">
-         <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
+            <ons-list-item class="bottom-menu-item"
+                           ng-click="menu.closeMenu() slidingMenu.setMainPage('html/AlbertoChiara/inserimento_dati_azienda.html');">
             Diventa donatore
           </ons-list-item>
           

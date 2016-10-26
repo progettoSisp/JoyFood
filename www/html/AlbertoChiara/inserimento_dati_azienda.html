@@ -1,4 +1,4 @@
-<ons-page ng-controller="inserimentoDatiAziendaController">
+<ons-list ng-controller="inserimentoDatiAziendaController">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
 		<span class="toolbar-button toolbar-button--material"
@@ -59,13 +59,11 @@
    </div>
    
    
-   <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formAzienda.$valid || !checkboxTutela)">Aggiungi</ons-button>
 
     </div>
-  
 
-  
-             
+
+</ons-list>
   </body>
      
   </ons-page>

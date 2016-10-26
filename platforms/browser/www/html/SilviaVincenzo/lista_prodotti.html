@@ -1,35 +1,41 @@
-
-    <ons-page>
-      <ons-toolbar>
+<ons-page>
+    <ons-toolbar>
+        <div class='left'>
+            <ons-back-button>Back</ons-back-button>
+        </div>
         <div class="center">Lista Prodotti</div>
-      </ons-toolbar>
 
-    
-         
-        <ons-list-item tappable onclick="myNavigator.pushPage('html/SilviaVIncenzo/dettaglio_prodotto.html', { animation : 'slide' })" modifier="chevron" class="list-item-container">
-         <div ng-repeat="group in groups">
-          
-          <ons-row>
-            <ons-col width="95px">
-              <img src="immagini/parmigiana-napoletana.png" class="thumbnail">
-            </ons-col>
-            <ons-col>
-              <div class="name">
-                Parmigiana
-              </div>
-              
-              <div class="desc">
-                lorem ipsum..
-              </div>
-            </ons-col>
-            <ons-col width="40px"></ons-col>
-          </ons-row>
-          </div>
-        </ons-list-item>
+    </ons-toolbar>
 
-       
-     
+    <!--onclick="myNavigator.pushPage('html/SilviaVIncenzo/dettaglio_prodotto.html', { animation : 'slide' })" -->
 
-   
 
-    </ons-page>
+    <!-- come si recupera il risultato della ricerca della pagina precedente? -->
+
+    <ons-list-item tappable
+
+                   modifier="chevron" class="list-item-container">
+
+        <div ng-repeat="group in groups" ng-click=dettaglioProdotto()>
+            <!-- come si accede alla pagina esatta del prodotto selezionato? -->
+
+            <ons-row>
+                <ons-col width="95px">
+                    <img class="thumbnail" name='immagine' ng-model="lista_prodotti.immagine">
+                </ons-col>
+                <ons-col>
+
+                    <div class="nome">
+                        <input type="text" name="nome" ng-model="lista_prodotti.nome">
+                    </div>
+
+                    <div class="descrizione">
+                        <input type="text" name="descrizione" ng-model="lista_prodotti.descrizione">
+                    </div>
+                </ons-col>
+                <ons-col width="40px"></ons-col>
+            </ons-row>
+
+        </div>
+    </ons-list-item>
+</ons-page>

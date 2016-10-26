@@ -2,9 +2,8 @@
  * Created by SMascaretti on 17-Sep-16.
  */
 
-myApp.controller('inserimentoNuovoProdottoController', function($scope,$http) {
-	
-
+myApp.controller('inserimentoNuovoProdottoController', function($scope,$http,localDbService, $timeout,remoteApiService) {
+    $scope.tipo = {};
 	 $scope.chiudiTipo=function(){
 
     	 // $scope.goOpzioniClassificazione = false;
@@ -126,37 +125,95 @@ myApp.controller('inserimentoNuovoProdottoController', function($scope,$http) {
 //     * else, select the given group
 //     */
 //    
-   
     
-    
-    $scope.accordionPrimoLivello = ['Tipo','Classificazione', 'Categoria','Sottocategoria','Allergeni'];
-    
-    
-    $scope.accordionSecondoLivello =
-    	[['Carne','Pesce','Frutta e verdura','Grano e cereali','Latticini'],
-    	 ['Vegano','Vegetariano','Celiaco','Non Specificato'],
-    	 ['Prodotti sfusi e pronti per il consumo', 'Prodotti confezionati e pronti per il consumo', 'Prodotti confezionati'],
-    	 ['n.d.'],
-         ['Mais','Latteria','Uovo','Pesce','Aromi','Glutine','MSG','Arachidi','Solanaceae','Molluschi','Soia','Solfiti','Grassi Trans','Frutta a guscio','Grano']];
-    
-      
-    
-$scope.groups = [];
-for (var i = 0; i < $scope.accordionPrimoLivello.length; i++) {
-	
-$scope.groups[i] = {
-name: $scope.accordionPrimoLivello[i],
-items: []
-};
+//    // Recupera le sottocategorie a partire dalla categoria selezionata
+//    $scope.getSottoCategoria = function(categoria){
+//    	$scope.sottocategorie = localDbService.getSottoCategoria(categoria);
+//    }
+//    console.log("CIAO2");
+//    // Recupera i valori di TIPO 
+//    $scope.getTipo = function(){
+//    	pluto = localDbService.getTipo();
+//    	console.log("CIAO");
+//    	$scope.tipo.name="pippo";
+//    	$scope.tipo.values=[];
+//    	$.each(pluto,function(index,value){
+//    		var value;
+//    		value.id=index:
+//    		value.value=value;
+//    		
+//    	});
+//    }
+//    
+//    // Recupera i valori di CLASSIFICAZIONE 
+//    $scope.getClassificazione = function(){
+//    	$scope.classificazione = localDbService.getClassificazione();
+//    }
+//    
+//    // Recupera i valori di CATEGORIA 
+//    $scope.getCategoria = function(){
+//    	$scope.categoria = localDbService.getCategoria();
+//    }
+//    
+//    // Recupera i valori di ALLERGENE 
+//    $scope.getAllergene = function(){
+//    	$scope.allergene = localDbService.getAllergene();
+//    }
 
-for (var j = 0; j < $scope.accordionSecondoLivello[i].length; j++) {
-$scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
-
-}
-}
-
-
+//    { name: "", values: [{}]}
+//    $scope.tipo = { name: "tipo",
+//    		values: [{ descrizione: "Frutta e verdura", id: "1" },
+//    		         { descrizione: "Grano e cereali", id: "2"}]
+// con values = record tirati fuopri dal db
     
+    
+
+
+//    $scope.tipo = { name: "tipo",
+//    		values: [{ descrizione: tipo.Descrizione, id: tipo.ID }]
+//    } 
+//
+//    $scope.classificazione = { name: "classificazione",
+//    		values: [{ descrizione: classificazione.Descrizione, id: classificazione.ID }]
+//    } 
+//    
+//    $scope.categoria = { name: "categoria",
+//    		values: [{ descrizione: categoria.Descrizione, id: categoria.ID }]
+//    } 
+//    
+//    $scope.allergene = { name: "allergene",
+//    		values: [{ descrizione: allergene.Descrizione, id: allergene.ID }]
+//    }
+//
+//    $scope.sottocategorie = { name: "sottocategorie",
+//    		values: [{ descrizione: sottocategorie.Descrizione, id: sottocategorie.ID, codCategoria: sottocategorie.codCategoria }]
+//    }
+//    var groups = [ $scope.tipo, $scope.classificazione, $scope.categoria, $scope.sottocategorie, $scope.allergene ];
+
+
+//  $scope.accordionPrimoLivello = ['Tipo','Classificazione', 'Categoria','Sottocategoria','Allergeni'];
+//  $scope.accordionSecondoLivello =
+//  [['Carne','Pesce','Frutta e verdura','Grano e cereali','Latticini'],
+//  ['Vegano','Vegetariano','Celiaco','Non Specificato'],
+//  ['Prodotti sfusi e pronti per il consumo', 'Prodotti confezionati e pronti per il consumo', 'Prodotti confezionati'],
+//  ['n.d.'],
+//  ['Mais','Latteria','Uovo','Pesce','Aromi','Glutine','MSG','Arachidi','Solanaceae','Molluschi','Soia','Solfiti','Grassi Trans','Frutta a guscio','Grano']];
+
+
+//    $scope.groups = [];
+//    for (var i = 0; i < $scope.accordionPrimoLivello.length; i++) {
+//
+//    	$scope.groups[i] = {
+//    			name: $scope.accordionPrimoLivello[i],
+//    			items: []
+//    	};
+//
+//    	for (var j = 0; j < $scope.accordionSecondoLivello[i].length; j++) {
+//    		$scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
+//
+//    	}
+//    }
+
     
     $scope.toggleGroup = function(group) {
         if ($scope.isGroupShown(group)) {

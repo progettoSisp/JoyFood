@@ -62,7 +62,8 @@ module.exports.metadata =
     "com.verso.cordova.clipboard": "0.1.0",
     "cordova-plugin-camera": "2.2.0",
     "cordova-plugin-compat": "1.0.0",
-    "plugin.google.maps": "1.3.9"
+    "plugin.google.maps": "1.3.9",
+    "cordova-plugin-whitelist": "1.3.0"
 }
 // BOTTOM OF METADATA
 });
