@@ -63,6 +63,7 @@
 			<input
 				pattern="[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
 				id="codicefiscale" name="cf" type="text"  ng-model="user.codiceFiscale" 
+				class="text-input--underbar width-full"
 				placeholder="&#xf15c; Tax code" value="" required
 				style="font-family: Arial, FontAwesome">
 			<span style="font-size:10px; color:red;" ng-show="!user.codiceFiscale && inviato2">Required field</span>
@@ -73,7 +74,6 @@
 				class="text-input--underbar width-full"
 				placeholder="&#xf095; Telephone" value="" required
 				style="font-family: Arial, FontAwesome">
-
 			<span style="font-size:10px; color:red;" ng-show="!user.telefono && inviato">Required field</span>
 		</div>
 		<div class="form-row">

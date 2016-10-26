@@ -88,8 +88,6 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 		 console.log(temp);
 		 var user=registrationService.getUser();
 		 
-		 
-		 
 		 $scope.inviato2 = true;
 		 var settings = {
 				  "async": true,
