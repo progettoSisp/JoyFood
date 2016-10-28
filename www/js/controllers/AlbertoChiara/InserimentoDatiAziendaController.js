@@ -30,8 +30,7 @@ myApp.controller('inserimentoDatiAziendaController', function($scope,$http, remo
 		});
 
 		remoteAppService.getNatGiud2lvl().then(function(response) {
-//			console.log('Nature 2 Livello:');
-//			console.log(response.length);
+
 			$scope.n2 = response;
 			console.log('Nature 2 Livello:');
 			console.log($scope.n2);
@@ -42,7 +41,7 @@ myApp.controller('inserimentoDatiAziendaController', function($scope,$http, remo
 				nuova_nat_2_liv['descnat1liv']=value.natGiud1lvl.descrizione;
 				nuova_nat_2_liv['descrizione']=value.descrizione;
 				$scope.nat2liv.push(nuova_nat_2_liv);
-				//$scope.nat2liv.push(value.descrizione);
+
 			});
 
 
@@ -91,14 +90,9 @@ myApp.controller('inserimentoDatiAziendaController', function($scope,$http, remo
 			$scope.nat1livRiempito = true;
 			$scope.nat2livDisabilitato = false;
 			$scope.nat2livRiempito = false;
+			$scope.nat1LivSelezionata = descrizione;
 			$scope.nat2livVisualizzate = [];
 			angular.forEach($scope.nat2liv,function(value, key){
-
-//				ons.notification.alert({
-//				title: 'ciao',
-//				message: (value.descnat1liv+"-"+value.descrizione)
-//				});
-
 
 				if(descrizione==value.descnat1liv)
 					$scope.nat2livVisualizzate.push(value.descrizione);
@@ -108,7 +102,8 @@ myApp.controller('inserimentoDatiAziendaController', function($scope,$http, remo
 
 		};
 
-		$scope.click2Livello=function(){
+		$scope.click2Livello=function(descrizione){
+			$scope.nat2LivSelezionata = descrizione;
 			$scope.nat2livRiempito = true;
 		}
 
@@ -117,14 +112,31 @@ myApp.controller('inserimentoDatiAziendaController', function($scope,$http, remo
 
 			$scope.aggiungiDisabilitato=true;
 			$scope.campoDisabilitato=true;
+			nuovaAzienda.nat1LivSelezionata=$scope.nat1LivSelezionata;
+			nuovaAzienda.nat2LivSelezionata=$scope.nat2LivSelezionata;
+			
+			console.log('Sto inserendo l\'azienda nuovaAzienda:');
+			console.log('nuovaAzienda.denominazione: '+nuovaAzienda.denominazione);
+			console.log('nuovaAzienda.CF: '+nuovaAzienda.CF);
+			console.log('nuovaAzienda.sedeLegale: '+nuovaAzienda.sedeLegale);
+			console.log('nuovaAzienda.nat1LivSelezionata: '+nuovaAzienda.nat1LivSelezionata);
+			console.log('nuovaAzienda.nat2LivSelezionata: '+nuovaAzienda.nat2LivSelezionata);
+			
+			//LOGIN LO FACCIO QUA PER NON PASSARE DALLA PAGINA DI LOGIN
+			var username = "utente3";
+			var password = "sisp";
+	        remoteApiService.login(username,password).then(function (user) {
+	        	console.log('LOGIN EFFETTUATO nella pagina InserimentoDatiAzienda');
+				
+	        	//INSERT SUL DB:
+				remoteApiService.insertAzienda(nuovaAzienda).then(function(response) {
+
+		        	console.log('Inserimento nuova azienda effettuato');
+				});
+	        });
+	        
 
 			
-			//EFFETTUARE LA INSERT SU DB
-			ons.notification.alert({
-				title: 'nuovaAzienda.sedeLegale = ',
-				message: nuovaAzienda.codicefiscale
-			});
-
 		};
 
 	});	 
