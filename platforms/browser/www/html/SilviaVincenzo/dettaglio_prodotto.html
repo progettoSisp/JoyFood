@@ -1,93 +1,79 @@
+<ons-page ng-controller="dettaglioProdottoController">
 
- <ons-page ng-controller="dettaglioProdottoController">
- 
-      <ons-tabbar>
-      <ons-tab page="dettaglio_donazione.html" icon="ion-search" label="Find a place" active="true">
-      </ons-tab>
-      <ons-tab page="dettaglio_donazione.html" icon="ion-heart" label="Favorites">
-      </ons-tab>
-      <ons-tab page="dettaglio_donazione.html" icon="ion-person" label="Profile">
-      </ons-tab>
-    </ons-tabbar>
-    
-    
-    <ons-navigator id="myNavigator" title="Navigator" var="myNavigator">
-      <ons-page modifier="shop-details" >
-      
-      <ons-toolbar fixed-style>
-		<div class="left"><ons-back-button>Back</ons-back-button></div>
-		<div class="center"> Dettaglio Prodotto </div>
-        <div class="right">
-		 </div>
-	</ons-toolbar>
+	<div class="navigation-bar navigation-bar--material">
+		<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			  ng-click="slidingMenu.openMenu();"> <ons-back-button>Back</ons-back-button>
+		</span>
+		</div>
+		<div class="navigation-bar__center navigation-bar--material__center">
+			Dettaglio Prodotto
+		</div>
+	</div>
 	
-	
-       <br>
-       <style="border-top: none"><ons-list-item style="line-height: 1; padding: 0;">
-          
-          <ons-col >
-          <center>
-          <label id="nome"></label>
-          </center>              
-          </ons-col>
-          
-        </ons-list-item></ons-list>
-		
-		<img ng-src="data:image/JPEG;base64,{{image}}">
-		
-        <ons-list style="margin-top: 12px;">
-          <ons-list-item>
-            <div class="prop-desc">
-              Id Prodotto: 
-              <label id= "id" ng-bind="id"></label>
-            </div>
-          </ons-list-item>
-          
-          <ons-list-item>
-            <div class="prop-desc">
-              Descrizione: 
-              <label id="descrizione" ng-bind="descrizione"></label>
-            </div>
-          </ons-list-item>
-          <ons-list-item>
-            <div class="prop-desc">
-              Descrizione estesa: 
-              <label id="descrizioneEstesa" ng-bind="descrizioneEstesa"></label>
-            </div>
-          </ons-list-item>
-          <ons-list-item>
-            <div class="prop-desc">
-              Sottocategoria: 
-              <label id="sottocategoria"ng-bind="sottocategoria"></label>
-            </div>
-          </ons-list-item>
-          <ons-list-item>
-            <div class="prop-desc">
-              Classificazione: 
-              <label id="classificazione" ng-bind="classificazione" ></label>
-            </div>
-          </ons-list-item>
-          <ons-list-item>
-            <div class="prop-desc">
-              Tipologia: 
-              <label id="tipologia" ng-bind="tipologia"></label>
-            </div>
-          </ons-list-item>
-          <ons-list-item>
-            <div class="prop-desc">
-              Allergene: 
-              <label id="allergene" ng-bind="allergene" ></label>
-            </div>
-          </ons-list-item>
-          <ons-list-item>
-            <div class="prop-desc">
-              Data creazione: 
-              <label id="datacreazione" ng-bind="datacreazione"></label>
-            </div>
-          </ons-list-item>
-        
-      </ons-page>
-    </ons-navigator>
 
+	<img ng-model="prodotto.immagine" title="Prodotto" alt="Prodotto"
+		 style="display: block; margin: 0 auto; width: 30%;"> <br/>
 
-            
+	<ul class="list">
+		<li class="list__item"><textarea ng-model="prodotto.nome"
+										 class="textarea textarea--transparent"
+										 style="width: 100%; height: 50px; margin-top: 4px;"
+										 placeholder="Nome"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea ng-model="prodotto.descrizione"
+										 class="textarea textarea--transparent"
+										 style="width: 100%; height: 50px; margin-top: 4px;"
+										 placeholder="Descrizione"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea
+				ng-model="prodotto.descrizioneestesa"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 100px; margin-top: 4px;"
+				placeholder="Descrizione Estesa"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea ng-model="prodotto.categoria"
+										 class="textarea textarea--transparent"
+										 style="width: 100%; height: 50px; margin-top: 4px;"
+										 placeholder="Categoria"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea
+				ng-model="prodotto.sottocategoria"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 50px; margin-top: 4px;"
+				placeholder="Sottocategoria"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea
+				ng-model="prodotto.classificazione"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 50px; margin-top: 4px;"
+				placeholder="Classificazione"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea ng-model="prodotto.tipologia"
+										 class="textarea textarea--transparent"
+										 style="width: 100%; height: 50px; margin-top: 4px;"
+										 placeholder="Tipologia"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea ng-model="prodotto.allergene"
+										 class="textarea textarea--transparent"
+										 style="width: 100%; height: 50px; margin-top: 4px;"
+										 placeholder="Allergene"></textarea></li>
+	</ul>
+	<ul class="list">
+		<li class="list__item"><textarea ng-model="prodotto.datacreazione"
+										 class="textarea textarea--transparent"
+										 style="width: 100%; height: 50px; margin-top: 4px;"
+										 placeholder="Data Creazione"></textarea></li>
+	</ul>
+
+	<div class="ricerca-form">
+	</div>
+	<br> <br/>
+</ons-page>

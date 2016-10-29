@@ -1,4 +1,5 @@
 <ons-page ng-controller="ricercaDonazioneController">
+<ons-toolbar>
   <div class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__left navigation-bar--material__left">
     <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
@@ -6,21 +7,23 @@
     </span>
   </div>
   <div class="navigation-bar__center navigation-bar--material__center">
-    Ricerca donazione
+    Ricerca Donazione
   </div>
-  <div class="navigation-bar__right navigation-bar--material__right">
-    <span class="toolbar-button toolbar-button--material">
-      <i class="zmdi zmdi-search"></i>
-    </span>
-  </div>
+  
 </div>
+</ons-toolbar>
+
+
  <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
       </p>
-      <div class="ricerca-form">
+      <form id='ricercaForm' class="ricerca-form login-form" ng-submit="submit()">
       
-                    <input type="search" value="" placeholder="Ricerca" class="search-input">
+      
+                   
+                    <input type="search" value="" name='ricerca' placeholder="Ricerca" id='ricerca' ng-model="richiesta.ricerca" class="text-input--underbar">
                     <br>
-                    <input type="text" value="" placeholder="Indirizzo" class="text-input">
+                    <p></p>
+                    <input type="search" value="" name='indirizzo' placeholder="Indirizzo" id='indirizzo' ng-model="richiesta.indirizzo" class="text-input--underbar">
                     <br><br>
               
       <div id="affinaricerca" ng-show="true" ng-animate="'box'">        
@@ -29,21 +32,26 @@
         <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
           <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
           <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
-           &nbsp; {{group.name}}
+           &nbsp; {{group.key}}
         </ons-list-item>
-       <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
+       <ons-list-item class="item-accordion" ng-repeat="item in group.values" ng-show="isGroupShown(group)">     
     <label class="checkbox checkbox--list-item">
-      <input type="checkbox">
+<!--<input type="checkbox" name='{{item.descrizione}}' value='{{item.id}}'>-->
+
+      <input type="checkbox" name='{{group.key}}' value='{{item.id}}'>
       <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-      {{item}}
-    </label>
-    </ons-list-item>
+      {{item.descrizione}} 
+      </label>
+ </ons-list-item>
    </div>
    <br>
-   <input type="text" onfocus="(this.type='date')" class="text-input--underbar width-full" placeholder="&#xf073; Data massima donazione" value="" required style="font-family:Arial, FontAwesome"/>                  
-    </div>
-   
-      <br>
+   <input type="text" onfocus="(this.type='date')" class="text-input--underbar width-full" id='dataMassima' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Data massima donazione" value="" required style="font-family:Arial, FontAwesome"/>                  
+   <br>
+   <br><br><br>
 
-   <ons-button modifier="large" class="search-button" ng-click="myNavigator.pushPage('registration.html');">Ricerca</ons-button>
+   <ons-button modifier="large" class="search-button" ng-click="ricerca(richiesta)">Ricerca</ons-button>
+   
+    </form>
+   
+      
   </ons-page>

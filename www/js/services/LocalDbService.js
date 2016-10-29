@@ -3,19 +3,22 @@
 
     	  this.Init= function() {
     	      db.transaction(function(transaction) {
+    	    	  
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Classificazione (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Tipo (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Categoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS SottoCategoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Allergene (id INTEGER PRIMARY KEY ASC,descrizione)');
-                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,descrizione)');
+                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,classificazione INTEGER, sottoCategoria INTEGER, tipo INTEGER, nome TEXT,immagine BLOB, descrizione)');
+                                transaction.executeSql('CREATE TABLE IF NOT EXISTS ProdottoAllegene (id INTEGER PRIMARY KEY ASC,codProdotto INTEGER,codAllergene )');
               });
               this.updateClassificazione();
               this.updateTipo();
               this.updateCategoria();
               this.updateSottoCategoria();
               this.updateAllergene();
-             // this.updateProdotti();
+              //this.updateProdottoAllergene();
+                this.updateProdotti();
     	  };
     	this.updateClassificazione= function(){
     	            var response=remoteAppService.getClassificazione().then(function (response) {
@@ -35,7 +38,7 @@
             };
 
         this.updateTipo=function(){
-            	 remoteAppService.getClassificazione().then(function (response) {
+            	 remoteAppService.getTipo().then(function (response) {
             	        if(response!=null ){
                             data = response;
                            if(data){
@@ -54,7 +57,7 @@
             };
 
          this.updateCategoria=function(){
-            	remoteAppService.getClassificazione().then(function(response){
+            	remoteAppService.getCategoria().then(function(response){
             	    if(response!=null){
                             data = response;
                          	db.transaction(function(transaction) {
@@ -75,8 +78,11 @@
                    if(response!=null ){
                           data = response;
                         if(data){
+
+                        console.log(data);
                             db.transaction(function(transaction) {
                                 for(var i=0;i<data.length;i++){
+                                console.log("PROD:"+data[i].id);
                                     transaction.executeSql('INSERT INTO SottoCategoria VALUES (?,?,?)', [data[i].id, data[i].descrizione,data[i].descrizione,data[i].categoria.id]);
                                 }
 
@@ -89,7 +95,7 @@
             };
 
           this.updateAllergene=function(){
-             var response=remoteAppService.getClassificazione().then(function(response){
+             var response=remoteAppService.getAllergene	().then(function(response){
                 if(response!=null){
                      data = response;
                      db.transaction(function(transaction) {
@@ -144,9 +150,11 @@
                           remoteAppService.getProdotto().then(function(response){
                                   if(response!=null){
                                       data = response;
+                                       console.log("PRODOTTI");
+                                      console.log(data);
                                       db.transaction(function(transaction) {
                                       for(var i=0;i<data.length;i++){
-                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id,data[i].classificazione.id,data[i].sottoCategoria.id,data[i].tipo.id,data[i].nome, data[i].immagine,data[i].descrizione]);
                                       		}
 
                                       	});
@@ -156,8 +164,9 @@
                           });
 
                           };
-var deferred = $q.defer();
+
             this.getClassificazione= function(){
+            	var deferred = $q.defer();
                     db.transaction(function (transaction) {
                         transaction.executeSql('SELECT * FROM Classificazione', [], function(tx,result) {
                           deferred.resolve(result.rows);
@@ -170,6 +179,7 @@ var deferred = $q.defer();
             };
 
             this.getTipo= function(){
+            	var deferred = $q.defer();
                  db.transaction(function (transaction) {
                      transaction.executeSql('SELECT * FROM Tipo', [], function(tx,result) {
                          deferred.resolve(result.rows);
@@ -183,6 +193,7 @@ var deferred = $q.defer();
             };
 
             this.getAllergene= function(){
+            	var deferred = $q.defer();
                              db.transaction(function (transaction) {
                                      transaction.executeSql('SELECT * FROM Allergene', [], function(tx,result) {
                                        deferred.resolve(result.rows);
@@ -195,6 +206,7 @@ var deferred = $q.defer();
              };
 
             this.getCategoria= function(){
+            	var deferred = $q.defer();
                   db.transaction(function (transaction) {
                          transaction.executeSql('SELECT * FROM Categoria', [], function(tx,result) {
                             deferred.resolve(result.rows);
@@ -207,6 +219,7 @@ var deferred = $q.defer();
             };
 
             this.getSottoCategoria= function(){
+            	var deferred = $q.defer();
                    db.transaction(function (transaction) {
                           transaction.executeSql('SELECT * FROM SottoCategoria', [], function(tx,result) {
                             deferred.resolve(result.rows);
@@ -218,6 +231,7 @@ var deferred = $q.defer();
                    return deferred.promise;
              };
             this.getNatGiudlvl= function(){
+            	var deferred = $q.defer();
                  db.transaction(function (transaction) {
                          transaction.executeSql('SELECT * FROM NatGiudlvl', [], function(tx,result) {
                            deferred.resolve(result.rows);
@@ -230,6 +244,7 @@ var deferred = $q.defer();
             };
 
             this.getNatGiudlv2= function(){
+            	var deferred = $q.defer();
                  db.transaction(function (transaction) {
                          transaction.executeSql('SELECT * FROM NatGiudlv2', [], function(tx,result) {
                             deferred.resolve(result.rows);
@@ -242,6 +257,7 @@ var deferred = $q.defer();
             };
 
             this.prodotti= function(categoria,classificazione,allergene,tipo,sottoCategoria){
+            	var deferred = $q.defer();
                  var result;
                  var query='SELECT * FROM Prodotto WHERE '
                  var cat="";

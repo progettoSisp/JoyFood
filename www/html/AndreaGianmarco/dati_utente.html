@@ -1,4 +1,5 @@
-<ons-page ng-controller="">
+ <link rel="stylesheet" href="css/profile.css">
+<ons-page >
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
 		<span class="toolbar-button toolbar-button--material"
@@ -8,10 +9,34 @@
 	<div class="navigation-bar__center navigation-bar--material__center">
 		Inserire titolo</div>
 	<div class="navigation-bar__right navigation-bar--material__right">
-		<span class="toolbar-button toolbar-button--material"> <i
-			class="zmdi zmdi-search"></i>
+		<span class="toolbar-button toolbar-button--material"> <i class="zmdi zmdi-search"></i>
 		</span>
 	</div>
 </div>
+      <div class="profile-card">
+
+        <img src="images/icon-user.png" class="profile-image">
+        <div class="profile-name">Username</div>
+        <div class="profile-id">Mail</div>
+        <div class="profile-desc">Freelance designer, software engineer and cyclist</div>
+
+      </div>
+
+       <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item modifier="chevron">
+          Nome , Cognome
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+          Indirizzo
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+         Cofice Fiscale
+        </ons-list-item>
+
+      </ons-list>
+
+      <br>
 
 </ons-page>

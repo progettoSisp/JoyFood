@@ -6,7 +6,7 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
 	 $scope.map;
      $scope.markers = [];
      $scope.markerId = 1;
-
+    $scope.sedi;
      ons.ready(function() {
     	 navigator.geolocation.getCurrentPosition(onSuccess,onError);
     	 remoteAppService.getAllSedi().then(function(result){
@@ -48,6 +48,8 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
         $scope.overlay.setMap($scope.map);
         $scope.element = document.getElementById('map_canvas');
         remoteAppService.getAllSedi().then(function(response) {
+        console.log(response);
+        $scope.sedi=response;
              data = response;
             if(data){
             	console.log(data);
