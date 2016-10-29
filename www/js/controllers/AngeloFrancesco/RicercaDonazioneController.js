@@ -26,12 +26,12 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	//                  {key:"Classificazione",values: [{"name": "Vegano","id": "id_class_1"},{"name": "Celiaco","id": "id_class_1"},{"name": "Vegetariano","id": "id_class_1"}]},
 	  //                {key:"Allergeni",values: [{"name": "Mais","id": "id_class_1"},{"name": "Latteria","id": "id_class_1"}]}
 	    //              ];
-   filtriService.Init();
-   $timeout(callAtTimeout, 3000);
+
+   $timeout(callAtTimeout, 1000);
 
    function callAtTimeout() {
 
-	  
+	   filtriService.Init();
 		                  console.log(filtriService.getTipo() );
 		                  console.log(filtriService.getClassificazione());
 		                  console.log(filtriService.getAllergene());
