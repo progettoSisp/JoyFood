@@ -30,6 +30,7 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 	
 	
 	 $scope.next= function(user){
+		 console.log(user)
 		 var errore = false;
 		 if(user){
 		 if(!user.username || !user.password1 || !user.password2 || !user.cognome)
@@ -71,7 +72,7 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 		 $scope.inviato = true;
 		 registrationService.saveUser(user);
 		 if(!errore)
-		 myNavigator.pushPage("html/MarcoNicola/registration_2.html")
+			 myNavigator.pushPage("html/MarcoNicola/registration_2.html")
 	 
 		 }else{
 			 
@@ -84,60 +85,80 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 		 
 		 }
 	 
-	 $scope.pagina2= function(temp){
-		 console.log(temp);
-		 var user=registrationService.getUser();
+	 $scope.pagina2= function(user2){
+		 console.log(user2);
+		 var user1=registrationService.getUser();
+		 var errore = false;
 		 
-		 $scope.inviato2 = true;
-		 var settings = {
-				  "async": true,
-				  "crossDomain": true,
-				  "url": "http://joyfoodamministratore-sisp.rhcloud.com/user/register",
-				  "method": "POST",
-				  "headers": {
-				    "content-type": "application/x-www-form-urlencoded",
-				    "cache-control": "no-cache",
-				    "postman-token": "be255aa4-2a8f-b146-c05f-36b49a1acc31"
-				  },
-				  "data": {
-				    "user": user.username,
-				    "password": user.password1,
-				    "mail": temp.email1,
-				    "nome": user.nome,
-				    "cognome": user.cognome,
-				    "sesso": "M",
-				    "codFiscale": temp.codiceFiscale,
-				    "statoNascita": "Italia",
-				    "provinciaNascita": "MI",
-				    "comuneNascita": temp.comuneNascita,
-				    "provinciaResidenza": "MB",
-				    "capNascita": "20826",
-				    "comuneResidenza": "Misinto",
-				    "indirizzoResidenza": "Via G. Garibaldi 29",
-				    "capResidenza": "20826",
-				    "telefono": temp.telefono,
-				    "statoUtente": "1",
-				    "tipoUtente": "1"
-				  }
-				}
-		 		console.log(settings);
-				$.ajax(settings).done(function (response) {
-					myNavigator.pushPage("html/MarcoNicola/conferma.html")
-				});
+		 if(user2){
+			 console.log("A");
+			 if(!user2.email1 || !user2.email2 || !user2.genere || !user2.codiceFiscale || !user2.comuneNascita || !user2.telefono){
+				 console.log("B");
+				 errore = true;
+		 	}
+		 
+			 $scope.inviato2 = true;
+			 if(!errore){				 
+				 var settings = {
+						 "async": true,
+						 "crossDomain": true,
+						 "url": "http://joyfoodamministratore-sisp.rhcloud.com/user/register",
+						 "method": "POST",
+						 "headers": {
+							 "content-type": "application/x-www-form-urlencoded",
+							 "cache-control": "no-cache",
+							 "postman-token": "be255aa4-2a8f-b146-c05f-36b49a1acc31"
+						 },
+						 "data": {
+							 "user": user1.username,
+							 "password": user1.password1,
+							 "mail": user2.email1,
+							 "nome": user1.nome,
+							 "cognome": user1.cognome,
+							 "sesso": user2.genere,
+							 "codFiscale": user2.codiceFiscale,
+							 "statoNascita": "Italia",
+							 "provinciaNascita": "MI",
+							 "comuneNascita": user2.comuneNascita,
+							 "provinciaResidenza": "MB",
+							 "capNascita": "20826",
+							 "comuneResidenza": "Misinto",
+							 "indirizzoResidenza": "Via G. Garibaldi 29",
+							 "capResidenza": "20826",
+							 "telefono": user2.telefono,
+							 "statoUtente": "1",
+							 "tipoUtente": "1"
+						 }
+				 }
+				 console.log(settings);
+			 
+				 console.log("C");
+				 $.ajax(settings).done(function (response) {
+					 console.log("FF");
+					 myNavigator.pushPage("html/MarcoNicola/conferma.html")
+				 });
+			 }
+		 }else{
+			 console.log("D");
+			 $scope.inviato2 = true;	 
+		 }
 	 }
 		
      $scope.reset = function() {
-         $scope.user = angular.copy($scope.master);
-         if($("#password1"))
-         $("#password1").val("");
-         if($("#password2"))
-         $("#password2").val("");
-         if($("#codicefiscale"))
-        $("#codicefiscale").val("");
-        if($("#email1"))
-        $("#email1").val("");
-        if($("#email2"))
-        $("#email2").val("");
+    	 $scope.user = angular.copy($scope.master);
+    	 $scope.user2 = angular.copy($scope.master);
+    	 if($("#password1"))
+    		 $("#password1").val("");
+    	 if($("#password2"))
+    		 $("#password2").val("");
+    	 if($("#codicefiscale"))
+    		 $("#codicefiscale").val("");
+    	 if($("#telefono"))
+    		 $("#telefono").val("");
+    	 if($("#email1"))
+    		 $("#email1").val("");
+    	 if($("#email2"))
+    		 $("#email2").val("");
      };
 	
 
