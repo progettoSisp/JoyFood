@@ -6,7 +6,7 @@
 		</span>
 	</div>
 	<div class="navigation-bar__center navigation-bar--material__center">
-		Registrazione 2/2</div>
+		Registration</div>
 	<div class="navigation-bar__right navigation-bar--material__right">
 	</div>
 </div>
@@ -15,21 +15,15 @@
 
 	<div class="formarea">
 
-
-
-		<p>Altre info</p>
-
-
-
 		<div class="form-row">
 			<input name="datadinascita" ng-model="user.dataNascita"  type="text" onfocus="(this.type='date')"
 				class="text-input--underbar width-full"
-				placeholder="&#xf073; Data di Nascita" value="" required
+				placeholder="&#xf073; Date of birth" value="" required
 				style="font-family: Arial, FontAwesome" />
 		</div>
 
 
-		<span style="font-size:10px; color:red;" ng-show="!user.dataNascita && inviato2">Inserire la data di nascita</span>
+		<span style="font-size:10px; color:red;" ng-show="!user.dataNascita && inviato2">Insert date of birth</span>
 
 
 		<div class="form-row" style="padding-top: 10px;">
@@ -59,10 +53,10 @@
 		<div class="form-row">
 			<input name="comune" type="text"  ng-model="user.comuneNascita" 
 				class="text-input--underbar width-full"
-				placeholder="&#xf015; Comune di Nascita" value=""
+				placeholder="&#xf015; Birthplace" value=""
 				style="font-family: Arial, FontAwesome" required>
 
-			<span style="font-size:10px; color:red;" ng-show="!user.comuneNascita && inviato2">Valore richiesto</span>
+			<span style="font-size:10px; color:red;" ng-show="!user.comuneNascita && inviato2">Required field</span>
 
 		</div>
 		<div class="form-row">
@@ -70,24 +64,23 @@
 				pattern="[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
 				id="codicefiscale" name="cf" type="text"  ng-model="user.codiceFiscale" 
 				class="text-input--underbar width-full"
-				placeholder="&#xf15c; Codice Fiscale" value="" required
+				placeholder="&#xf15c; Tax code" value="" required
 				style="font-family: Arial, FontAwesome">
-			<span style="font-size:10px; color:red;" ng-show="!user.codiceFiscale && inviato2">Valore richiesto</span>
+			<span style="font-size:10px; color:red;" ng-show="!user.codiceFiscale && inviato2">Field not correct</span>
 		</div>
-		<p>Recapiti</p>
+		<p>Contact details</p>
 		<div class="form-row">
 			<input type="tel" name="telefono"  ng-model="user.telefono" 
 				class="text-input--underbar width-full"
-				placeholder="&#xf095; Telefono" value="" required
+				placeholder="&#xf095; Telephone" value="" required
 				style="font-family: Arial, FontAwesome">
-
-			<span style="font-size:10px; color:red;" ng-show="!user.telefono && inviato">Valore richiesto</span>
+			<span style="font-size:10px; color:red;" ng-show="!user.telefono && inviato">Required field</span>
 		</div>
 		<div class="form-row">
 			<input id="email1" name="email" type="email" ng-model="user.email1"
 				   class="text-input--underbar width-full" placeholder="&#xf003; Email"
 				   value="" required style="font-family: Arial, FontAwesome">
-			<span style="font-size:10px; color:red;" ng-show="!user.email1 && inviato2">Inserire una mail nel formato corretto</span>
+			<span style="font-size:10px; color:red;" ng-show="!user.email1 && inviato2">(es. name@domain)</span>
 		</div>
 		<div class="form-row">
 			<input id="email2" type="email" ng-model="user.email2"
@@ -95,14 +88,13 @@
 				   placeholder="&#xf003; Retype Email" value="" required
 				   style="font-family: Arial, FontAwesome">
 			<span style="font-size:10px; color:red;"
-				  ng-show="(user.email1!=user.email2) && inviato2">Le due email devono corrispondere</span>
+				  ng-show="(user.email1!=user.email2) && inviato2">Mail and retype mail must match</span>
 
 		</div>
 		<br />
 		<div class="form-row lucent" style="padding-top: 20px;">
-			<input type="checkbox" required ng-model="user.condizioni"/><span>Accetto le condizioni
-				della <a ng-click="show('termini.html')"><span id="privacy"
-															   style="text-decoration: underline;">Privacy</span></a>
+			<input type="checkbox" required ng-model="user.condizioni"/><span><a ng-click="show('termini.html')"><span id="privacy"
+															   style="text-decoration: underline;">Privacy policy</span></a>
 			
 			</span>
 
@@ -111,12 +103,12 @@
 
 
 		<p>
-			<span style="font-size:10px; color:red;" ng-show="!user.condizioni && inviato2">Bisogna accettare le condizioni sulla Privacy</span>
+			<span style="font-size:10px; color:red;" ng-show="!user.condizioni && inviato2">Accept privacy policy</span>
 		</p>
 
 
 		<br />
-		<button class="button--large--cta"  ng-click="pagina2(user)">Registrati</button>
+		<button class="button--large--cta"  ng-click="pagina2(user)">Register</button>
 		<br />
 		<button ng-click="reset()" class="button--large--cta reset">Reset</button>
 	</div>

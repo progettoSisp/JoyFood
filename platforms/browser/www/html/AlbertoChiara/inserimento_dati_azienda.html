@@ -1,4 +1,5 @@
 <ons-page ng-controller="inserimentoDatiAziendaController">
+<link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
 		<span class="toolbar-button toolbar-button--material"
@@ -18,48 +19,67 @@
                 <div class="formarea">
                 <form name="formAzienda">
                   <div class="form-row">
-                      <input id="denominazione" name="denominazione" ng-model="denominazione" type="text" class="text-input--underbar" placeholder="Denominazione" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                      <input id="denominazione" name="denominazione" ng-model="nuovaAzienda.denominazione" type="text" class="text-input--underbar" placeholder="Denominazione" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
+                  
                   <div class="form-row">
-                      <input id="codicefiscale" name="codicefiscale" ng-model="codicefiscale" type="text" class="text-input--underbar" placeholder="Codice Fiscale" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" ng-pattern="/^[A-Za-z]{6}[0-9]{2}[A-Za-z]{1}[0-9]{2}[A-Za-z]{1}[0-9]{3}[A-Za-z]{1}$/" required>
+                      <input id="codicefiscale" name="codicefiscale" ng-model="nuovaAzienda.CF" type="text" class="text-input--underbar" placeholder="Codice Fiscale" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" ng-pattern="/^[A-Za-z]{6}[0-9]{2}[A-Za-z]{1}[0-9]{2}[A-Za-z]{1}[0-9]{3}[A-Za-z]{1}$/" required>
                             <div ng-show="!formAzienda.codicefiscale.$valid && formAzienda.codicefiscale.$dirty" style="color:red;font-size: 12px;">Formato del CF non corretto</div>
 
 
                   </div>
                   <div class="form-row">
-                      <input id="sedelegale" name="sedelegale" ng-model="sedelegale" type="text" class="text-input--underbar" placeholder="Sede Legale" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                      <input id="sedelegale" name="sedelegale" ng-model="nuovaAzienda.sedeLegale" type="text" class="text-input--underbar" placeholder="Sede Legale" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>  
-                  <div class="form-row">
-                   <ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-model="checkboxTutela" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">Certificazione tutela</ons-input>
-                   </div>
-                  <div ng-show="!formAzienda.$valid || !checkboxTutela" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
+                  
+
 
                  
-                  </form>   
-                  </div>
+
                   <br>
                 
        
   
-        <div id="affinaricerca" ng-show="true" ng-animate="'box'">        
-      <ons-list>
-      <div ng-repeat="group in groups">
-        <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
-          <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
-          <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
-           &nbsp; {{group.name}}
+        <div id="affinaricerca" ng-show="true" ng-animate="'box'">     
+           
+     <ons-list>
+        <ons-list-item ng-click="toggleGroup1(group1)" class="title" ng-class="{active:isGroupShown1(group1)}">
+          <ons-icon icon="minus-square-o" ng-if="isGroupShown1(group1)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="!isGroupShown1(group1)"></ons-icon>
+           &nbsp; Natura Giuridica 1 Livello
         </ons-list-item>
-       <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
+       <ons-list-item class="item-accordion" ng-repeat="descrizione in nat1liv" ng-show="isGroupShown1(group1)">     
     <label class="checkbox checkbox--list-item">
-      <input class="checkbox__input" type="radio" name={{group.name}} ng-disabled="campoDisabilitato">
+      <input class="checkbox__input" type="radio" name="nat1livInput" ng-disabled="campoDisabilitato" ng-click="click1Livello(descrizione)">
       <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-      {{item}}
+      {{descrizione}}
     </label>
     </ons-list-item>
-   </div>
+   </ons-list>
    
-   
-   <ons-button id="aggiungibutton"  ng-click ="clickAggiungi()" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formAzienda.$valid || !checkboxTutela)">Aggiungi</ons-button>
+        <ons-list>
+        <ons-list-item id="natGiud2LivElem" ng-click="toggleGroup2(group2)" class="title natGiudDisabled" ng-class="{active:isGroupShown2(group2)}" >
+          <ons-icon icon="minus-square-o" ng-if="isGroupShown2(group2)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="!isGroupShown2(group2)"></ons-icon>
+           &nbsp; Natura Giuridica 2 Livello
+        </ons-list-item>
+       <ons-list-item class="item-accordion" ng-repeat="descrizione in nat2livVisualizzate" ng-show="isGroupShown2(group2)">     
+    <label class="checkbox checkbox--list-item">
+      <input class="checkbox__input" type="radio" name="nat2livInput" ng-disabled="campoDisabilitato" ng-click="click2Livello(descrizione)">
+      <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+      {{descrizione}}
+    </label>
+    </ons-list-item>
+   </ons-list>
+   <br>
+   <div class="form-row">
+                   <ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-model="checkboxTutela" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">&nbsp; Certificazione tutela</ons-input>
+    </div>
+   <div ng-show="(!formAzienda.$valid || !checkboxTutela || !nat1livRiempito || !nat2livRiempito) && formAzienda.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
+                     </form>   
+                  </div>
+   <br><br>
+   <ons-button id="aggiungibutton"  ng-click ="clickAggiungi(nuovaAzienda)" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formAzienda.$valid || !checkboxTutela || !nat1livRiempito || !nat2livRiempito)">Aggiungi</ons-button>
 
     </div>
   

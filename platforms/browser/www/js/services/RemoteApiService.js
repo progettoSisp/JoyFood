@@ -272,16 +272,18 @@ this.updateSede= function(sede){
          return deferred.promise;
     };
 
-    this.ricercaDonazione== function(richiesta){
+    this.ricercaDonazione= function(richiesta){
           var deferred = $q.defer();
           var str=this.toString(richiesta);
                  var settings = {
-                   "url": "https://joyfoodamministratore-sisp.rhcloud.com/ricercaDonazione",
+                   "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/ricercaDonazione",
                    "method": "POST",
                    "headers": {
                      "content-type": "application/x-www-form-urlencoded",
                    },
                    "data": str
+                   
+                   
                    };
         $http(settings)
         .then(function(response) {
@@ -289,6 +291,7 @@ this.updateSede= function(sede){
          },function(response) {
               deferred.resolve(response);
         });
+        return deferred.promise;
     };
 
 });

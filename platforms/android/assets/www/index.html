@@ -1,30 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="en" ng-app="my-app">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <script src="components/loader.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/onsenui/js/onsenui.js"></script>
-    <script src="lib/onsenui/js/angular-onsenui.js"></script>
-    <script src="lib/jquery/jquery-3.1.0.js"></script>
-    	<script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKG94lIZ0mgTGMsBbm70kifycrYTcXk0A">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Security-Policy"
+	content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+<script src="components/loader.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/onsenui/js/onsenui.js"></script>
+<script src="lib/onsenui/js/angular-onsenui.js"></script>
+<script src="lib/jquery/jquery-3.1.0.js"></script>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKG94lIZ0mgTGMsBbm70kifycrYTcXk0A">
     </script>
-    
-    <link rel="stylesheet" href="components/loader.css">
-    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
-    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/inputlogin.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/toolbar.css">
- 	<link rel="stylesheet" href="css/signup.css">
-     <link rel="stylesheet" href="css/menu1.css">
-    <link rel="stylesheet" href="css/registrazione.css">
-    <script>
+
+<link rel="stylesheet" href="components/loader.css">
+<link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+<link rel="stylesheet"
+	href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/inputlogin.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/toolbar.css">
+<link rel="stylesheet" href="css/signup.css">
+<link rel="stylesheet" href="css/menu1.css">
+<link rel="stylesheet" href="css/registrazione.css">
+<script>
       var myApp = angular.module('my-app', ['onsen']);
 
 	   myApp.factory('myInterceptor', [ 'userService', function(userService) {
@@ -47,209 +50,244 @@
       myApp.controller('AppController', function($scope) { });
    </script>
 
-    <script src="js/services/RegistrationService.js"></script>
-	<script src="js/controllers/MenuController.js"></script>
-	<script src="js/controllers/HomeController.js"></script>
-    <script src="js/controllers/LoginController.js"></script>
-    
-     <script src="js/controllers/AndreaGianmarco/forgotPasswordController.js"></script>
+<script src="js/services/RegistrationService.js"></script>
+<script src="js/controllers/MenuController.js"></script>
+<script src="js/controllers/HomeController.js"></script>
+<script src="js/controllers/LoginController.js"></script>
 
-    <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
+<script src="js/controllers/AndreaGianmarco/forgotPasswordController.js"></script>
 
-    
-    
-    <script src="js/services/UserService.js"></script>
-    <script src="js/services/RegistrationService.js"></script>
-    <script src="js/services/LocalDbService.js"></script>
-     <script src="js/services/RemoteApiService.js"></script>
-      <script src="js/services/RemoteService.js"></script>
-    <script src="js/services/FiltriService.js"></script>
- <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>
-    
-    <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
-    <script src="js/controllers/AndreaGianmarco/ModificaDonazioneController.js"></script>
-   
-       
-    <script src="js/controllers/AngeloFrancesco/RicercaDonazioneController.js"></script>
-    <script src="js/controllers/AngeloFrancesco/dettaglioDonazioneController.js"></script>
-        
-    <script src="js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js"></script> 
-    <script src="js/controllers/SilviaVincenzo/DettaglioProdottoController.js"></script>
-    
-    
- 	<script src="js/controllers/AlbertoChiara/DatiAziendaController.js"></script>
-    <script src="js/controllers/AlbertoChiara/DatiSedeController.js"></script>
-    <script src="js/controllers/AlbertoChiara/VisualizzaSediController.js"></script>
-    <script src="js/controllers/AlbertoChiara/InserimentoDatiAziendaController.js"></script>
-    <script src="js/controllers/AlbertoChiara/InserimentoDatiSedeController.js"></script>
-   
+<script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
 
-        
+
+
+<script src="js/services/UserService.js"></script>
+<script src="js/services/RegistrationService.js"></script>
+<script src="js/services/LocalDbService.js"></script>
+<script src="js/services/RemoteApiService.js"></script>
+<script src="js/services/RemoteService.js"></script>
+<script src="js/services/FiltriService.js"></script>
+	<script src="js/services/ProdottoService.js"></script>
+
+
+
+
+
+<script src="js/controllers/MarcoNicola/ConfermaController.js"></script>
+<script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
+<script
+	src="js/controllers/AndreaGianmarco/ModificaDonazioneController.js"></script>
+<script
+	src="js/controllers/AngeloFrancesco/RicercaDonazioneController.js"></script>
+<script
+	src="js/controllers/AngeloFrancesco/dettaglioDonazioneController.js"></script>
+<script
+	src="js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js"></script>
+	<script
+	src="js/controllers/SilviaVincenzo/ListaProdottiController.js"></script>
+<script
+	src="js/controllers/SilviaVincenzo/DettaglioProdottoController.js"></script>
+<script src="js/controllers/SilviaVincenzo/RicercaProdottoController.js"></script>
+<script src="js/controllers/AlbertoChiara/DatiAziendaController.js"></script>
+<script src="js/controllers/AlbertoChiara/DatiSedeController.js"></script>
+<script src="js/controllers/AlbertoChiara/VisualizzaSediController.js"></script>
+<script
+	src="js/controllers/AlbertoChiara/InserimentoDatiAziendaController.js"></script>
+<script
+	src="js/controllers/AlbertoChiara/InserimentoDatiSedeController.js"></script>
+
+
+
+
+
+
 
 
 </head>
- <body ng-controller="AppController">
-	<ons-navigator var="myNavigator">
-        <ons-page  ng-controller="loginController" id="login.html">
-            <img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood" style="display: block; margin: 0 auto; width: 80%; ">
-            <div class="login-form">
-                <input id="id" class="text-input--underbar" placeholder="Email" value="utente3" ng-model="field1" >
-                <input id="psw" type="password" class="text-input--underbar" placeholder="Password" value="sisp" ng-model="field2" >
-                <br><br>
-                <ons-button modifier="large" class="login-button" ng-click="login()" >Log In</ons-button>
-                <br><br>
-                <ons-button modifier="quiet" class="forgot-password" ng-click="myNavigator.pushPage('html/AndreaGianmarco/forgotPassword.html')">Forgot password?</ons-button>
-                <ons-button ng-click="myNavigator.pushPage('html/MarcoNicola/registration.html')" modifier="quiet" class="signin forgot-password">Sign in</ons-button>
-              	 
-      	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_azienda.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_azienda.html</ons-button>
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')" modifier="quiet" class="signin forgot-password">inserimento_dati_sede.html</ons-button>
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')" modifier="quiet" class="signin forgot-password">visualizza_dati_azienda.html</ons-button>
-            	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_sede.html')" modifier="quiet" class="signin forgot-password">visualizza_dati_sede.html</ons-button>
-              	  <ons-button ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_sedi.html')" modifier="quiet" class="signin forgot-password">visualizza_sedi.html</ons-button>
-            	  
-            	  <ons-button ng-click="myNavigator.pushPage('html/AngeloFrancesco/dettaglio_donazione.html')" modifier="quiet" class="signin forgot-password">dettaglio_donazione.html</ons-button>
-      			  <ons-button ng-click="myNavigator.pushPage('html/AngeloFrancesco/ricerca_donazione.html')" modifier="quiet" class="signin forgot-password">ricerca_donazione.html</ons-button>
-      		      <ons-button ng-click="myNavigator.pushPage('html/AngeloFrancesco/risultati_ricerca_donazione.html')" modifier="quiet" class="signin forgot-password">risultati_ricerca_donazione.html</ons-button>
-      			
-      			 <ons-button ng-click="myNavigator.pushPage('html/SilviaVincenzo/dettaglio_prodotto.html')" modifier="quiet" class="signin forgot-password">dettaglio_prodotto.html</ons-button>
-      			  <ons-button ng-click="myNavigator.pushPage('html/SilviaVincenzo/inserimento_nuovo_prodotto.html')" modifier="quiet" class="signin forgot-password">inserimento_nuovo_prodotto.html</ons-button>
-      		      <ons-button ng-click="myNavigator.pushPage('html/SilviaVincenzo/ricerca_prodotto.html')" modifier="quiet" class="signin forgot-password">ricerca_prodotto.html</ons-button>
-      			 <ons-button ng-click="myNavigator.pushPage('html/SilviaVincenzo/risultati_ricerca_prodotti.html')" modifier="quiet" class="signin forgot-password">risultati_ricerca_prodotti.html</ons-button>
-      			
-      			 <ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/storico_donazioni.html')" modifier="quiet" class="signin forgot-password">storico_donazioni.html</ons-button>
-      			<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/seleziona_sede.html')" modifier="quiet" class="signin forgot-password">seleziona_sede.html</ons-button>
-      			<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/nuova_donazione.html')" modifier="quiet" class="signin forgot-password">nuova_donazione.html</ons-button>
-				<ons-button ng-click="myNavigator.pushPage('html/AndreaGianmarco/modifica_donazione.html')" modifier="quiet" class="signin forgot-password">modifica_donazione.html</ons-button>
-            </div>
-        </ons-page>
-	</ons-navigator>
+<body ng-controller="AppController">
+	<ons-navigator var="myNavigator"> <ons-page
+		ng-controller="loginController" id="login.html"> <img
+		src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood"
+		style="display: block; margin: 0 auto; width: 80%;">
+	<div class="login-form">
+		<input id="id" class="text-input--underbar" placeholder="Username"
+			value="utente3" ng-model="field1"> <input id="psw"
+			type="password" class="text-input--underbar" placeholder="Password"
+			value="sisp" ng-model="field2"> <br> <br>
+		<ons-button modifier="large" class="login-button" ng-click="login()">Log
+		In</ons-button>
+		<br> <br>
+		<ons-button modifier="quiet" class="forgot-password"
+			ng-click="myNavigator.pushPage('html/AndreaGianmarco/forgotPassword.html')">Forgot
+		password?</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/MarcoNicola/registration.html')"
+			modifier="quiet" class="signin forgot-password">Sign in</ons-button>
 
 
-	<ons-template id="slidingmenu.html">
-		<ons-page>
-			<ons-sliding-menu var="slidingMenu" swipeable="false" menu-page="menu.html" main-page="home.html"  side="left" type="overlay" max-slide-distance="200px">
-			</ons-sliding-menu>
-		</ons-page>
-	</ons-template>
+
+
+
+
+
+
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_azienda.html')"
+			modifier="quiet" class="signin forgot-password">inserimento_dati_azienda.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')"
+			modifier="quiet" class="signin forgot-password">inserimento_dati_sede.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')"
+			modifier="quiet" class="signin forgot-password">visualizza_dati_azienda.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_sede.html')"
+			modifier="quiet" class="signin forgot-password">visualizza_dati_sede.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AlbertoChiara/visualizza_sedi.html')"
+			modifier="quiet" class="signin forgot-password">visualizza_sedi.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AngeloFrancesco/dettaglio_donazione.html')"
+			modifier="quiet" class="signin forgot-password">dettaglio_donazione.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AngeloFrancesco/ricerca_donazione.html')"
+			modifier="quiet" class="signin forgot-password">ricerca_donazione.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AngeloFrancesco/risultati_ricerca_donazione.html')"
+			modifier="quiet" class="signin forgot-password">risultati_ricerca_donazione.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/SilviaVincenzo/dettaglio_prodotto.html')"
+			modifier="quiet" class="signin forgot-password">dettaglio_prodotto.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/SilviaVincenzo/lista_prodotti.html')"
+			modifier="quiet" class="signin forgot-password">lista_prodotti.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/SilviaVincenzo/inserimento_nuovo_prodotto.html')"
+			modifier="quiet" class="signin forgot-password">inserimento_nuovo_prodotto.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/SilviaVincenzo/ricerca_prodotto.html')"
+			modifier="quiet" class="signin forgot-password">ricerca_prodotto.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/SilviaVincenzo/risultati_ricerca_prodotti.html')"
+			modifier="quiet" class="signin forgot-password">risultati_ricerca_prodotti.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/SilviaVincenzo/termini.html')"
+			modifier="quiet" class="signin forgot-password">termini.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AndreaGianmarco/storico_donazioni.html')"
+			modifier="quiet" class="signin forgot-password">storico_donazioni.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AndreaGianmarco/seleziona_sede.html')"
+			modifier="quiet" class="signin forgot-password">seleziona_sede.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AndreaGianmarco/nuova_donazione.html')"
+			modifier="quiet" class="signin forgot-password">nuova_donazione.html</ons-button>
+		<ons-button
+			ng-click="myNavigator.pushPage('html/AndreaGianmarco/modifica_donazione.html')"
+			modifier="quiet" class="signin forgot-password">modifica_donazione.html</ons-button>
+
+
+
+
+
+
+
+	</div>
+	</ons-page> </ons-navigator>
+
+
+	<ons-template id="slidingmenu.html"> <ons-page>
+	<ons-sliding-menu var="slidingMenu" swipeable="false"
+		menu-page="menu.html" main-page="home.html" side="left" type="overlay"
+		max-slide-distance="200px"> </ons-sliding-menu> </ons-page> </ons-template>
+
+	<ons-template id="slidingmenuDonatore.html"> <ons-page>
+	<ons-sliding-menu var="slidingMenu" swipeable="false"
+		menu-page="menuDonatore.html" main-page="homeDonatore.html"
+		side="left" type="overlay" max-slide-distance="200px">
+	</ons-sliding-menu> </ons-page> </ons-template>
+
+	<!-- MENU-->
+	<ons-template id="menu.html"> <ons-page
+		modifier="menu-page">
+	<div class="navigation-bar navigation-bar--material">
+		<div class="navigation-bar__right navigation-bar--material__right">
+			<span style="color: #ccc; font-size: 17px;"
+				ng-click="slidingMenu.closeMenu();"> Close </span>
+		</div>
+	</div>
 	
-	<ons-template id="slidingmenuDonatore.html">
-		<ons-page>
-			<ons-sliding-menu var="slidingMenu" swipeable="false" menu-page="menuDonatore.html" main-page="homeDonatore.html"  side="left" type="overlay" max-slide-distance="200px">
-			</ons-sliding-menu>
-		</ons-page>
-	</ons-template>
-
-	<!-- MENU -->
-	<ons-template id="menu.html">
-		<ons-page  modifier="menu-page">
-	  <div class="navigation-bar navigation-bar--material">
-  <div class="navigation-bar__right navigation-bar--material__right">
-    <span style="color:#ccc;font-size: 17px;" ng-click="slidingMenu.closeMenu();">
-       Chiudi
-    </span>
-  </div>
-  </div>
-
-        <ons-list class="menu-list">
-         <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('home.html');">
-            <ons-icon icon="fa-home"></ons-icon>
-           Home
-          </ons-list-item>
-          <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AngeloFrancesco/ricerca_donazione.html');">
-            <ons-icon icon="fa-search"></ons-icon>
-            Cerca donazioni
-          </ons-list-item>
-
-          <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
-            <ons-icon icon="fa-clock-o"></ons-icon>
-           Ultime richieste
-          </ons-list-item>
-
+	<!-- MENU RICHIEDENTE-->
+	<ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/SilviaVincenzo/lista_prodotti.html');">
+	<ons-icon icon="fa-home"></ons-icon> Lista Prodotti </ons-list-item>
+	
+	
+	<ons-list class="menu-list"> <ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('home.html');">
+	<ons-icon icon="fa-home"></ons-icon> Home </ons-list-item> <ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AngeloFrancesco/ricerca_donazione.html');">
+	<ons-icon icon="fa-search"></ons-icon> Find donation </ons-list-item> <ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AndreaGianmarco/storico_richieste.html');">
+	<ons-icon icon="fa-clock-o"></ons-icon> Last requests </ons-list-item> <!-- 
           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('StoricoDonazioni.html');">
             <ons-icon icon="fa-bookmark"></ons-icon>
             Storico richieste
           </ons-list-item>
-          
-           <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
-            <ons-icon icon="fa-user"></ons-icon>
-            Profilo
-          </ons-list-item>
-        </ons-list>
+           --> <ons-list-item class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/visualizza_profilo.html');">
+	<ons-icon icon="fa-user"></ons-icon> Profile </ons-list-item> </ons-list> <br>
+	<ons-list class="bottom-menu-list"> <ons-list-item
+		class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/inserimento_dati_azienda.html');">
+	Become donor </ons-list-item> <ons-list-item class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AndreaGianmarco/impostazioni.html');">
+	Settings </ons-list-item> <ons-list-item class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('html/SilviaVincenzo/termini.html')">
+	Policy </ons-list-item> <ons-list-item class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu();"> <ons-icon
+		icon="fa-sign-out"> </ons-icon>Esci </ons-list-item> </ons-list> </ons-page> </ons-template>
 
-        <br>
-        <ons-list class="bottom-menu-list">
-         <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-            Diventa donatore
-          </ons-list-item>
-          
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-            Impostazioni
-          </ons-list-item>
+	<ons-template id="menuDonatore.html"> <ons-page
+		modifier="menu-page">
+	<div class="navigation-bar navigation-bar--material">
+		<div class="navigation-bar__right navigation-bar--material__right">
+			<span style="color: #ccc; font-size: 17px;"
+				ng-click="slidingMenu.closeMenu();"> Close </span>
+		</div>
+	</div>
 
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-           	Informativa
-          </ons-list-item>
 
-		<ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-           	 <ons-icon icon="fa-sign-out"> </ons-icon>Esci
-          </ons-list-item>
-        </ons-list>
-	
-		</ons-page>
-	</ons-template>
-
-	<ons-template id="menuDonatore.html">
-		<ons-page  modifier="menu-page">
-	  <div class="navigation-bar navigation-bar--material">
-  <div class="navigation-bar__right navigation-bar--material__right">
-    <span style="color:#ccc;font-size: 17px;" ng-click="slidingMenu.closeMenu();">
-       Chiudi
-    </span>
-  </div>
-  </div>
-
-        <ons-list class="menu-list">
-        <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('home.html');">
-            <ons-icon icon="fa-home"></ons-icon>
-           Home
-          </ons-list-item>
-          <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('ricercaDonazione.html');">
-            <ons-icon icon="fa-shopping-cart"></ons-icon>
-            Inserisci donazione
-          </ons-list-item>
-
-          <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
-            <ons-icon icon="fa-clock-o"></ons-icon>
-           Ultime Donazioni
-          </ons-list-item>
-
+	<!-- MENU DONATORE--> <ons-list class="menu-list">
+	 <ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('home.html');">
+	<ons-icon icon="fa-home"></ons-icon> Home </ons-list-item> <ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('ricerca_donazioni_mappa.html');">
+	<ons-icon icon="fa-shopping-cart"></ons-icon> Insert donation </ons-list-item> <ons-list-item
+		class="menu-item"
+		ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('storico_donazioni.html');>
+            <ons-icon icon="fa-clock-o">
+	</ons-icon> Old donations </ons-list-item> <!-- 
           <ons-list-item class="menu-item" ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('StoricoDonazioni.html');">
             <ons-icon icon="fa-bookmark"></ons-icon>
-            Storico Donazioni
+            Old Donazioni
           </ons-list-item>
-          
-           <ons-list-item class="menu-item" ng-click="menu.closeMenu()">
-            <ons-icon icon="fa-user"></ons-icon>
-            Profilo
-          </ons-list-item>
-        </ons-list>
-
-        <br>
-        <ons-list class="bottom-menu-list">         
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-            Impostazioni
-          </ons-list-item>
-
-          <ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-           	Informativa
-          </ons-list-item>
-
-		<ons-list-item class="bottom-menu-item" ng-click="menu.closeMenu()">
-           	 <ons-icon icon="fa-sign-out"> </ons-icon>Esci
-          </ons-list-item>
-        </ons-list>
-	
-		</ons-page>
-	</ons-template>
+           --> <ons-list-item class="menu-item"
+		ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('visualizza_profilo.html');">
+	<ons-icon icon="fa-user"></ons-icon> Profile </ons-list-item> </ons-list> <br>
+	<ons-list class="bottom-menu-list"> <ons-list-item
+		class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('html/AndreaGianmarco/impostazioni.html');">
+	Settings </ons-list-item> <ons-list-item class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('html/SilviaVincenzo/termini.html')">
+	Policy </ons-list-item> <ons-list-item class="bottom-menu-item"
+		ng-click="slidingMenu.closeMenu();"> <ons-icon
+		icon="fa-sign-out"> </ons-icon>Esci </ons-list-item> </ons-list> </ons-page> </ons-template>
 </body>
 </html>

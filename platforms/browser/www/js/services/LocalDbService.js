@@ -1,21 +1,24 @@
  myApp.service('localDbService', function(remoteAppService,$q) {
-    	  var  db= window.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
+    	  var  db= window.sqlitePlugin.openDatabase("database", "1.0", "joyfooddatabase", 1000000);
 
     	  this.Init= function() {
     	      db.transaction(function(transaction) {
+    	      transaction.executeSql('DROP TABLE IF EXISTS Classificazione ');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Classificazione (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Tipo (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Categoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS SottoCategoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Allergene (id INTEGER PRIMARY KEY ASC,descrizione)');
-                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,descrizione)');
+                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,classificazione INTEGER, sottoCategoria INTEGER, tipo INTEGER, nome TEXT,immagine BLOB, descrizione)');
+                                transaction.executeSql('CREATE TABLE IF NOT EXISTS ProdottoAllegene (id INTEGER PRIMARY KEY ASC,codProdotto INTEGER,codAllergene )');
               });
               this.updateClassificazione();
               this.updateTipo();
               this.updateCategoria();
-              this.updateSottoCategoria();
+           //  this.updateSottoCategoria();
               this.updateAllergene();
-             // this.updateProdotti();
+              //this.updateProdottoAllergene();
+               // this.updateProdotti();
     	  };
     	this.updateClassificazione= function(){
     	            var response=remoteAppService.getClassificazione().then(function (response) {
@@ -23,7 +26,9 @@
     	                if(response!=null){
                                  var data=response;
                              db.transaction(function(transaction) {
+                            	 console.log(data);
                              		for(var i=0;i<data.length;i++){
+                             			console.log(data[i]);
                              			transaction.executeSql('INSERT INTO Classificazione  VALUES (?,?)', [data[i].id, data[i].descrizione]);
                              		}
 
@@ -75,8 +80,11 @@
                    if(response!=null ){
                           data = response;
                         if(data){
+
+                        console.log(data);
                             db.transaction(function(transaction) {
                                 for(var i=0;i<data.length;i++){
+                                console.log("PROD:"+data[i].id);
                                     transaction.executeSql('INSERT INTO SottoCategoria VALUES (?,?,?)', [data[i].id, data[i].descrizione,data[i].descrizione,data[i].categoria.id]);
                                 }
 
@@ -144,9 +152,11 @@
                           remoteAppService.getProdotto().then(function(response){
                                   if(response!=null){
                                       data = response;
+                                       console.log("PRODOTTI");
+                                      console.log(data);
                                       db.transaction(function(transaction) {
                                       for(var i=0;i<data.length;i++){
-                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id,data[i].classificazione.id,data[i].sottoCategoria.id,data[i].tipo.id,data[i].nome, data[i].immagine,data[i].descrizione]);
                                       		}
 
                                       	});
@@ -159,7 +169,8 @@
 var deferred = $q.defer();
             this.getClassificazione= function(){
                     db.transaction(function (transaction) {
-                        transaction.executeSql('SELECT * FROM Classificazione', [], function(tx,result) {
+                        transaction.executeSql('SELECT id,descrizione FROM Classificazione', [], function(tx,result) {
+                        	 console.log(result);
                           deferred.resolve(result.rows);
                           }, function(result) {
                           deferred.resolve(result);
@@ -172,6 +183,7 @@ var deferred = $q.defer();
             this.getTipo= function(){
                  db.transaction(function (transaction) {
                      transaction.executeSql('SELECT * FROM Tipo', [], function(tx,result) {
+                    	 console.log(result);
                          deferred.resolve(result.rows);
                          }, function(result) {
                          deferred.resolve(result);
@@ -185,6 +197,7 @@ var deferred = $q.defer();
             this.getAllergene= function(){
                              db.transaction(function (transaction) {
                                      transaction.executeSql('SELECT * FROM Allergene', [], function(tx,result) {
+                                    	 console.log(result);
                                        deferred.resolve(result.rows);
                                       }, function(error) {
                                       result=error
@@ -197,6 +210,7 @@ var deferred = $q.defer();
             this.getCategoria= function(){
                   db.transaction(function (transaction) {
                          transaction.executeSql('SELECT * FROM Categoria', [], function(tx,result) {
+                        	 console.log(result);
                             deferred.resolve(result.rows);
                           }, function(error) {
                           result=error
@@ -209,6 +223,7 @@ var deferred = $q.defer();
             this.getSottoCategoria= function(){
                    db.transaction(function (transaction) {
                           transaction.executeSql('SELECT * FROM SottoCategoria', [], function(tx,result) {
+                        	  console.log(result);
                             deferred.resolve(result.rows);
                            }, function(error) {
                            result=error
@@ -220,6 +235,7 @@ var deferred = $q.defer();
             this.getNatGiudlvl= function(){
                  db.transaction(function (transaction) {
                          transaction.executeSql('SELECT * FROM NatGiudlvl', [], function(tx,result) {
+                        	 
                            deferred.resolve(result.rows);
                           }, function(error) {
                           result=error
