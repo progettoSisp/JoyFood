@@ -1,57 +1,58 @@
-<ons-page ng-controller="ricercaDonazioneController">
-<ons-toolbar>
-  <div class="navigation-bar navigation-bar--material">
-  <div class="navigation-bar__left navigation-bar--material__left">
-    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      <i class="zmdi zmdi-menu"></i>
-    </span>
-  </div>
-  <div class="navigation-bar__center navigation-bar--material__center">
-    Ricerca Donazione
-  </div>
-  
+<ons-page ng-controller="ricercaDonazioneController"> <ons-toolbar>
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
+		<span class="toolbar-button toolbar-button--material"
+			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		</span>
+	</div>
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Ricerca Donazione</div>
+
 </div>
 </ons-toolbar>
 
 
- <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      </p>
-      <form id='ricercaForm' class="ricerca-form login-form" ng-submit="submit()">
-      
-      
-                   
-                    <input type="search" value="" name='ricerca' placeholder="Ricerca" id='ricerca' ng-model="richiesta.ricerca" class="text-input--underbar">
-                    <br>
-                    <p></p>
-                    <input type="search" value="" name='indirizzo' placeholder="Indirizzo" id='indirizzo' ng-model="richiesta.indirizzo" class="text-input--underbar">
-                    <br><br>
-              
-      <div id="affinaricerca" ng-show="true" ng-animate="'box'">        
-      <ons-list>
-      <div ng-repeat="group in groups">
-        <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
-          <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
-          <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
-           &nbsp; {{group.key}}
-        </ons-list-item>
-       <ons-list-item class="item-accordion" ng-repeat="item in group.values" ng-show="isGroupShown(group)">     
-    <label class="checkbox checkbox--list-item">
-<!--<input type="checkbox" name='{{item.descrizione}}' value='{{item.id}}'>-->
+<p style="text-align: center; opacity: 0.6; padding-top: 20px;"></p>
+<form id='ricercaForm' class="ricerca-form login-form"
+	ng-submit="submit()">
 
-      <input type="checkbox" name='{{group.key}}' value='{{item.id}}'>
-      <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-      {{item.descrizione}} 
-      </label>
- </ons-list-item>
-   </div>
-   <br>
-   <input type="text" onfocus="(this.type='date')" class="text-input--underbar width-full" id='dataMassima' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Data massima donazione" value="" required style="font-family:Arial, FontAwesome"/>                  
-   <br>
-   <br><br><br>
 
-   <ons-button modifier="large" class="search-button" ng-click="ricerca(richiesta)">Ricerca</ons-button>
-   
-    </form>
-   
-      
-  </ons-page>
+
+	<input type="search" value="" name='ricerca' placeholder="Ricerca"
+		id='ricerca' ng-model="richiesta.ricerca" class="text-input--underbar">
+	<br>
+	<p></p>
+	<input type="search" value="" name='indirizzo' placeholder="Indirizzo"
+		id='indirizzo' ng-model="richiesta.indirizzo"
+		class="text-input--underbar"> <br>
+	<br>
+
+	<div id="affinaricerca" ng-show="true" ng-animate="'box'">
+		<ons-list>
+		<div ng-repeat="group in groups">
+			<ons-list-item ng-click="toggleGroup(group)" class="title"
+				ng-class="{active:isGroupShown(group)}"> <ons-icon
+				icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
+				icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon> &nbsp;
+			{{group.key}} </ons-list-item>
+			<ons-list-item class="item-accordion"
+				ng-repeat="item in group.values" ng-show="isGroupShown(group)">
+			<label class="checkbox checkbox--list-item"> <input
+				type="checkbox" name='{{group.key}}' value='{{item.id}}'>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				{{item.name}}
+			</label> </ons-list-item>
+		</div>
+		<br>
+		<input type="text" onfocus="(this.type='date')"
+			class="text-input--underbar width-full" id='dataMassima'
+			placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Data massima donazione"
+			value="" required style="font-family: Arial, FontAwesome" /> <br>
+		<br>
+		<br>
+		<br>
+		<ons-button modifier="large" class="search-button" ng-click="ricerca(richiesta)">Ricerca</ons-button>
+</form>
+
+
+</ons-page>
