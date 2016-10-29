@@ -1,4 +1,4 @@
-myApp.service('filtriService', function(localDbService) {
+myApp.service('filtriService', function(localDbService,$q) {
    classificazione={};
    tipo={};
    categoria={};
@@ -6,21 +6,32 @@ myApp.service('filtriService', function(localDbService) {
   allergene={};
 
      this.Init= function() {
+    	 var deferred = $q.defer();
           localDbService.getClassificazione().then(function (result) {
+        	  console.log(result);
              	classificazione=result;
+             	  localDbService.getTipo().then(function (result) {
+                	  console.log(result);
+                      	 tipo=result;
+                      	 localDbService.getCategoria().then(function (result) {
+                       	  console.log(result);
+                       	  categoria=result;
+                       	 localDbService.getSottoCategoria().then(function (result) {
+                       	  console.log(result);  
+                       	  sottoCategoria=result;
+                       	  localDbService.getAllergene().then(function (result) {
+                        	  console.log(result); 
+                        	  allergene=result;
+                          });
+                          });
+                          });
+                  });
           });
-          localDbService.getTipo().then(function (result) {
-              	 tipo=result;
-          });
-          localDbService.getCategoria().then(function (result) {
-               categoria=result;
-           });
-          localDbService.getSottoCategoria().then(function (result) {
-                sottoCategoria=result;
-           });
-          localDbService.getAllergene().then(function (result) {
-               allergene=result;
-          });
+        
+         
+         
+        
+          console.log("INIT");
      }
 
      this.getClassificazione= function() {

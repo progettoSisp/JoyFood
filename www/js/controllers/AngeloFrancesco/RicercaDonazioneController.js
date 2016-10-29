@@ -18,7 +18,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
      $scope.mySplitterContent.load(page)
    }
    $scope.open = function() {
-   $scope.mySplitterSide.open();
+	   $scope.mySplitterSide.open();
    }
    
    
@@ -26,12 +26,22 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	//                  {key:"Classificazione",values: [{"name": "Vegano","id": "id_class_1"},{"name": "Celiaco","id": "id_class_1"},{"name": "Vegetariano","id": "id_class_1"}]},
 	  //                {key:"Allergeni",values: [{"name": "Mais","id": "id_class_1"},{"name": "Latteria","id": "id_class_1"}]}
 	    //              ];
-	                  
-   $scope.groups= [{key:"Tipo", values: filtriService.getTipo() },
-	                  {key:"Classificazione",values: filtriService.getClassificazione()},
-	                  {key:"Allergeni",values:filtriService.getAllergene()}
-	               ];
- 
+   filtriService.Init();
+   $timeout(callAtTimeout, 3000);
+
+   function callAtTimeout() {
+
+	  
+		                  console.log(filtriService.getTipo() );
+		                  console.log(filtriService.getClassificazione());
+		                  console.log(filtriService.getAllergene());
+	   $scope.groups= [{key:"Tipo", values: filtriService.getTipo() },
+		                  {key:"Classificazione",values: filtriService.getClassificazione()},
+		                  {key:"Allergeni",values:filtriService.getAllergene()}
+		               ];
+	 
+	}
+
    // $scope.accordionPrimoLivello = ['Tipo','Classificazione','Allergeni'];
 
     
