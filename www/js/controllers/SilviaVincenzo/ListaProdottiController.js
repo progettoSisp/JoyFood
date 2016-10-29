@@ -1,4 +1,4 @@
-myApp.controller('listaProdottiController', function($scope,$http) {
+myApp.controller('listaProdottiController', function($scope,$http,prodottoService) {
 
 	console.log("listaProdottiController");
 	$http.get("http://joyfoodamministratore-sisp.rhcloud.com/public/listAllProdotti")
@@ -9,4 +9,11 @@ myApp.controller('listaProdottiController', function($scope,$http) {
 		$scope.prodotti = response.data;
 		
 	});
+
+	$scope.changeView=function(prodotto){
+	    prodottoService.saveProdotto(prodotto);
+	    console.log(prodotto.id);
+	    myNavigator.pushPage("html/SilviaVincenzo/dettaglio_prodotto.html");
+	}
+
 });

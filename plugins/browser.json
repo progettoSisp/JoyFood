@@ -18,6 +18,9 @@
         },
         "plugin.google.maps": {
             "PACKAGE_NAME": "com.example.helloworld"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.helloworld"
         }
     },
     "dependent_plugins": {

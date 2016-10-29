@@ -64,7 +64,8 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.0.0",
     "cordova-plugin-camera": "2.2.0",
     "cordova-sqlite-storage": "1.4.7",
-    "plugin.google.maps": "1.3.9"
+    "plugin.google.maps": "1.3.9",
+    "cordova-plugin-whitelist": "1.3.0"
 }
 // BOTTOM OF METADATA
 });

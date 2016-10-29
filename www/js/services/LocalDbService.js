@@ -3,19 +3,28 @@
 
     	  this.Init= function() {
     	      db.transaction(function(transaction) {
+    	      transaction.executeSql('DROP TABLE IF EXISTS Classificazione ');
+                                         		transaction.executeSql('DROP TABLE IF EXISTS Tipo');
+                                         		transaction.executeSql('DROP TABLE IF EXISTS Categoria');
+                                         		transaction.executeSql('DROP TABLE IF EXISTS SottoCategoria');
+                                         		transaction.executeSql('DROP TABLE IF EXISTS Allergene');
+                                         		transaction.executeSql('DROP TABLE IF EXISTS Prodotto');
+                                              transaction.executeSql('DROP TABLE IF EXISTS ProdottoAllegene');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Classificazione (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Tipo (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Categoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS SottoCategoria (id INTEGER PRIMARY KEY ASC,descrizione)');
                            		transaction.executeSql('CREATE TABLE IF NOT EXISTS Allergene (id INTEGER PRIMARY KEY ASC,descrizione)');
-                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,descrizione)');
+                           		transaction.executeSql('CREATE TABLE IF NOT EXISTS Prodotto (id INTEGER PRIMARY KEY ASC,classificazione INTEGER, sottoCategoria INTEGER, tipo INTEGER, nome TEXT,immagine BLOB, descrizione)');
+                                transaction.executeSql('CREATE TABLE IF NOT EXISTS ProdottoAllegene (id INTEGER PRIMARY KEY ASC,codProdotto INTEGER,codAllergene )');
               });
               this.updateClassificazione();
               this.updateTipo();
               this.updateCategoria();
               this.updateSottoCategoria();
               this.updateAllergene();
-             // this.updateProdotti();
+              //this.updateProdottoAllergene();
+                this.updateProdotti();
     	  };
     	this.updateClassificazione= function(){
     	            var response=remoteAppService.getClassificazione().then(function (response) {
@@ -75,8 +84,11 @@
                    if(response!=null ){
                           data = response;
                         if(data){
+
+                        console.log(data);
                             db.transaction(function(transaction) {
                                 for(var i=0;i<data.length;i++){
+                                console.log("PROD:"+data[i].id);
                                     transaction.executeSql('INSERT INTO SottoCategoria VALUES (?,?,?)', [data[i].id, data[i].descrizione,data[i].descrizione,data[i].categoria.id]);
                                 }
 
@@ -144,9 +156,11 @@
                           remoteAppService.getProdotto().then(function(response){
                                   if(response!=null){
                                       data = response;
+                                       console.log("PRODOTTI");
+                                      console.log(data);
                                       db.transaction(function(transaction) {
                                       for(var i=0;i<data.length;i++){
-                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id, data[i].descrizione]);
+                                      			transaction.executeSql('INSERT INTO Prodotto  VALUES (?,?)', [data[i].id,data[i].classificazione.id,data[i].sottoCategoria.id,data[i].tipo.id,data[i].nome, data[i].immagine,data[i].descrizione]);
                                       		}
 
                                       	});
