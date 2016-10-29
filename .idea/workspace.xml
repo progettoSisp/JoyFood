@@ -2,288 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f05c12-3f9d-4dbb-ae6e-aeaf7912f797" name="Default" comment="Update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/release/classes.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/AuthenticationToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/BuildConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CallbackContext.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/Config.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/ConfigXmlParser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$4$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaArgs.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaBridge.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaClientCertRequest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$6.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$7.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$8.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$9.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper$Result.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaDialogsHelper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaHttpAuthHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaInterface.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaInterfaceImpl$ActivityResultHolder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaInterfaceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaPreferences.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaResourceApi$OpenForReadResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaResourceApi.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewEngine$Client.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewEngine$EngineView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewEngine.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl$EngineClient$1$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl$EngineClient$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl$EngineClient.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaWebViewImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CoreAndroid$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CoreAndroid$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CoreAndroid$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CoreAndroid$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CoreAndroid$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CoreAndroid.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/ExposedJsApi.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/ICordovaClientCertRequest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/ICordovaCookieManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/ICordovaHttpAuthHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/LOG.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$BridgeMode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$JsMessage.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$LoadUrlBridgeMode$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$LoadUrlBridgeMode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$NoOpBridgeMode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode$OnlineEventsBridgeModeDelegate.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/NativeToJsMessageQueue.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginEntry.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginResult$Status.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/Whitelist$URLPattern.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/Whitelist.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemCookieManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemExposedJsApi.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebChromeClient$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebChromeClient$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebChromeClient$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebChromeClient$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebChromeClient$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebChromeClient.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebViewClient.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebViewEngine$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebViewEngine$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/engine/SystemWebViewEngine.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/aidl/release/dependency.store" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-release.aar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/delivery-truck-with-circular-clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/icona_sede.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/images/clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/images/delivery-truck-with-circular-clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/images/icona_sede.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/images/restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/images/user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/images/prova.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/release/org/apache/cordova/BuildConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeAssets/release/merger.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageResources/release/merger.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/tmp/packageReleaseJar/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/visualizza_sedi.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/AngeloFrancesco/cercaDonazione.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/AngeloFrancesco/cercaDonazioneController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/SilviaVincenzo/DettaglioProdottoController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/SilviaVincenzo/lista_prodottiController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/FiltriService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/RemoteApiService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/UserService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/platform_www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/org/apache/cordova/whitelist/WhitelistPlugin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/AsyncKmlParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/AsyncLicenseInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/AsyncLoadImage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/AsyncLoadImageInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/External.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/GoogleMaps.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/MyGeocoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/MyPlugin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/MyPluginInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/MyPluginLayout.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginAsyncInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginCircle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginGroundOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginKmlOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginMarker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginPolygon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginPolyline.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginTileOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginTileProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/css/visualizza_sedi.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/html/AngeloFrancesco/cercaDonazione.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/AngeloFrancesco/cercaDonazioneController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/SilviaVincenzo/lista_prodottiController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/services/FiltriService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/services/LocalDbService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/services/RemoteApiService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/services/RemoteService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/js/services/UserService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/NOTICE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/RELEASENOTES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/de/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/es/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/fr/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/it/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/ja/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/ko/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/pl/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/zh/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/android/WhitelistPlugin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/AsyncKmlParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/AsyncLicenseInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/AsyncLoadImage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/AsyncLoadImageInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/External.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/GoogleMaps.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/MyGeocoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/MyPlugin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/MyPluginInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/MyPluginLayout.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginAsyncInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginCircle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginGroundOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginKmlOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginMarker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginPolygon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginPolyline.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginTileOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginTileProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Circle.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Circle.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/External.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/External.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Geocoder.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Geocoder.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GoogleMaps.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GoogleMaps.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GoogleMapsViewController.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GoogleMapsViewController.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GroundOverlay.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GroundOverlay.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/KmlOverlay.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/KmlOverlay.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Map.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Map.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Marker.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Marker.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPlgunProtocol.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPluginLayer.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPluginLayer.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPluginLayerDebugView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPluginLayerDebugView.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPluginScrollView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyPluginScrollView.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyReachability.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/MyReachability.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/NSData-Base64/NSData+Base64.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/NSData-Base64/NSData+Base64.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/NSData-Base64/NSData+Base64.podspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/PluginUtil.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/PluginUtil.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Polygon.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Polygon.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Polyline.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Polyline.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/TBXML.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/TBXML.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/TileOverlay.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/TileOverlay.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/html/AngeloFrancesco/cercaDonazione.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/controllers/AngeloFrancesco/cercaDonazioneController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/controllers/SilviaVincenzo/lista_prodottiController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/services/ProdottoService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/android.json" afterPath="$PROJECT_DIR$/platforms/android/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/home.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/AlbertoChiara/visualizza_sedi.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/AlbertoChiara/visualizza_sedi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/AngeloFrancesco/risultati_ricerca_donazione.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/AngeloFrancesco/risultati_ricerca_donazione.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/MarcoNicola/registration.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/MarcoNicola/registration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/MarcoNicola/registration_2.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/MarcoNicola/registration_2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/SilviaVincenzo/dettaglio_prodotto.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/SilviaVincenzo/dettaglio_prodotto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/SilviaVincenzo/inserimento_nuovo_prodotto.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/SilviaVincenzo/inserimento_nuovo_prodotto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/SilviaVincenzo/lista_prodotti.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/SilviaVincenzo/lista_prodotti.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/AngeloFrancesco/risultatiRicercaController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/AngeloFrancesco/risultatiRicercaController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/MarcoNicola/RegistrationController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/MarcoNicola/RegistrationController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/build.gradle" afterPath="$PROJECT_DIR$/platforms/android/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/browser.json" afterPath="$PROJECT_DIR$/platforms/browser/browser.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/browser/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/home.html" afterPath="$PROJECT_DIR$/platforms/browser/www/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/AlbertoChiara/visualizza_sedi.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/AlbertoChiara/visualizza_sedi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/AngeloFrancesco/risultati_ricerca_donazione.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/AngeloFrancesco/risultati_ricerca_donazione.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/MarcoNicola/registration.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/MarcoNicola/registration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/MarcoNicola/registration_2.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/MarcoNicola/registration_2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/SilviaVincenzo/dettaglio_prodotto.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/SilviaVincenzo/dettaglio_prodotto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/SilviaVincenzo/inserimento_nuovo_prodotto.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/SilviaVincenzo/inserimento_nuovo_prodotto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/html/SilviaVincenzo/lista_prodotti.html" afterPath="$PROJECT_DIR$/platforms/browser/www/html/SilviaVincenzo/lista_prodotti.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/controllers/AngeloFrancesco/risultatiRicercaController.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/AngeloFrancesco/risultatiRicercaController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/controllers/MarcoNicola/RegistrationController.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/MarcoNicola/RegistrationController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/controllers/SilviaVincenzo/DettaglioProdottoController.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/SilviaVincenzo/DettaglioProdottoController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/android.json" afterPath="$PROJECT_DIR$/plugins/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/browser.json" afterPath="$PROJECT_DIR$/plugins/browser.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/fetch.json" afterPath="$PROJECT_DIR$/plugins/fetch.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/home.html" afterPath="$PROJECT_DIR$/www/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/html/SilviaVincenzo/lista_prodotti.html" afterPath="$PROJECT_DIR$/www/html/SilviaVincenzo/lista_prodotti.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/SilviaVincenzo/DettaglioProdottoController.js" afterPath="$PROJECT_DIR$/www/js/controllers/SilviaVincenzo/DettaglioProdottoController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/SilviaVincenzo/ListaProdottiController.js" afterPath="$PROJECT_DIR$/www/js/controllers/SilviaVincenzo/ListaProdottiController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/AngeloFrancesco/RicercaDonazioneController.js" afterPath="$PROJECT_DIR$/www/js/controllers/AngeloFrancesco/RicercaDonazioneController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/FiltriService.js" afterPath="$PROJECT_DIR$/www/js/services/FiltriService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/LocalDbService.js" afterPath="$PROJECT_DIR$/www/js/services/LocalDbService.js" />
     </list>
     <ignored path="JoyFood.iws" />
@@ -308,7 +29,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
+            <state vertical-scroll-proportion="0.0">
               <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding />
             </state>
@@ -318,7 +39,7 @@
       <file leaf-file-name="lista_prodotti.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/html/SilviaVincenzo/lista_prodotti.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6153846">
+            <state vertical-scroll-proportion="0.0">
               <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
               <folding />
             </state>
@@ -329,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/www/js/services/LocalDbService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="42" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="42" />
+              <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -368,8 +89,8 @@
       <file leaf-file-name="dettaglio_prodotto.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/html/SilviaVincenzo/dettaglio_prodotto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -378,8 +99,8 @@
       <file leaf-file-name="ProdottoService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/services/ProdottoService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8592058">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.42805755">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -503,6 +224,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -832,9 +556,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1168,11 +889,10 @@
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.49746513" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33008358" sideWeight="0.49239543" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5752089" sideWeight="0.44169834" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5752089" sideWeight="0.5583016" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5744089" sideWeight="0.4442332" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5744089" sideWeight="0.5557668" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.4949303" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1183,6 +903,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33688414" sideWeight="0.49747476" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33008358" sideWeight="0.49239543" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1529,7 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="88" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1537,7 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.37037">
           <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,7 +1270,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/html/SilviaVincenzo/lista_prodotti.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
           <folding />
         </state>
@@ -1575,7 +1294,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
+        <state vertical-scroll-proportion="0.0">
           <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
           <folding />
         </state>
@@ -1583,8 +1302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/html/SilviaVincenzo/dettaglio_prodotto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1592,7 +1311,7 @@
     <entry file="file://$PROJECT_DIR$/www/js/services/LocalDbService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="42" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="42" />
+          <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1615,8 +1334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/ProdottoService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8592058">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.42805755">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>

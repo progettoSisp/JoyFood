@@ -30,37 +30,33 @@
 <div class="navigation-bar navigation-bar--material">
 
 	<div class="navigation-bar__center navigation-bar--material__center">
-		Inserire titolo</div>
+		New Donation</div>
 
 </div>
 <div class="nuovaDon">
-	<label>Effettua una nuova donazione: </label> <br>
-	<br> <input id="tit" type="titolo" class="text-input--underbar"
-		placeholder="Titolo" style="text-align: left;" value=""> <br>
-	<br> <input id="Idisp" type="date" class="text-input--underbar"
-		value=""> <br>
-	<br> <input id="Edisp" type="date" class="text-input--underbar"
-		value=""> <br>
+ <input id="tit" type="titolo" class="text-input--underbar"
+		placeholder="Title" style="text-align: left;" value=""> <br>
+	<br>    <input type="text" onfocus="(this.type='date')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Start date availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
+	<br>    <input type="text" onfocus="(this.type='date')" class="text-input--underbar width-full" id='fineData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp End date availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
 	<br>
+	<br>
+    <br> 
 	<div class="container">
-		<div class="form-group">
-			<div class="col-lg-offset-2 col-lg-10">
-				<select id="aaa" class="selectpicker show-menu-arrow form-control">
-					<option selected>Seleziona la tua sede</option>
-					<option>sede 1</option>
-					<option>sede 2</option>
-					<option>sede 3</option>
-					<option>sede 4</option>
-					<option>sede 5</option>
-				</select>
-			</div>
-		</div>
+		<select class="text-input" ng-model="animationName">
+    <option value="" selected>Select your seat</option>
+    <option value="tea">Seat1</option>
+    <option value="coffee">Seat2</option>
+    <option value="soda">Seat3</option>
+</select>
 		<br>
-		<br> <label>Divisibilità</label><label class="switch"><input
-			type="checkbox" class="switch__input" style="margin-left: 20px;">
-		<div class="switch__toggle"></div></label> <br>
-		<br> <label>Inserisci qui una foto:</label> <br>
 		<br>
-		<ons-button id="sede" class="crea">Crea</ons-button>
+		<br> 
+		<ons-input type="checkbox" id="checkboxVeridicita" name="checkboxVeridicita" ng-model="checkboxVeridicita" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">&nbsp &nbsp The donation is divisible</ons-input>
+		<br>
+		<br>
+		<ons-button modifier="large" class="search-button" ng-click="">Acquiring an image from album</ons-button>
+        <img style="display:none;" id="picture" src="" width="150" height="150" />
+		<br>
+		<ons-button modifier="large" class="search-button" ng-click="">Insert donation</ons-button>
 	</div>
 </ons-page>

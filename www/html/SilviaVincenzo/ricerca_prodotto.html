@@ -28,7 +28,7 @@
         <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
           <ons-icon icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon>
           <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
-           &nbsp; {{group.name}}
+           &nbsp; {{group.descrizione}}
         </ons-list-item>
        <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">     
     <label class="checkbox checkbox--list-item">

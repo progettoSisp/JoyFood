@@ -30,7 +30,7 @@
     }
 </style>
 <ons-page ng-controller="homeController">
-    <ons-toolbar>
+    <ons-toolbar style="height: 56px;">
   <div class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__left navigation-bar--material__left">
     <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
@@ -40,20 +40,23 @@
   <div class="navigation-bar__center navigation-bar--material__center">
     Main 
   </div>
+  <!-- 
   <div class="navigation-bar__right navigation-bar--material__right">
     <span class="toolbar-button toolbar-button--material">
       <i class="zmdi zmdi-search"></i>
     </span>
   </div>
+   -->
 </div>
     </ons-toolbar>
     <div id="map_canvas" style="height: 50%; width: 100%;"></div>
-    <ons-row heigth="20px"></ons-row>
+    <div style="height: 30px;"></div>
     <ons-row>
-        <ons-col width="25%"></ons-col>
+        <ons-col width="20%"></ons-col>
         <ons-col width="25%">
-            <image src="images/clock.png"></image>
+            <image src="images/prova.png"></image>
         </ons-col>
+        <ons-col width="10%"></ons-col>
         <ons-col>
             <image src="images/delivery-truck-with-circular-clock.png"></image>
         </ons-col>
@@ -67,6 +70,8 @@
             <image src="images/user.png"></image>
         </ons-col>
     </ons-row>
+    
+    <!-- 
     <ons-list>
         <ons-list-item ng-repeat="sede in sedi" modifier="chevron" class="list-item-container">
 
@@ -84,4 +89,6 @@
             </ons-row>
         </ons-list-item>
     </ons-list>
+     -->
+    
   </ons-page>

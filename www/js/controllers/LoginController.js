@@ -19,6 +19,7 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
             if(user.tipoUtente){
                  localDbService.Init();
                   filtriService.Init();
+                  
                       myNavigator.resetToPage("slidingmenu.html");
             }
 

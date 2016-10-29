@@ -88,8 +88,6 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 		 console.log(temp);
 		 var user=registrationService.getUser();
 		 
-		 
-		 
 		 $scope.inviato2 = true;
 		 var settings = {
 				  "async": true,
@@ -103,8 +101,8 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				  },
 				  "data": {
 				    "user": user.username,
-				    "password": user.password,
-				    "mail": temp.email,
+				    "password": user.password1,
+				    "mail": temp.email1,
 				    "nome": user.nome,
 				    "cognome": user.cognome,
 				    "sesso": "M",
@@ -117,7 +115,9 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				    "comuneResidenza": "Misinto",
 				    "indirizzoResidenza": "Via G. Garibaldi 29",
 				    "capResidenza": "20826",
-				    "telefono": temp.telefono
+				    "telefono": temp.telefono,
+				    "statoUtente": "1",
+				    "tipoUtente": "1"
 				  }
 				}
 		 		console.log(settings);
