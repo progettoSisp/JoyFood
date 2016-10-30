@@ -51,9 +51,9 @@
           <ons-icon icon="plus-square-o" ng-if="isGroupShown1(group1)"></ons-icon>
            &nbsp; Natura Giuridica 1 Livello
         </ons-list-item>
-       <ons-list-item class="item-accordion" ng-repeat="descrizione in nat1liv" ng-show="!isGroupShown1(group1)">     
+       <ons-list-item class="item-accordion" ng-repeat="descrizione in nat1liv" ng-show="!isGroupShown1(group1)" ng-init="nat1livModel=nat1LivFromDB">     
     <label class="checkbox checkbox--list-item">
-      <input class="checkbox__input" type="radio" name="nat1livInput" ng-disabled="inputDisabilitato" ng-checked="checked1Liv(descrizione)" ng-click="click1Livello(descrizione)">
+      <input class="checkbox__input" type="radio" name="nat1livInput" ng-disabled="inputDisabilitato" ng-model="nat1livModel" ng-click="click1Livello(descrizione)" value="{{descrizione}}">
       <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
       {{descrizione}}
     </label>
@@ -62,40 +62,38 @@
 
         <ons-list>
         <ons-list-item id="natGiud2LivElem" ng-click="toggleGroup2(group2)" class="title" ng-class="{active:isGroupShown2(group2)}" >
-          <ons-icon icon="minus-square-o" ng-if="isGroupShown2(group2)"></ons-icon>
-          <ons-icon icon="plus-square-o" ng-if="!isGroupShown2(group2)"></ons-icon>
+          <ons-icon icon="minus-square-o" ng-if="!isGroupShown2(group2)"></ons-icon>
+          <ons-icon icon="plus-square-o" ng-if="isGroupShown2(group2)"></ons-icon>
            &nbsp; Natura Giuridica 2 Livello
         </ons-list-item>
-       <ons-list-item class="item-accordion" ng-repeat="descrizione in nat2livVisualizzate" ng-show="isGroupShown2(group2)">     
+       <ons-list-item class="item-accordion" ng-repeat="descrizione in nat2livVisualizzate" ng-show="!isGroupShown2(group2)" ng-init="nat2livModel=nat2LivFromDB">     
     <label class="checkbox checkbox--list-item">
-      <input class="checkbox__input" type="radio" name="nat2livInput" ng-disabled="inputDisabilitato" ng-checked="checked2Liv(descrizione)" ng-click="click2Livello(descrizione)">
+      <input class="checkbox__input" type="radio" name="nat2livInput" ng-disabled="inputDisabilitato" ng-model="nat2livModel" ng-click="click2Livello(descrizione)" value="{{descrizione}}" id={{descrizione}}>
       <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
       {{descrizione}}
     </label>
     </ons-list-item>
    </ons-list>
    <br>
+   
    <div class="form-row">
-                   <ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-model="checkboxTutela" ng-disabled="inputDisabilitato" ng-checked="statoCheckbox">&nbsp; Certificazione tutela</ons-input>
+   <ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-disabled="inputDisabilitato" ng-model="certTutelaCheckata" ng-init="certTutelaCheckata=true">&nbsp; Certificazione tutela</ons-input>
     </div>
-   <div ng-show="(!formAzienda.$valid || !checkboxTutela || !nat1livRiempito || !nat2livRiempito) && formAzienda.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
+   <div ng-show="(!formAzienda.$valid || !certTutelaCheckata || !nat1livRiempito || !nat2livRiempito)" style="color:red;font-size: 12px;">Riempire tutti i campi</div>
   </form>   
                   </div>
    <br><br>
 
-<!--    <ons-button id="aggiungibutton"  ng-click ="clickAggiungi(nuovaAzienda)" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formAzienda.$valid || !checkboxTutela || !nat1livRiempito || !nat2livRiempito)">Aggiungi</ons-button> -->
    	<ons-button id="modificabutton" ng-click="clickModifica()"
 		modifier="large--cta" ng-disabled="modificaDisabilitato">Modifica</ons-button>
 
 	<ons-button id="salvabutton" ng-click="clickSalva()"
-		modifier="large--cta" ng-disabled="salvaDisabilitato || !formAzienda.$valid">Salva</ons-button>
+		modifier="large--cta" ng-disabled="salvaDisabilitato || !formAzienda.$valid || !certTutelaCheckata">Salva</ons-button>
 
     </div>
   
 
-  
-             
-  </body>
+
      
   </ons-page>
   

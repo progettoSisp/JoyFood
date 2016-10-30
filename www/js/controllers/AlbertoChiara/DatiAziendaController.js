@@ -7,18 +7,21 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 
 		$scope.inputDisabilitato = true;
 		$scope.salvaDisabilitato = true;
-		$scope.nat2livDisabilitato = false;
+    	$scope.modificaDisabilitato = false;
+
 		$scope.nat1livRiempito = true;
 		$scope.nat2livRiempito = true;
-		$scope.statoCheckbox = true;
+
 		$scope.shownGroup1 = true;
 		$scope.shownGroup2 = true;
-
 		
 		$scope.denominazione = 'DenominazioneProva';
 		$scope.CF = 'VVVBBB66T66T555T';
 		$scope.sedeLegale = 'Sede Legale prova';
 		$scope.stato = 'STATOPROVA';
+	    $scope.nat1LivFromDB = 'Nat1LivA';
+	    $scope.nat2LivFromDB = 'Nat2LivA2';
+
 		
 //		remoteApiService.getAzienda().then(function(response) {
 //			
@@ -34,10 +37,6 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 //				$scope.stato = response.data.stato;
 //		
 //	});
-
-		//QUERY SEDI http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1
-		//QUERY AZIENDA "https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123"
-
 
 		remoteAppService.getNatGiud1lvl().then(function(response) {
 
@@ -67,7 +66,12 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 
 			});
 
+			$scope.nat2livVisualizzate = [];
+			angular.forEach($scope.nat2liv,function(value, key){
 
+				if(value.descnat1liv==='Nat1LivA')
+					$scope.nat2livVisualizzate.push(value.descrizione);
+			});
 
 		});
 
@@ -107,45 +111,21 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 
 
 		$scope.click1Livello=function(descrizione){
-			var myEl = angular.element(document.querySelector('#natGiud2LivElem'));
-			myEl.removeClass('natGiudDisabled');  
+
 			
 			$scope.nat1livRiempito = true;
-			$scope.nat2livDisabilitato = false;
 			$scope.nat2livRiempito = false;
 			$scope.nat1LivSelezionata = descrizione;
+
 			$scope.nat2livVisualizzate = [];
 			angular.forEach($scope.nat2liv,function(value, key){
 
 				if(descrizione==value.descnat1liv)
 					$scope.nat2livVisualizzate.push(value.descrizione);
 			});
+		    $scope.nat2LivFromDB = false;
 
 
-
-		};
-		
-		$scope.checked1Liv=function(descrizione){
-			if(descrizione==='Nat1LivA'){
-				$scope.nat2livVisualizzate = [];
-				angular.forEach($scope.nat2liv,function(value, key){
-
-					if(descrizione==value.descnat1liv)
-						$scope.nat2livVisualizzate.push(value.descrizione);
-				});
-				
-				return true;
-		}
-			return false;
-		};
-		
-		$scope.checked2Liv=function(descrizione){
-			if(descrizione==='Nat2LivA2'){
-
-				
-				return true;
-		}
-			return false;
 		};
 
 
@@ -155,54 +135,27 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 		}
 
 
-//		$scope.clickAggiungi=function(nuovaAzienda){
-//
-//			$scope.aggiungiDisabilitato=true;
-//			$scope.campoDisabilitato=true;
-//			nuovaAzienda.nat1LivSelezionata=$scope.nat1LivSelezionata;
-//			nuovaAzienda.nat2LivSelezionata=$scope.nat2LivSelezionata;
-//			
-//			console.log('Sto inserendo l\'azienda nuovaAzienda:');
-//			console.log('nuovaAzienda.denominazione: '+nuovaAzienda.denominazione);
-//			console.log('nuovaAzienda.CF: '+nuovaAzienda.CF);
-//			console.log('nuovaAzienda.sedeLegale: '+nuovaAzienda.sedeLegale);
-//			console.log('nuovaAzienda.nat1LivSelezionata: '+nuovaAzienda.nat1LivSelezionata);
-//			console.log('nuovaAzienda.nat2LivSelezionata: '+nuovaAzienda.nat2LivSelezionata);
-//			
-//			//LOGIN LO FACCIO QUA PER NON PASSARE DALLA PAGINA DI LOGIN
-//			var username = "utente3";
-//			var password = "sisp";
-//	        remoteApiService.login(username,password).then(function (user) {
-//	        	console.log('LOGIN EFFETTUATO nella pagina InserimentoDatiAzienda');
-//				
-//	        	//INSERT SUL DB:
-//				remoteApiService.insertAzienda(nuovaAzienda).then(function(response) {
-//
-//		        	console.log('Inserimento nuova azienda effettuato');
-//				});
-//	        });
-//	        
-//
-//			
-//		};
 		
 	    $scope.clickModifica=function(){
-
 	    	$scope.inputDisabilitato = !$scope.inputDisabilitato;
 	    	$scope.salvaDisabilitato = !$scope.salvaDisabilitato;
 	    	$scope.modificaDisabilitato = !$scope.modificaDisabilitato;
-//		 ons.notification.alert({
-//	     message: 'ciao'
-//	     });
-//	    	
+	
 	    };
 	    
 	    $scope.clickSalva=function(){
 	    	$scope.inputDisabilitato = true;
 	    	$scope.salvaDisabilitato = true;
 	    	$scope.modificaDisabilitato = false;
+	    	
+	    	console.log("denominazione: "+$scope.denominazione);
+	    	console.log("CF: "+$scope.CF);
+	    	console.log("sedeLegale: "+$scope.sedeLegale);
+	    	console.log("Natura di 1 livello: "+$scope.nat1LivSelezionata);
+	    	console.log("Natura di 2 livello: "+$scope.nat2LivSelezionata);
+	    	
 	   	 ons.notification.alert({
-	   	  message: 'Dati salvati con successo',
+	   	  message: 'Dati salvati con successo-Controllare in console i dati che verranno salvati',
 	   		  title: 'JoyFood'
 	   	  });
 	    };
