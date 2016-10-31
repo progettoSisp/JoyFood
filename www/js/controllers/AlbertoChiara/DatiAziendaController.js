@@ -21,6 +21,8 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 		$scope.stato = 'STATOPROVA';
 	    $scope.nat1LivFromDB = 'Nat1LivA';
 	    $scope.nat2LivFromDB = 'Nat2LivA2';
+	    $scope.nat1LivSelezionata = $scope.nat1LivFromDB;
+	    $scope.nat2LivSelezionata = $scope.nat2LivFromDB;
 
 		
 //		remoteApiService.getAzienda().then(function(response) {
