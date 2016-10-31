@@ -1,79 +1,83 @@
-<ons-page ng-controller="dettaglioProdottoController">
-
-	<div class="navigation-bar navigation-bar--material">
-		<div class="navigation-bar__left navigation-bar--material__left">
+<ons-page ng-controller="dettaglioProdottoController"> <ons-toolbar>
+<div class="navigation-bar navigation-bar--material">
+	<div class="navigation-bar__left navigation-bar--material__left">
 		<span class="toolbar-button toolbar-button--material"
-			  ng-click="slidingMenu.openMenu();"> <ons-back-button>Back</ons-back-button>
+			ng-click="slidingMenu.openMenu();"> <ons-back-button>Back</ons-back-button>
 		</span>
-		</div>
-		<div class="navigation-bar__center navigation-bar--material__center">
-			Dettaglio Prodotto
-		</div>
 	</div>
-	
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Detail Product</div>
+</div>
+</ons-toolbar>
+<div class="login-form">
 
-	<img ng-model="prodotto.immagine" title="Prodotto" alt="Prodotto"
-		 style="display: block; margin: 0 auto; width: 30%;"> <br/>
+	<img align="middle" width="300" height="300"
+		ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
 
 	<ul class="list">
-		<li class="list__item"><textarea ng-model="prodotto.nome"
-										 class="textarea textarea--transparent"
-										 style="width: 100%; height: 50px; margin-top: 4px;"
-										 placeholder="Nome"></textarea></li>
-	</ul>
-	<ul class="list">
-		<li class="list__item"><textarea ng-model="prodotto.descrizione"
-										 class="textarea textarea--transparent"
-										 style="width: 100%; height: 50px; margin-top: 4px;"
-										 placeholder="Descrizione"></textarea></li>
+		<li class="list__item"><textarea
+				class="textarea textarea--transparent"
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Nome"></textarea> <textarea ng-model="prodotto.nome"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 50px; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
 		<li class="list__item"><textarea
-				ng-model="prodotto.descrizioneestesa"
 				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;"
-				placeholder="Descrizione Estesa"></textarea></li>
-	</ul>
-	<ul class="list">
-		<li class="list__item"><textarea ng-model="prodotto.categoria"
-										 class="textarea textarea--transparent"
-										 style="width: 100%; height: 50px; margin-top: 4px;"
-										 placeholder="Categoria"></textarea></li>
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Descrizione"></textarea> <textarea
+				ng-model="prodotto.descrizione"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 50px; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
 		<li class="list__item"><textarea
-				ng-model="prodotto.sottocategoria"
 				class="textarea textarea--transparent"
-				style="width: 100%; height: 50px; margin-top: 4px;"
-				placeholder="Sottocategoria"></textarea></li>
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Descrizione Estesa"></textarea> <textarea
+				ng-model="prodotto.descrizioneEstesa"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
 		<li class="list__item"><textarea
-				ng-model="prodotto.classificazione"
 				class="textarea textarea--transparent"
-				style="width: 100%; height: 50px; margin-top: 4px;"
-				placeholder="Classificazione"></textarea></li>
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Classificazione"></textarea> <textarea
+				ng-model="prodotto.classificazione.descrizione"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 50px; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea ng-model="prodotto.tipologia"
-										 class="textarea textarea--transparent"
-										 style="width: 100%; height: 50px; margin-top: 4px;"
-										 placeholder="Tipologia"></textarea></li>
+		<li class="list__item"><textarea
+				class="textarea textarea--transparent"
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Categoria"></textarea> <textarea
+				ng-model="prodotto.sottoCategoria.categoria.descrizione"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea ng-model="prodotto.allergene"
-										 class="textarea textarea--transparent"
-										 style="width: 100%; height: 50px; margin-top: 4px;"
-										 placeholder="Allergene"></textarea></li>
+		<li class="list__item"><textarea
+				class="textarea textarea--transparent"
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Sottocategoria"></textarea> <textarea
+				ng-model="prodotto.sottoCategoria.descrizione"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 150px; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea ng-model="prodotto.datacreazione"
-										 class="textarea textarea--transparent"
-										 style="width: 100%; height: 50px; margin-top: 4px;"
-										 placeholder="Data Creazione"></textarea></li>
+		<li class="list__item"><textarea
+				class="textarea textarea--transparent"
+				style="width: 70%; height: 50px; margin-top: 4px;"
+				placeholder="Tipo"></textarea> <textarea
+				ng-model="prodotto.tipo.descrizione"
+				class="textarea textarea--transparent"
+				style="width: 100%; height: 50px; margin-top: 4px;"></textarea></li>
 	</ul>
 
-	<div class="ricerca-form">
-	</div>
-	<br> <br/>
+</div>
+<br>
+<br />
 </ons-page>
