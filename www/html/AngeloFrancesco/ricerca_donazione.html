@@ -19,11 +19,11 @@
 
 
 	<input type="search" value="" name='ricerca' placeholder="Ricerca"
-		id='ricerca' ng-model="richiesta.ricerca" class="text-input--underbar">
+		id='ricerca' class="text-input--underbar">
 	<br>
 	<p></p>
 	<input type="search" value="" name='indirizzo' placeholder="Indirizzo"
-		id='indirizzo' ng-model="richiesta.indirizzo"
+		id='indirizzo'
 		class="text-input--underbar"> <br>
 	<br>
 
@@ -31,14 +31,14 @@
 		<ons-list>
 		<div ng-repeat="group in groups">
 			<ons-list-item ng-click="toggleGroup(group)" class="title"
-				ng-class="{active:isGroupShown(group)}"> <ons-icon
+				ng-class="{active:isGroupShown(group)}" > <ons-icon
 				icon="minus-square-o" ng-if="isGroupShown(group)"></ons-icon> <ons-icon
 				icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon> &nbsp;
 			{{group.key}} </ons-list-item>
 			<ons-list-item class="item-accordion"
 				ng-repeat="item in group.values" ng-show="isGroupShown(group)">
 			<label class="checkbox checkbox--list-item"> <input
-				type="checkbox" name='{{group.key}}' value='{{item.id}}'>
+				type="checkbox" name='{{group.key}}' value='{{item.id}}' >
 				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
 				{{item.name}}
 			</label> </ons-list-item>
@@ -51,7 +51,7 @@
 		<br>
 		<br>
 		<br>
-		<ons-button modifier="large" class="search-button" ng-click="ricerca(richiesta)">Ricerca</ons-button>
+		<ons-button modifier="large" class="search-button" ng-click="ricerca()">Ricerca</ons-button>
 </form>
 
 
