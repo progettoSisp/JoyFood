@@ -86,6 +86,8 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		
 		
 		
+		
+		
 	
 		
 //	    for (i=0; i<$scope.valori.length; i++){
