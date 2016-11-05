@@ -112,7 +112,11 @@
 				<span style="font-size: 10px; color: red;"
 					ng-show="!user2.condizioni && inviato2">Accept privacy policy</span>
 			</p>
-	
+			
+			<p>
+				<span style="font-size: 10px; color: red;"
+					ng-show="!user_mail && inviato2">Username or Mail already used</span>
+			</p>
 	
 			<br />
 			<button class="button--large--cta" ng-click="pagina2(user2)">Register</button>

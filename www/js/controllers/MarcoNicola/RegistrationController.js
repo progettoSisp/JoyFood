@@ -87,6 +87,7 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 		 console.log(user2);
 		 var user1=registrationService.getUser();
 		 var errore = false;
+		 $scope.user_mail = false;
 		 
 		 if(user2){
 			 console.log("A");
@@ -94,64 +95,72 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				 console.log("B");
 				 errore = true;
 		 	}
-		 
-			 $scope.inviato2 = true;
-			 if(!errore){				 
-				 var settings = {
-						 "async": true,
-						 "crossDomain": true,
-						 "url": "http://joyfoodamministratore-sisp.rhcloud.com/user/register",
-						 "method": "POST",
-						 "headers": {
-							 "content-type": "application/x-www-form-urlencoded",
-							 "cache-control": "no-cache",
-							 "postman-token": "be255aa4-2a8f-b146-c05f-36b49a1acc31"
-						 },
-						 "data": {
-							 "user": user1.username,
-							 "password": user1.password1,
-							 "mail": user2.email1,
-							 "nome": user1.nome,
-							 "cognome": user1.cognome,
-							 "sesso": user2.genere,
-							 "codFiscale": user2.codiceFiscale,
-							 "statoNascita": "Italia",
-							 "provinciaNascita": "MI",
-							 "comuneNascita": user2.comuneNascita,
-							 "provinciaResidenza": "MB",
-							 "capNascita": "20826",
-							 "comuneResidenza": "Misinto",
-							 "indirizzoResidenza": "Via G. Garibaldi 29",
-							 "capResidenza": "20826",
-							 "telefono": user2.telefono,
-							 "statoUtente": "1",
-							 "tipoUtente": "1"
-						 }
-				 }
-				 console.log(settings);
 			 
-				 console.log("C");
-				 var str=this.toString({user: username, password: password});
-			        var settings = {
-			          "url": "https://joyfoodamministratore-sisp.rhcloud.com/user/checkUnique",
-			          "method": "POST",
+			 var settings = {
+			          "url": "https://joyfoodamministratore-sisp.rhcloud.com/user/checkUnique?user=" + user1.username + "&mail=" + user2.email1,
+			          "method": "GET",
 			          "headers": {
 			            "content-type": "application/x-www-form-urlencoded",
 			          },
-			          "data": str
+			          //"params": "user=" + user1.username + ", mail=" + user2.email1
 			          };
 			        $http(settings)
 			            .then(function(response) {
 			            	 console.log(response);
-							 	$.ajax(settings).done(function (response) {
-							 		console.log("FF");
-							 		myNavigator.pushPage("html/MarcoNicola/conferma.html")
-							 	});
+							 errore=false;
+							 $scope.user_mail=false;
+							 
+							 $scope.inviato2 = true;
+							 if(!errore){				 
+								 var settings = {
+										 "async": true,
+										 "crossDomain": true,
+										 "url": "http://joyfoodamministratore-sisp.rhcloud.com/user/register",
+										 "method": "POST",
+										 "headers": {
+											 "content-type": "application/x-www-form-urlencoded",
+											 "cache-control": "no-cache",
+											 "postman-token": "be255aa4-2a8f-b146-c05f-36b49a1acc31"
+										 },
+										 "data": {
+											 "user": user1.username,
+											 "password": user1.password1,
+											 "mail": user2.email1,
+											 "nome": user1.nome,
+											 "cognome": user1.cognome,
+											 "sesso": user2.genere,
+											 "codFiscale": user2.codiceFiscale,
+											 "statoNascita": "Italia",
+											 "provinciaNascita": "MI",
+											 "comuneNascita": user2.comuneNascita,
+											 "dataNascita": user2.dataNascita,
+											 "provinciaResidenza": "MB",
+											 "capNascita": "20826",
+											 "comuneResidenza": "Misinto",
+											 "indirizzoResidenza": "Via G. Garibaldi 29",
+											 "capResidenza": "20826",
+											 "telefono": user2.telefono,
+											 "statoUtente": "1",
+											 "tipoUtente": "1"
+										 }
+								 }
+								 console.log(settings);
+								 
+								 console.log("C");
+								 //var str='user=' + user1.username + ", mail=" + user2.email1;
+								 $.ajax(settings).done(function (response) {
+								 		console.log("FF");
+								 		myNavigator.pushPage("html/MarcoNicola/conferma.html")
+								 	});    
+							 }
 			                }
 			           ,function error(response) {
 			            console.log(response);
-			            });	    
-			 }
+			            errore=true;
+			            $scope.user_mail=true;
+			            });	
+		 
+			 
 		 }else{
 			 console.log("D");
 			 $scope.inviato2 = true;	 
