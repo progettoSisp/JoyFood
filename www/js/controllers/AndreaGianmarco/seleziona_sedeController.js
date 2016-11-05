@@ -31,6 +31,19 @@ myApp.controller('seleziona_sedeController', function($scope,$http,remoteApiServ
 	 });
     
     
+    $scope.lista_sedi= function(id){
+		 console.log('lista sedi');
+		 var sede
+		 var sede = {
+				    "provincia": sede.provincia,
+				    "indirizzo": sede.indirizzo,
+			
+				 
+				
+				}
+		}
+    
+    
 });   
 
 

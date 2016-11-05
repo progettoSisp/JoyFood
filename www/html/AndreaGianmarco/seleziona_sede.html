@@ -69,15 +69,17 @@
 	</div>
 	-->
 	
-	<div class="aaa">
-		<ons-button id="sede" ng-click="myNavigator.pushPage('html/AndreaGianmarco/storico_donazioni.html')" class="sede1">Sede 1</ons-button>
-		<br>
-		<br>
-		<ons-button id="sede" class="sede2">Sede 2</ons-button>
-		<br>
-		<br>
-		<ons-button id="sede" class="sede3">Sede 3</ons-button>
+	<ons-list id="listaSedi">
+	<ons-list-item modifier="chevron" class="list-item-container"
+				   ng-repeat="sede in sedi" ng-click="changeView(sedi);">
+	
+	<div class="list-item-right">
+		<div class="list-item-content">
+			<div class="sedeprovincia"><strong>{{sede.provincia}}</strong></div>
+			<span class="sedeindirizzo">{{sede.indirizzo}}</span>
+		</div>
 	</div>
+	</ons-list-item> </ons-list>
 	
 </div>
 </ons-page>
