@@ -4,9 +4,9 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 
 
 
-	$scope.groups= [{key:"Tipo", values: [{ "name": "Carne","id": "01"},{ "name": "Pesce","id": "02"},{ "name": "Frutta","id": "id_carne"}]},
-	                {key:"Classificazione",values: [{"name": "Vegano","id": "id_class_1"},{"name": "Celiaco","id": "id_class_1"},{"name": "Vegetariano","id": "id_class_1"}]},
-	                {key:"Allergeni",values: [{"name": "Mais","id": "id_class_1"},{"name": "Latteria","id": "id_class_1"}]}
+	$scope.groups= [{key:"tipo", values: [{ "name": "Carne","id": "01"},{ "name": "Pesce","id": "02"},{ "name": "Frutta","id": "03"}]},
+	                {key:"classificazione",values: [{"name": "Vegano","id": "01"},{"name": "Celiaco","id": "02"},{"name": "Vegetariano","id": "03"}]},
+	                {key:"allergene",values: [{"name": "Mais","id": "01"},{"name": "Latteria","id": "02"}]}
 	                ];
 
 	$scope.load = function(page) {
@@ -58,13 +58,31 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 
 
 	$scope.richiesta={};
+	
 
+	$scope.ricerca=function(){
+		$scope.richiesta={};
+		//console.log(richiesta.pippo);
+	
+		$scope.valori=$("form.ricerca-form").serialize();
+		
 
-	$scope.ricerca=function(richiesta){
+		console.log($scope.valori);
 
-		console.log(richiesta);
-		//console.log(filtriService.getClassificazione());	
-		remoteApiService.ricercaDonazione(richiesta).then(function (risultato) {
+//	    for (i=0; i<$scope.valori.length; i++){
+//	    	
+//	    //	$scope.key=$scope.valori[i].name;
+//	    	console.log($scope.key);
+//	    	$scope.richiesta[$scope.key].setValue($scope.valori[i].value);
+//	    	
+//	    }
+//	 
+//	   console.log($scope.richiesta);
+	   //console.log(filtriService.getClassificazione());
+	//$scope.formData = JSON.parse($("form.ricerca-form").serializeArray());
+	
+	//console.log($scope.formData);
+		remoteApiService.ricercaDonazione($scope.valori).then(function (risultato) {
 			
 			console.log(risultato);
 		});
