@@ -25,12 +25,10 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 	
 	 $scope.master = {};
 	 
-	 
-	 
-	
-	
+	 	
 	 $scope.next= function(user){
 		 console.log(user)
+
 		 var errore = false;
 		 if(user){
 		 if(!user.username || !user.password1 || !user.password2 || !user.cognome)
@@ -133,10 +131,26 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 				 console.log(settings);
 			 
 				 console.log("C");
-				 $.ajax(settings).done(function (response) {
-					 console.log("FF");
-					 myNavigator.pushPage("html/MarcoNicola/conferma.html")
-				 });
+				 var str=this.toString({user: username, password: password});
+			        var settings = {
+			          "url": "https://joyfoodamministratore-sisp.rhcloud.com/user/checkUnique",
+			          "method": "POST",
+			          "headers": {
+			            "content-type": "application/x-www-form-urlencoded",
+			          },
+			          "data": str
+			          };
+			        $http(settings)
+			            .then(function(response) {
+			            	 console.log(response);
+							 	$.ajax(settings).done(function (response) {
+							 		console.log("FF");
+							 		myNavigator.pushPage("html/MarcoNicola/conferma.html")
+							 	});
+			                }
+			           ,function error(response) {
+			            console.log(response);
+			            });	    
 			 }
 		 }else{
 			 console.log("D");
