@@ -4,9 +4,9 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 
 
 
-	$scope.groups= [{key:"tipo", values: [{ "name": "Carne","id": "01"},{ "name": "Pesce","id": "02"},{ "name": "Frutta","id": "03"}]},
-	                {key:"classificazione",values: [{"name": "Vegano","id": "01"},{"name": "Celiaco","id": "02"},{"name": "Vegetariano","id": "03"}]},
-	                {key:"allergene",values: [{"name": "Mais","id": "01"},{"name": "Latteria","id": "02"}]}
+	$scope.groups= [{key:"tipo", values: [{ "name": "Carne","id": "1"},{ "name": "Pesce","id": "2"},{ "name": "Frutta","id": "3"}]},
+	                {key:"classificazione",values: [{"name": "Vegano","id": "1"},{"name": "Celiaco","id": "2"},{"name": "Vegetariano","id": "3"}]},
+	                {key:"allergene",values: [{"name": "Mais","id": "1"},{"name": "Latteria","id": "2"}]}
 	                ];
 
 	$scope.load = function(page) {
@@ -57,18 +57,37 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	};
 
 
-	$scope.richiesta={};
+	$scope.latitudine;
+	$scope.longitudine;
+	$scope.indirizzo;
 	
-
+	
 	$scope.ricerca=function(){
-		$scope.richiesta={};
-		//console.log(richiesta.pippo);
 	
-		$scope.valori=$("form.ricerca-form").serialize();
+	   $scope.valori=$("form.ricerca-form").serialize();
 		
-
-		console.log($scope.valori);
-
+		
+		var request = {	
+				'address': $scope.indirizzo
+		};
+		
+		geocoder = new google.maps.Geocoder();
+		geocoder.geocode(request, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				$scope.latitudine = results[0].geometry.location.lat();
+				$scope.longitudine = results[0].geometry.location.lng();
+				console.log("Latitudine = "+$scope.latitudine);
+				console.log("Longitudine = "+$scope.longitudine);
+				$scope.valori= ($scope.valori+"&latitudine="+$scope.latitudine+"&longitudine="+$scope.longitudine);
+				console.log($scope.valori);
+			}
+			
+		});
+		
+		
+		
+	
+		
 //	    for (i=0; i<$scope.valori.length; i++){
 //	    	
 //	    //	$scope.key=$scope.valori[i].name;
@@ -79,9 +98,9 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 //	 
 //	   console.log($scope.richiesta);
 	   //console.log(filtriService.getClassificazione());
-	//$scope.formData = JSON.parse($("form.ricerca-form").serializeArray());
+	   //$scope.formData = JSON.parse($("form.ricerca-form").serializeArray());
 	
-	//console.log($scope.formData);
+	
 		remoteApiService.ricercaDonazione($scope.valori).then(function (risultato) {
 			
 			console.log(risultato);
