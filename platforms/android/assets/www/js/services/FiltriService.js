@@ -10,23 +10,27 @@ myApp.service('filtriService', function(localDbService,$q) {
           localDbService.getClassificazione().then(function (result) {
         	  console.log(result);
              	classificazione=result;
+             	  localDbService.getTipo().then(function (result) {
+                	  console.log(result);
+                      	 tipo=result;
+                      	 localDbService.getCategoria().then(function (result) {
+                       	  console.log(result);
+                       	  categoria=result;
+                       	 localDbService.getSottoCategoria().then(function (result) {
+                       	  console.log(result);  
+                       	  sottoCategoria=result;
+                       	  localDbService.getAllergene().then(function (result) {
+                        	  console.log(result); 
+                        	  allergene=result;
+                          });
+                          });
+                          });
+                  });
           });
-          localDbService.getTipo().then(function (result) {
-        	  console.log(result);
-              	 tipo=result;
-          });
-          localDbService.getCategoria().then(function (result) {
-        	  console.log(result);
-        	  categoria=result;
-           });
-          localDbService.getSottoCategoria().then(function (result) {
-        	  console.log(result);  
-        	  sottoCategoria=result;
-           });
-          localDbService.getAllergene().then(function (result) {
-        	  console.log(result); 
-        	  allergene=result;
-          });
+        
+         
+         
+        
           console.log("INIT");
      }
 

@@ -3,16 +3,12 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
 	var data;
 	var db; 
 	var map;
+	var sedi;
 	 $scope.map;
      $scope.markers = [];
      $scope.markerId = 1;
     $scope.sedi;
-     ons.ready(function() {
-    	 navigator.geolocation.getCurrentPosition(onSuccess,onError);
-    	 remoteAppService.getAllSedi().then(function(result){
-    	    console.log(result);
-    	 })
-    });
+
 
      
      function onSuccess(position) {
@@ -48,16 +44,19 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
         $scope.overlay.setMap($scope.map);
         $scope.element = document.getElementById('map_canvas');
         remoteAppService.getAllSedi().then(function(response) {
+        	console.log("RESPONSE");
         console.log(response);
         $scope.sedi=response;
              data = response;
             if(data){
             	console.log(data);
             		for(var i=0;i<data.length;i++){
-            			if(data[i].longitude && data[i].latitudine ){
-            				console.log(data[i].longitude+" "+data[i].latitudine);
+            			console.log("CICLO");
+            			console.log(data[i]);
+            			if(data[i].longitudine && data[i].latitudine ){
+            				console.log(data[i].longitudine+" "+data[i].latitudine);
             				console.log(point);
-            				  var point = new google.maps.Point(data[i].longitude, data[i].latitudine);
+            				  var point = new google.maps.Point(data[i].longitudine, data[i].latitudine);
             		            var coordinates = $scope.overlay.getProjection().fromContainerPixelToLatLng(point);
 
             		            var marker = new google.maps.Marker({

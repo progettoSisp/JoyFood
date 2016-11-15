@@ -83,7 +83,7 @@ myApp.service('remoteApiService', function($q,$http,userService) {
 
     this.getAzienda= function(){
         var deferred = $q.defer();
-         $http.get("https://joyfoodamministratore-sisp.rhcloud.com/user/azienda")
+         $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda")
          .then(function(response) {
              deferred.resolve(response.data);
          },function(response) {
@@ -96,7 +96,7 @@ myApp.service('remoteApiService', function($q,$http,userService) {
         var deferred = $q.defer();
                   var str=this.toString(azienda);
                         var settings = {
-                          "url": "https://joyfoodamministratore-sisp.rhcloud.com/user/insertAzienda",
+                          "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/insertAzienda",
                           "method": "POST",
                           "headers": {
                             "content-type": "application/x-www-form-urlencoded",
@@ -116,7 +116,7 @@ myApp.service('remoteApiService', function($q,$http,userService) {
         var deferred = $q.defer();
         var str=this.toString(azienda);
         var settings = {
-          "url": "https://joyfoodamministratore-sisp.rhcloud.com/updateAzienda",
+          "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/updateAzienda",
           "method": "POST",
           "headers": {
             "content-type": "application/x-www-form-urlencoded",
@@ -136,7 +136,7 @@ myApp.service('remoteApiService', function($q,$http,userService) {
       var deferred = $q.defer();
        var str=this.toString(sede);
               var settings = {
-                "url": "https://joyfoodamministratore-sisp.rhcloud.com/insertSede",
+                "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/insertSede",
                 "method": "POST",
                 "headers": {
                   "content-type": "application/x-www-form-urlencoded",
@@ -156,7 +156,7 @@ this.updateSede= function(sede){
       var deferred = $q.defer();
        var str=this.toString(sede);
               var settings = {
-                "url": "https://joyfoodamministratore-sisp.rhcloud.com/insertSede",
+                "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/insertSede",
                 "method": "POST",
                 "headers": {
                   "content-type": "application/x-www-form-urlencoded",
@@ -185,7 +185,7 @@ this.updateSede= function(sede){
 
     this.getDonazioni= function(){
         var deferred = $q.defer();
-        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/allDonazioni")
+        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/allDonazioni")
          .then(function(response) {
              deferred.resolve(response.data);
          },function(response) {
@@ -196,7 +196,7 @@ this.updateSede= function(sede){
 
     this.donazioniByAzienda= function(id){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniByAzienda","codAzienda="+id)
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/api/donazioniByAzienda","codAzienda="+id)
          .then(function(response) {
              deferred.resolve(response.data);
          },function(response) {
@@ -207,7 +207,7 @@ this.updateSede= function(sede){
 
     this.donazioniBySede= function(id){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniBySede","idSede="+id )
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/api/donazioniBySede","idSede="+id )
          .then(function(response) {
              deferred.resolve(response.data);
          },function(response) {
@@ -218,7 +218,7 @@ this.updateSede= function(sede){
 
     this.listRichiesteByDonazione== function(id){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/donazioniBySede","idDonazione="+id )
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/api/donazioniBySede","idDonazione="+id )
          .then(function(response) {
              deferred.resolve(response.data);
          },function(response) {
@@ -231,7 +231,7 @@ this.updateSede= function(sede){
       var deferred = $q.defer();
       var str=this.toString(donazione);
              var settings = {
-               "url": "https://joyfoodamministratore-sisp.rhcloud.com/insertDonazione",
+               "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/insertDonazione",
                "method": "POST",
                "headers": {
                  "content-type": "application/x-www-form-urlencoded",
@@ -249,7 +249,7 @@ this.updateSede= function(sede){
 
     this.accettaRichiesta== function(id){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/accettaRichiesta","codDonazione="+id)
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/api/accettaRichiesta","codDonazione="+id)
          .then(function(response) {
              deferred.resolve(response.data);
          },function(response) {
@@ -260,7 +260,7 @@ this.updateSede= function(sede){
 
     this.inserimentoRichiesta== function(richiesta){
       var deferred = $q.defer();
-      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/inserimentoRichiesta",{
+      $http.post("https://joyfoodamministratore-sisp.rhcloud.com/api/inserimentoRichiesta",{
            idCarrello:richiesta.idCarrello,
            prodotto:richiesta.prodotto
       })

@@ -25,42 +25,85 @@
 .switch {
 	margin-left: 20px;
 }
+
+
+#fileField{
+display:default;
+
+}
 </style>
-<ons-page ng-controller="donazioneController">
+<ons-page ng-controller="NuovaDonazioneController">
 <div class="navigation-bar navigation-bar--material">
 
 	<div class="navigation-bar__center navigation-bar--material__center">
-		Inserire titolo</div>
+		New Donation</div>
 
 </div>
 <div class="nuovaDon">
-	<label>Effettua una nuova donazione: </label> <br>
-	<br> <input id="tit" type="titolo" class="text-input--underbar"
-		placeholder="Titolo" style="text-align: left;" value=""> <br>
-	<br> <input id="Idisp" type="date" class="text-input--underbar"
-		value=""> <br>
-	<br> <input id="Edisp" type="date" class="text-input--underbar"
-		value=""> <br>
+ <input ng-model="newproduct.title" id="titolo" type="text" class="text-input--underbar"
+		placeholder="Title" style="text-align: left;" value=""> <br>
+
+<span style="font-size:10px; color:red;" ng-show="!newproduct.title && prodottoinviato">Required field</span>
+		
+		
+		
+	 <textarea ng-model="newproduct.description" rows="5" id="descrizione" class="textarea textarea--transparent"
+		placeholder="Description" style="text-align: left;" value=""></textarea>
+		<!--   
+		<ons-button type="file" ng-click="fileUpload()">Upload a photo</ons-button>
+		-->
+		<input id="fileField" type="file" class="button  button--large" onchange="showImg(this);"/>
+		<br/>
+		
+		
+		        <img ng-model="newproduct.immagine" style="" id="picture" src="" width="60%" height="auto" />
+		        
+		<input ng-model="newproduct.sede2" readonly placeholder="Location" id="fileField" type="text" class="text-input--underbar"/>
+		
+		
+	<br>    <input ng-model="newproduct.datainizio" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Start date availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
+<!-- 	<br>    <input ng-model="newproduct.orainizio" type="text" onfocus="(this.type='time')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf017; &nbsp Start hour availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
+	-->
+	<span style="font-size:10px; color:red;" ng-show="!newproduct.datainizio && prodottoinviato">Required field</span>
+		
+		
+	
+	<br>    <input ng-model="newproduct.datafine" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='fineData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp End date availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
+   
+   	<span style="font-size:10px; color:red;" ng-show="!newproduct.datafine && prodottoinviato">Required field</span>
+		
+		
+   
+   <!-- <br>    <input ng-model="newproduct.orafine" type="text" onfocus="(this.type='time')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf017; &nbsp End hour availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
+	-->
 	<br>
+    <br> 
 	<div class="container">
-		<div class="form-group">
-			<div class="col-lg-offset-2 col-lg-10">
-				<select id="aaa" class="selectpicker show-menu-arrow form-control">
-					<option selected>Seleziona la tua sede</option>
-					<option>sede 1</option>
-					<option>sede 2</option>
-					<option>sede 3</option>
-					<option>sede 4</option>
-					<option>sede 5</option>
-				</select>
-			</div>
-		</div>
+		<select class="text-input" ng-model="newproduct.sede">
+    <option value="" selected>Select your location</option>
+    <option value="location1">Location 1</option>
+    <option value="location2">Location 2</option>
+    <option value="location3">Location 3</option>
+</select>
+
+<span style="font-size:10px; color:red;" ng-show="!newproduct.sede && prodottoinviato">Required field</span>
+		
 		<br>
-		<br> <label>Divisibilità</label><label class="switch"><input
-			type="checkbox" class="switch__input" style="margin-left: 20px;">
-		<div class="switch__toggle"></div></label> <br>
-		<br> <label>Inserisci qui una foto:</label> <br>
 		<br>
-		<ons-button id="sede" class="crea">Crea</ons-button>
+
+		<br> 
+		<ons-input ng-model="newproduct.divisibilita" type="checkbox" id="checkboxVeridicita" name="checkboxVeridicita" ng-model="checkboxVeridicita" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">&nbsp &nbsp The donation is divisible</ons-input>
+		<br>
+		<br>
+		<!-- <ons-button modifier="large" class="search-button" ng-click="">Acquiring an image from album</ons-button> -->
+		<br>
+		<ons-button modifier="large" class="search-button" ng-click="invioprodotto(newproduct)">Insert donation</ons-button>
+<br>
+		<ons-button id="sede" ng-click="myNavigator.pushPage('html/SilviaVincenzo/ricerca_prodotto.html')" class="crea">Search a product</ons-button>
+	<br>
+	
+	<ons-button ng-click="reset()" class="button--large--cta reset">Reset</ons-button>
+		
+	
 	</div>
 </ons-page>

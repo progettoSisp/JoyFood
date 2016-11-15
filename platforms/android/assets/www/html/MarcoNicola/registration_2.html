@@ -1,222 +1,224 @@
 <ons-page ng-controller="registrationController">
-<div class="navigation-bar navigation-bar--material">
-	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"
-			ng-click="slidingMenu.openMenu();"> <ons-back-button>Back</ons-back-button>
-		</span>
-	</div>
-	<div class="navigation-bar__center navigation-bar--material__center">
-		Registration</div>
-	<div class="navigation-bar__right navigation-bar--material__right">
-	</div>
-</div>
-
-	<form>
-
-	<div class="formarea">
-
-		<div class="form-row">
-			<input name="datadinascita" ng-model="user.dataNascita"  type="text" onfocus="(this.type='date')"
-				class="text-input--underbar width-full"
-				placeholder="&#xf073; Date of birth" value="" required
-				style="font-family: Arial, FontAwesome" />
-		</div>
-
-
-		<span style="font-size:10px; color:red;" ng-show="!user.dataNascita && inviato2">Insert date of birth</span>
-
-
-		<div class="form-row" style="padding-top: 10px;">
-
-
-
-
-			<ul class="list">
-				<li class="list__item list__item--tappable"><label
-					class="radio-button radio-button--list-item"> <input
-						type="radio" name="genere" value="m" checked="checked">
-						<div
-							class="radio-button__checkmark radio-button--list-item__checkmark"></div>
-						<ons-icon icon="fa-male" size="15px" fixed-width="false" ng-model="user.password.male" 
-							style="color: grey"> </ons-icon>Male
-				</label></li>
-				<li class="list__item list__item--tappable"><label
-					class="radio-button radio-button--list-item"> <input ng-model="user.female" 
-						type="radio" name="genere" value="f">
-						<div
-							class="radio-button__checkmark radio-button--list-item__checkmark"></div>
-						<ons-icon icon="fa-female" size="15px" fixed-width="false"
-							style="color: grey"> </ons-icon>Female
-				</label></li>
-			</ul>
-		</div>
-		<div class="form-row">
-			<input name="comune" type="text"  ng-model="user.comuneNascita" 
-				class="text-input--underbar width-full"
-				placeholder="&#xf015; Birthplace" value=""
-				style="font-family: Arial, FontAwesome" required>
-
-			<span style="font-size:10px; color:red;" ng-show="!user.comuneNascita && inviato2">Required field</span>
-
-		</div>
-		<div class="form-row">
-			<input
-				pattern="[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
-				id="codicefiscale" name="cf" type="text"  ng-model="user.codiceFiscale" 
-				class="text-input--underbar width-full"
-				placeholder="&#xf15c; Tax code" value="" required
-				style="font-family: Arial, FontAwesome">
-			<span style="font-size:10px; color:red;" ng-show="!user.codiceFiscale && inviato2">Field not correct</span>
-		</div>
-		<p>Contact details</p>
-		<div class="form-row">
-			<input type="tel" name="telefono"  ng-model="user.telefono" 
-				class="text-input--underbar width-full"
-				placeholder="&#xf095; Telephone" value="" required
-				style="font-family: Arial, FontAwesome">
-			<span style="font-size:10px; color:red;" ng-show="!user.telefono && inviato">Required field</span>
-		</div>
-		<div class="form-row">
-			<input id="email1" name="email" type="email" ng-model="user.email1"
-				   class="text-input--underbar width-full" placeholder="&#xf003; Email"
-				   value="" required style="font-family: Arial, FontAwesome">
-			<span style="font-size:10px; color:red;" ng-show="!user.email1 && inviato2">(es. name@domain)</span>
-		</div>
-		<div class="form-row">
-			<input id="email2" type="email" ng-model="user.email2"
-				   class="text-input--underbar width-full"
-				   placeholder="&#xf003; Retype Email" value="" required
-				   style="font-family: Arial, FontAwesome">
-			<span style="font-size:10px; color:red;"
-				  ng-show="(user.email1!=user.email2) && inviato2">Mail and retype mail must match</span>
-
-		</div>
-		<br />
-		<div class="form-row lucent" style="padding-top: 20px;">
-			<input type="checkbox" required ng-model="user.condizioni"/><span><a ng-click="show('termini.html')"><span id="privacy"
-															   style="text-decoration: underline;">Privacy policy</span></a>
-			
+	<div class="navigation-bar navigation-bar--material">
+		<div class="navigation-bar__left navigation-bar--material__left">
+			<span class="toolbar-button toolbar-button--material"
+				ng-click="slidingMenu.openMenu();"> <ons-back-button>Back</ons-back-button>
 			</span>
-
-
 		</div>
-
-
-		<p>
-			<span style="font-size:10px; color:red;" ng-show="!user.condizioni && inviato2">Accept privacy policy</span>
-		</p>
-
-
-		<br />
-		<button class="button--large--cta"  ng-click="pagina2(user)">Register</button>
-		<br />
-		<button ng-click="reset()" class="button--large--cta reset">Reset</button>
+		<div class="navigation-bar__center navigation-bar--material__center">
+			Registration</div>
+		<div class="navigation-bar__right navigation-bar--material__right">
+		</div>
 	</div>
-</form>
+	
+	<form>
+	
+		<div class="formarea">
+	
+			<div class="form-row">
+				<input name="datadinascita" ng-model="user2.dataNascita" type="text"
+					onfocus="(this.type='date')" class="text-input--underbar width-full"
+					placeholder="&#xf073; Date of birth" value="" required
+					style="font-family: Arial, FontAwesome" />
+			</div>
+	
+	
+			<span style="font-size: 10px; color: red;"
+				ng-show="!user2.dataNascita && inviato2">Insert date of birth</span>
+	
+	
+			<div class="form-row" style="padding-top: 10px;">
+	
+	
+	
+	
+				<ul class="list">
+					<li class="list__item list__item--tappable"><label
+						class="radio-button radio-button--list-item"> <input
+							type="radio" name="genere" value="m" checked="checked" ng-model="user2.genere">
+							<div
+								class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+							<ons-icon icon="fa-male" size="15px" fixed-width="false"
+								 style="color: grey"> </ons-icon>
+							Male
+					</label></li>
+					<li class="list__item list__item--tappable"><label
+						class="radio-button radio-button--list-item"> <input
+							type="radio" name="genere" value="f" ng-model="user2.genere">
+							<div
+								class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+							<ons-icon icon="fa-female" size="15px" fixed-width="false"
+								style="color: grey"> </ons-icon>Female
+					</label></li>
+				</ul>
+			</div>
+			<div class="form-row">
+				<input name="comune" type="text" ng-model="user2.comuneNascita"
+					class="text-input--underbar width-full"
+					placeholder="&#xf015; Birthplace" value=""
+					style="font-family: Arial, FontAwesome" required> <span
+					style="font-size: 10px; color: red;"
+					ng-show="!user2.comuneNascita && inviato2">Required field</span>
+	
+			</div>
+			<div class="form-row">
+				<input
+					pattern="[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
+					id="codicefiscale" name="cf" type="text"
+					ng-model="user2.codiceFiscale"
+					class="text-input--underbar width-full"
+					placeholder="&#xf15c; Tax code" value="" required
+					style="font-family: Arial, FontAwesome"> <span
+					style="font-size: 10px; color: red;"
+					ng-show="!user2.codiceFiscale && inviato2">Field not correct</span>
+			</div>
+			<p>Contact details</p>
+			<div class="form-row">
+				<input id="telefono" type="tel" name="telefono" ng-model="user2.telefono"
+					class="text-input--underbar width-full"
+					placeholder="&#xf095; Telephone" value="" ng-pattern="/^[3]{1}[0-9]{9}$/" required
+					style="font-family: Arial, FontAwesome"> <span
+					style="font-size: 10px; color: red;"
+					ng-show="!user2.telefono && inviato2">Required field</span>
+			</div>
+			<div class="form-row">
+				<input id="email1" name="email" type="email" ng-model="user2.email1"
+					class="text-input--underbar width-full" placeholder="&#xf003; Email"
+					value="" required style="font-family: Arial, FontAwesome"> <span
+					style="font-size: 10px; color: red;"
+					ng-show="!user2.email1 && inviato2">(es. name@domain)</span>
+			</div>
+			<div class="form-row">
+				<input id="email2" type="email" ng-model="user2.email2"
+					class="text-input--underbar width-full"
+					placeholder="&#xf003; Retype Email" value="" required
+					style="font-family: Arial, FontAwesome"> <span
+					style="font-size: 10px; color: red;"
+					ng-show="(user2.email1!=user2.email2) && inviato2">Mail and
+					retype mail must match</span>
+	
+			</div>
+			<br />
+			<div class="form-row lucent" style="padding-top: 20px;">
+				<input type="checkbox" required ng-model="user2.condizioni" /><span><a
+					ng-click="show('termini.html')"><span id="privacy"
+						style="text-decoration: underline;">Privacy policy</span></a> </span>
+	
+	
+			</div>
+	
+	
+			<p>
+				<span style="font-size: 10px; color: red;"
+					ng-show="!user2.condizioni && inviato2">Accept privacy policy</span>
+			</p>
+			
+			<p>
+				<span style="font-size: 10px; color: red;"
+					ng-show="!user_mail && inviato2">Username or Mail already used</span>
+			</p>
+	
+			<br />
+			<button class="button--large--cta" ng-click="pagina2(user2)">Register</button>
+			<br />
+			<button ng-click="reset()" class="button--large--cta reset">Reset</button>
+		</div>
+	</form>
+	
+	
+	<ons-template id="termini.html"> <ons-scroller
+		style="height: 200px; width: 100%"> <ons-dialog
+		style="height: 75%;" var="dialog" cancelable>
+	
+	<div>
+		<p>Termini d'uso Condizioni Generali Utilizzando l'applicazione
+			"JoyFood the Joy of Giving" l'utente registrato accetta i seguenti
+			termini e condizioni. L'applicazione permette gratuitamente ad utenti
+			registrati titolari di un'attività commerciale, di cedere
+			gratuitamente derrate alimentari ad altri utenti registrati,
+			specificando e descrivendo genere di alimento, quantit� e data di
+			scadenza. Ciascun utente pu� gratuitamente prenotare il ritiro della
+			merce. Trattandosi di donazione gratuita di alimenti, essa non
+			costituisce in alcun modo un'attivit� economica ed in nessun caso
+			pu� configurarsi un contratto tra utente donatore e richiedente.
+			L'utente richiedente, presa visione dei prodotti, potr� comunque
+			decidere di non ritirarli. Per gli stessi motivi, non potr�
+			ravvisarsi alcuna responsabilit� n� commerciale n� contrattuale
+			a nostro carico. L'utilizzo dell'applicazione " JoyFood the Joy of
+			Giving non trasferisce alcuna proprietà della merce. L'utilizzo
+			dell'applicazione è totalmente gratuito. Non è garantito l'accesso
+			continuo e ininterrotto ai servizi, che possono essere condizionato da
+			fattori esterni. Si rifiuta qualunque responsabilità per eventuali
+			perdite economiche, per danni di immagine, per danni diretti,
+			indiretti o conseguenti derivanti dall'utilizzo dell'applicazione.
+	
+			L'utilizzo dell'applicazione "JoyFood the Joy of Giving ", è
+			vincolato all'accettazione di tutti i termini e le condizioni presenti
+			in questo Accordo per gli utenti e nelle Regole sulla Privacy.
+			L'utilizzo dell'applicazione comporta: Il divieto per l�utente
+			donatore di richiedere qualunque tipo di pagamento Il divieto per
+			l�utente richiedente a procedere a qualsiasi pagamento L'obbligo di
+			segnalare sospette attivit� illecite sull'applicazione; L'obbligo di
+			accettare la rimozione delle eventuali informazioni relative ad
+			attivit� ritenute illecite; � L'obbligo di accettare che il
+			proprio account possa essere temporaneamente o definitivamente sospeso
+			dal servizio o che gli sia negato l'accesso ai servizi. � L'obbligo
+			di accettare il proprio account possa cancellato se non confermato o
+			inattivo da molto tempo; � La donazione della merce a discrezione
+			del donatore tra gli utenti richiedenti. � Il divieto di pubblicare
+			disponibilit� di donazioni false; � Il divieto di prenotare la
+			donazione senza esserene interessati � L�obbligo a ritirare la
+			merce nei tempi e luoghi definiti dal donatore. � La disponibilit�
+			ad utilizzare feedback per le donazioni effettuate o ricevute; � Il
+			divieto di utilizzo dell�applicazione a scopo pubblicitario � Il
+			divieto di diffondere qualsiasi altra tecnologia volta a danneggiare
+			l'applicazione o i suoi utenti � Copiare, modificare o diffondere il
+			contenuto dell'applicazione e i relativi diritti di propriet�
+			intellettuale. Responsabilit� Con la registrazione, l'utente ci da
+			qualsiasi responsabilit� associata a contenuto, attivit� o
+			inattivit� o relativa alla qualit� della merce destinata alla
+			donazione. Lo scopo dell�applicazione � quello di fornire un
+			servizio in cui i donatori possono segnalare la disponibilit� alla
+			donazione di prodotti alimentari eccedenti e gli utenti segnalare il
+			proprio interesse al ritiro. Non abbiamo alcun ruolo nella relazione
+			che intercorre tra donatore e utente, potendo comunque l'utente, per
+			impedimento o anche una volta vista la merce, decidere di non
+			ritirarla e il donatore, per le stesse motivazioni, di non accettare
+			la richiesta. Decliniamo ogni responsabilit� in merito alla
+			qualit�, sicurezza, liceit� dei prodotti oggetto di donazione.
+			Accettando il presente Accordo, gli utenti si impegnano ad esonerarci
+			da qualsiasi richiesta di risarcimento di danni o rivendicazione da
+			terzi, che possa derivare dalla violazione delle condizioni contenute
+			in questo Accordo, degli obblighi di legge o dei diritti di terzi.
+			Privacy Policy Accettando le Regole sulla Privacy e le condizioni per
+			gli utenti al momento della registrazione, l�utente acconsente
+			espressamente all'utilizzo, all'archiviazione dei sui dati personali e
+			alla divulgazione dei dati necessari alla messa in essere della
+			donazione. Con la registrazione, l�utente acconsente alla raccolta e
+			all'utilizzo dei dati personali per le finalit� dell'applicazione.
+			L'utente � consapevole ed acconsente che una parte di questi dati
+			possa essere visibile a tutti gli altri utenti registrati
+			dell'applicazione. Ci impegnamo a non vendere, n� cedere
+			gratuitamente o dietro compenso i dati personali degli utenti a
+			soggetti terzi senza il suo esplicito consenso. I dati possono essere
+			utilizzati internamente per finalit� di ricerca e personalizzare e
+			migliorare l'applicazione e il raggiungimento delle finalit� per le
+			quali � stata realizzata. Condivisione dei dati e protezione
+			dell'account Gli Utenti accettano di utilizzare le informazioni degli
+			utenti esclusivamente per i seguenti scopi: � per scopi connessi
+			alla donazione; � per altri scopi espressamente indicati da un
+			utente. La combinazione di user name e password � l'unico modo di
+			accedere al proprio account ed ai servizi ad esso connessi. Fornendo
+			le proprie credenziali di accesso a terzi, l�utente � responsabile
+			per tutti gli atti compiuti con l'utilizzo del proprio account.
+			Invitiamo l�utente ad aggiornare i propri dati personali o i dati
+			inerenti alle donazioni tempestivamente in caso di variazioni o
+			inesattezze. L�utente ha facolt� in ogni momento di richiedere la
+			chiusura del proprio account e la cancellazione dal servizio. Ci
+			riserviamo il diritto di conserva i dati personali associati ad
+			account chiusi nel rispetto delle normative vigenti, per prevenire
+			frodi, risolvere controversie e problemi ed offrire assistenza in caso
+			di indagini.</p>
+	</div>
 
-
-	<ons-template id="termini.html">
-		<ons-scroller style="height: 200px; width: 100%">
-			<ons-dialog style="height: 75%;" var="dialog" cancelable>
-
-				<div><p>Termini d'uso
-					Condizioni Generali
-					Utilizzando l'applicazione "JoyFood the Joy of Giving" l'utente registrato
-					accetta i seguenti termini e condizioni.
-					L'applicazione permette gratuitamente ad utenti registrati titolari di
-					un'attività commerciale, di cedere gratuitamente derrate alimentari ad altri
-					utenti registrati, specificando e descrivendo genere di alimento, quantit� e
-					data di scadenza. Ciascun utente pu� gratuitamente prenotare il ritiro della
-					merce. Trattandosi di donazione gratuita di alimenti, essa non costituisce in
-					alcun modo un'attivit� economica ed in nessun caso pu� configurarsi un contratto
-					tra utente donatore e richiedente. L'utente richiedente, presa visione dei
-					prodotti, potr� comunque decidere di non ritirarli. Per gli stessi motivi, non
-					potr� ravvisarsi alcuna responsabilit� n� commerciale n� contrattuale a nostro
-					carico.
-					L'utilizzo dell'applicazione " JoyFood the Joy of Giving non trasferisce alcuna
-					proprietà della merce. L'utilizzo dell'applicazione è totalmente gratuito.
-					Non è garantito l'accesso continuo e ininterrotto ai servizi, che possono essere
-					condizionato da fattori esterni.
-					Si rifiuta qualunque responsabilità per eventuali perdite economiche, per danni
-					di immagine, per danni diretti, indiretti o conseguenti derivanti dall'utilizzo
-					dell'applicazione.
-
-					L'utilizzo dell'applicazione "JoyFood the Joy of Giving ", è vincolato
-					all'accettazione di tutti i termini e le condizioni presenti in questo Accordo
-					per gli utenti e nelle Regole sulla Privacy.
-					L'utilizzo dell'applicazione comporta:
-					Il divieto per l�utente donatore di richiedere qualunque tipo di pagamento
-					Il divieto per l�utente richiedente a procedere a qualsiasi pagamento
-					L'obbligo di segnalare sospette attivit� illecite sull'applicazione;
-					L'obbligo di accettare la rimozione delle eventuali informazioni relative ad
-					attivit� ritenute illecite;
-					� L'obbligo di accettare che il proprio account possa essere temporaneamente o
-					definitivamente sospeso dal servizio o che gli sia negato l'accesso ai servizi.
-					� L'obbligo di accettare il proprio account possa cancellato se non confermato o
-					inattivo da molto tempo;
-					� La donazione della merce a discrezione del donatore tra gli utenti
-					richiedenti.
-					� Il divieto di pubblicare disponibilit� di donazioni false;
-					� Il divieto di prenotare la donazione senza esserene interessati
-					� L�obbligo a ritirare la merce nei tempi e luoghi definiti dal donatore.
-					� La disponibilit� ad utilizzare feedback per le donazioni effettuate o
-					ricevute;
-					� Il divieto di utilizzo dell�applicazione a scopo pubblicitario
-					� Il divieto di diffondere qualsiasi altra tecnologia volta a danneggiare
-					l'applicazione o i suoi utenti
-					� Copiare, modificare o diffondere il contenuto dell'applicazione e i relativi
-					diritti di propriet� intellettuale.
-					Responsabilit�
-					Con la registrazione, l'utente ci da qualsiasi responsabilit� associata a
-					contenuto, attivit� o inattivit� o relativa alla qualit� della merce destinata
-					alla donazione. Lo scopo dell�applicazione � quello di fornire un servizio in
-					cui i donatori possono segnalare la disponibilit� alla donazione di prodotti
-					alimentari eccedenti e gli utenti segnalare il proprio interesse al ritiro. Non
-					abbiamo alcun ruolo nella relazione che intercorre tra donatore e utente,
-					potendo comunque l'utente, per impedimento o anche una volta vista la merce,
-					decidere di non ritirarla e il donatore, per le stesse motivazioni, di non
-					accettare la richiesta. Decliniamo ogni responsabilit� in merito alla qualit�,
-					sicurezza, liceit� dei prodotti oggetto di donazione.
-					Accettando il presente Accordo, gli utenti si impegnano ad esonerarci da
-					qualsiasi richiesta di risarcimento di danni o rivendicazione da terzi, che
-					possa derivare dalla violazione delle condizioni contenute in questo Accordo,
-					degli obblighi di legge o dei diritti di terzi.
-					Privacy Policy
-					Accettando le Regole sulla Privacy e le condizioni per gli utenti al momento
-					della registrazione, l�utente acconsente espressamente all'utilizzo,
-					all'archiviazione dei sui dati personali e alla divulgazione dei dati necessari
-					alla messa in essere della donazione.
-					Con la registrazione, l�utente acconsente alla raccolta e all'utilizzo dei dati
-					personali per le finalit� dell'applicazione.
-					L'utente � consapevole ed acconsente che una parte di questi dati possa essere
-					visibile a tutti gli altri utenti registrati dell'applicazione.
-					Ci impegnamo a non vendere, n� cedere gratuitamente o dietro compenso i dati
-					personali degli utenti a soggetti terzi senza il suo esplicito consenso. I dati
-					possono essere utilizzati internamente per finalit� di ricerca e personalizzare
-					e migliorare l'applicazione e il raggiungimento delle finalit� per le quali �
-					stata realizzata.
-					Condivisione dei dati e protezione dell'account
-					Gli Utenti accettano di utilizzare le informazioni degli utenti esclusivamente
-					per i seguenti scopi:
-					� per scopi connessi alla donazione;
-					� per altri scopi espressamente indicati da un utente.
-					La combinazione di user name e password � l'unico modo di accedere al proprio
-					account ed ai servizi ad esso connessi. Fornendo le proprie credenziali di
-					accesso a terzi, l�utente � responsabile per tutti gli atti compiuti con
-					l'utilizzo del proprio account.
-					Invitiamo l�utente ad aggiornare i propri dati personali o i dati inerenti alle
-					donazioni tempestivamente in caso di variazioni o inesattezze.
-					L�utente ha facolt� in ogni momento di richiedere la chiusura del proprio
-					account e la cancellazione dal servizio. Ci riserviamo il diritto di conserva i
-					dati personali associati ad account chiusi nel rispetto delle normative vigenti,
-					per prevenire frodi, risolvere controversie e problemi ed offrire assistenza in
-					caso di indagini.
-				</p></div>
-
-			</ons-dialog>
-		</ons-scroller>
-
-	</ons-template>
-
-
-</ons-page>
+</ons-dialog> </ons-scroller> </ons-template> </ons-page>

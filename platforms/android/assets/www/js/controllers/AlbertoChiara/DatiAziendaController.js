@@ -1,108 +1,172 @@
-myApp.controller('datiAziendaController', function($scope,$http) {
+myApp.controller('datiAziendaController', function($scope,$http, remoteAppService, remoteApiService) {
 
-	
-	console.log("datiAziendaController");
-	//QUERY SEDI http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1
-	//QUERY AZIENDA "https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123"
-	 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/detailCompany?id=123")
-//	    
-//		.then(function(response) {
-//			//var aaa = response.data[0].denominazioneSede+" "+response.data[1].denominazioneSede;
-//			$scope.denominazione = response.data.denominazione;
-//			$scope.cf = response.data.cf;
-//			$scope.sedeLegale = response.data.sedeLegale;
-//			$scope.categoria = response.data.categoria;
-//
-//		 
-//		 });
-	
-	
+	ons.ready(function() {
 
-	$scope.inputDisabilitato = true;
-	$scope.salvaDisabilitato = true;
-	$scope.modificaDisabilitato = false;
-	
-	$scope.showNat1Livello = true;
-	$scope.showNat2Livello = true;
 
-	
-    $scope.clickModifica=function(){
-//        $("#Denominazione").prop('readonly', false);
-//        $("#CF").prop('readonly', false);
-//        $("#SedeLegale").prop('readonly', false);
-//        $("#Categoria").prop('readonly', false);
-//        $("#modificabutton").prop('disabled', true);
-//        $("#salvabutton").prop('disabled', false);
-    	$scope.inputDisabilitato = !$scope.inputDisabilitato;
-    	$scope.salvaDisabilitato = !$scope.salvaDisabilitato;
-    	$scope.modificaDisabilitato = !$scope.modificaDisabilitato;
-//	 ons.notification.alert({
-//     message: 'ciao'
-//     });
-//    	
-    };
-    
-    $scope.clickSalva=function(){
-    	$scope.inputDisabilitato = true;
-    	$scope.salvaDisabilitato = true;
+		console.log("inserimentoDatiAziendaController");
+
+		$scope.inputDisabilitato = true;
+		$scope.salvaDisabilitato = true;
     	$scope.modificaDisabilitato = false;
-   	 ons.notification.alert({
-   	  message: 'Dati salvati con successo',
-   		  title: 'JoyFood'
-   	  });
-    };
-    
 
-    $scope.clickNat1Liv = function(){
-    	$scope.showNat1Livello = !$scope.showNat1Livello;
+		$scope.nat1livRiempito = true;
+		$scope.nat2livRiempito = true;
 
-    };
-    
-    $scope.clickNat2Liv = function(){
-    	$scope.showNat2Livello = !$scope.showNat2Livello;
+		$scope.shownGroup1 = true;
+		$scope.shownGroup2 = true;
+		
+		$scope.denominazione = 'DenominazioneProva';
+		$scope.CF = 'VVVBBB66T66T555T';
+		$scope.sedeLegale = 'Sede Legale prova';
+		$scope.stato = 'STATOPROVA';
+	    $scope.nat1LivFromDB = 'Nat1LivA';
+	    $scope.nat2LivFromDB = 'Nat2LivA2';
+	    $scope.nat1LivSelezionata = $scope.nat1LivFromDB;
+	    $scope.nat2LivSelezionata = $scope.nat2LivFromDB;
 
-    };
+		
+//		remoteApiService.getAzienda().then(function(response) {
+//			
+//			$scope.a = response;
+//			console.log('Azienda:');
+//			console.log($scope.a);
+//			
+//			
+//			
+//				$scope.denominazione = response.data.denominazione;
+//				$scope.cf = response.data.cf;
+//				$scope.sedeLegale = response.data.sedeLegale;
+//				$scope.stato = response.data.stato;
+//		
+//	});
+
+		remoteAppService.getNatGiud1lvl().then(function(response) {
+
+
+			$scope.n1 = response;
+			console.log('Nature 1 Livello:');
+			console.log($scope.n1);
+
+			$scope.nat1liv= [];
+			angular.forEach($scope.n1,function(value){
+				$scope.nat1liv.push(value.descrizione);
+			});
+		});
+
+		remoteAppService.getNatGiud2lvl().then(function(response) {
+
+			$scope.n2 = response;
+			console.log('Nature 2 Livello:');
+			console.log($scope.n2);
+
+			$scope.nat2liv= [];
+			angular.forEach($scope.n2,function(value){
+				var nuova_nat_2_liv = {};
+				nuova_nat_2_liv['descnat1liv']=value.natGiud1lvl.descrizione;
+				nuova_nat_2_liv['descrizione']=value.descrizione;
+				$scope.nat2liv.push(nuova_nat_2_liv);
+
+			});
+
+			$scope.nat2livVisualizzate = [];
+			angular.forEach($scope.nat2liv,function(value, key){
+
+				if(value.descnat1liv==='Nat1LivA')
+					$scope.nat2livVisualizzate.push(value.descrizione);
+			});
+
+		});
+
+
+
+
+
+		$scope.toggleGroup1 = function(group1) {
+			if ($scope.isGroupShown1(group1)) {
+				$scope.shownGroup1 = null;
+			} else {
+				$scope.shownGroup1 = group1;
+			}
+		};
+
+		$scope.toggleGroup2 = function(group2) {
+		
+				if ($scope.isGroupShown2(group2)) {
+					$scope.shownGroup2 = null;
+				} else {
+					$scope.shownGroup2 = group2;
+				}
 	
+		};
 
-    $scope.accordionPrimoLivello = ['Tipo azienda','Natura giuridica I livello','Natura giuridica II livello'];
 
-//    $scope.accordionSecondoLivello = [[tipi_azienda],['Natura 1','Natura 2','Natura 3'],['x.1','x.2','x.3']];
-    $scope.accordionSecondoLivello = [['Categoria 1','Categoria 2','Categoria 3'],['Natura 1','Natura 2','Natura 3'],['x.1','x.2','x.3']];
-    
-    
-  $scope.groups = [];
-  
-for (var i = 0; i < $scope.accordionPrimoLivello.length; i++) {
-$scope.groups[i] = {
-name: $scope.accordionPrimoLivello[i],
-items: []
-};
-for (var j = 0; j < $scope.accordionSecondoLivello[i].length; j++) {
-$scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
+		$scope.isGroupShown1 = function(group1) {
+			return $scope.shownGroup1 === group1;
+		};
 
-}
-    
-    $scope.toggleGroup = function(group) {
-    	if ($scope.isGroupShown(group)) {
-    	$scope.shownGroup = null;
-    	} else {
-    	$scope.shownGroup = group;
-    	}
-    	};
-    	
-    $scope.toggleoptions = function(group) {
-    	if ($scope.isGroupShown(group)) {
-    	$scope.shownGroup = null;
-    	} else {
-    	$scope.shownGroup = group;
-    	}
-    	};
+		$scope.isGroupShown2 = function(group2) {
+			return $scope.shownGroup2 === group2;
+		};
 
-    	$scope.isGroupShown = function(group) {
-    	return $scope.shownGroup === group;
-    	};
- 
- 
-}
+
+
+
+
+		$scope.click1Livello=function(descrizione){
+
+			
+			$scope.nat1livRiempito = true;
+			$scope.nat2livRiempito = false;
+			$scope.nat1LivSelezionata = descrizione;
+
+			$scope.nat2livVisualizzate = [];
+			angular.forEach($scope.nat2liv,function(value, key){
+
+				if(descrizione==value.descnat1liv)
+					$scope.nat2livVisualizzate.push(value.descrizione);
+			});
+		    $scope.nat2LivFromDB = false;
+
+
+		};
+
+
+		$scope.click2Livello=function(descrizione){
+			$scope.nat2LivSelezionata = descrizione;
+			$scope.nat2livRiempito = true;
+		}
+
+
+		
+	    $scope.clickModifica=function(){
+	    	$scope.inputDisabilitato = !$scope.inputDisabilitato;
+	    	$scope.salvaDisabilitato = !$scope.salvaDisabilitato;
+	    	$scope.modificaDisabilitato = !$scope.modificaDisabilitato;
+	
+	    };
+	    
+	    $scope.clickSalva=function(){
+	    	$scope.inputDisabilitato = true;
+	    	$scope.salvaDisabilitato = true;
+	    	$scope.modificaDisabilitato = false;
+	    	
+	    	console.log("denominazione: "+$scope.denominazione);
+	    	console.log("CF: "+$scope.CF);
+	    	console.log("sedeLegale: "+$scope.sedeLegale);
+	    	console.log("Natura di 1 livello: "+$scope.nat1LivSelezionata);
+	    	console.log("Natura di 2 livello: "+$scope.nat2LivSelezionata);
+	    	
+	   	 ons.notification.alert({
+	   	  message: 'Dati salvati con successo-Controllare in console i dati che verranno salvati',
+	   		  title: 'JoyFood'
+	   	  });
+	    };
+	    
+	  
+
+	});	 
 });
+
+
+
 
