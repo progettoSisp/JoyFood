@@ -87,7 +87,12 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		
 		
 		
-		
+		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/listAllCarrelli")
+         .then(function(response) {
+            console.log(response.data);
+         },function(response) {
+        	 console.log(response);
+         });
 	
 		
 //	    for (i=0; i<$scope.valori.length; i++){
@@ -103,10 +108,10 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	   //$scope.formData = JSON.parse($("form.ricerca-form").serializeArray());
 	
 	
-		remoteApiService.ricercaDonazione($scope.valori).then(function (risultato) {
+	/*	remoteApiService.ricercaDonazione($scope.valori).then(function (risultato) {
 			
 			console.log(risultato);
-		});
+		});*/
 
 	}
 });

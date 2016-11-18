@@ -1,5 +1,17 @@
 
 <style>
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
 #sede {
 	width: 100%;
 	background-color: #1E90FF;
@@ -32,14 +44,26 @@ display:default;
 
 }
 </style>
-<ons-page ng-controller="NuovaDonazioneController">
-<div class="navigation-bar navigation-bar--material">
-
-	<div class="navigation-bar__center navigation-bar--material__center">
-		New Donation</div>
-
+<ons-page ng-controller="donazioneController">
+<ons-toolbar  style="height: 56px;" >
+ <div   class="navigation-bar navigation-bar--material" style="width:100%;">
+  <div  class="navigation-bar__left navigation-bar--material__left">
+    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+	<ons-back-button></ons-back-button>
+    </span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--material__center">
+    Nuova donazione
+  </div>
 </div>
+</ons-toolbar>
 <div class="nuovaDon">
+<div class="name">
+                {{sede.azienda.denominazione}} - {{sede.denominazioneSede}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i>  {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}} 
+              </div>           
  <input ng-model="newproduct.title" id="titolo" type="text" class="text-input--underbar"
 		placeholder="Title" style="text-align: left;" value=""> <br>
 

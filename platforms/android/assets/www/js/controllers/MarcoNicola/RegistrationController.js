@@ -101,11 +101,11 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 			          "method": "GET",
 			          "headers": {
 			            "content-type": "application/x-www-form-urlencoded",
-			          },
-			          //"params": "user=" + user1.username + ", mail=" + user2.email1
-			          };
+			          	},
+			         };
 			        $http(settings)
 			            .then(function(response) {
+			            	 console.log("NO ERR");
 			            	 console.log(response);
 							 errore=false;
 							 $scope.user_mail=false;
@@ -147,7 +147,6 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 								 console.log(settings);
 								 
 								 console.log("C");
-								 //var str='user=' + user1.username + ", mail=" + user2.email1;
 								 $.ajax(settings).done(function (response) {
 								 		console.log("FF");
 								 		myNavigator.pushPage("html/MarcoNicola/conferma.html")
@@ -155,9 +154,11 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 							 }
 			                }
 			           ,function error(response) {
-			            console.log(response);
-			            errore=true;
-			            $scope.user_mail=true;
+			        	   console.log("ERR");
+			        	   console.log(response);
+			        	   errore=true;
+			        	   $scope.user_mail=true;
+			        	   $scope.inviato2 = true;
 			            });	
 		 
 			 

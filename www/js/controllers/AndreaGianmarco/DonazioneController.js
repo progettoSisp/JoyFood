@@ -2,21 +2,30 @@
  * Created by Aerdna on 17-Sep-16.
  */
 
-myApp.controller('donazioneController', function($scope,$http) {
-    $scope.signUp= function(){
-        alert("ok");
-        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/login?user="+$scope.field1+"&password="+$scope.field2)
+myApp.controller('donazioneController', function(donazioniService,$scope,$http) {
+		$scope.sedi;
+		$scope.sede=donazioniService.getSede();
+		console.log($scope.sede);
+		
+		$scope.init = function () {
+			console.log("INIT");
+			$scope.sede=donazioniService.getSede();
+			console.log($scope.sede);
+		}
+		
+		$scope.init();
+		
+        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
             .then(function(response) {
-                $scope.myData = response.data.result;
-                if($scope.myData){
-                    myNavigator.resetToPage('slidingmenu.html')
-                    console.log("LOGIN "+response.data.result);
-                }else{
-                    console.log("LOGIN "+response.data.error);
-                }
-
-
+            	$scope.sedi=response.data;
             });
-    }
+        
+        $scope.selezionaSede= function(sede){
+        	console.log("CLICK");
+        	console.log(sede);
+        	donazioniService.setSede(sede);
+        	console.log(donazioniService.getSede());
+        	myNavigator.pushPage('html/AndreaGianmarco/nuova_donazione.html');
+        }
 
 });
