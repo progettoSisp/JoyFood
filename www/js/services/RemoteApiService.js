@@ -156,7 +156,7 @@ this.updateSede= function(sede){
       var deferred = $q.defer();
        var str=this.toString(sede);
               var settings = {
-                "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/insertSede",
+                "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/updateSede",
                 "method": "POST",
                 "headers": {
                   "content-type": "application/x-www-form-urlencoded",
