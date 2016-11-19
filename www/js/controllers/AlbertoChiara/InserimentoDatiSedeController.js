@@ -1,6 +1,6 @@
 myApp.controller('inserimentoDatiSedeController', function($scope,$http,remoteAppService, remoteApiService) {
 
-	ons.ready(function() {
+	ons.ready(function(){
 		console.log("inserimentoDatiSedeController");
 		//QUERY SEDI http://joyfoodamministratore-sisp.rhcloud.com/listSedeByAzienda?id=1
 		//QUERY AZIENDA "https://joyfoodamministratore-sisp.rhcloud.com/detailCompany?id=123"
