@@ -19,12 +19,10 @@
 <div class="prodotti">
 
 	<ons-list id="listaProdotti">
-	<ons-list-item modifier="chevron" class="list-item-container"
-				   ng-repeat="prodotto in prodotti" ng-click="changeView(prodotto);">
+	<ons-list-item modifier="chevron" class="list-item-container" ng-repeat="prodotto in prodotti" ng-click="changeView(prodotto);">
 	<div class="list-item-left">
 		<img width="40" height="40"
 			ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
-		<!-- <img src="images/icona_sede.jpg" class="avatar"> -->
 	</div>
 	<div class="list-item-right">
 		<div class="list-item-content">

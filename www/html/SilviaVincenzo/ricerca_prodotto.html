@@ -86,6 +86,14 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 }
 </style>
 <ons-page ng-controller="ricercaProdottoController">
+<div style="width:100%;height:100%;z-index:100;" ng-show="dialog">
+<div class="dialog-mask dialog-mask--material"></div>
+<div class="dialog dialog--material">
+  <div class="dialog dialog-container--material">
+    <p style="margin-left:24px;margin-right:24px">The quick brown fox jumps over the lazy dog.</p>
+  </div>
+</div>
+</div>
  <ons-toolbar style="height: 56px;">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
@@ -128,19 +136,18 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 <div class="prodotti">
 		<ons-list style="width=100%;" id="listaProdotti">
 		  <ons-list-header>Prodotti</ons-list-header>
-	<ons-list-item class="list-item-container"
-				   ng-repeat="prodotto in prodotti" >
-	<div style="width="40" >
+	<ons-list-item style="height:100px;" ng-repeat="prodotto in prodotti" >
+	<div style="width="10%" ng-click="changeView(prodotto)" >
 		<img width="40" height="40"	ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
 	</div>
-	<div>
+	<div style="width:70%" ng-click="changeView(prodotto)">
 		<div style="padding:5px;">
 			<div class="nomeprodotto"><strong>{{prodotto.nome}}</strong></div>
 			<span class="descrizioneprodotto">{{prodotto.descrizione}}</span>
 		</div>
 	</div>
-	<div style="float:right;">
-	<ons-icon icon="fa-cart-plus" size="40px"></ons-icon>
+	<div style="width="10%; float:right;">
+		<ons-icon ng-click="aggiungiProdotto(prodotto)" icon="fa-cart-plus" size="40px" class="ons-icon fa-cart-plus fa" _compiled="" style="font-size: 40px;position: absolute;right: 8px;top: 30px;"></ons-icon>
 	</div>
 	</ons-list-item> </ons-list>
 	<br>
