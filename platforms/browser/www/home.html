@@ -1,0 +1,108 @@
+<style>
+    .list-item-container {
+    line-height: 1;
+    padding: 15px 0px 15px 15px;
+    }
+
+    .thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    }
+
+    .name {
+    font-weight: 500;
+    line-height: 16px;
+    font-size: 15px;
+    margin-bottom: 6px;
+    }
+
+    .location {
+    font-size: 14px;
+    opacity: 0.4;
+    margin-bottom: 6px;
+    }
+
+    .desc {
+    line-height: 1.2;
+    font-size: 13px;
+    }
+    
+.reply-notification {
+  position: absolute;
+  top: 28px;
+  font-size: 10px;
+  font-weight: 600;
+  height: 13px;
+  line-height: 13px;
+  padding: 0 4px;
+  min-width: 13px;
+  margin-left: 18px;
+}
+
+.tab-icon {
+  font-size: 28px;
+  vertical-align: -4px;
+}
+</style>
+<ons-page ng-controller="homeController">
+
+  <div class="navigation-bar navigation-bar--material">
+  <div class="navigation-bar__left navigation-bar--material__left">
+    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+      <i class="zmdi zmdi-menu"></i>
+    </span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--material__center">
+    Main 
+  </div>
+  <!-- 
+  <div class="navigation-bar__right navigation-bar--material__right">
+    <span class="toolbar-button toolbar-button--material">
+      <i class="zmdi zmdi-search"></i>
+    </span>
+  </div>
+   -->
+</div>
+    <div id="map_canvas" style="height: 85%; width: 100%; border: 1px solid gray"></div>
+    <div  class="tab-bar ons-tab-bar__footer">
+      <ons-tab page="timeline.html" active="true" class="tab-bar__item active"><input type="radio" style="display: none">
+      <button class="tab-bar__button">
+        <ons-icon icon="ion-home" class="tab-icon ons-icon ion-home ons-icon--ion"></ons-icon>
+      </button></ons-tab>
+      <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
+      <button class="tab-bar__button">
+        <div class="notification reply-notification" ons-tab-inactive="">4</div>
+        <ons-icon icon="ion-at" class="tab-icon ons-icon ion-at ons-icon--ion"></ons-icon>
+      </button></ons-tab>
+      <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
+      <button class="tab-bar__button">
+        <ons-icon icon="ion-heart" class="tab-icon ons-icon ion-heart ons-icon--ion"></ons-icon>
+      </button></ons-tab>
+      <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
+      <button class="tab-bar__button">
+        <ons-icon icon="ion-person" class="tab-icon ons-icon ion-person ons-icon--ion"></ons-icon>
+      </button></ons-tab>
+    </div>
+    <!-- 
+    <ons-list>
+        <ons-list-item ng-repeat="sede in sedi" modifier="chevron" class="list-item-container">
+
+            <ons-row>
+                <ons-col>
+                    <div class="name">
+                        {{sede.denominazioneSede}}
+                    </div>
+                    <div class="location">
+                        <i class="fa fa-map-marker"></i> {{sede.indirizzoSede}}, {{sede.comuneSede}}
+                        {{sede.provinciaSede}}
+                    </div>
+                </ons-col>
+                <ons-col width="40px"></ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+     -->
+    
+  </ons-page>

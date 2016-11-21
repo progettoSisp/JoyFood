@@ -1,0 +1,73 @@
+<ons-page ng-controller="registrationController">
+ <div class="navigation-bar navigation-bar--material">
+  <div class="navigation-bar__left navigation-bar--material__left">
+    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+	<ons-back-button>Back</ons-back-button>
+    </span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--material__center">
+    Registration
+  </div>
+  <div class="navigation-bar__right navigation-bar--material__right">
+  </div>
+</div>
+<form id="myForm">
+	<div class="formarea">
+		<div class="form-row">
+			<!-- <input type="text" class="text-input--underbar width-full" placeholder="Username" value="" required> -->
+			<input id="username" ng-model="user.username" name="username" type="text"
+				   class="text-input--underbar width-full "
+				   placeholder="&#xf007; Username"
+				   style="font-family: Arial, FontAwesome" required>
+
+			<span style="font-size:10px; color:red;" ng-show="!user.username && inviato">Required field</span>
+
+
+		</div>
+		<div class="form-row">
+			<input id="password1" ng-model="user.password1" name="password" type="password"
+				   class="text-input--underbar width-full"
+				   placeholder="&#xf084; Password" value=""
+				   style="font-family: Arial, FontAwesome" minlength="8"
+				   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+			<span style="font-size:10px; color:red;" ng-show="!user.password1 && inviato">At least 8 characters, at least one number, at least one capital letter</span>
+
+		</div>
+		<div class="form-row">
+			<input id="password2" type="password" ng-model="user.password2"
+				   class="text-input--underbar width-full "
+				   placeholder="&#xf084; Retype Password" value=""
+				   style="font-family: Arial, FontAwesome" minlength="8">
+			<span style="font-size:10px; color:red;"
+				  ng-show="(user.password1!=user.password2) && inviato">Password and confirm password must match</span>
+
+
+		</div>
+		<div class="lucent">
+			<p class="note">At least 8 characters, at least one number, at least one capital letter</p>
+		</div>
+		<div class="form-row">
+			<input type="text" ng-model="user.nome" name="nome"
+				class="text-input--underbar width-full" placeholder="&#xf007; Name"
+				value="" style="font-family: Arial, FontAwesome" >
+			<span style="font-size:10px; color:red;" ng-show="!user.nome && inviato">Required field</span>
+
+
+		</div>
+		<div class="form-row">
+			<input type="text" name="cognome" ng-model="user.cognome"
+				class="text-input--underbar width-full"
+				placeholder="&#xf007; Surname" value="" 
+				style="font-family: Arial, FontAwesome">
+			<span style="font-size:10px; color:red;" ng-show="!user.cognome && inviato">Required field</span>
+
+		</div>
+		<div class="form-row">
+		<br />
+		</div>
+		<button class="button--large--cta"  ng-click="next(user)">Next</button>
+		<br />
+		<button ng-click="reset()" class="button--large--cta reset">Reset</button>
+		</div>
+</form>
+</ons-page>

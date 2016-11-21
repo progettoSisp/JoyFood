@@ -21,6 +21,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.example.helloworld"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.example.helloworld"
         }
     },
     "dependent_plugins": {

@@ -1,0 +1,47 @@
+<style>
+
+.principal {
+	text-align: center;
+	width: 80%;
+	margin: 60px auto 0;
+}
+
+#sede {
+	width: 100%;
+	background-color: #1E90FF;
+	border-radius: 10px 10px 10px 10px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+
+</style>
+
+
+
+<ons-page ng-controller="modificaDonazioneController">
+<div class="navigation-bar navigation-bar--material">
+
+	<div class="navigation-bar__center navigation-bar--material__center">
+		Inserire titolo</div>
+
+</div>
+
+<img src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood"
+	style="display: block; margin: 0 auto; width: 80%;">
+<div class="principal">
+	<input type="text" class="text-input--underbar" placeholder="Donazione"
+		style="text-align: left;"> <br> <br> <img id="img"
+		src="images/carrello.png"
+		style="float: center; width: 180px; height: 163px;"> <br> <br>
+	<input type="text" class="text-input--underbar" placeholder="Tizio" style="text-align: left;"> <br> <br> 
+    <input type="text" onfocus="(this.type='time')" class="text-input--underbar width-full" id='inizioData' placeholder="Ora" value="" required style="font-family:Arial, FontAwesome"/> <br>
+	<br>
+	<ons-button type="submit" id="sede" class="Salva">Salva</ons-button>
+	<br>
+	<ons-button type="submit" id="sede" class="Blocca">Blocca</ons-button>
+	<br> <br>
+</div>
+</ons-page>
+
+

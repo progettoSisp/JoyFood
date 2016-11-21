@@ -77,7 +77,24 @@ myApp.controller('ricercaProdottoController', function($scope,$http,prodottoServ
 	}
 	
 	$scope.aggiungiProdotto=function(prodotto){
-		$scope.dialog=true;
+		navigator.notification.confirm(
+			    "Could you take a minute to rate my app?", // the message
+			    function( index ) {
+			        switch ( index ) {
+			            case 1:
+			                // The first button was pressed
+			                break;
+			            case 2:
+			                // The second button was pressed
+			                break;
+			            case 3:
+			                // The third button was pressed
+			                break;
+			        }
+			    },
+			    "Desperate for reviews",                   // a title
+			    [ "Sure", "Remind me later", "NO! STOP!" ] // text of the buttons
+			);
 	}
 	
 
