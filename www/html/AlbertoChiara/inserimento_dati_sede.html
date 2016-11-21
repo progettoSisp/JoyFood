@@ -17,21 +17,33 @@
                 <div class="formarea">
                     <form name="formsede">
                     <div class="form-row">
-                      <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" ng-model="denominazione" placeholder="Denominazione" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                      <input id="denominazione" name="denominazione" type="text" class="text-input--underbar" ng-model="nuovaSede.denominazioneSede" placeholder="Denominazione" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   <div class="form-row">
-                      <input id="indirizzo sede" name="indirizzosede" type="text" class="text-input--underbar" ng-model="nuovaSede.indirizzosede" placeholder="Indirizzo sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                      <input id="indirizzoSede" name="indirizzosede" type="text" class="text-input--underbar" ng-model="nuovaSede.indirizzoSede" placeholder="Indirizzo sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                  </div>
+                  <div class="form-row">
+                      <input id="comuneSede" name="comuneSede" type="text" class="text-input--underbar" ng-model="nuovaSede.comuneSede" placeholder="Comune sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                  </div>
+                  <div class="form-row">
+                      <input id="provinciaSede" name="provinciaSede" type="text" class="text-input--underbar" ng-model="nuovaSede.provinciaSede" placeholder="Provincia sede" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
+                  </div>
+                  <div class="form-row">
+                      <input id="capSede" name="capSede" type="text" class="text-input--underbar" ng-model="nuovaSede.capSede" placeholder="Cap sede" value="" required style=" font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   
+<!--                   <div class="form-row"> -->
+<!--                       <input id="nomereferente" name="nomereferente" type="text" class="text-input--underbar" ng-model="nomereferente" placeholder="Nome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required> -->
+<!--                   </div> -->
+<!--                   <div class="form-row"> -->
+<!--                       <input id="cognomereferente" name="cognomereferente" type="text" class="text-input--underbar" ng-model="cognomereferente" placeholder="Cognome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required> -->
+<!--                   </div> -->
+<!--                   <div class="form-row"> -->
+<!--                       <input id="cellulare" name="cellulare" type="text" class="text-input--underbar" ng-model="cellulare" placeholder="Cellulare" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" ng-pattern="/^[3]{1}[0-9]{9}$/" required> -->
+<!--                    <div ng-show="!formsede.cellulare.$valid && formsede.cellulare.$dirty" style="color:red;font-size: 12px;">Formato del Cell non corretto</div> -->
+<!--                   </div> -->
                   <div class="form-row">
-                      <input id="nomereferente" name="nomereferente" type="text" class="text-input--underbar" ng-model="nomereferente" placeholder="Nome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
-                  </div>
-                  <div class="form-row">
-                      <input id="cognomereferente" name="cognomereferente" type="text" class="text-input--underbar" ng-model="cognomereferente" placeholder="Cognome referente" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
-                  </div>
-                  <div class="form-row">
-                      <input id="cellulare" name="cellulare" type="text" class="text-input--underbar" ng-model="cellulare" placeholder="Cellulare" value="" style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" ng-pattern="/^[3]{1}[0-9]{9}$/" required>
-                   <div ng-show="!formsede.cellulare.$valid && formsede.cellulare.$dirty" style="color:red;font-size: 12px;">Formato del Cell non corretto</div>
+                      <input id="note" name="note" type="text" class="text-input--underbar" ng-model="nuovaSede.note" placeholder="note" value="" required style="font-family:Arial, FontAwesome" ng-disabled="campoDisabilitato" required>
                   </div>
                   
                   <div class="form-row">
