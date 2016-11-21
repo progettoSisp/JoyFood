@@ -1,4 +1,29 @@
-<ons-page>
+<style>
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.list-item-container {
+  font-size: 14px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.list-item-content {
+  margin-left: 50px;
+  margin-right: 30px;
+}
+</style>
+<ons-page ng-controller="donazioneController">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
 		<span class="toolbar-button toolbar-button--material"
@@ -6,7 +31,7 @@
 		</span>
 	</div>
 	<div class="navigation-bar__center navigation-bar--material__center">
-		Seleziona la sede della donazione</div>
+		Sede</div>
 	<div class="navigation-bar__right navigation-bar--material__right">
 		<span class="toolbar-button toolbar-button--material"> <i
 			class="zmdi zmdi-search"></i>
@@ -15,32 +40,18 @@
 </div>
 
 	 <ons-list>
+		
+        <ons-list-header>Seleziona una delle tue sedi</ons-list-header>
 
-        <ons-list-header>Browsers</ons-list-header>
-
-        <ons-list-item modifier="tappable">
-          <div class="list__item__left">
-            <label class="radio-button radio-button--list-item">
-              <input id="browser1" class="radio-button__input" type="radio" name="a">
-              <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
-            </label>
-          </div>
-          <label for="browser1" class="list__item__center">
-            Chrome
-          </label>
-        </ons-list-item>
-           <ons-list-header>Browsers</ons-list-header>
-
-        <ons-list-item modifier="tappable">
-          <div class="list__item__left">
-            <label class="radio-button radio-button--list-item">
-              <input id="browser2" class="radio-button__input" type="radio" name="a">
-              <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
-            </label>
-          </div>
-          <label for="browser2" class="list__item__center">
-            Chrome
-          </label>
+        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-click="selezionaSede(sede)">
+            <div class="list-item-content">
+          	<div class="name">
+                {{sede.azienda.denominazione}} - {{sede.denominazioneSede}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i>  {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}} 
+              </div>           
+           </div>
         </ons-list-item>
 	</ons-list>
 	

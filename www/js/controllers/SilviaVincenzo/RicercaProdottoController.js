@@ -1,7 +1,7 @@
-myApp.controller('ricercaProdottoController', function($scope,$http,localDbService, $timeout,remoteApiService,filtriService) {
+myApp.controller('ricercaProdottoController', function($scope,$http,localDbService,prodottoService, $timeout,remoteApiService,filtriService) {
 	$scope.opzioni="Più Opzioni";
 	$scope.goOpzioni = false;
-
+	$scope.opzioniRicerca=false;
 
 
 	$scope.groups= [{key:"Tipo", values: [{ "name": "Carne","id": "01"},{ "name": "Pesce","id": "02"},{ "name": "Frutta","id": "03"}]},
@@ -55,4 +55,25 @@ myApp.controller('ricercaProdottoController', function($scope,$http,localDbServi
 		});
 
 	}
+	
+	$http.get("http://joyfoodamministratore-sisp.rhcloud.com/public/listAllProdotti")
+
+	.then(function(response) {
+		console.log('prodotti = '+response.data.length);
+		
+		$scope.prodotti = response.data;
+		
+	});
+
+	$scope.changeView=function(prodotto){
+	    prodottoService.saveProdotto(prodotto);
+	    console.log(prodotto.id);
+	    myNavigator.pushPage("html/SilviaVincenzo/dettaglio_prodotto.html");
+	}
+	
+	$scope.ricercaAvanzata=function(){
+		$scope.opzioniRicerca=!$scope.opzioniRicerca;
+	}
 });
+
+

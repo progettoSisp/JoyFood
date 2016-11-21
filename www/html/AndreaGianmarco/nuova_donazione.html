@@ -1,17 +1,231 @@
 
 <style>
+.switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  min-width: 51px;
+  font-size: 17px;
+  padding: 0 20px;
+  border: none;
+  overflow: visible;
+  width: 51px;
+  height: 32px;
+  z-index: 0;
+  text-align: left;
+}
+.switch__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: -1;
+}
+.switch__toggle {
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-box-shadow: inset 0 0 0 2px #e5e5e5;
+  box-shadow: inset 0 0 0 2px #e5e5e5;
+}
+.switch__handle {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: absolute;
+  content: '';
+  -webkit-border-radius: 28px;
+  border-radius: 28px;
+  height: 28px;
+  width: 28px;
+  background-color: #fff;
+  left: 1px;
+  top: 2px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  -o-transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  -webkit-box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0,0,0,0.25);
+  box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0,0,0,0.25);
+}
+.switch--active .switch__handle {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+input:checked + .switch__toggle {
+  -webkit-box-shadow: inset 0 0 0 2px #5198db;
+  box-shadow: inset 0 0 0 2px #5198db;
+  background-color: #5198db;
+}
+input:checked + .switch__toggle .switch__handle {
+  left: 21px;
+  -webkit-box-shadow: 0 3px 2px rgba(0,0,0,0.25);
+  box-shadow: 0 3px 2px rgba(0,0,0,0.25);
+}
+input:disabled + .switch__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.switch__touch {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+}
+.switch.switch--material {
+  width: 36px;
+  height: 24px;
+  padding: 0 10px;
+  min-width: 36px;
+}
+.switch.switch--material .switch__toggle {
+  background-color: #b0afaf;
+  margin-top: 5px;
+  height: 14px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.switch.switch--material .switch__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: -1;
+}
+.switch.switch--material .switch__handle {
+  background-color: #f1f1f1;
+  left: 0px;
+  margin-top: -5px;
+  width: 20px;
+  height: 20px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.4);
+}
+.switch.switch--material input:checked + .switch__toggle {
+  background-color: #77c2bb;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.switch.switch--material input:checked + .switch__toggle .switch__handle {
+  left: 16px;
+  background-color: #009688;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.switch.switch--material input:disabled + .switch__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.switch.switch--material .switch__handle:before {
+  background: transparent;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.12);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  -moz-transition: box-shadow 0.1s linear;
+  -o-transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+}
+.switch.switch--material.switch--active .switch__handle:before {
+  -webkit-box-shadow: 0px 0px 0px 14px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 0px 14px rgba(0,0,0,0.12);
+}
+.switch.switch--material.switch--active input:checked + .switch__toggle .switch__handle:before {
+  -webkit-box-shadow: 0px 0px 0px 14px #009688;
+  box-shadow: 0px 0px 0px 14px #009688;
+}
+.switch.switch--material .switch__touch {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -15px;
+  right: -15px;
+}
+
 .name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 15px;
-  margin-bottom: 6px;
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 15px;
+	margin-bottom: 6px;
 }
 
 .location {
-  font-size: 14px;
-  opacity: 0.4;
-  margin-bottom: 6px;
+	font-size: 14px;
+	opacity: 0.4;
+	margin-bottom: 6px;
 }
+
 #sede {
 	width: 100%;
 	background-color: #1E90FF;
@@ -38,96 +252,60 @@
 	margin-left: 20px;
 }
 
-
-#fileField{
-display:default;
-
+#fileField {
+	display: default;
 }
 </style>
-<ons-page ng-controller="donazioneController">
-<ons-toolbar  style="height: 56px;" >
- <div   class="navigation-bar navigation-bar--material" style="width:100%;">
-  <div  class="navigation-bar__left navigation-bar--material__left">
-    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-	<ons-back-button></ons-back-button>
-    </span>
-  </div>
-  <div class="navigation-bar__center navigation-bar--material__center">
-    Nuova donazione
-  </div>
-</div>
-</ons-toolbar>
+<ons-page ng-controller="donazioneController"> 
+	<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<span class="toolbar-button toolbar-button--material"> 
+					<ons-back-button></ons-back-button>
+				</span>
+			</div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Nuova donazione
+			</div>
+		</div>
+	</ons-toolbar>
 <div class="nuovaDon">
-<div class="name">
-                {{sede.azienda.denominazione}} - {{sede.denominazioneSede}}
-              </div>
-              <div class="location">
-                <i class="fa fa-map-marker"></i>  {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}} 
-              </div>           
- <input ng-model="newproduct.title" id="titolo" type="text" class="text-input--underbar"
-		placeholder="Title" style="text-align: left;" value=""> <br>
-
-<span style="font-size:10px; color:red;" ng-show="!newproduct.title && prodottoinviato">Required field</span>
-		
-		
-		
-	 <textarea ng-model="newproduct.description" rows="5" id="descrizione" class="textarea textarea--transparent"
-		placeholder="Description" style="text-align: left;" value=""></textarea>
-		<!--   
-		<ons-button type="file" ng-click="fileUpload()">Upload a photo</ons-button>
-		-->
-		<input id="fileField" type="file" class="button  button--large" onchange="showImg(this);"/>
-		<br/>
-		
-		
-		        <img ng-model="newproduct.immagine" style="" id="picture" src="" width="60%" height="auto" />
-		        
-		<input ng-model="newproduct.sede2" readonly placeholder="Location" id="fileField" type="text" class="text-input--underbar"/>
-		
-		
-	<br>    <input ng-model="newproduct.datainizio" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Start date availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
-<!-- 	<br>    <input ng-model="newproduct.orainizio" type="text" onfocus="(this.type='time')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf017; &nbsp Start hour availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
-	-->
-	<span style="font-size:10px; color:red;" ng-show="!newproduct.datainizio && prodottoinviato">Required field</span>
-		
-		
-	
-	<br>    <input ng-model="newproduct.datafine" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='fineData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp End date availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
-   
-   	<span style="font-size:10px; color:red;" ng-show="!newproduct.datafine && prodottoinviato">Required field</span>
-		
-		
-   
-   <!-- <br>    <input ng-model="newproduct.orafine" type="text" onfocus="(this.type='time')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf017; &nbsp End hour availability" value="" required style="font-family:Arial, FontAwesome"/>   <br>
-	-->
+	<img align="middle" width="200" height="200" ng-src="images/missing-image.png" ng-click="inserisciImmagine()"> <br>
+	<div class="name">{{sede.azienda.denominazione}} - {{sede.denominazioneSede}}</div>
+	<div class="location">
+		<i class="fa fa-map-marker"></i> {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}}
+	</div>
+	<input ng-model="donazione.titolo" id="titolo" type="text" class="text-input--underbar" placeholder="Title" style="text-align: left;" value=""> 
+	<span style="font-size: 10px; color: red;" ng-show="!newproduct.title && prodottoinviato">Required field</span> <br>
 	<br>
-    <br> 
+	<textarea ng-model="donazione.descrizione" placeholder="Descrizione" class="textarea textarea--transparent" style="width: 100%; height: 50px; margin-top: 4px;">
+	</textarea>
+	<br /> 
+	<input ng-model="donazione.datainizio" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Start date availability"
+		value="" required style="font-family: Arial, FontAwesome" /> 
+	<span style="font-size: 10px; color: red;" ng-show="!newproduct.datainizio && prodottoinviato">Required field</span> 
+	<br> 
+	<br>
+	<input ng-model="donazione.datafine" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='fineData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp End date availability"
+			value="" required style="font-family: Arial, FontAwesome" /> 
+	<span style="font-size: 10px; color: red;" ng-show="!newproduct.datafine && prodottoinviato">Required field</span>
+	<br>
+	<br>
 	<div class="container">
-		<select class="text-input" ng-model="newproduct.sede">
-    <option value="" selected>Select your location</option>
-    <option value="location1">Location 1</option>
-    <option value="location2">Location 2</option>
-    <option value="location3">Location 3</option>
-</select>
-
-<span style="font-size:10px; color:red;" ng-show="!newproduct.sede && prodottoinviato">Required field</span>
-		
-		<br>
-		<br>
-
-		<br> 
-		<ons-input ng-model="newproduct.divisibilita" type="checkbox" id="checkboxVeridicita" name="checkboxVeridicita" ng-model="checkboxVeridicita" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">&nbsp &nbsp The donation is divisible</ons-input>
-		<br>
-		<br>
-		<!-- <ons-button modifier="large" class="search-button" ng-click="">Acquiring an image from album</ons-button> -->
-		<br>
-		<ons-button modifier="large" class="search-button" ng-click="invioprodotto(newproduct)">Insert donation</ons-button>
-<br>
-		<ons-button id="sede" ng-click="myNavigator.pushPage('html/SilviaVincenzo/ricerca_prodotto.html')" class="crea">Search a product</ons-button>
+		<span style="font-size: 10px; color: red;" ng-show="!newproduct.sede && prodottoinviato">Required field</span> 
 	<br>
-	
-	<ons-button ng-click="reset()" class="button--large--cta reset">Reset</ons-button>
-		
-	
+	<label class="switch switch--material">
+  		<input type="checkbox" class="switch__input switch--material__input">
+  		<div class="switch__toggle switch--material__toggle">
+   	 		<div class="switch__handle switch--material__handle">
+    		</div>
+  		</div>
+	</label>
+	<label>&nbsp &nbsp The donation is divisible </label>
+	<br>
+	<br>
+	<ons-button modifier="large" class="search-button" ng-click="creaCarrello()">Inserisci i prodotti</ons-button>
+		<br>
+	<br>
 	</div>
 </ons-page>

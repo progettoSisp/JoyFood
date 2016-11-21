@@ -1,30 +1,111 @@
-<ons-page ng-controller="ricercaProdottoController"> <ons-toolbar>
+<style>
+
+.list-item-container {
+  line-height: 1;
+  font-size: 14px;
+  padding: 15px 0px 15px 15px;
+}
+
+
+
+input[type="search"].search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
+}
+.search-input {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  vertical-align: top;
+  outline: none;
+  line-height: 1;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 31px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #1f1f21;
+  padding: 4px 0 0 28px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNDFweCcgaGVpZ2h0PSc0MHB4JyB2aWV3Qm94PScwIDAgNDEgNDAnIHZlcnNpb249JzEuMScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluaycgeG1sbnM6c2tldGNoPSdodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMnPjx0aXRsZT5TbGljZSAxPC90aXRsZT48ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+PGRlZnM+PC9kZWZzPjxnIGlkPSdQYWdlIDEnIHN0cm9rZT0nbm9uZScgc3Ryb2tlLXdpZHRoPScxJyBmaWxsPSdub25lJyBmaWxsLXJ1bGU9J2V2ZW5vZGQnPjxnIGlkPSdzZWFyY2gnIGZpbGw9JyNDNkM4QzgnPjxwYXRoIGQ9J00wLjUwNCwxNi4zMzggQzAuNTA0LDI1LjA4NSA3LjYzNSwzMi4xNjUgMTYuNDQ0LDMyLjE2NSBDMjUuMjQsMzIuMTY1IDMyLjM4MiwyNS4wODUgMzIuMzgyLDE2LjMzOCBDMzIuMzgyLDcuNTkxIDI1LjI0LDAuNSAxNi40NDQsMC41IEM3LjYzNSwwLjUgMC41MDQsNy41OTEgMC41MDQsMTYuMzM4IEwwLjUwNCwxNi4zMzggWiBNNS41NTUsMTYuMzM4IEM1LjU1NSwxMC4zNTkgMTAuNDIzLDUuNTIxIDE2LjQ0NSw1LjUyMSBDMjIuNDU1LDUuNTIxIDI3LjMzMywxMC4zNiAyNy4zMzMsMTYuMzM4IEMyNy4zMzMsMjIuMzE3IDIyLjQ1NSwyNy4xNTYgMTYuNDQ1LDI3LjE1NiBDMTAuNDIzLDI3LjE1NiA1LjU1NSwyMi4zMTYgNS41NTUsMTYuMzM4IEw1LjU1NSwxNi4zMzggWiBNMjcuNjY2LDMwLjg2MSBMMzQuNTIxLDM4LjY3IEMzNS42MjUsMzkuNzcyIDM2LjMzOCwzOS43ODEgMzcuNDYsMzguNjcgTDM5LjY2MSwzNi40ODkgQzQwLjc0MywzNS40MDggNDAuODExLDM0LjcxMSAzOS42NjEsMzMuNTY4IEwzMS43NjUsMjYuNzkzIEwyNy42NjYsMzAuODYxIEwyNy42NjYsMzAuODYxIFogTTI3LjY2NiwzMC44NjEnIGlkPSdTaGFwZSc+PC9wYXRoPjwvZz48L2c+PC9zdmc+");
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 17px;
+  background-size: 17px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+}
+.search-input:focus {
+  background-color: #f9f9f9;
+  color: #1f1f21;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  margin-right: 0px;
+}
+.search-input::-webkit-input-placeholder {
+  color: #999;
+}
+.search-input::-moz-placeholder {
+  color: #999;
+}
+.search-input::-ms-input-placeholder {
+  color: #999;
+}
+.search-input:-ms-input-placeholder {
+  color: #999;
+}
+.search-input:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+</style>
+<ons-page ng-controller="ricercaProdottoController">
+ <ons-toolbar style="height: 56px;">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"
-			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		<span class="toolbar-button toolbar-button--material"> 
+			<ons-back-button></ons-back-button>
 		</span>
 	</div>
 	<div class="navigation-bar__center navigation-bar--material__center">
 		Ricerca Prodotto</div>
-
+		<div class="navigation-bar__right navigation-bar--material__right">
+		<span class="toolbar-button toolbar-button--material"> <i
+			class="zmdi zmdi-search" ng-click="ricercaAvanzata()"></i>
+		</span>
+	</div>
 </div>
 </ons-toolbar>
-
-
-<p style="text-align: center; opacity: 0.6; padding-top: 20px;"></p>
-<form id='ricercaForm' class="ricerca-form login-form"
-	ng-submit="submit()">
-
-
-
-	<input type="search" value="" name='ricerca' placeholder="Ricerca"
-		id='ricerca' class="text-input--underbar">
+<br>
+<div ng-show="opzioniRicerca">
+	<input type="search" value="" placeholder="Search" class="search-input">
 	<br>
-	<p></p>
-	
-	<br>
-
 	<div id="affinaricerca" ng-show="true" ng-animate="'box'">
 		<ons-list>
 		<div ng-repeat="group in groups">
@@ -41,13 +122,27 @@
 				{{item.name}}
 			</label> </ons-list-item>
 		</div>
-		<br>
-		
-		<br>
-		<br>
-		<br>
-		<ons-button modifier="large" class="search-button" ng-click="ricerca()">Ricerca</ons-button>
-</form>
-
-
+		</ons-list>
+	</div>
+</div>
+<div class="prodotti">
+		<ons-list style="width=100%;" id="listaProdotti">
+		  <ons-list-header>Prodotti</ons-list-header>
+	<ons-list-item class="list-item-container"
+				   ng-repeat="prodotto in prodotti" >
+	<div style="width="40" >
+		<img width="40" height="40"	ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
+	</div>
+	<div>
+		<div style="padding:5px;">
+			<div class="nomeprodotto"><strong>{{prodotto.nome}}</strong></div>
+			<span class="descrizioneprodotto">{{prodotto.descrizione}}</span>
+		</div>
+	</div>
+	<div style="float:right;">
+	<ons-icon icon="fa-cart-plus" size="40px"></ons-icon>
+	</div>
+	</ons-list-item> </ons-list>
+	<br>
+</div>
 </ons-page>

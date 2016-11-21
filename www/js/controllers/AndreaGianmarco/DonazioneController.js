@@ -27,5 +27,25 @@ myApp.controller('donazioneController', function(donazioniService,$scope,$http) 
         	console.log(donazioniService.getSede());
         	myNavigator.pushPage('html/AndreaGianmarco/nuova_donazione.html');
         }
+        
+        $scope.creaCarrello= function(donazione){
+        	console.log("CLICK1");
+        	myNavigator.pushPage('html/AndreaGianmarco/creazione_carrello.html');
+        }
+        
+        
+        
+        $scope.inserisciImmagine= function() {
+            navigator.camera.getPicture(dump_pic, fail, {
+                quality : 50,
+                destinationType: Camera.DestinationType.DATA_URL,
+                targetWidth: 100,
+                targetHeight: 100
+            });
+        }
+        
+        $scope.inserisciProdotto= function() {
+        	myNavigator.pushPage('html/SilviaVincenzo/ricerca_prodotto.html');
+        }
 
 });

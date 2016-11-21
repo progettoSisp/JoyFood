@@ -1,7 +1,9 @@
-myApp.controller('NuovaDonazioneController', function($scope,$http) { 
+myApp.controller('NuovaDonazioneController', function(donazioniService,$scope,$http) { 
 	
 	$scope.prodottoinviato = false;
 	$scope.master = {};
+	$scope.sede=donazioniService.getSede();
+	console.log(donazioniService.getSede());
 	
 	showImg = function(imgUpload){
 		//console.log("fileUpload");

@@ -1,86 +1,79 @@
-myApp.controller('ricercaProdottoController', function($scope,$http) {
+myApp.controller('ricercaProdottoController', function($scope,$http,localDbService,prodottoService, $timeout,remoteApiService,filtriService) {
 	$scope.opzioni="Più Opzioni";
-    $scope.goOpzioni = false;
-         
-   $scope.cambio=function(){
-        
-             
-             $scope.goOpzioni = ! $scope.goOpzioni;
-             if( $scope.goOpzioni){
-                  $scope.opzioni="Meno Opzioni";
-             }else{
-                   $scope.opzioni="Più Opzioni";  
-             }
-    }
-   
-   $scope.load = function(page) {
-     $scope.mySplitterContent.load(page)
-   }
-   $scope.open = function() {
-     $scope.mySplitterSide.open();
-   }
-
-   
-// https://joyfoodamministratore-sisp.rhcloud.com/listAllCategoria
-// https://joyfoodamministratore-sisp.rhcloud.com/listSottoCategoriaByCod?id=1
-
-   
-    $scope.accordionPrimoLivello = ['Tipo','Classificazione', 'Categoria','Sottocategoria','Allergeni'];
-    
-    
-    $scope.accordionSecondoLivello =
-    	[['Carne','Pesce','Frutta e verdura','Grano e cereali','Latticini'],
-    	 ['Vegano','Vegetariano','Celiaco','Non Specificato'],
-    	 ['Prodotti sfusi e pronti per il consumo', 'Prodotti confezionati e pronti per il consumo', 'Prodotti confezionati'],
-    	 ['n.d.'],
-         ['Mais','Latteria','Uovo','Pesce','Aromi','Glutine','MSG','Arachidi','Solanaceae','Molluschi','Soia','Solfiti','Grassi Trans','Frutta a guscio','Grano']];
-    
-      
-    
-$scope.groups = [];
-for (var i = 0; i < $scope.accordionPrimoLivello.length; i++) {
-	
-$scope.groups[i] = {
-name: $scope.accordionPrimoLivello[i],
-items: []
-};
-
-for (var j = 0; j < $scope.accordionSecondoLivello[i].length; j++) {
-$scope.groups[i].items.push($scope.accordionSecondoLivello[i][j]);
-
-}
-}
+	$scope.goOpzioni = false;
+	$scope.opzioniRicerca=false;
 
 
+	$scope.groups= [{key:"Tipo", values: [{ "name": "Carne","id": "01"},{ "name": "Pesce","id": "02"},{ "name": "Frutta","id": "03"}]},
+	                {key:"Classificazione",values: [{"name": "Vegano","id": "01"},{"name": "Celiaco","id": "02"},{"name": "Vegetariano","id": "03"}]},
+	                {key:"Allergene",values: [{"name": "Mais","id": "01"},{"name": "Latteria","id": "02"}]}
+	                ];
 
-
- 
+	$scope.load = function(page) {
+		$scope.mySplitterContent.load(page)
+	}
+	$scope.open = function() {
+		$scope.mySplitterSide.open();
+	} 
 
 	
+	$scope.toggleGroup = function(group) {
+		if ($scope.isGroupShown(group)) {
+			$scope.shownGroup = null;
+		} else {
+			$scope.shownGroup = group;
+		}
+	};
+	$scope.toggleoptions = function(group) {
+		if ($scope.isGroupShown(group)) {
+			$scope.shownGroup = null;
+		} else {
+			$scope.shownGroup = group;
+		}
+	};
+
+	$scope.isGroupShown = function(group) {
+		return $scope.shownGroup === group;
+	};
+
+
+	$scope.richiesta={};
 	
 
-/*
-* if given group is the selected group, deselect it
-* else, select the given group
-*/
-$scope.toggleGroup = function(group) {
-if ($scope.isGroupShown(group)) {
-$scope.shownGroup = null;
-} else {
-$scope.shownGroup = group;
-}
-};
-$scope.toggleoptions = function(group) {
-if ($scope.isGroupShown(group)) {
-$scope.shownGroup = null;
-} else {
-$scope.shownGroup = group;
-}
-};
+	$scope.ricerca=function(){
+		$scope.richiesta={};
+		//console.log(richiesta.pippo);
+	
+		$scope.valori=$("form.ricerca-form").serialize();
+		
 
-$scope.isGroupShown = function(group) {
-return $scope.shownGroup === group;
-};
- 
+		console.log($scope.valori);
 
+		remoteApiService.ricercaProdotto($scope.valori).then(function (risultato) {
+			
+			console.log(risultato);
+		});
+
+	}
+	
+	$http.get("http://joyfoodamministratore-sisp.rhcloud.com/public/listAllProdotti")
+
+	.then(function(response) {
+		console.log('prodotti = '+response.data.length);
+		
+		$scope.prodotti = response.data;
+		
+	});
+
+	$scope.changeView=function(prodotto){
+	    prodottoService.saveProdotto(prodotto);
+	    console.log(prodotto.id);
+	    myNavigator.pushPage("html/SilviaVincenzo/dettaglio_prodotto.html");
+	}
+	
+	$scope.ricercaAvanzata=function(){
+		$scope.opzioniRicerca=!$scope.opzioniRicerca;
+	}
 });
+
+
