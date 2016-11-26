@@ -15,6 +15,20 @@ var deffered = $q.defer();
          });
          return deferred.promise;
     };
+    
+
+    this.getProdottoAllergene = function(){
+        var deferred = $q.defer();
+        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/prodottoAllergene")
+         .success(function(response) {
+            data = response.data;
+            deferred.resolve(response);
+         })
+         .error(function(response) {
+        	   deferred.resolve(response);
+         });
+         return deferred.promise;
+    };
 
     this.getCategoria = function(){
         var deferred = $q.defer();
