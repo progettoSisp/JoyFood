@@ -29,7 +29,7 @@
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: rgba(24,103,194,0.81);
+  background: rgba(24,103,194,1);
   color: #1f1f21;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -58,7 +58,7 @@
   padding-top: 0;
 }
 .navigation-bar__bg {
-  background: rgba(24,103,194,0.81);
+  background: rgba(24,103,194,1);
 }
 .navigation-bar__item,
 .navigation-bar__left,

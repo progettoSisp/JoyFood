@@ -1,9 +1,19 @@
-myApp.controller('ricercaProdottoController', function($scope,$http,prodottoService, $timeout,remoteApiService,filtriService) {
+myApp.controller('ricercaProdottoController', function($scope,$http,prodottoService,donazioniService,dialogService, $timeout,remoteApiService,filtriService) {
 	$scope.opzioni="Più Opzioni";
 	$scope.goOpzioni = false;
 	$scope.opzioniRicerca=false;
 	$scope.dialog=false;
+	$scope.prodotto;
+	$scope.selezione;
+	$scope.quantita=1;
+	$scope.numero=1;
+	
 
+
+	ons.createDialog('dialog.html',{parentScope: $scope}).then(function(dialog) {
+		 $scope.dialog=dialog;
+	 });
+	 
 	$scope.groups= [{key:"Tipo", values: [{ "name": "Carne","id": "01"},{ "name": "Pesce","id": "02"},{ "name": "Frutta","id": "03"}]},
 	                {key:"Classificazione",values: [{"name": "Vegano","id": "01"},{"name": "Celiaco","id": "02"},{"name": "Vegetariano","id": "03"}]},
 	                {key:"Allergene",values: [{"name": "Mais","id": "01"},{"name": "Latteria","id": "02"}]}
@@ -66,7 +76,6 @@ myApp.controller('ricercaProdottoController', function($scope,$http,prodottoServ
 	});
 
 	$scope.changeView=function(prodotto){
-		console.log("PORCOOOOO");
 	    prodottoService.saveProdotto(prodotto);
 	    console.log(prodotto.id);
 	    myNavigator.pushPage("html/SilviaVincenzo/dettaglio_prodotto.html");
@@ -75,29 +84,30 @@ myApp.controller('ricercaProdottoController', function($scope,$http,prodottoServ
 	$scope.ricercaAvanzata=function(){
 		$scope.opzioniRicerca=!$scope.opzioniRicerca;
 	}
+	var dialog1;
 	
 	$scope.aggiungiProdotto=function(prodotto){
-		navigator.notification.confirm(
-			    "Could you take a minute to rate my app?", // the message
-			    function( index ) {
-			        switch ( index ) {
-			            case 1:
-			                // The first button was pressed
-			                break;
-			            case 2:
-			                // The second button was pressed
-			                break;
-			            case 3:
-			                // The third button was pressed
-			                break;
-			        }
-			    },
-			    "Desperate for reviews",                   // a title
-			    [ "Sure", "Remind me later", "NO! STOP!" ] // text of the buttons
-			);
+		$scope.selezione=prodotto;
+		$scope.selezione.quantita=1;
+		$scope.selezione.pezzi=1;
+		$scope.dialog.show();
+	}
+	var load=function(){
+		$scope.selezione=dialogService.getProdotto();
 	}
 	
+	$scope.insert= function(){
+		console.log($scope.selezione);
+		donazioniService.addProdotto($scope.selezione);
+		console.log(donazioniService.getProdotti())
+		$scope.dialog.hide();
+	}
+	
+	$scope.cancel= function(){
+		$scope.dialog.hide();
+	}
 
+	
 });
 
 

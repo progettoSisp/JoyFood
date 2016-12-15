@@ -69,6 +69,14 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
+        "id": "cordova-plugin-googlemaps.cordova-plugin-googlemaps",
+        "pluginId": "cordova-plugin-googlemaps",
+        "clobbers": [
+            "cordova-plugin-googlemaps"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -80,7 +88,8 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.0.0",
     "plugin.google.maps": "1.3.9",
     "cordova-plugin-whitelist": "1.3.0",
-    "cordova-plugin-dialogs": "1.3.0"
+    "cordova-plugin-dialogs": "1.3.0",
+    "cordova-plugin-googlemaps": "1.4.0"
 }
 // BOTTOM OF METADATA
 });

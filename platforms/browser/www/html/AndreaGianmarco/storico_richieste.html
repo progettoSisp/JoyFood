@@ -1,0 +1,66 @@
+<ons-page ng-controller="storicoRichiesteController">
+
+<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<div class="navigation-bar__left navigation-bar--material__left">
+    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+      					<i class="zmdi zmdi-menu"></i>
+    				</span>
+ 				</div>
+			</div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Request hystory
+			</div>
+		</div>
+	</ons-toolbar>
+
+
+
+<ons-list id="listaCarrelli"> <ons-list-item
+	modifier="chevron" class="list-item-container"
+	ng-repeat="richiesta in richieste"> 
+<div class="list-item-left">
+	<img width="40" height="40"
+		ng-src="data:image/JPEG;base64,{{richiesta.carrello.immagine}}">
+</div>
+<div class="list-item-right">
+	<div class="list-item-content">
+		<div class="name">
+			&nbsp<strong>ID: {{richiesta.carrello.idCarrello}} -
+				{{richiesta.carrello.descrizione}}</strong>
+		</div>
+
+		<div>
+			Data di accettazione: {{richiesta.dataAccettazione | date:"dd/MM/yyyy"}}</i>
+		</div>
+	</div>
+</div>
+</ons-list-item>
+
+ </ons-list> </ons-list> 
+ 
+ <ons-list>
+ <ons-list-item
+	 class="list-item-container"
+	ng-repeat="richiesta in richieste"> 
+<div class="list-item-left">
+	<img width="40" height="40"
+		src="images/insert-picture-button.png">
+</div>
+<div class="list-item-right">
+	<div class="list-item-content">
+		<div class="name">
+			Not requests found
+		</div>
+
+		<div>
+			
+		</div>
+	</div>
+</div>
+</ons-list-item> 
+ </ons-list> 
+ 
+ 
+ </ons-page>

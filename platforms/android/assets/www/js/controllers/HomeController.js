@@ -1,15 +1,31 @@
 
-myApp.controller('homeController', function($scope,$http, $timeout,remoteAppService) {
+myApp.controller('homeController', function($scope,$http, $timeout,remoteAppService,userService) {
 	var data;
 	var db; 
 	var map;
 	var sedi;
-	 $scope.map;
-     $scope.markers = [];
-     $scope.markerId = 1;
+	$scope.map;
+    $scope.markers = [];
+    $scope.markerId = 1;
     $scope.sedi;
-
-
+    $scope.view;
+    
+	$scope.init = function () {
+		$scope.view=userService.getView();
+	}
+	
+	$scope.centerMap = function(){
+		console.log("CENTER");
+		$scope.map.setCenter({lat: 45.484150, lng: 9.200465}); 
+	}
+	
+	$scope.init();
+    
+    $scope.changeView= function(){
+    	console.log("HOME")
+    	userService.changeView();
+    	$scope.view=userService.getView();
+    }
      
      function onSuccess(position) {
     	   console.log('Latitude: '          + position.coords.latitude          + '\n' +
@@ -20,7 +36,7 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
     	          'Heading: '           + position.coords.heading           + '\n' +
     	          'Speed: '             + position.coords.speed             + '\n' +
     	          'Timestamp: '         + position.timestamp                + '\n');
-    	};
+    	}; 
 
     	// onError Callback receives a PositionError object
     	//

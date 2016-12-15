@@ -269,33 +269,26 @@ input:disabled + .switch__toggle {
 			</div>
 		</div>
 	</ons-toolbar>
-<div class="nuovaDon">
+<form  name="myForm" class="nuovaDon">
 	<img align="middle" width="200" height="200" ng-src="images/missing-image.png" ng-click="inserisciImmagine()"> <br>
 	<div class="name">{{sede.azienda.denominazione}} - {{sede.denominazioneSede}}</div>
 	<div class="location">
 		<i class="fa fa-map-marker"></i> {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}}
 	</div>
-	<input ng-model="donazione.titolo" id="titolo" type="text" class="text-input--underbar" placeholder="Title" style="text-align: left;" value=""> 
+	<input ng-model="donazione.titolo"  id="titolo" type="text" class="text-input--underbar" placeholder="Title" style="text-align: left;" value=""> 
 	<span style="font-size: 10px; color: red;" ng-show="!newproduct.title && prodottoinviato">Required field</span> <br>
 	<br>
-	<textarea ng-model="donazione.descrizione" placeholder="Descrizione" class="textarea textarea--transparent" style="width: 100%; height: 50px; margin-top: 4px;">
+	<textarea ng-model="donazione.descrizione" placeholder="Descrizione" class="textarea textarea--transparent" style="border:1px solid #ddd; width: 100%; height: 50px; margin-top: 4px;">
 	</textarea>
-	<br /> 
-	<input ng-model="donazione.datainizio" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='inizioData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp Start date availability"
-		value="" required style="font-family: Arial, FontAwesome" /> 
-	<span style="font-size: 10px; color: red;" ng-show="!newproduct.datainizio && prodottoinviato">Required field</span> 
+	<br>
+	<br>
+	<input ng-model="donazione.dataInizio" type="date" name="dataInizio"  value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
 	<br> 
 	<br>
-	<input ng-model="donazione.datafine" type="text" onfocus="(this.type='datetime-local')" class="text-input--underbar width-full" id='fineData' placeholder="&nbsp &nbsp &nbsp &#xf073; &nbsp End date availability"
-			value="" required style="font-family: Arial, FontAwesome" /> 
-	<span style="font-size: 10px; color: red;" ng-show="!newproduct.datafine && prodottoinviato">Required field</span>
-	<br>
-	<br>
-	<div class="container">
-		<span style="font-size: 10px; color: red;" ng-show="!newproduct.sede && prodottoinviato">Required field</span> 
+	<input ng-model="donazione.dataFine" type="date" name="dataFine" value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
 	<br>
 	<label class="switch switch--material">
-  		<input type="checkbox" class="switch__input switch--material__input">
+  		<input ng-model="donazione.flagIndivisibile" type="checkbox" class="switch__input switch--material__input">
   		<div class="switch__toggle switch--material__toggle">
    	 		<div class="switch__handle switch--material__handle">
     		</div>
@@ -304,8 +297,8 @@ input:disabled + .switch__toggle {
 	<label>&nbsp &nbsp The donation is divisible </label>
 	<br>
 	<br>
-	<ons-button modifier="large" class="search-button" ng-click="creaCarrello()">Inserisci i prodotti</ons-button>
+	<ons-button modifier="large" class="search-button" ng-click="creaCarrello(donazione)">Inserisci i prodotti</ons-button>
 		<br>
 	<br>
-	</div>
+	</form>
 </ons-page>

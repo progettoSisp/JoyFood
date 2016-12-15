@@ -4,10 +4,13 @@
 
 myApp.controller('donazioneController', function(donazioniService,$scope,$http) {
 		$scope.sedi;
+		$scope.date = new Date();
+		$scope.donazione;
 		$scope.sede=donazioniService.getSede();
-		console.log($scope.sede);
+		$scope.prodotti=donazioniService.getProdotti();
 		
 		$scope.init = function () {
+			console.log($scope.prodotti);
 			console.log("INIT");
 			$scope.sede=donazioniService.getSede();
 			console.log($scope.sede);
@@ -30,6 +33,15 @@ myApp.controller('donazioneController', function(donazioniService,$scope,$http) 
         
         $scope.creaCarrello= function(donazione){
         	console.log("CLICK1");
+        	console.log(donazione);
+        	console.log($scope.donazione);
+        	var don={};
+        	angular.copy($scope.donazione, don);
+        	console.log(don);
+        	don.dataInizio=$scope.donazione.dataInizio.getTime();
+        	don.dataFine=$scope.donazione.dataFine.getTime();
+        	don.codsede=$scope.sede.idSede;
+        	donazioniService.setDonazioni(don);
         	myNavigator.pushPage('html/AndreaGianmarco/creazione_carrello.html');
         }
         
@@ -47,5 +59,12 @@ myApp.controller('donazioneController', function(donazioniService,$scope,$http) 
         $scope.inserisciProdotto= function() {
         	myNavigator.pushPage('html/SilviaVincenzo/ricerca_prodotto.html');
         }
+        
+        myNavigator.once("postpop",function(){
+        	console.log("STOSI");
+        	console.log(donazioniService.getProdotti());
+        	console.log($scope.prodotti);
+        	$scope.prodotti=donazioniService.getProdotti();
+    	});
 
 });

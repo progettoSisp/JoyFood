@@ -41,22 +41,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
-        "id": "cordova-sqlite-storage.SQLitePlugin",
-        "pluginId": "cordova-sqlite-storage",
-        "clobbers": [
-            "SQLitePlugin"
-        ]
-    },
-    {
-        "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
-        "id": "plugin.google.maps.phonegap-googlemaps-plugin",
-        "pluginId": "plugin.google.maps",
-        "clobbers": [
-            "plugin.google.maps"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-dialogs/www/notification.js",
         "id": "cordova-plugin-dialogs.notification",
         "pluginId": "cordova-plugin-dialogs",
@@ -71,6 +55,22 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
+    },
+    {
+        "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
+        "id": "plugin.google.maps.phonegap-googlemaps-plugin",
+        "pluginId": "plugin.google.maps",
+        "clobbers": [
+            "plugin.google.maps"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -79,10 +79,10 @@ module.exports.metadata =
     "com.verso.cordova.clipboard": "0.1.0",
     "cordova-plugin-compat": "1.0.0",
     "cordova-plugin-camera": "2.2.0",
-    "cordova-sqlite-storage": "1.4.7",
-    "plugin.google.maps": "1.3.9",
+    "cordova-plugin-dialogs": "1.3.0",
     "cordova-plugin-whitelist": "1.3.0",
-    "cordova-plugin-dialogs": "1.3.0"
+    "cordova-sqlite-storage": "1.4.7",
+    "plugin.google.maps": "1.3.9"
 }
 // BOTTOM OF METADATA
 });

@@ -20,16 +20,20 @@
 		
         <ons-list-header>Seleziona i prodotti</ons-list-header>
 
-        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in prodotti">
-            <div class="list-item-content">
-          	<div class="name">
-                {{sede.azienda.denominazione}} - {{sede.denominazioneSede}}
-              </div>
-              <div class="location">
-                <i class="fa fa-map-marker"></i>  {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}} 
-              </div>           
-           </div>
-        </ons-list-item>
+	<ons-list-item style="height:100px;" ng-repeat="prodotto in prodotti" >
+	<div style="width="10%" ng-click="changeView(prodotto)" >
+		<img width="40" height="40"	ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
+	</div>
+	<div style="width:70%" ng-click="changeView(prodotto)">
+		<div style="padding:5px;">
+			<div class="nomeprodotto"><strong>{{prodotto.nome}}</strong></div>
+			<span class="descrizioneprodotto">{{prodotto.pezzi}} X {{prodotto.quantita}}</span>
+		</div>
+	</div>
+	<div style="width="10%; float:right;">
+		<ons-icon  icon="fa-cart-plus" size="40px" class="ons-icon fa-cart-plus fa" _compiled="" style="font-size: 40px;position: absolute;right: 8px;top: 30px;"></ons-icon>
+	</div>
+	</ons-list-item> </ons-list>
 	</ons-list>      
 	    <ons-fab position="right bottom">
       <ons-ripple></ons-ripple>

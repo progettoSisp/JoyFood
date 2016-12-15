@@ -12,11 +12,11 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <allow-intent href="*" />
+    <preference name="ErrorUrl" value="" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="default" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidLaunchMode" value="singleTop" />
-    <preference name="ErrorUrl" value="" />
     <preference name="Fullscreen" value="false" />
     <preference name="KeepRunning" value="true" />
     <preference name="SplashScreen" value="screen" />

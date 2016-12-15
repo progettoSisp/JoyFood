@@ -1,7 +1,7 @@
 myApp.controller('ricercaDonazioneController', function($scope,$http,localDbService, $timeout,remoteApiService,filtriService) {
 	$scope.opzioni="Più Opzioni";
 	$scope.goOpzioni = false;
-
+	$scope.carrelli=[];
 
 
 	$scope.groups= [{key:"tipo", values: [{ "name": "Carne","id": "1"},{ "name": "Pesce","id": "2"},{ "name": "Frutta","id": "3"}]},
@@ -89,6 +89,8 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		
 		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/listAllCarrelli")
          .then(function(response) {
+        	$scope.carrelli=response;
+        	myNavigator.pushPage("html/AngeloFrancesco/risultati_ricerca_donazione.html")
             console.log(response.data);
          },function(response) {
         	 console.log(response);

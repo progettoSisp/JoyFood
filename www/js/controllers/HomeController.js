@@ -1,15 +1,33 @@
 
-myApp.controller('homeController', function($scope,$http, $timeout,remoteAppService) {
+myApp.controller('homeController', function($scope,$http, $timeout,remoteAppService,userService) {
 	var data;
 	var db; 
 	var map;
 	var sedi;
-	 $scope.map;
-     $scope.markers = [];
-     $scope.markerId = 1;
+	var geocoder = new google.maps.Geocoder();
+	$scope.map;
+    $scope.markers = [];
+    $scope.markerId = 1;
     $scope.sedi;
+    $scope.view;
+    $scope.markerWindow=[];
+    var openMarker;
+	$scope.init = function () {
+		$scope.view=userService.getView();
+	}
+	
+	$scope.init();
+	
+	$scope.centerMap = function(){
+		console.log("CENTER");
+		$scope.map.setCenter({lat: 45.484150, lng: 9.200465}); 
+	}
 
-
+    $scope.changeView= function(){
+    	console.log("HOME")
+    	userService.changeView();
+    	$scope.view=userService.getView();
+    }
      
      function onSuccess(position) {
     	   console.log('Latitude: '          + position.coords.latitude          + '\n' +
@@ -20,7 +38,7 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
     	          'Heading: '           + position.coords.heading           + '\n' +
     	          'Speed: '             + position.coords.speed             + '\n' +
     	          'Timestamp: '         + position.timestamp                + '\n');
-    	};
+    	}; 
 
     	// onError Callback receives a PositionError object
     	//
@@ -63,15 +81,39 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
             		                position: coordinates,
             		                map: $scope.map
             		            });
-
             		            marker.id = $scope.markerId;
+            		            var contentString = '<div id="content">'+
+            		            '<div id="siteNotice">'+
+            		            '</div>'+
+            		            '<div style="font-weight: 500; line-height: 16px; font-size: 15px; margin-bottom: 6px;">'+data[i].azienda.denominazione+'<br>'+data[i].denominazioneSede+'</div>'+
+            		            '<div id="bodyContent">'+
+            		            '<div  style="font-size: 14px; opacity: 0.4; margin-bottom: 6px;"><i class="fa fa-map-marker"></i>&nbsp'+data[i].indirizzoSede+','+data[i].comuneSede+' '+data[i].provinciaSede+' '+
+            		            '</div></div>'+
+            		            '</div>'+
+            		            '</div>';
+
+            		            var infowindow = new google.maps.InfoWindow({
+            		            	content: contentString
+            		            });
+            		            $scope.markerWindow.splice(marker.id, 0, infowindow);
+            		            marker.addListener('click', function() {
+            		            	if(openMarker && $scope.markerWindow[openMarker]){
+            		            		console.log("MID1 "+openMarker);
+            		            		$scope.markerWindow[openMarker].close();
+            		            	}
+            		            	if($scope.markerWindow[this.id]){
+	            		            	console.log("MID2 "+this.id);
+	            		            	openMarker=this.id;
+	            		            	$scope.map.setCenter(this.position); 
+	            		            	$scope.markerWindow[this.id].open(map, this);
+            		            	}
+            		            });
             		            $scope.markerId++;
-            		            $scope.markers.push(marker);
-
+            		            $scope.markers.push(marker);   
             			}
-
-
             		}
+            		console.log($scope.markers);
+            		console.log($scope.markerWindow);
             }else{
                 console.log("LOGIN "+response.data.error);
             }

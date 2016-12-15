@@ -5,12 +5,12 @@ myApp.controller('listaDonazioniController', function($scope,$http,donazioniServ
 			$scope.carrelli = response.data;
 		});
 
-	 
+		$scope.date=new Date().getTime();
 		$scope.changeView=function(carrello){
 		
 		donazioniService.setDonazioni(carrello);
 		console.log(carrello);
-	    myNavigator.pushPage("html/AndreaGianmarco/inserimento_richiesta.html");
+	    myNavigator.pushPage("html/AngeloFrancesco/dettaglio_donazione.html");
 	}   
 
 });
