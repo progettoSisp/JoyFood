@@ -77,11 +77,11 @@
       <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
       <button class="tab-bar__button">
         <div class="notification reply-notification" ons-tab-inactive=""></div>
-        <ons-icon icon="fa-inbox" class="tab-icon ons-icon "></ons-icon>
+        <ons-icon icon="fa-inbox" class="tab-icon ons-icon " ng-click="slidingMenu.closeMenu(); inbox()"></ons-icon>
       </button></ons-tab>
       <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
       <button class="tab-bar__button">
-        <ons-icon icon="fa-upload" class="tab-icon ons-icon "></ons-icon>
+        <ons-icon icon="fa-upload" class="tab-icon ons-icon " ng-click="slidingMenu.closeMenu(); outbox()"></ons-icon>
       </button></ons-tab>
       <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
       <button ng-if="!view" class="tab-bar__button" ng-click="changeView();">

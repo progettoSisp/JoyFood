@@ -32,6 +32,30 @@
   margin-top: 4px;
 }
 
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.list-item-container {
+  font-size: 14px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.list-item-content {
+  margin-left: 10px;
+  margin-right: 30px;
+}
+
 </style>
 <ons-page ng-controller="datiAziendaController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
@@ -73,7 +97,7 @@
               </div>           
            </div>
         </ons-list-item>
-         <ons-list-item modifier="chevron tappable" class="list-item-container" >
+         <ons-list-item modifier="chevron tappable" class="list-item-container" ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')">
             <div class="list-item-content">
           	<div class="name">
                Add a location

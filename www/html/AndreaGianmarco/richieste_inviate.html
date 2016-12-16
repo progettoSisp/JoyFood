@@ -52,19 +52,19 @@
 		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
 			<div class="navigation-bar__left navigation-bar--material__left">
 				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      					<i class="zmdi zmdi-menu"></i>
+    				<span class="toolbar-button toolbar-button--material">
+      					<ons-back-button></ons-back-button>
     				</span>
  				</div>
 			</div>
 			<div class="navigation-bar__center navigation-bar--material__center">
-				Requests
+				Requests sent
 			</div>
 		</div>
 	</ons-toolbar>
 <br>
 <ons-list>
-        <ons-list-item ng-repeat="richiesta in richieste" class="list-item-container" >
+        <ons-list-item ng-repeat="richiesta in richieste" ng-if="(richiesta.dataAccettazione) && (richiesta.accettata)" class="list-item-container" >
           <ons-row >
             <ons-col>
               <div class="name">
@@ -114,4 +114,3 @@
  </ons-list> 
  
  
- </ons-page>

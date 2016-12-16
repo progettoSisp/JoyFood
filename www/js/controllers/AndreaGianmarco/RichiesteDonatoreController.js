@@ -1,9 +1,10 @@
-myApp.controller('storicoRichiesteController', function($scope,$http,prodottoService,richiestaService) {
+
+myApp.controller('richiesteDonatoreController', function($scope,$http,prodottoService,richiestaDonatoreService) {
 
 	$scope.date=new Date();
 	
 	$scope.init=function(){
-		$scope.richieste =richiestaService.getRichiesta();
+		$scope.richieste =richiestaDonatoreService.getRichiesta();
 	};
 
 	$scope.init();

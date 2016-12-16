@@ -1,4 +1,4 @@
-myApp.controller('ricercaDonazioneController', function($scope,$http,localDbService, $timeout,remoteApiService,filtriService) {
+myApp.controller('ricercaDonazioneController', function($scope,$http,localDbService, $timeout,remoteApiService,filtriService,ricercaService) {
 	$scope.opzioni="Più Opzioni";
 	$scope.goOpzioni = false;
 	$scope.carrelli=[];
@@ -89,7 +89,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		
 		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/listAllCarrelli")
          .then(function(response) {
-        	$scope.carrelli=response;
+        	ricercaService.saveRicerca(response);
         	myNavigator.pushPage("html/AngeloFrancesco/risultati_ricerca_donazione.html")
             console.log(response.data);
          },function(response) {

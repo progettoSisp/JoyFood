@@ -1,5 +1,5 @@
 
-myApp.controller('homeController', function($scope,$http, $timeout,remoteAppService,userService) {
+myApp.controller('homeController', function($scope,$http, $timeout,remoteAppService,userService,richiestaService,richiestaDonatoreService) {
 	var data;
 	var db; 
 	var map;
@@ -14,9 +14,36 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
     var openMarker;
 	$scope.init = function () {
 		$scope.view=userService.getView();
+		$http.post("http://joyfoodamministratore-sisp.rhcloud.com/api/listRichiesta")
+		.then(function(response) {
+			console.log(response.data);
+			richiestaService.saveRichiesta(JSON.parse(response.data));
+		});
+		
+		$http.post("http://joyfoodamministratore-sisp.rhcloud.com/api/listRichiesteRicevute")
+		.then(function(response) {
+			console.log(response.data);
+			richiestaDonatoreService.saveRichiesta(JSON.parse(response.data));
+		});
 	}
 	
 	$scope.init();
+	
+	$scope.inbox=function(){
+		if($scope.view){
+			myNavigator.pushPage("html/AndreaGianmarco/richieste_ricevute.html");
+		}else{
+			myNavigator.pushPage("html/AndreaGianmarco/richieste_accettate.html");
+		}
+	};
+	
+	$scope.outbox=function(){
+		if($scope.view){
+			myNavigator.pushPage("html/AndreaGianmarco/donazioni_attive.html");
+		}else{
+			myNavigator.pushPage("html/AndreaGianmarco/richieste_inviate.html");
+		}
+	};
 	
 	$scope.centerMap = function(){
 		console.log("CENTER");

@@ -58,7 +58,7 @@
 <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
 
 
-
+<script src="js/services/RicercaService.js"></script>
 <script src="js/services/UserService.js"></script>
 <script src="js/services/RegistrationService.js"></script>
 <script src="js/services/LocalDbService.js"></script>
@@ -69,12 +69,13 @@
 <script src="js/services/DonazioniService.js"></script>
 <script src="js/services/DialogService.js"></script>
 <script src="js/services/RichiestaService.js"></script>
-
+<script src="js/services/RichiestaDonatoreService.js"></script>
 
 <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>
 <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
 <script src="js/controllers/AndreaGianmarco/StoricoRichieste.js"></script>
 <script src="js/controllers/AndreaGianmarco/DialogProdottoController.js"></script>
+<script src="js/controllers/AndreaGianmarco/RichiesteDonatoreController.js"></script>
 <script
 	src="js/controllers/AndreaGianmarco/ModificaDonazioneController.js"></script>
 <script
@@ -165,9 +166,6 @@
 			</ons-list-item> 
 			<ons-list-item ng-if="view" class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/visualizza_dati_azienda.html');">
 				<ons-icon icon="fa-suitcase"></ons-icon> &nbsp Your company 
-			</ons-list-item>
-			<ons-list-item ng-if="view" class="menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/visualizza_dati_donazioni.html');">
-				<ons-icon icon="fa-bar-chart"></ons-icon> &nbsp Your results
 			</ons-list-item>
 		</ons-list> <br>
 		<ons-list class="bottom-menu-list"> 
