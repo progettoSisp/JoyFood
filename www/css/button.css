@@ -1,4 +1,4 @@
-.button {
+.button1 {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -35,7 +35,7 @@
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: rgba(24,103,194,0.81);
+  background-color: #4CAF50;
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -44,30 +44,30 @@
   -o-transition: none;
   transition: none;
 }
-.button:hover {
+.button1:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button:active {
-  background-color: rgba(24,103,194,0.81);
+.button1:active {
+  background-color: #66BB6A;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
   opacity: 0.2;
 }
-.button:focus {
+.button1:focus {
   outline: 0;
 }
-.button:disabled,
-.button[disabled] {
+.button1:disabled,
+.button1[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-.button--large {
+.button1--large {
   font-size: 17px;
   font-weight: 500;
   line-height: 36px;
@@ -76,8 +76,8 @@
   width: 100%;
   text-align: center;
 }
-.button--large:active {
-  background-color: rgba(24,103,194,0.81);
+.button1--large:active {
+  background-color: #66BB6A;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -88,19 +88,20 @@
   -o-transition: none;
   transition: none;
 }
-.button--large:disabled,
-.button--large[disabled] {
+.button1--large:disabled,
+.button1--large[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-.button--large:hover {
+
+.button1--large:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button--large:focus {
+.button1--large:focus {
   outline: 0;
 }
 

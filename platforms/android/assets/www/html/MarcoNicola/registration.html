@@ -1,16 +1,18 @@
 <ons-page ng-controller="registrationController">
- <div class="navigation-bar navigation-bar--material">
-  <div class="navigation-bar__left navigation-bar--material__left">
-    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-	<ons-back-button>Back</ons-back-button>
-    </span>
-  </div>
-  <div class="navigation-bar__center navigation-bar--material__center">
-    Registration
-  </div>
-  <div class="navigation-bar__right navigation-bar--material__right">
-  </div>
-</div>
+<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<div class="navigation-bar__left navigation-bar--material__left">
+    				<span class="toolbar-button toolbar-button--material" ">
+      					<ons-back-button></ons-back-button>
+    				</span>
+ 				</div>
+			</div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Registration
+			</div>
+		</div>
+	</ons-toolbar>
 <form id="myForm">
 	<div class="formarea">
 		<div class="form-row">
@@ -65,9 +67,9 @@
 		<div class="form-row">
 		<br />
 		</div>
-		<button class="button--large--cta"  ng-click="next(user)">Next</button>
+		<ons-button modifier="large" class="login-button" ng-click="next(user)">Next</ons-button>
 		<br />
-		<button ng-click="reset()" class="button--large--cta reset">Reset</button>
+		<ons-button modifier="large" class="login-button" ng-click="reset()">Reset</ons-button>
 		</div>
 </form>
 </ons-page>

@@ -1,4 +1,4 @@
-myApp.controller('risultatiRicercaController', function($scope,$http, donazioneService) {
+myApp.controller('risultatiRicercaController', function($scope,$http, ricercaService) {
 
 	
 	 array=[];
@@ -6,7 +6,7 @@ myApp.controller('risultatiRicercaController', function($scope,$http, donazioneS
 console.log("risultatiRicercaController");
 
 
-  $scope.carrelli = donazioneService.getDonazione();
+  $scope.carrelli =ricercaService.getRicerca();
 
 
  

@@ -1,8 +1,8 @@
 <ons-page ng-controller="inserimentoDatiSedeController">
 <div class="navigation-bar navigation-bar--material">
 	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"
-			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
+		<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+			<ons-back-button></ons-back-button>
 		</span>
 	</div>
 	<div class="navigation-bar__center navigation-bar--material__center">
@@ -51,11 +51,11 @@
                    </div>
                    <div ng-show="(!formsede.$valid || !checkboxVeridicita) && formsede.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>   
                     
+                     <ons-button id="aggiungibutton"  ng-click ="clickAggiungi(nuovaSede)" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formsede.$valid || !checkboxVeridicita)"  >Aggiungi</ons-button>
                     
                     </form>
                     </div>
-      <ons-button id="aggiungibutton"  ng-click ="clickAggiungi(nuovaSede)" modifier="large--cta" ng-disabled="aggiungiDisabilitato || (!formsede.$valid || !checkboxVeridicita)"  >Aggiungi</ons-button>
-<!--               <ons-button id="provabutton"  ng-click ="provaGeo()" modifier="large--cta">PROVA</ons-button>             -->
+     <!--               <ons-button id="provabutton"  ng-click ="provaGeo()" modifier="large--cta">PROVA</ons-button>             -->
     
              
   </body>

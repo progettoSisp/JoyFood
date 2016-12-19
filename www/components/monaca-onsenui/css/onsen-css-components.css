@@ -49,7 +49,7 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   font-size: 17px;
-  background-color: #f9f9f9;
+  background-color: #F0F4C3;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -60,10 +60,10 @@ h6 {
   color: #1f1f21;
 }
 .page::-webkit-scrollbar {
-  display: none;
+  display: none; 
 }
 .page__content {
-  background-color: #f9f9f9;
+  background-color: #F0F4C3;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -802,7 +802,7 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: rgba(24,103,194,0.81);
+  background-color: #4CAF50;
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -818,7 +818,7 @@ h6 {
   transition: none;
 }
 .button:active {
-  background-color: rgba(24,103,194,0.81);
+  background-color: #66BB6A;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -963,7 +963,7 @@ h6 {
   -o-transition: none;
   transition: none;
   opacity: 0.2;
-  color: rgba(24,103,194,0.81);
+  color: #66BB6A;
 }
 /* topdoc
   name: Call To Action Button
@@ -1009,7 +1009,7 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: rgba(24,103,194,0.81);
+  background-color: #4CAF50;
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1032,7 +1032,7 @@ h6 {
 }
 .button--cta:active {
   color: var-button-cat-color;
-  background-color: #25a6d9;
+  background-color: #66BB6A;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1062,7 +1062,7 @@ h6 {
   text-align: center;
 }
 .button--large:active {
-  background-color: rgba(24,103,194,0.81);
+  background-color: #66BB6A;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;

@@ -1,10 +1,44 @@
-myApp.controller('datiAziendaController', function($scope,$http, remoteAppService, remoteApiService) {
+myApp.controller('datiAziendaController', function($scope,$http, remoteAppService, remoteApiService,donazioniService) {
 
 	ons.ready(function() {
 
-
+		$scope.azienda={};
 		console.log("inserimentoDatiAziendaController");
-
+		$scope.sedi=[];
+		
+        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
+        .then(function(response) {
+        	$scope.sedi=response.data;
+        });
+        
+		$scope.init = function () {
+			$scope.sede=donazioniService.getSede();
+	         $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda")
+	         .then(function(response) {
+	             $scope.azienda=response.data;
+	         },function(response) {
+	        	 console.log(response);
+	         });
+	         console.log($scope.azienda);
+		}
+		
+		$scope.init();
+		
+		$scope.selezionaSede= function(sede){
+			donazioniService.setSede(sede);
+			myNavigator.pushPage("html/AlbertoChiara/visualizza_dati_sede.html");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		$scope.inputDisabilitato = true;
 		$scope.salvaDisabilitato = true;
     	$scope.modificaDisabilitato = false;
@@ -24,7 +58,7 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 	    $scope.nat1LivSelezionata = $scope.nat1LivFromDB;
 	    $scope.nat2LivSelezionata = $scope.nat2LivFromDB;
 
-		
+	
 //		remoteApiService.getAzienda().then(function(response) {
 //			
 //			$scope.a = response;

@@ -1,0 +1,116 @@
+<style>
+.list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+.reply-notification {
+  position: absolute;
+  top: 28px;
+  font-size: 10px;
+  font-weight: 600;
+  height: 13px;
+  line-height: 13px;
+  padding: 0 4px;
+  min-width: 13px;
+  margin-left: 18px;
+}
+
+.tab-icon {
+  font-size: 28px;
+  vertical-align: -4px;
+}
+</style>
+<ons-page ng-controller="storicoRichiesteController">
+
+<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<div class="navigation-bar__left navigation-bar--material__left">
+    				<span class="toolbar-button toolbar-button--material">
+      					<ons-back-button></ons-back-button>
+    				</span>
+ 				</div>
+			</div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Requests sent
+			</div>
+		</div>
+	</ons-toolbar>
+<br>
+<ons-list>
+        <ons-list-item ng-repeat="richiesta in richieste" ng-if="(richiesta.dataAccettazione) && (richiesta.accettata)" class="list-item-container" >
+          <ons-row >
+            <ons-col>
+              <div class="name">
+                <b>{{richiesta.titolo}} </b>
+              </div>
+              <div class="name" ng-if="richiesta.dataAccettazione">
+                	Data di accettazione: {{richiesta.dataAccettazione | date:"dd/MM/yyyy HH:mm"}}
+              </div>
+              <div class="name" ng-if="richiesta.dataRitiro">
+                	Data di ritiro: {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> {{richiesta.sede}}
+              </div>
+              <div class="desc">
+               	{{richiesta.descrizione}}
+              </div>
+              <div class="desc">
+               	{{richiesta.prodotto}} x {{richiesta.pezzi}}
+              </div>
+              <br>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+ </ons-list>
+ 
+ </ons-list> 
+ 
+ <ons-list ng-if="!richieste">
+ <ons-list-item	 class="list-item-container"> 
+<div class="list-item-left">
+
+</div>
+<div class="list-item-right" >
+	<div class="list-item-content">
+		<div class="name">
+			Not requests found
+		</div>
+
+		<div>
+			
+		</div>
+	</div>
+</div>
+</ons-list-item> 
+ </ons-list> 
+ 
+ 

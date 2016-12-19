@@ -1,5 +1,5 @@
 .page--menu-page__background {
-  background-color: rgba(24, 103, 194,1);
+  background-color: #4CAF50;
   color: white;
 }
 
@@ -11,7 +11,7 @@
 .menu-list,
 .menu-item:first-child,
 .menu-item {
-  background-color: rgba(24, 103, 194, 1);
+  background-color: #4CAF50;
   background-image: none !important;
   border-color: transparent;
   color: #fff;
@@ -25,7 +25,7 @@
 }
 
 .menu-item:active {
-  background-color: #0099CB;
+  background-color: #66BB6A;
 }
 
 .menu-notification {
@@ -41,12 +41,12 @@
 .bottom-menu-list,
 .bottom-menu-item:first-child,
 .bottom-menu-item {
-  border-color: #393939;
-  background-color:rgba(24, 103, 194, 1);
+  border-color: #43A047;
+  background-color:#4CAF50;
   background-image: none !important;
   color: #ccc;
 }
 
 .bottom-menu-item:active {
-  background-color: #0099CB;
+  background-color: #66BB6A;
 }

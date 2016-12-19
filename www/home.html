@@ -46,7 +46,7 @@
   vertical-align: -4px;
 }
 </style>
-<ons-page ng-controller="homeController">
+<ons-page ng-controller="homeController" modifier="material">
 
   <div ng-if="!view" class="navigation-bar navigation-bar--material">
   <div class="navigation-bar__left navigation-bar--material__left">
@@ -69,7 +69,7 @@
   </div>
 </div>
     <div id="map_canvas" style="height: 85%; width: 100%; border: 1px solid gray"></div>
-    <div class="tab-bar ons-tab-bar__footer">
+    <div style="background:#F0F4C3;" class="tab-bar ons-tab-bar__footer">
       <ons-tab page="timeline.html" active="true" class="tab-bar__item active"><input type="radio" style="display: none">
       <button class="tab-bar__button"  ng-click="centerMap()">
         <ons-icon icon="fa-home" class="tab-icon ons-icon "></ons-icon>

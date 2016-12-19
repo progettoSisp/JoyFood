@@ -21,9 +21,11 @@ myApp.service('userService', function() {
     	  }
     	  
     	  this.changeView= function(){
-    		  console.log("USER SERVICE");
-    		  view=!view;
-    		  console.log(view);
+    		  if(this.user.tipoUtente.idTipoUtente==1){
+    			  console.log("USER SERVICE");
+    		  	view=!view;
+    		  	console.log(view);
+    		  }
     	  }
 
 })

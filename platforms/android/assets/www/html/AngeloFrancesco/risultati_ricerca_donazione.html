@@ -1,38 +1,79 @@
-<ons-page ng-controller="ricercaDonazioneController">
+<style>
+.list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+}
 
-<div class="navigation-bar navigation-bar--material">
-		<div class="navigation-bar__left navigation-bar--material__left">
-			<span class="toolbar-button toolbar-button--material"
-				ng-click=""> <ons-back-button>Back</ons-back-button>
-			</span>
-		</div>
-		<div class="navigation-bar__center navigation-bar--material__center">
-			Carts</div>
-		<div class="navigation-bar__right navigation-bar--material__right">
-		</div>
-	</div>
-	
-	
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}
 
 
-<ons-list id="listaCarrelli">
-	<ons-list-item modifier="chevron" class="list-item-container"
-				   ng-repeat="carrello in carrelli">
-	<div class="list-item-left">
-		<img width="40" height="40"
-			ng-src="data:image/JPEG;base64,{{carrello.immagine}}">
-	</div>
-	<div class="list-item-right">
-		<div class="list-item-content">
-			<div class="name">&nbsp<strong>{{carrello.titolo}}</strong></div>
-			<div>
-			<span ngIf="{{carrello.flagIndivisibile}}==0">Locked</span>
+
+</style>
+<ons-page ng-controller="listaDonazioniController">
+
+<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<div class="navigation-bar__left navigation-bar--material__left">
+    				<span class="toolbar-button toolbar-button--material" >
+      					<ons-back-button></ons-back-button>
+    				</span>
+ 				</div>
 			</div>
-			<div class="location">&nbsp <i class="fa fa-map-marker" >&nbsp{{carrello.descrizione}}</i></div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Found Donations
+			</div>
 		</div>
-	</div>
-	</ons-list-item> 
-	</ons-list>
-      </ons-list>
+</ons-toolbar>
+<br>
+<ons-list>
+        <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container" ng-if="date<carrello.dataFine"  ng-click="changeView(carrello);">
+          <ons-row >
+            <ons-col width="95px"  ng-if="carrello.immagine">
+              <img ng-src="data:image/JPEG;base64,{{carrello.immagine}}">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                <b>{{carrello.titolo}}</b>
+              </div>
+              <div class="name">
+                {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}} - {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> {{carrello.sede.denominazioneSede}}
+              </div>
+              <div class="desc">
+                 {{carrello.descrizione}}
+              </div>
+              <br>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+ </ons-list>
+ </ons-page>
 
-    </ons-page>
+

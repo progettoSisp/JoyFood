@@ -1,17 +1,425 @@
-<ons-page ng-controller="">
-<div class="navigation-bar navigation-bar--material">
-	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"
-			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
-		</span>
-	</div>
-	<div class="navigation-bar__center navigation-bar--material__center">
-		Inserire titolo</div>
-	<div class="navigation-bar__right navigation-bar--material__right">
-		<span class="toolbar-button toolbar-button--material"> <i
-			class="zmdi zmdi-search"></i>
-		</span>
-	</div>
-</div>
+<style>
+.switch--list-item {
+  margin-right: 0px;
+}
 
+.settings-header {
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.4;
+  padding: 10px 0 0px 10px;
+  margin-bottom: -4px;
+}
+
+.settings-list {
+  margin-top: 10px;
+}
+
+.icon {
+  opacity: 0.8;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.lower {
+  opacity: 0.2;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.button--material--flat {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #fff;
+  vertical-align: middle;
+  background-color: rgba(24,103,194,0.81);
+  border: 0px solid currentColor;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  min-height: 36px;
+  line-height: 36px;
+  padding: 0px 16px;
+  -webkit-transition: -webkit-box-shadow 0.2s ease;
+  -moz-transition: box-shadow 0.2s ease;
+  -o-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  text-transform: uppercase;
+  background-color: rgba(24,103,194,0.81);
+  color: #ffffff;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: rgba(24,103,194,0.81);
+}
+.button--material--flat:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: rgba(24,103,194,0.81);
+  outline: 0;
+  opacity: 1;
+  border: none;
+}
+.button--material--flat:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: rgba(24,103,194,0.81);
+  outline: 0;
+  opacity: 1;
+  border: none;
+}
+.button--material--flat:disabled,
+.button--material--flat[disabled] {
+  opacity: 0.5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  min-width: 51px;
+  font-size: 17px;
+  padding: 0 20px;
+  border: none;
+  overflow: visible;
+  width: 51px;
+  height: 32px;
+  z-index: 0;
+  text-align: left;
+}
+.switch__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: -1;
+}
+.switch__toggle {
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-box-shadow: inset 0 0 0 2px #e5e5e5;
+  box-shadow: inset 0 0 0 2px #e5e5e5;
+}
+.switch__handle {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: absolute;
+  content: '';
+  -webkit-border-radius: 28px;
+  border-radius: 28px;
+  height: 28px;
+  width: 28px;
+  background-color: #fff;
+  left: 1px;
+  top: 2px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  -o-transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  transition-timing-function: cubic-bezier(0.59, 0.01, 0.5, 0.99);
+  -webkit-box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0,0,0,0.25);
+  box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0,0,0,0.25);
+}
+.switch--active .switch__handle {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+input:checked + .switch__toggle {
+  -webkit-box-shadow: inset 0 0 0 2px #5198db;
+  box-shadow: inset 0 0 0 2px #5198db;
+  background-color: #5198db;
+}
+input:checked + .switch__toggle .switch__handle {
+  left: 21px;
+  -webkit-box-shadow: 0 3px 2px rgba(0,0,0,0.25);
+  box-shadow: 0 3px 2px rgba(0,0,0,0.25);
+}
+input:disabled + .switch__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.switch__touch {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+}
+.switch.switch--material {
+  width: 36px;
+  height: 24px;
+  padding: 0 10px;
+  min-width: 36px;
+}
+.switch.switch--material .switch__toggle {
+  background-color: #b0afaf;
+  margin-top: 5px;
+  height: 14px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.switch.switch--material .switch__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: -1;
+}
+.switch.switch--material .switch__handle {
+  background-color: #f1f1f1;
+  left: 0px;
+  margin-top: -5px;
+  width: 20px;
+  height: 20px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.4);
+}
+.switch.switch--material input:checked + .switch__toggle {
+  background-color: #1884c2;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.switch.switch--material input:checked + .switch__toggle .switch__handle {
+  left: 16px;
+  background-color: #1867c2;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.switch.switch--material input:disabled + .switch__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.switch.switch--material .switch__handle:before {
+  background: transparent;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.12);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  -moz-transition: box-shadow 0.1s linear;
+  -o-transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+}
+.switch.switch--material.switch--active .switch__handle:before {
+  -webkit-box-shadow: 0px 0px 0px 14px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 0px 14px rgba(0,0,0,0.12);
+}
+.switch.switch--material.switch--active input:checked + .switch__toggle .switch__handle:before {
+  -webkit-box-shadow: 0px 0px 0px 14px #1867c2;
+  box-shadow: 0px 0px 0px 14px #1867c2;
+}
+.switch.switch--material .switch__touch {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -15px;
+  right: -15px;
+}
+</style>
+<ons-page >
+<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<div class="navigation-bar__left navigation-bar--material__left">
+    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
+      					<i class="zmdi zmdi-menu"></i>
+    				</span>
+ 				</div>
+			</div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Your profile
+			</div>
+		</div>
+</ons-toolbar>
+<br>
+<br>
+      <div class="settings-header">Push Notification</div>
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          <div class="list__item__center">
+            Push Notification
+          </div>
+           <div class="list__item__right">
+         <label class="switch switch--material">
+  		<input ng-model="donazione.flagIndivisibile" type="checkbox" class="switch__input switch--material__input">
+  		<div class="switch__toggle switch--material__toggle">
+   	 		<div class="switch__handle switch--material__handle">
+    		</div>
+  		</div>
+		</label>
+		</div>
+        </ons-list-item>
+      </ons-list>
+       <div class="settings-header">Change username</div>
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          <span>
+          	<input class="text-input--material" placeholder="New username" type="text" required>
+          	<div >
+           		<button class="button button--material--flat">Save</button>
+          	</div>
+		  </span>
+          
+        </ons-list-item>
+      </ons-list>
+   	  <div class="settings-header">Change password</div>
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          <span>
+          	<input class="text-input--material" placeholder="Old password" type="password" required>
+  			<input class="text-input--material" placeholder="New password" type="password" required>
+  			<input class="text-input--material" placeholder="Retype new password" type="password" required>
+  			<div >
+           		<button class="button button--material--flat">Save</button>
+          	</div>
+		  </span>
+        </ons-list-item>
+      </ons-list>
+      <div class="settings-header">Change map address</div>
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          <span>
+          	<input class="text-input--material" placeholder="New address" type="text" required>
+          	<br />
+          	<div >
+           		<button class="button button--material--flat">Save</button>
+          	</div>
+		  </span>
+        </ons-list-item>
+      </ons-list>
+            <div class="settings-header">Search distance</div>
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          <div class="list__item__left">
+              <ons-icon icon="fa-suitcase"></ons-icon> 
+          </div>
+          <div style="width: 60%;">
+        <input  min="0"  max="10" type="range" ng-model="selezione.quantita" class="range range--material" style="float: left; width: 100%; margin-top: -4px;">
+        <span class="range-slider__value" ng-model="quantita" style="float: right;">{{selezione.quantita}}</span>
+      	</div>
+        </ons-list-item>
+      </ons-list>
+      
 </ons-page>

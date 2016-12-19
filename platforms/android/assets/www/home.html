@@ -69,23 +69,26 @@
   </div>
 </div>
     <div id="map_canvas" style="height: 85%; width: 100%; border: 1px solid gray"></div>
-    <div ng-click="centerMap()" class="tab-bar ons-tab-bar__footer">
+    <div class="tab-bar ons-tab-bar__footer">
       <ons-tab page="timeline.html" active="true" class="tab-bar__item active"><input type="radio" style="display: none">
-      <button class="tab-bar__button">
+      <button class="tab-bar__button"  ng-click="centerMap()">
         <ons-icon icon="fa-home" class="tab-icon ons-icon "></ons-icon>
       </button></ons-tab>
       <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
       <button class="tab-bar__button">
-        <div class="notification reply-notification" ons-tab-inactive="">4</div>
-        <ons-icon icon="fa-inbox" class="tab-icon ons-icon "></ons-icon>
+        <div class="notification reply-notification" ons-tab-inactive=""></div>
+        <ons-icon icon="fa-inbox" class="tab-icon ons-icon " ng-click="slidingMenu.closeMenu(); inbox()"></ons-icon>
       </button></ons-tab>
       <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
       <button class="tab-bar__button">
-        <ons-icon icon="fa-upload" class="tab-icon ons-icon "></ons-icon>
+        <ons-icon icon="fa-upload" class="tab-icon ons-icon " ng-click="slidingMenu.closeMenu(); outbox()"></ons-icon>
       </button></ons-tab>
       <ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
-      <button class="tab-bar__button" ng-click="changeView()">
-        <ons-icon icon="fa-exchange" class="tab-icon ons-icon "></ons-icon>
+      <button ng-if="!view" class="tab-bar__button" ng-click="changeView();">
+        <ons-icon icon="fa-exchange" class="changeIcon tab-icon ons-icon "></ons-icon>
+      </button>
+      <button ng-if="view"  class="tab-bar__button" ng-click="changeView();">
+        <ons-icon icon="fa-exchange" style=" color: #4CAF50;" class="changeIcon tab-icon ons-icon "></ons-icon>
       </button></ons-tab>
     </div>    
   </ons-page>

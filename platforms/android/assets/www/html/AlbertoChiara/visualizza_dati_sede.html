@@ -1,46 +1,98 @@
+<link rel="stylesheet" href="css/profile.css">
+<style>
+.to-wrapper {
+  line-height: 1;
+  height: 62px;
+  padding: 10px;
+}
+
+.to-image {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.to-name {
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.to-email {
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.text-input {
+  margin-top: 4px;
+}
+
+.textarea {
+  margin-top: 4px;
+}
+
+</style>
 <ons-page ng-controller="datiSedeController">
-<div class="navigation-bar navigation-bar--material">
-	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"
-			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
-		</span>
-	</div>
-	<div class="navigation-bar__center navigation-bar--material__center">
-		Dati sede</div>
-	<div class="navigation-bar__right navigation-bar--material__right">
-		<span class="toolbar-button toolbar-button--material"> <i
-			class="zmdi zmdi-search"></i>
-		</span>
-	</div>
-</div>
+<link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
+<ons-toolbar style="height: 56px;">
+		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
+			<div class="navigation-bar__left navigation-bar--material__left">
+				<div class="navigation-bar__left navigation-bar--material__left">
+    				<span class="toolbar-button toolbar-button--material"> 
+						<ons-back-button></ons-back-button>
+					</span>
+ 				</div>
+			</div>
+			<div class="navigation-bar__center navigation-bar--material__center">
+				Location
+			</div>
+		</div>
+</ons-toolbar>
+<div id="map_canvas_sede" style="height: 200px; width:100% border: 1px solid gray"></div>
+<ons-list modifier="inset" style="margin-top: 10px">
+<ons-list-item>
+<strong>Name</strong> : {{sede.denominazioneSede}}</ons-list-item> 
+<ons-list-item>
+<strong>Address</strong> : {{sede.indirizzoSede}}</ons-list-item> 
+<ons-list-item>
+<strong>City</strong> : {{sede.comuneSede}}</ons-list-item> 
+<ons-list-item>
+<strong>Province</strong> : {{sede.provinciaSede}}</ons-list-item> 
+<ons-list-item>
+<strong>Validation status</strong> : <span style="color: green;" ng-if="sede.statoSede.idStatoSede==1">{{sede.statoSede.descrizione}}</span><span style="color: red;"  ng-if="sede.statoSede.idStatoSede==2">{{sede.statoSede.descrizione}}</span></ons-list-item> <ons-list-item>
+ </ons-list>
+<ons-list>
+        <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"  >
+          <ons-row >
+            <ons-col width="95px"  ng-if="carrello.immagine">
+              <img ng-src="data:image/JPEG;base64,{{carrello.immagine}}">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                <b>{{carrello.titolo}} <span style="float:right; color: green;" ng-if="date<carrello.dataFine">Aperto</span> <span style="float:right; color: red;" ng-if="date>=carrello.dataFine">Chiuso</span>
+              	</b>
+              </div>
+              <div class="name">
+                {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}} - {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> {{carrello.sede.denominazioneSede}}
+              </div>
+              <div class="desc">
+                 {{carrello.descrizione}}
+              </div>
+              <br>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
 
-<div class="formarea">
-<form name = "formSede">
-	
-	
-	    
-	    <div class="form-row">
-            <input id="denominazione" name="denominazione" type="text" ng-model="denominazione" class="text-input--underbar" placeholder="Denominazione"  style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  value={{denominazioneSede}} required>
-         </div>
-         <div class="form-row">
-            <input id="indirizzosede" name="indirizzosede" type="text" ng-model="indirizzosede" class="text-input--underbar" placeholder="Indirizzo Sede"  style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato"  value={{indirizzoSede}} required>
-         </div>
-         <div class="form-row">
-            <input id="nomereferente" name="nomereferente" type="text" ng-model="nomereferente" class="text-input--underbar" placeholder="Nome Referente" style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" required>
-         </div>
-         <div class="form-row">
-            <input id="cognomereferente" name="cognomereferente" type="text" ng-model="cognomereferente" class="text-input--underbar" placeholder="Cognome Referente" style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" required >
-         </div>
-         <div class="form-row">
-            <input id="Cell" name="Cell" type="text" ng-model="cellulare" class="text-input--underbar" placeholder="Cellulare" style="font-family:Arial, FontAwesome" ng-disabled="inputDisabilitato" ng-model="modelCell" ng-pattern="/^[3]{1}[0-9]{9}$/" required >
-         </div>
-         <div ng-show="!formSede.Cell.$valid && formSede.Cell.$dirty" style="color:red;font-size: 12px;">Formato del Cell non corretto</div>
-         <div ng-show="(!formSede.$valid) && formSede.$dirty" style="color:red;font-size: 12px;">Riempire tutti i campi</div>  
-	 </form>
-	     <br> 
-	<ons-button id="modificabutton" ng-click="clickModifica()"
-		modifier="large--cta" ng-disabled="modificaDisabilitato">Modifica</ons-button>
-	<ons-button id="salvabutton" ng-click="clickSalva()"
-		modifier="large--cta" ng-disabled="salvaDisabilitato || (!formSede.$valid)">Salva</ons-button>
+</ons-list>
+	<ons-fab position="right bottom">
+      <ons-ripple></ons-ripple>
+      <ons-icon icon="md-edit"></ons-icon>
+    </ons-fab>
 </ons-page>
-
+  
+  

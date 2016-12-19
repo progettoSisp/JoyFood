@@ -18,7 +18,7 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
         remoteApiService.login(username,password).then(function (user) {
             console.log(user);
                  localDbService.Init();
-                  filtriService.Init();
+                 filtriService.Init();
                   $("#loader").html("");
                       myNavigator.resetToPage("slidingmenu.html");
         });

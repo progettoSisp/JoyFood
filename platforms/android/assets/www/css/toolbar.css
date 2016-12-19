@@ -95,7 +95,7 @@
 }
 .navigation-bar__center {
   width: 46%;
-  text-align: center;
+  text-align: left;
   line-height: 44px;
   font-size: 17px;
   font-weight: 500;
@@ -155,7 +155,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
-  padding-left: 34px;
+  padding-left: 0px;
   line-height: 56px;
 }
 .navigation-bar--material__right {

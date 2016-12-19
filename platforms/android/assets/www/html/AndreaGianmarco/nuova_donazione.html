@@ -270,7 +270,6 @@ input:disabled + .switch__toggle {
 		</div>
 	</ons-toolbar>
 <form  name="myForm" class="nuovaDon">
-	<img align="middle" width="200" height="200" ng-src="images/missing-image.png" ng-click="inserisciImmagine()"> <br>
 	<div class="name">{{sede.azienda.denominazione}} - {{sede.denominazioneSede}}</div>
 	<div class="location">
 		<i class="fa fa-map-marker"></i> {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}}
@@ -286,6 +285,7 @@ input:disabled + .switch__toggle {
 	<br> 
 	<br>
 	<input ng-model="donazione.dataFine" type="date" name="dataFine" value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
+	<br>
 	<br>
 	<label class="switch switch--material">
   		<input ng-model="donazione.flagIndivisibile" type="checkbox" class="switch__input switch--material__input">
