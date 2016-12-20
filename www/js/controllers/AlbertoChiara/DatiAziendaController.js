@@ -1,4 +1,4 @@
-myApp.controller('datiAziendaController', function($scope,$http, remoteAppService, remoteApiService,donazioniService) {
+myApp.controller('datiAziendaController', function($scope,$http, remoteAppService, remoteApiService,donazioniService,userService) {
 
 	ons.ready(function() {
 
@@ -6,19 +6,11 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 		console.log("inserimentoDatiAziendaController");
 		$scope.sedi=[];
 		
-        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
-        .then(function(response) {
-        	$scope.sedi=response.data;
-        });
+		$scope.sedi=userService.getSedi();
         
 		$scope.init = function () {
 			$scope.sede=donazioniService.getSede();
-	         $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda")
-	         .then(function(response) {
-	             $scope.azienda=response.data;
-	         },function(response) {
-	        	 console.log(response);
-	         });
+	         $scope.azienda=userService.getAzienda();
 	         console.log($scope.azienda);
 		}
 		

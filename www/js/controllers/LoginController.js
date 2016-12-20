@@ -44,6 +44,19 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
                      user=response.data;
                      user.token=response.headers('X-AUTH-TOKEN');
                      userService.setUser(user);
+                     if(user.tipoUtente.idTipoUtente==1){
+                     $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
+                     .then(function(response) {
+                    	console.log(response);
+                     	userService.saveSedi(response.data);
+                     });	
+                     $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda")
+        	         .then(function(response) {
+        	        	 userService.saveAzienda(response.data);
+        	         },function(response) {
+        	        	 console.log(response);
+        	         });	
+                     }
                      console.log("USER");
                       console.log(userService.getUser(user));
                       localDbService.Init();
