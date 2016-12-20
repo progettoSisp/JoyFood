@@ -71,10 +71,10 @@
                 <b>{{richiesta.titolo}} </b>
               </div>
               <div class="name" ng-if="richiesta.dataAccettazione">
-                	Data di accettazione: {{richiesta.dataAccettazione | date:"dd/MM/yyyy HH:mm"}}
+                	 <i class="fa fa-calendar"></i> {{richiesta.dataAccettazione | date:"dd/MM/yyyy HH:mm"}}
               </div>
               <div class="name" ng-if="richiesta.dataRitiro">
-                	Data di ritiro: {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
+                	 <i class="fa fa-calendar"></i> {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
               </div>
               <div class="location">
                 <i class="fa fa-map-marker"></i> {{richiesta.sede}}

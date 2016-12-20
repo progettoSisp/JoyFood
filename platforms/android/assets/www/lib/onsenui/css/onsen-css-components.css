@@ -49,7 +49,7 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   font-size: 17px;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -69,7 +69,7 @@ h6 {
   display: none;
 }
 .page__content {
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -80,7 +80,7 @@ h6 {
   box-sizing: border-box;
 }
 .page__background {
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -2083,7 +2083,7 @@ ons-range[disabled] .range {
   margin: 0;
   padding: 0;
   height: 49px;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   border-top: 1px solid #ccc;
   width: 100%;
 }
@@ -3582,8 +3582,8 @@ ons-range[disabled] .range {
   text-shadow: none;
   border-top: none;
   border-bottom: 1px solid #ccc;
-  -webkit-box-shadow: 0px 1px 0px 0px #fff9c4;
-  box-shadow: 0px 1px 0px 0px #fff9c4;
+  -webkit-box-shadow: 0px 1px 0px 0px #fff8e1;
+  box-shadow: 0px 1px 0px 0px #fff8e1;
   min-height: 24px;
   line-height: 24px;
   margin-top: -1px;
@@ -3655,7 +3655,7 @@ ons-range[disabled] .range {
   padding: 0 0 0 14px;
   margin: 1px 0 -1px 0;
   color: #1f1f21;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
 }
 .list__item:first-child {
   -webkit-box-shadow: inset 0px 1px 0px 0px #ccc;
@@ -4242,7 +4242,7 @@ ons-range[disabled] .range {
     </ul>
 */
 .list__header--material {
-  background: #fff9c4;
+  background: #fff8e1;
   border: none;
   font-size: 14px;
   text-transform: none;
@@ -4482,7 +4482,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   height: 31px;
   font-size: 15px;
   border: 1px solid #ccc;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #1f1f21;
@@ -4499,7 +4499,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   width: 100%;
 }
 .search-input:focus {
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   color: #1f1f21;
   border: 1px solid #ccc;
   -webkit-box-shadow: none;
@@ -4900,7 +4900,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   color: #1f1f21;
   letter-spacing: 0;
   -webkit-box-shadow: none;
@@ -5030,7 +5030,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   overflow: hidden;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  background-color: #fff9c4;
+  background-color: transparent;
   -webkit-mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC");
 }
 .dialog-mask {
@@ -5074,7 +5074,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 .dialog-container--material {
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
 }
 .dialog-mask--material {
   background-color: rgba(0,0,0,0.3);
@@ -5537,7 +5537,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   overflow: auto;
   min-height: 100px;
   max-height: 100%;
-  background-color: #fff9c4;
+  background-color: #fff8e1;
   -webkit-border-radius: 8px;
   border-radius: 8px;
   color: #1f1f21;
@@ -5560,10 +5560,10 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   -o-transform-origin: 50% 50% 0;
   transform-origin: 50% 50% 0;
   background-color: transparent;
-  background-image: -webkit-linear-gradient(45deg, #fff9c4, #fff9c4 50%, transparent 50%);
-  background-image: -moz-linear-gradient(45deg, #fff9c4, #fff9c4 50%, transparent 50%);
-  background-image: -o-linear-gradient(45deg, #fff9c4, #fff9c4 50%, transparent 50%);
-  background-image: linear-gradient(45deg, #fff9c4, #fff9c4 50%, transparent 50%);
+  background-image: -webkit-linear-gradient(45deg, #fff8e1, #fff8e1 50%, transparent 50%);
+  background-image: -moz-linear-gradient(45deg, #fff8e1, #fff8e1 50%, transparent 50%);
+  background-image: -o-linear-gradient(45deg, #fff8e1, #fff8e1 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #fff8e1, #fff8e1 50%, transparent 50%);
   -webkit-border-radius: 0 0 0 4px;
   border-radius: 0 0 0 4px;
   margin: -9px;

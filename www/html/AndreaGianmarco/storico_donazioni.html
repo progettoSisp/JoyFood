@@ -1,7 +1,7 @@
 <style>
 .list-item-container {
   line-height: 1;
-  padding: 15px 0px 15px 15px;
+  padding: 0px 15px 0px 15px;
 }
 
 .thumbnail {
@@ -34,7 +34,7 @@
 </style>
 <ons-page ng-controller="listaDonazioniController">
 
-<ons-toolbar style="height: 56px;">
+<ons-toolbar style="height: 56px;width: 100%;">
 		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
 			<div class="navigation-bar__left navigation-bar--material__left">
 				<div class="navigation-bar__left navigation-bar--material__left">
@@ -44,12 +44,13 @@
  				</div>
 			</div>
 			<div class="navigation-bar__center navigation-bar--material__center">
-				My Donations
+				Last donations
 			</div>
 		</div>
 </ons-toolbar>
 <br>
 <ons-list>
+	 <ons-list-header>Your last donations</ons-list-header>
         <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"  ng-click="changeView(carrello);">
           <ons-row >
             <ons-col width="95px"  ng-if="carrello.immagine">
@@ -61,17 +62,15 @@
               	</b>
               </div>
               <div class="name">
-                {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}} - {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
+                <i class="fa fa-calendar"></i>  {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}} 
+              </div>
+              <div class="name">
+                <i class="fa fa-calendar"></i>  {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
               </div>
               <div class="location">
                 <i class="fa fa-map-marker"></i> {{carrello.sede.denominazioneSede}}
               </div>
-              <div class="desc">
-                 {{carrello.descrizione}}
-              </div>
-              <br>
             </ons-col>
-            <ons-col width="40px"></ons-col>
           </ons-row>
         </ons-list-item>
  </ons-list>

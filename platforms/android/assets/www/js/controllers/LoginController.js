@@ -48,7 +48,7 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
                       console.log(userService.getUser(user));
                       localDbService.Init();
                       filtriService.Init();
-                      $scope.dialog.hide();
+                     $scope.dialog.hide();
                       myNavigator.resetToPage("slidingmenu.html");
                      
                 }

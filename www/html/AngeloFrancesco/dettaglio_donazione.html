@@ -71,19 +71,22 @@
 			<div class="navigation-bar__center navigation-bar--material__center">
 				Donation
 			</div>
+			<div class="navigation-bar__right navigation-bar--material__right">
+				<i class="fa fa-trash"></i>
+			</div>
 		</div>
 </ons-toolbar>
-<ons-list modifier="inset" style="margin-top: 10px"> 
-<ons-list-item>
-<strong>Title</strong> : {{donazione.titolo}}</ons-list-item> 
-<ons-list-item>
-<strong>Description</strong> : {{donazione.descrizione}}</ons-list-item> 
-<ons-list-item>
-<strong>Note</strong> : {{donazione.note}}</ons-list-item> <ons-list-item>
-<strong>Start date</strong> : {{donazione.dataInizio | date : 'dd/MM/yyyy HH:mm'}}</ons-list-item> <ons-list-item>
-<strong>End date</strong> : {{donazione.dataFine | date : 'dd/MM/yyyy HH:mm'}}</ons-list-item>
-<ons-list>
-		
+<div style="padding-top:30px;" id="map_canvas_sede" style="height: 200px; width:100%; border: 1px solid gray;"></div>
+<div style="padding-left: 15px;">
+	<div class="name" style="text-align:center;"><h2>{{donazione.titolo}}</h2></div>
+	<div class="location" style="text-align:center;">
+		<i class="fa fa-map-marker"></i> {{donazione.sede.indirizzoSede}}, {{donazione.sede.comuneSede}} {{donazione.sede.provinciaSede}}
+	</div>
+	<div class="name"><p><strong>Description</strong>: {{donazione.descrizione}}</p></div>
+	<div class="name"><p><strong><i class="fa fa-calendar"></i></strong>:{{donazione.dataInizio | date : 'dd/MM/yyyy HH:mm'}}</p></div>
+	<div class="name"><p><strong><i class="fa fa-calendar"></i></strong>: {{donazione.dataFine | date : 'dd/MM/yyyy HH:mm'}}</p></div>
+</div>
+
         <ons-list-header>Products</ons-list-header>
 
         <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in donazione.carrelloProdottos" ng-click="dettaglioProdotto(prodotto.prodotto)">
@@ -98,8 +101,4 @@
         </ons-list-item>
 	</ons-list>
 </ons-list>
-	<ons-fab position="right bottom">
-      <ons-ripple></ons-ripple>
-      <ons-icon icon="md-edit"></ons-icon>
-    </ons-fab>
   </ons-page>

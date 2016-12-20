@@ -241,7 +241,6 @@ input:disabled + .switch__toggle {
 }
 
 #aaa {
-	background-color: #1E90FF;
 	width: 100%;
 	height: 40px;
 	border-radius: 10px 10px 10px 10px;
@@ -257,7 +256,7 @@ input:disabled + .switch__toggle {
 }
 </style>
 <ons-page ng-controller="donazioneController" > 
-	<ons-toolbar style="height: 56px;">
+	<ons-toolbar style="height: 56px; style="width: 100%;">
 		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
 			<div class="navigation-bar__left navigation-bar--material__left">
 				<span class="toolbar-button toolbar-button--material"> 
@@ -269,7 +268,7 @@ input:disabled + .switch__toggle {
 			</div>
 		</div>
 	</ons-toolbar>
-<form  name="myForm" class="nuovaDon" style="height:100%;background:#F0F4C3;">
+<form  name="myForm" class="nuovaDon" style="height:100%;">
 	<div class="name">{{sede.azienda.denominazione}} - {{sede.denominazioneSede}}</div>
 	<div class="location">
 		<i class="fa fa-map-marker"></i> {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}}

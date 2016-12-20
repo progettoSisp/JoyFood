@@ -32,6 +32,24 @@
   margin-top: 4px;
 }
 
+.name {
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+.location {
+	font-size: 14px;
+	opacity: 0.4;
+	margin-bottom: 6px;
+}
+
+.nuovaDon {
+	text-align: center;
+	width: 80%;
+	margin: 10px auto 0;
+}
 </style>
 <ons-page ng-controller="datiSedeController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
@@ -49,20 +67,16 @@
 			</div>
 		</div>
 </ons-toolbar>
-<div id="map_canvas_sede" style="height: 200px; width:100% border: 1px solid gray"></div>
-<ons-list modifier="inset" style="margin-top: 10px">
-<ons-list-item>
-<strong>Name</strong> : {{sede.denominazioneSede}}</ons-list-item> 
-<ons-list-item>
-<strong>Address</strong> : {{sede.indirizzoSede}}</ons-list-item> 
-<ons-list-item>
-<strong>City</strong> : {{sede.comuneSede}}</ons-list-item> 
-<ons-list-item>
-<strong>Province</strong> : {{sede.provinciaSede}}</ons-list-item> 
-<ons-list-item>
-<strong>Validation status</strong> : <span style="color: green;" ng-if="sede.statoSede.idStatoSede==1">{{sede.statoSede.descrizione}}</span><span style="color: red;"  ng-if="sede.statoSede.idStatoSede==2">{{sede.statoSede.descrizione}}</span></ons-list-item> <ons-list-item>
- </ons-list>
+<div id="map_canvas_sede" style="padding-top:10px;height: 300px; width:100% border: 1px solid gray"></div>
+<div class="nuovaDon">
+<div class="name"><h3>{{sede.denominazioneSede}}</h3></div>
+	<div class="location">
+		<i class="fa fa-map-marker"></i>  {{sede.indirizzoSede}}, {{sede.comuneSede}} {{sede.provinciaSede}}
+	</div>
+	
+</div>
 <ons-list>
+<ons-list-header>Donations</ons-list-header>
         <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"  >
           <ons-row >
             <ons-col width="95px"  ng-if="carrello.immagine">
@@ -84,10 +98,19 @@
               </div>
               <br>
             </ons-col>
-            <ons-col width="40px"></ons-col>
           </ons-row>
         </ons-list-item>
-
+		<ons-list-item ng-if="!carrelli"class="list-item-container"  >
+          <ons-row >
+            <ons-col width="95px"  >         
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                <b> There are no donations available for this location</b>
+              </div>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
 </ons-list>
 	<ons-fab position="right bottom">
       <ons-ripple></ons-ripple>

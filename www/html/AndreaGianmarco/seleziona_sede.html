@@ -37,11 +37,11 @@
 	</div>
 </div>
 
-	 <ons-list style="background:#E6EE9C;">
+	 <ons-list>
 		
         <ons-list-header>Seleziona una delle tue sedi</ons-list-header>
 
-        <ons-list-item modifier="chevron tappable" class="list-item-container" style="background:#F0F4C3;"  ng-repeat="sede in sedi" ng-click="selezionaSede(sede)">
+        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-click="selezionaSede(sede)">
             <div class="list-item-content">
           	<div class="name">
                 {{sede.azienda.denominazione}} - {{sede.denominazioneSede}}

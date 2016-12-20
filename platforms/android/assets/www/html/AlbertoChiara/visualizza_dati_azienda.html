@@ -56,6 +56,24 @@
   margin-right: 30px;
 }
 
+.name {
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+.location {
+	font-size: 14px;
+	opacity: 0.4;
+	margin-bottom: 6px;
+}
+
+.nuovaDon {
+	text-align: center;
+	width: 80%;
+	margin: 60px auto 0;
+}
 </style>
 <ons-page ng-controller="datiAziendaController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
@@ -73,18 +91,16 @@
 			</div>
 		</div>
 </ons-toolbar>
-<ons-list modifier="inset" style="margin-top: 10px"> 
-<ons-list-item>
-<strong>Denominazione</strong> : {{azienda[0].denominazione}}</ons-list-item> 
-<ons-list-item>
-<strong>Sede legale</strong> : {{azienda[0].sedeLegale}}</ons-list-item> 
-<ons-list-item>
-<strong>Natura giuridica</strong> : {{azienda[0].natGiud1lvl.descrizione}}</ons-list-item> <ons-list-item>
-<strong>Tipo azienda</strong> : {{azienda[0].tipoAzienda.descrizione}}</ons-list-item> <ons-list-item>
-<strong>Tax</strong> : {{azienda[0].cf}} </ons-list-item> <ons-list-item> 
-<strong>Description</strong> : {{azienda[0].note}} </ons-list-item> 
-<ons-list>
-		
+<div style="padding-left: 15px; padding-top:30px;">
+	<div class="name" style="text-align:center;"><h2>{{azienda[0].denominazione}}</h2></div>
+	<div class="location" style="text-align:center;">
+		<h3><i class="fa fa-map-marker"></i>  {{azienda[0].sedeLegale}}</h3>
+	</div>
+	<div class="name"><p><strong>Natura giuridica</strong>: {{azienda[0].natGiud1lvl.descrizione}}</p></div>
+	<div class="name"><p><strong>Tipo azienda</strong>:{{azienda[0].tipoAzienda.descrizione}}</p></div>
+	<div class="name"><p><strong>Tax</strong>: {{azienda[0].cf}}</p></div>
+	<div class="name"><p><strong>Description</strong>: {{azienda[0].note}}</p></div>
+</div>
         <ons-list-header>Locations</ons-list-header>
 
         <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-if="azienda[0].idAzienda==sede.azienda.idAzienda") ng-click="selezionaSede(sede)">
