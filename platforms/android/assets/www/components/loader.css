@@ -15,6 +15,6 @@
 @import url("monaca-onsenui/css/onsenui.css");
 /*** <End:monaca-onsenui LoadCss:"components/monaca-onsenui/css/onsenui.css"> ***/
 /*** <Start:monaca-onsenui LoadCss:"components/monaca-onsenui/css/onsen-css-components-blue-basic-theme.css"> ***/
-@import url("monaca-onsenui/css/onsen-css-components-blue-basic-theme.css");
+@import url("monaca-onsenui/cssonsen-css-components-custom.css");
 /*** <End:monaca-onsenui LoadCss:"components/monaca-onsenui/css/onsen-css-components-blue-basic-theme.css"> ***/
 /*** <End:monaca-onsenui> ***/

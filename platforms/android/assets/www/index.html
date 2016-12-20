@@ -15,7 +15,7 @@
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKG94lIZ0mgTGMsBbm70kifycrYTcXk0A">
     </script>
 
-<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
 <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/inputlogin.css">
@@ -52,7 +52,7 @@
 <script src="js/controllers/MenuController.js"></script>
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/LoginController.js"></script>
-
+<script src="js/controllers/AndreaGianmarco/DettaglioDonazioneController.js"></script>
 <script src="js/controllers/AndreaGianmarco/forgotPasswordController.js"></script>
 
 <script src="js/controllers/MarcoNicola/RegistrationController.js"></script>
@@ -73,7 +73,7 @@
 
 <script src="js/controllers/MarcoNicola/ConfermaController.js"></script>
 <script src="js/controllers/AndreaGianmarco/DonazioneController.js"></script>
-<script src="js/controllers/AndreaGianmarco/StoricoRichieste.js"></script>
+
 <script src="js/controllers/AndreaGianmarco/DialogProdottoController.js"></script>
 <script src="js/controllers/AndreaGianmarco/RichiesteDonatoreController.js"></script>
 <script
@@ -111,10 +111,12 @@
 </head>
 <body ng-controller="AppController">
 	<ons-navigator var="myNavigator"> 
-	<ons-page ng-controller="loginController" id="login.html"> <img
-		src="images/JoyFood.jpg" title="JoyFood" alt="JoyFood"
+	<ons-page ng-controller="loginController" id="login.html" style="background:#F0F4C3;" >
+	<div style="height:100%;background:#F0F4C3;">
+	 <img
+		src="images/logo.png" title="JoyFood" alt="JoyFood"
 		style="display: block; margin: 0 auto; width: 80%;">
-	<div class="login-form">
+	<div class="login-form" style="background:#F0F4C3;">
 		<input id="id" style="width:100%;"  class="text-input--underbar" placeholder="Username" value="utente3" ng-model="field1"> 
 		<input id="psw"	type="password" class="text-input--underbar" placeholder="Password" value="sisp" ng-model="field2"> <br> <br>
 		<ons-button modifier="large" class="login-button" ng-click="login()">Log In</ons-button>
@@ -127,6 +129,7 @@
 			ng-click="myNavigator.pushPage('html/MarcoNicola/registration.html')"
 			modifier="quiet" class="signin forgot-password">Sign in</ons-button>
 	</div>
+	</div>
 	</ons-page> </ons-navigator>
 
 
@@ -135,6 +138,14 @@
 		menu-page="menu.html" main-page="home.html" side="left" type="overlay"
 		max-slide-distance="200px"> </ons-sliding-menu> </ons-page> </ons-template>
 
+<ons-template id="loader.html">
+	<ons-dialog var="dialog" style="background: transparent;" >
+		<div align="center" style="background: transparent;">
+			<svg class='progress-circular'><circle class='progress-circular__primary' cx='50%' cy='50%' r='40%' fill='none' stroke-width='10%' stroke-miterlimit='10'/>
+			</svg>
+		</div>
+	</ons-dialog>
+</ons-template>
 	<!-- MENU-->
 <ons-template id="menu.html"> 
 	<ons-page modifier="menu-page" ng-controller="menuController">

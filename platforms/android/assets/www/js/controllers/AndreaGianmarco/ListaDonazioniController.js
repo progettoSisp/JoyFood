@@ -6,10 +6,8 @@ myApp.controller('listaDonazioniController', function($scope,$http,donazioniServ
 		});
 
 		$scope.date=new Date().getTime();
-		$scope.changeView=function(carrello){
-		
+	$scope.changeView=function(carrello){	
 		donazioniService.setDonazioni(carrello);
-		console.log(carrello);
 	    myNavigator.pushPage("html/AngeloFrancesco/dettaglio_donazione.html");
 	}   
 

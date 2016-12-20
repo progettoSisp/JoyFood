@@ -256,12 +256,12 @@ input:disabled + .switch__toggle {
 	display: default;
 }
 </style>
-<ons-page ng-controller="donazioneController"> 
+<ons-page ng-controller="donazioneController" > 
 	<ons-toolbar style="height: 56px;">
 		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
 			<div class="navigation-bar__left navigation-bar--material__left">
 				<span class="toolbar-button toolbar-button--material"> 
-					<ons-back-button></ons-back-button>
+					<ons-back-button ></ons-back-button>
 				</span>
 			</div>
 			<div class="navigation-bar__center navigation-bar--material__center">
@@ -269,7 +269,7 @@ input:disabled + .switch__toggle {
 			</div>
 		</div>
 	</ons-toolbar>
-<form  name="myForm" class="nuovaDon">
+<form  name="myForm" class="nuovaDon" style="height:100%;background:#F0F4C3;">
 	<div class="name">{{sede.azienda.denominazione}} - {{sede.denominazioneSede}}</div>
 	<div class="location">
 		<i class="fa fa-map-marker"></i> {{sede.indirizzoSede}} , {{sede.comuneSede}} {{sede.provinciaSede}}
