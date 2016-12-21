@@ -1,54 +1,15 @@
-<style>
-.list-item-container {
-  line-height: 1;
-  padding: 0px 15px 0px 15px;
-}
-
-.thumbnail {
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-}
-
-.name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 15px;
-  margin-bottom: 6px;
-}
-
-.location {
-  font-size: 14px;
-  opacity: 0.4;
-  margin-bottom: 6px;
-}
-
-.desc {
-  line-height: 1.2;
-  font-size: 13px;
-}
-
-
-
-</style>
 <ons-page ng-controller="listaDonazioniController">
-
-<ons-toolbar style="height: 56px;width: 100%;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      					<i class="zmdi zmdi-menu"></i>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Last donations
-			</div>
-		</div>
-</ons-toolbar>
-<br>
+<ons-toolbar modifier="material noshadow">
+      		<div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Last donations</div>
+      <div class="right">
+         
+      </div>
+    </ons-toolbar>
 <ons-list>
 	 <ons-list-header>Your last donations</ons-list-header>
         <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"  ng-click="changeView(carrello);">

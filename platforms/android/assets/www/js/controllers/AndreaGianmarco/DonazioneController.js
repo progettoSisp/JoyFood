@@ -2,7 +2,7 @@
  * Created by Aerdna on 17-Sep-16.
  */
 
-myApp.controller('donazioneController', function(donazioniService,$scope,$http) {
+myApp.controller('donazioneController', function(donazioniService,$scope,$http,userService) {
 		$scope.sedi;
 		$scope.date = new Date();
 		$scope.donazione;
@@ -14,15 +14,19 @@ myApp.controller('donazioneController', function(donazioniService,$scope,$http) 
 			console.log("INIT");
 			$scope.sede=donazioniService.getSede();
 			console.log($scope.sede);
+			$scope.sedi=userService.getSedi();
 		}
 		
 		$scope.init();
 		
-        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
+		$scope.refreshSedi=function(){
+	        $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
             .then(function(response) {
-            	$scope.sedi=response.data;
-            });
-        
+            	userService.saveSedi(response);
+            	$scope.sedi=response;
+            });	
+		}
+
         $scope.selezionaSede= function(sede){
         	console.log("CLICK");
         	console.log(sede);

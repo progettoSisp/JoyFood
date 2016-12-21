@@ -33,22 +33,17 @@
 
 </style>
 <ons-page ng-controller="listaDonazioniController">
-
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" >
-      					<ons-back-button></ons-back-button>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Found Donations
-			</div>
-		</div>
-</ons-toolbar>
-<br>
+<ons-toolbar modifier="material noshadow">
+      		<div class="left">
+		<ons-toolbar-button modifier="material" >
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Found Donations</div>
+      <div class="right">
+         
+      </div>
+    </ons-toolbar>
 <ons-list>
         <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container" ng-if="date<carrello.dataFine"  ng-click="changeView(carrello);">
           <ons-row >

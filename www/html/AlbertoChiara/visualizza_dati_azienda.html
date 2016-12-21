@@ -77,20 +77,19 @@
 </style>
 <ons-page ng-controller="datiAziendaController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      					<i class="zmdi zmdi-menu"></i>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				My Company
-			</div>
-		</div>
-</ons-toolbar>
+ <ons-toolbar modifier="material noshadow">
+      <div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">My Company</div>
+      <div class="right">       
+        <ons-toolbar-button modifier="material">
+          <ons-icon icon="md-edit"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
 <div style="padding-left: 15px; padding-top:30px;">
 	<div class="name" style="text-align:center;"><h2>{{azienda[0].denominazione}}</h2></div>
 	<div class="location" style="text-align:center;">

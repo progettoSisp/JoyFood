@@ -15,11 +15,11 @@
 .list-item-container {
   font-size: 14px;
   padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .list-item-content {
-  margin-left: 50px;
+  margin-left: 0px;
   margin-right: 30px;
 }
 </style>
@@ -31,7 +31,7 @@
 		</span>
 	</div>
 	<div class="navigation-bar__center navigation-bar--material__center">
-		Sede</div>
+		Location</div>
 	<div class="navigation-bar__right navigation-bar--material__right">
 
 	</div>
@@ -39,7 +39,7 @@
 
 	 <ons-list>
 		
-        <ons-list-header>Seleziona una delle tue sedi</ons-list-header>
+        <ons-list-header>Select one of your locations</ons-list-header>
 
         <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-click="selezionaSede(sede)">
             <div class="list-item-content">

@@ -1,19 +1,15 @@
 <ons-page ng-controller="ricercaDonazioneController">
-    <div class="navigation-bar navigation-bar--material">
-        <div class="navigation-bar__left navigation-bar--material__left">
-    <span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      <i class="zmdi zmdi-menu"></i>
-    </span>
-        </div>
-        <div class="navigation-bar__center navigation-bar--material__center">
-            Ricerca donazione
-        </div>
-        <div class="navigation-bar__right navigation-bar--material__right">
-    <span class="toolbar-button toolbar-button--material">
-      <i class="zmdi zmdi-search"></i>
-    </span>
-        </div>
-    </div>
+<ons-toolbar modifier="material noshadow">
+      		<div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Search donations</div>
+      <div class="right">
+         
+      </div>
+    </ons-toolbar>
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
     </p>
     <form id='ricercaForm' class="ricerca-form" ng-submit="submit()">
