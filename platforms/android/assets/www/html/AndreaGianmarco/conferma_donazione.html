@@ -59,24 +59,20 @@
 </style>
 <ons-page ng-controller="confermaDonazioneController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material">
-      					<ons-back-button ></ons-back-button>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Confirm
-			</div>
-			<div class="navigation-bar__right navigation-bar--material__right">
-				<ons-icon ng-click="saveDonation()" icon="fa-floppy-o"></ons-icon>
-			</div>
-		</div>
-</ons-toolbar>
-<div style="padding-top:30px;" id="map_canvas_sede" style="height: 200px; width:100%; border: 1px solid gray;"></div>
+<ons-toolbar modifier="material noshadow">
+      <div class="left">
+      	<ons-toolbar-button modifier="material">
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Confirm</div>
+      <div class="right">   
+      	<ons-toolbar-button>
+              <ons-icon icon="fa-floppy-o" ng-click="saveDonation()"></ons-icon>
+        </ons-toolbar-button>   
+      </div>
+    </ons-toolbar>
+<div id="map_canvas_sede" style="height: 300px; width:100%; border: 1px solid gray;"></div>
 <div style="padding-left: 15px;">
 	<div class="name" style="text-align:center;"><h2>{{donazione.titolo}}</h2></div>
 	<div class="location" style="text-align:center;">

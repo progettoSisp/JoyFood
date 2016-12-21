@@ -256,18 +256,16 @@ input:disabled + .switch__toggle {
 }
 </style>
 <ons-page ng-controller="donazioneController" > 
-	<ons-toolbar style="height: 56px; style="width: 100%;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<span class="toolbar-button toolbar-button--material"> 
-					<ons-back-button ></ons-back-button>
-				</span>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				New donation
-			</div>
-		</div>
-	</ons-toolbar>
+		<ons-toolbar modifier="material noshadow">
+      <div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">New donation</div>
+      <div class="right">      
+      </div>
+    </ons-toolbar>
 <form  name="myForm" class="nuovaDon" style="height:100%;">
 	<div class="name">{{sede.azienda.denominazione}} - {{sede.denominazioneSede}}</div>
 	<div class="location">
@@ -280,10 +278,10 @@ input:disabled + .switch__toggle {
 	</textarea>
 	<br>
 	<br>
-	<input ng-model="donazione.dataInizio" type="date" name="dataInizio"  value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
+	<input ng-model="donazione.dataInizio" type="datetime-local" name="dataInizio"  value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
 	<br> 
 	<br>
-	<input ng-model="donazione.dataFine" type="date" name="dataFine" value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
+	<input ng-model="donazione.dataFine" type="datetime-local" name="dataFine" value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
 	<br>
 	<br>
 	<label class="switch switch--material">

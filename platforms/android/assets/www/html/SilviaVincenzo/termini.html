@@ -1,18 +1,14 @@
 <ons-page ng-controller="ricercaDonazioneController"> 
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      					<i class="zmdi zmdi-menu"></i>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Terms of use
-			</div>
-		</div>
-	</ons-toolbar>
+ <ons-toolbar modifier="material noshadow">
+      <div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Term of user</div>
+      <div class="right">       
+      </div>
+    </ons-toolbar>
 <p style="text-align: center; opacity: 0.6; padding-top: 20px;"></p>
 <div class="termini" style="align:center;text-align:center;padding-left: 10px;padding-right: 10px;">
 	<p align="center">

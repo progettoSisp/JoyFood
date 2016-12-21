@@ -278,10 +278,10 @@ input:disabled + .switch__toggle {
 	</textarea>
 	<br>
 	<br>
-	<input ng-model="donazione.dataInizio" type="date" name="dataInizio"  value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
+	<input ng-model="donazione.dataInizio" type="datetime-local" name="dataInizio"  value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
 	<br> 
 	<br>
-	<input ng-model="donazione.dataFine" type="date" name="dataFine" value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
+	<input ng-model="donazione.dataFine" type="datetime-local" name="dataFine" value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
 	<br>
 	<br>
 	<label class="switch switch--material">

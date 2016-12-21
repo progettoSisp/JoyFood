@@ -1,0 +1,46 @@
+.list-item-container {
+  line-height: 1;
+  padding: 0px 0px 0px 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+.reply-notification {
+  position: absolute;
+  top: 28px;
+  font-size: 10px;
+  font-weight: 600;
+  height: 13px;
+  line-height: 13px;
+  padding: 0 4px;
+  min-width: 13px;
+  margin-left: 18px;
+}
+
+.tab-icon {
+  font-size: 28px;
+  vertical-align: -4px;
+}

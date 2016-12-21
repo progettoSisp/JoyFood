@@ -2,8 +2,10 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	$scope.opzioni="Più Opzioni";
 	$scope.goOpzioni = false;
 	$scope.carrelli=[];
-
-
+	$scope.dialog;
+	$scope.latitudine;
+	$scope.longitudine;
+	$scope.indirizzo;
 	$scope.groups= [{key:"tipo", values: [{ "name": "Carne","id": "1"},{ "name": "Pesce","id": "2"},{ "name": "Frutta","id": "3"}]},
 	                {key:"classificazione",values: [{"name": "Vegano","id": "1"},{"name": "Celiaco","id": "2"},{"name": "Vegetariano","id": "3"}]},
 	                {key:"allergene",values: [{"name": "Mais","id": "1"},{"name": "Latteria","id": "2"}]}
@@ -12,30 +14,10 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	$scope.load = function(page) {
 		$scope.mySplitterContent.load(page)
 	}
+	
 	$scope.open = function() {
 		$scope.mySplitterSide.open();
 	} 
-
-	/*
-  $timeout(callAtTimeout, 0);
-
-   function callAtTimeout() {
-
-
-
-
-	   filtriService.Init();
-		                  console.log(filtriService.getTipo() );
-		                  console.log(filtriService.getClassificazione());
-		                  console.log(filtriService.getAllergene());
-	   $scope.groups= [{key:"Tipo", values: filtriService.getTipo() },
-		               {key:"Classificazione",values: filtriService.getClassificazione()},
-		               {key:"Allergeni",values:filtriService.getAllergene()}
-		               ];   
-	 }
-
-
-	 */
 
 	$scope.toggleGroup = function(group) {
 		if ($scope.isGroupShown(group)) {
@@ -44,6 +26,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 			$scope.shownGroup = group;
 		}
 	};
+	
 	$scope.toggleoptions = function(group) {
 		if ($scope.isGroupShown(group)) {
 			$scope.shownGroup = null;
@@ -56,21 +39,19 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		return $scope.shownGroup === group;
 	};
 
-
-	$scope.latitudine;
-	$scope.longitudine;
-	$scope.indirizzo;
-	
+	ons.ready(function() {
+	       console.log("YEAU");
+	       ons.createDialog('loader.html',{parentScope: $scope}).then(function(dialog) {
+	  		 $scope.dialog=dialog;
+	  	 	});
+	      });
 	
 	$scope.ricerca=function(){
-	
-	   $scope.valori=$("form.ricerca-form").serialize();
-		
-		
+		$scope.dialog.show();
+		$scope.valori=$("form.ricerca-form").serialize();
 		var request = {	
 				'address': $scope.indirizzo
 		};
-		
 		geocoder = new google.maps.Geocoder();
 		geocoder.geocode(request, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
@@ -83,37 +64,24 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 			}
 			
 		});
-		
-		
-		
-		
-		 $http.get("https://joyfoodamministratore-sisp.rhcloud.com/public/listAllCarrelli")
-         .then(function(response) {
-        	ricercaService.saveRicerca(response);
-        	myNavigator.pushPage("html/AngeloFrancesco/risultati_ricerca_donazione.html")
-            console.log(response.data);
-         },function(response) {
-        	 console.log(response);
-         });
-	
-		
-//	    for (i=0; i<$scope.valori.length; i++){
-//	    	
-//	    //	$scope.key=$scope.valori[i].name;
-//	    	console.log($scope.key);
-//	    	$scope.richiesta[$scope.key].setValue($scope.valori[i].value);
-//	    	
-//	    }
-//	 
-//	   console.log($scope.richiesta);
-	   //console.log(filtriService.getClassificazione());
-	   //$scope.formData = JSON.parse($("form.ricerca-form").serializeArray());
-	
-	
-	/*	remoteApiService.ricercaDonazione($scope.valori).then(function (risultato) {
-			
-			console.log(risultato);
-		});*/
-
+		console.log($scope.valori);
+		var settings = {
+		          "url": "https://joyfoodamministratore-sisp.rhcloud.com/api/ricercaDonazione",
+		          "method": "POST",
+		          "headers": {
+		            "content-type": "application/x-www-form-urlencoded",
+		          },
+		          "data": $scope.valori
+		          };
+		        $http(settings)
+		            .then(function(response) {
+		            	ricercaService.saveRicerca(response);
+		            	$scope.dialog.hide();
+		            	myNavigator.pushPage("html/AngeloFrancesco/risultati_ricerca_donazione.html")
+		            }
+		           ,function error(response) {
+		        	   console.log(response);
+		        	   $scope.dialog.hide();
+		           });
 	}
 });

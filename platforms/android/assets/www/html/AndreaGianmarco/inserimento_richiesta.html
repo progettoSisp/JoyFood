@@ -1,65 +1,45 @@
 <ons-page ng-controller="inserimentoRichiestaController">
-<ons-toolbar>
-<div class="center">New request</div>
-</ons-toolbar> <!--IIMMAGINE 
-	 <img src="images/product_default.png" title="Prodotto" alt="Prodotto"
-		style="display: block; margin: 0 auto; width: 30%;"> <br />
-		-->
-<div class="login-form">
-
-	<form class="insert-form">
-	
-		<ul class="list">
-			<li class="list__item">
-			<textarea readonly 
-					class="textarea textarea--transparent" name="carrello" value="richiesta.id"
-					style="width: 100%; height: 50px; margin-top: 4px;"
-					placeholder="ID Richiesta :"></textarea></li>
-		</ul>
-		<ul class="list">
-			<li class="list__item">
-			<textarea readonly ng-model="richiesta.carrello.titolo"
-					class="textarea textarea--transparent" name="titolo" value="richiesta.carrello.titolo"
-					style="width: 100%; height: 50px; margin-top: 4px;"
-					placeholder="Titolo"></textarea></li>
-		</ul>
-		<ul class="list">
-			<li class="list__item">
-			<textarea readonly ng-model="richiesta.carrello.descrizione"
-					class="textarea textarea--transparent" name="descrizione" value=""
-					style="width: 100%; height: 50px; margin-top: 4px;"
-					placeholder="Descrizione :"></textarea></li>
-		</ul>
-		<ul class="list">
-			<li class="list__item">
-			<textarea readonly ng-model="richiesta.dataRitiro"
-					class="textarea textarea--transparent" name="dataRitiro" value=""
-					style="width: 100%; height: 50px; margin-top: 4px;"
-					placeholder="Data Ritiro :"></textarea></li>
-		</ul>
-		<ul class="list">
-			<li class="list__item">
-			<textarea readonly ng-model="richiesta.pezzi"
-					class="textarea textarea--transparent" name="pezzi" value=""
-					style="width: 100%; height: 50px; margin-top: 4px;"
-					placeholder="Pezzi :"></textarea></li>
-		</ul>
-		
-		<ons-list id="listaProdotti">
-	<ons-list-item modifier="chevron" class="list-item-container">
-	
-	<div class="list-item-right">
-		<div class="list-item-content">
-			<div class="nomeprodotto"><strong>{{richiesta.prodotto.nome}}</strong></div>
-			<span class="descrizioneprodotto">{{richiesta.prodotto.descrizione}}</span>
-		</div>
-	</div>
-	</ons-list-item> </ons-list>
-		
-
-			<br />
-			<ons-button modifier="large" class="search-button"
-				ng-click="insertRichiesta(richiesta)"> Save request </ons-button>
+<style>
+.nuovaDon {
+	text-align: center;
+	width: 80%;
+	margin: 60px auto 0;
+}
+</style>
+<ons-toolbar modifier="material noshadow">
+      <div class="left">
+      	<ons-toolbar-button modifier="material">
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Insert request</div>
+      <div class="right">   
+      	<ons-toolbar-button>
+              <ons-icon icon="fa-floppy-o" ng-click="saveRequest()"></ons-icon>
+        </ons-toolbar-button>   
+      </div>
+    </ons-toolbar>
+    <form  name="myForm" class="nuovaDon" style="height:100%;">
+    	<textarea ng-model="descrizione" placeholder="Description" class="textarea textarea--transparent" style="border:1px solid #ddd; width: 100%; height: 50px; margin-top: 4px;">
+		</textarea>
+		<br>
+		<br>
+		<input ng-model="dataRitiro" type="datetime-local" name="dataRitiro"  value="{{ date | date: 'yyyy-MM-dd' }}"  class="text-input--underbar width-full" /> 
+		<br> 
+    
+<ons-list-header>Select the products</ons-list-header>
+<ons-list>
+        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in donazione.carrelloProdottos">
+            <div class="list-item-content">
+          	<div class="name" ng-click="changeView(prodotto.prodotto)">
+               	<p>{{prodotto.prodotto.descrizione}} </p><p> {{prodotto.pezzi}} X {{prodotto.quantita}}{{prodotto.unitaDiMisura.descrizione}}</p>
+               	              </div> 
+            <p style="opacity: 0.6; font-size: 80%;">Numero porzioni</p>
+           <div class="desc">
+                <input  min="0"  value=0 max="{{prodotto.pezzi}}" type="range" ng-model="prodotto.selezione" class="range range--material" style="float: left; width: 190px; margin-top: -4px;">
+        <span class="range-slider__value" ng-model="quantita" style="float: right;">{{prodotto.selezione}}</span> 
+           </div>
+        </ons-list-item>
+	</ons-list>
 	</form>
-</div>
 </ons-page>

@@ -1,25 +1,18 @@
 <link rel="stylesheet" href="css/profile.css">
 <ons-page ng-controller="dettaglioUtenteController"> 
-
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      					<i class="zmdi zmdi-menu"></i>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Your profile
-			</div>
-			<div class="navigation-bar__right navigation-bar--material__right">
-				<ons-icon icon="md-edit"></ons-icon>
-			</div>
-			 
-		</div>
-</ons-toolbar>
-
+<ons-toolbar modifier="material noshadow">
+      <div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Profile</div>
+      <div class="right">       
+        <ons-toolbar-button modifier="material">
+          <ons-icon icon="md-edit"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
 <div class="profile-card">
 
 	<img src="images/icon-user.png" class="profile-image">

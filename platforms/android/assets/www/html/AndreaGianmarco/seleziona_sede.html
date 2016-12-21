@@ -24,18 +24,18 @@
 }
 </style>
 <ons-page ng-controller="donazioneController">
-<div class="navigation-bar navigation-bar--material">
-	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"
-			ng-click="slidingMenu.openMenu();"> <i class="zmdi zmdi-menu"></i>
-		</span>
-	</div>
-	<div class="navigation-bar__center navigation-bar--material__center">
-		Location</div>
-	<div class="navigation-bar__right navigation-bar--material__right">
+<ons-toolbar modifier="material noshadow">
+      		<div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Locations</div>
+      <div class="right">
+         
+      </div>
+    </ons-toolbar>
 
-	</div>
-</div>
 
 	 <ons-list>
 		

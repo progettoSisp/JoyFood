@@ -1,54 +1,15 @@
-<style>
-.list-item-container {
-  line-height: 1;
-  padding: 15px 0px 15px 15px;
-}
-
-.thumbnail {
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-}
-
-.name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 15px;
-  margin-bottom: 6px;
-}
-
-.location {
-  font-size: 14px;
-  opacity: 0.4;
-  margin-bottom: 6px;
-}
-
-.desc {
-  line-height: 1.2;
-  font-size: 13px;
-}
-
-
-
-</style>
 <ons-page ng-controller="listaDonazioniController">
-
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" >
-      					<ons-back-button></ons-back-button>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Found Donations
-			</div>
-		</div>
-</ons-toolbar>
-<br>
+<ons-toolbar modifier="material noshadow">
+      		<div class="left">
+		<ons-toolbar-button modifier="material" >
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Found Donations</div>
+      <div class="right">
+         
+      </div>
+    </ons-toolbar>
 <ons-list>
         <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container" ng-if="date<carrello.dataFine"  ng-click="changeView(carrello);">
           <ons-row >
@@ -60,7 +21,10 @@
                 <b>{{carrello.titolo}}</b>
               </div>
               <div class="name">
-                {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}} - {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
+                 <i class="fa fa-calendar"></i> {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}}
+              </div>
+              <div class="name">
+                <i class="fa fa-calendar"></i>  {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
               </div>
               <div class="location">
                 <i class="fa fa-map-marker"></i> {{carrello.sede.denominazioneSede}}

@@ -45,12 +45,6 @@
   margin-bottom: 6px;
 }
 
-.list-item-container {
-  font-size: 14px;
-  padding-left: 15px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
 .list-item-content {
   margin-left: 10px;
   margin-right: 30px;
@@ -59,24 +53,20 @@
 </style>
 <ons-page ng-controller="dettaglioDonazioneController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material">
-      					<ons-back-button ></ons-back-button>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Donation
-			</div>
-			<div class="navigation-bar__right navigation-bar--material__right">
-				<i class="fa fa-trash"></i>
-			</div>
-		</div>
-</ons-toolbar>
-<div style="padding-top:30px;" id="map_canvas_sede" style="height: 200px; width:100%; border: 1px solid gray;"></div>
+ <ons-toolbar modifier="material noshadow">
+      <div class="left">
+      	<ons-toolbar-button modifier="material">
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Donation</div>
+      <div class="right">       
+        <ons-toolbar-button modifier="material">
+         
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+<div id="map_canvas_sede" style="height: 200px; width:100%; border: 1px solid gray;"></div>
 <div style="padding-left: 15px;">
 	<div class="name" style="text-align:center;"><h2>{{donazione.titolo}}</h2></div>
 	<div class="location" style="text-align:center;">
@@ -88,17 +78,17 @@
 </div>
 
         <ons-list-header>Products</ons-list-header>
-
-        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in donazione.carrelloProdottos" ng-click="dettaglioProdotto(prodotto.prodotto)">
+<ons-list>
+        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in donazione.carrelloProdottos" ng-click="changeView(prodotto.prodotto)">
             <div class="list-item-content">
           	<div class="name">
-               	{{prodotto.prodotto.descrizione}}
-               	              </div>
-              <div class="location">
-                 
-              </div>           
+               	<p>{{prodotto.prodotto.descrizione}} </p><p> {{prodotto.pezzi}} X {{prodotto.quantita}}{{prodotto.unitaDiMisura.descrizione}}</p>
+               	              </div>        
            </div>
         </ons-list-item>
 	</ons-list>
-</ons-list>
+<ons-fab position="right bottom">
+      <ons-ripple></ons-ripple>
+      <ons-icon icon="fa-cart-plus" ng-click="inserisciRichiesta()"></ons-icon>
+    </ons-fab>
   </ons-page>

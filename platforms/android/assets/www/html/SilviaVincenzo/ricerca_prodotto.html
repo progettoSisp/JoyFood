@@ -104,6 +104,17 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 	</div>
 </div>
 </ons-toolbar>
+<ons-toolbar modifier="material noshadow">
+      		<div class="left">
+		<ons-toolbar-button modifier="material" >
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Search product</div>
+      <div class="right">
+         
+      </div>
+    </ons-toolbar>
 <br>
 <div ng-show="opzioniRicerca">
 	<input type="search" value="" placeholder="Search" class="search-input">
@@ -298,13 +309,13 @@ input[type="search"].search-input::-webkit-search-cancel-button {
       <p style="font-weight: 500;" >{{selezione.nome}}</p>
       <p style="opacity: 0.6; font-size: 80%;">Quantit&agrave;</p>
       <div>
-        <input  min="0"  max="10" type="range" ng-model="selezione.quantita" class="range range--material" style="float: left; width: 190px; margin-top: -4px;">
+        <input  min="1"  max="10" type="range" ng-model="selezione.quantita" class="range range--material" style="float: left; width: 190px; margin-top: -4px;">
         <span class="range-slider__value" ng-model="quantita" style="float: right;">{{selezione.quantita}}</span>
       </div>
 	<br>
       <p style="opacity: 0.6; font-size: 80%;">Numero porzioni</p>
       <div>
-        <input min="0"  max="10" type="range" class="range range--material" ng-model="selezione.pezzi" style="float: left; width: 190px; margin-top: -4px;">
+        <input min="1"  max="10" type="range" class="range range--material" ng-model="selezione.pezzi" style="float: left; width: 190px; margin-top: -4px;">
         <span class="range-slider__value" ng-model="numero" style="float: right;">{{selezione.pezzi}}</span>
       </div>
       <div class="alert-dialog-footer alert-dialog-footer--material">

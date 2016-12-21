@@ -45,12 +45,6 @@
   margin-bottom: 6px;
 }
 
-.list-item-container {
-  font-size: 14px;
-  padding-left: 15px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
 .list-item-content {
   margin-left: 10px;
   margin-right: 30px;
@@ -68,7 +62,7 @@
       <div class="center">Donation</div>
       <div class="right">       
         <ons-toolbar-button modifier="material">
-          <ons-icon icon="fa-trash"></ons-icon>
+         
         </ons-toolbar-button>
       </div>
     </ons-toolbar>
@@ -84,17 +78,17 @@
 </div>
 
         <ons-list-header>Products</ons-list-header>
-
-        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in donazione.carrelloProdottos" ng-click="dettaglioProdotto(prodotto.prodotto)">
+<ons-list>
+        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in donazione.carrelloProdottos" ng-click="changeView(prodotto.prodotto)">
             <div class="list-item-content">
           	<div class="name">
-               	{{prodotto.prodotto.descrizione}}
-               	              </div>
-              <div class="location">
-                 
-              </div>           
+               	<p>{{prodotto.prodotto.descrizione}} </p><p> {{prodotto.pezzi}} X {{prodotto.quantita}}{{prodotto.unitaDiMisura.descrizione}}</p>
+               	              </div>        
            </div>
         </ons-list-item>
 	</ons-list>
-</ons-list>
+<ons-fab position="right bottom">
+      <ons-ripple></ons-ripple>
+      <ons-icon icon="fa-cart-plus" ng-click="inserisciRichiesta()"></ons-icon>
+    </ons-fab>
   </ons-page>

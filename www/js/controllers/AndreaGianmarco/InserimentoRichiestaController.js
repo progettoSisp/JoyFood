@@ -1,12 +1,31 @@
-myApp.controller('inserimentoRichiestaController', function($scope,$http,donazioniService) {
-
-    $scope.richiesta = donazioniService.getDonazioni();
+myApp.controller('inserimentoRichiestaController', function($scope,$http,donazioniService,prodottoService) {
+	$scope.donazione;
+    $scope.descrizione;
+    $scope.dataRitiro;
+    $scope.init = function () {
+		console.log("INIT");
+		$scope.donazione=donazioniService.getDonazioni();
+		console.log($scope.donazione);
+		angular.forEach($scope.donazione.carrelloProdottos, function(value, key) {
+			value.selezione=0;
+		});
+	}
 	
-    $scope.insertRichiesta=function(){
-		$scope.valori=$("form.insert-form").serialize();
-		console.log("Richiesta: "+$scope.valori);
-
-		var str= $scope.valori;
+	$scope.init();
+	
+    $scope.saveRequest=function(){
+    	var str="idCarrello="+$scope.donazione.idCarrello+
+    	"&dataRitiro="+$scope.dataRitiro+
+    	"&descrizione="+$scope.descrizione;
+    	angular.forEach($scope.donazione.carrelloProdottos, function(value, key) {
+			if(value.selezione>0){
+				var prodotto={
+						"id":value.prodotto.id,
+						"pezzi":value.selezione
+				}
+				str=str+"&prodotto="+JSON.stringify(prodotto);
+			}
+		});
 		var settings = {
 				"url": "https://joyfoodamministratore-sisp.rhcloud.com/api/inserimentoRichiesta",
 				"method": "POST",
@@ -23,5 +42,10 @@ myApp.controller('inserimentoRichiestaController', function($scope,$http,donazio
         });
 	}
     
+    $scope.changeView=function(prodotto){
+	    prodottoService.saveProdotto(prodotto);
+	    console.log(prodotto.id);
+	    myNavigator.pushPage("html/SilviaVincenzo/dettaglio_prodotto.html");
+	}
     
 });   

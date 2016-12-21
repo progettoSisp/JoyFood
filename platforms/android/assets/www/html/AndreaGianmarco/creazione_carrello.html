@@ -1,21 +1,17 @@
 <ons-page ng-controller="donazioneController">
-	<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<span class="toolbar-button toolbar-button--material"> 
-					<ons-back-button></ons-back-button>
-				</span>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Inserimento prodotti
-			</div>
-			<div class="navigation-bar__right navigation-bar--material__right">
-		<span class="toolbar-button toolbar-button--material"> 
-			<ons-icon ng-click="myNavigator.pushPage('html/AndreaGianmarco/conferma_donazione.html')" icon="fa-floppy-o"></ons-icon>
-		</span>
-	</div>
-		</div>
-	</ons-toolbar>
+	<ons-toolbar modifier="material noshadow">
+      <div class="left">
+      	<ons-toolbar-button modifier="material">
+          <ons-back-button></ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Insert products</div>
+      <div class="right">    
+      	<ons-toolbar-button>
+              <ons-icon icon="fa-floppy-o" ng-click="myNavigator.pushPage('html/AndreaGianmarco/conferma_donazione.html')" ></ons-icon>
+        </ons-toolbar-button>   
+      </div>
+    </ons-toolbar>
  <ons-list>
 		
         <ons-list-header>Seleziona i prodotti</ons-list-header>
@@ -31,7 +27,7 @@
 		</div>
 	</div>
 	<div style="width="10%; float:right;">
-		<ons-icon  icon="fa-cart-plus" size="40px" class="ons-icon fa-cart-plus fa" _compiled="" style="font-size: 40px;position: absolute;right: 8px;top: 30px;"></ons-icon>
+		<ons-icon  icon="fa-trash" size="40px" class="ons-icon fa-thrash fa" _compiled="" style="font-size: 40px;position: absolute;right: 8px;top: 30px;"></ons-icon>
 	</div>
 	</ons-list-item> </ons-list>
 	</ons-list>      

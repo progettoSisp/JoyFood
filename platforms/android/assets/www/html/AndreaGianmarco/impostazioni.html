@@ -339,22 +339,16 @@ input:disabled + .switch__toggle {
 }
 </style>
 <ons-page >
-<ons-toolbar style="height: 56px;">
-		<div class="navigation-bar navigation-bar--material" style="width: 100%;">
-			<div class="navigation-bar__left navigation-bar--material__left">
-				<div class="navigation-bar__left navigation-bar--material__left">
-    				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();">
-      					<i class="zmdi zmdi-menu"></i>
-    				</span>
- 				</div>
-			</div>
-			<div class="navigation-bar__center navigation-bar--material__center">
-				Your profile
-			</div>
-		</div>
-</ons-toolbar>
-<br>
-<br>
+	<ons-toolbar modifier="material noshadow">
+		<div class="left">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Settings</div>
+      <div class="right">     
+      </div>
+    </ons-toolbar>
       <div class="settings-header">Push Notification</div>
       <ons-list modifier="inset" class="settings-list">
         <ons-list-item>
