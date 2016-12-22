@@ -11,17 +11,19 @@
       </div>
     </ons-toolbar>
 <ons-list>
-        <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"   ng-click="changeView(carrello);">
+	 <ons-list-header>Donations</ons-list-header>
+        <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"  ng-click="changeView(carrello);">
           <ons-row >
             <ons-col width="95px"  ng-if="carrello.immagine">
               <img ng-src="data:image/JPEG;base64,{{carrello.immagine}}">
             </ons-col>
             <ons-col>
               <div class="name">
-                <b>{{carrello.titolo}}</b>
+                <b>{{carrello.titolo}} <span style="float:right; color: green;" ng-if="date<carrello.dataFine">Aperto</span> <span style="float:right; color: red;" ng-if="date>=carrello.dataFine">Chiuso</span>
+              	</b>
               </div>
               <div class="name">
-                 <i class="fa fa-calendar"></i> {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}}
+                <i class="fa fa-calendar"></i>  {{carrello.dataInizio | date : 'dd/MM/yyyy HH:mm'}} 
               </div>
               <div class="name">
                 <i class="fa fa-calendar"></i>  {{carrello.dataFine | date : 'dd/MM/yyyy HH:mm'}}
@@ -29,12 +31,7 @@
               <div class="location">
                 <i class="fa fa-map-marker"></i> {{carrello.sede.denominazioneSede}}
               </div>
-              <div class="desc">
-                 {{carrello.descrizione}}
-              </div>
-              <br>
             </ons-col>
-            <ons-col width="40px"></ons-col>
           </ons-row>
         </ons-list-item>
  </ons-list>
