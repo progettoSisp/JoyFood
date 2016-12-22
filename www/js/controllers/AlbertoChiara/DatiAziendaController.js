@@ -20,17 +20,7 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 			donazioniService.setSede(sede);
 			myNavigator.pushPage("html/AlbertoChiara/visualizza_dati_sede.html");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 		$scope.inputDisabilitato = true;
 		$scope.salvaDisabilitato = true;
     	$scope.modificaDisabilitato = false;
@@ -190,7 +180,47 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 	    
 	  
 
-	});	 
+	});	
+	
+	$scope.saveChanges= function(azienda){
+		console.log("idAzienda: "+azienda.idAzienda);
+		console.log("CF: "+azienda.cf);
+		console.log("denominazione: "+azienda.denominazione);
+		console.log("statoAzienda: "+azienda.statoAzienda.idStatoAzienda);
+		console.log("tipoAzienda: "+azienda.tipoAzienda.idTipoAzienda);
+		console.log("sedeLegale: "+azienda.sedeLegale);
+		console.log("note: "+azienda.note);
+		console.log("natGiur: "+azienda.natGiud1lvl.id);
+
+		var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://joyfoodamministratore-sisp.rhcloud.com/api/updateAzienda",
+				"method": "POST",
+				"headers": {
+//					"x-auth-token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJWaW5jZW56bzIifQ.wqDrxAW4dDudWO-9EaLTMrZ4vbbwdxzW7RG1FCHkAmG2bOq-Uiw-oFBEtlll684W92FfRPg5Agr4pHFxguxbHw",
+					"content-type": "application/x-www-form-urlencoded",
+					"cache-control": "no-cache",
+//					"postman-token": "8ef7df35-41df-8364-621e-5c0fdae67e96"
+				},
+				"data": {		
+					"cf": azienda.cf,
+					"denominazione": azienda.denominazione,
+					"statoAzienda" :azienda.statoAzienda.idStatoAzienda,
+					"tipoAzienda": azienda.tipoAzienda.idTipoAzienda,
+					"sedeLegale": azienda.sedeLegale,
+					"note": azienda.note,
+					"codNaturaGiuridica1lvl": azienda.natGiud1lvl.id,
+					"codAzienda": azienda.idAzienda
+				}
+		};
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+			ons.notification.alert('Your profile has been saved correctly');
+		});
+
+	}
+	
 });
 
 
