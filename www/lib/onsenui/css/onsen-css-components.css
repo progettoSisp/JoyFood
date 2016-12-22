@@ -5038,7 +5038,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   margin: 0;
   font: inherit;
   color: inherit;
-  background: transparent;
+  background: #fff;
   border: none;
   line-height: normal;
   cursor: default;
