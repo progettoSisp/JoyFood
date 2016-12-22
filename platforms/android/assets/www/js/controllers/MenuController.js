@@ -13,6 +13,12 @@ myApp.controller('menuController', function($scope, userService) {
 	
 	$scope.init();
 	
+	$scope.logout=function(){
+		userService.clear();
+		slidingMenu.closeMenu();
+		slidingMenu.setMainPage('index.html');
+	};
+	
 	$scope.$watch(function() { return userService.getView(); }, function(newVal) { 
 	    console.log("MENU WATCH");
 	    $scope.init();

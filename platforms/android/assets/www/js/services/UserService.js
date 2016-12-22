@@ -44,5 +44,12 @@ myApp.service('userService', function() {
     	  this.saveAzienda=function(azienda){
     		  return this.azienda=angular.copy(azienda);
     	  }
+    	  
+    	  this.clear=function(){
+    		  user = null;
+        	  view= null;
+        	  sedi = null;
+        	  azienda=null;
+    	  }
 
 })

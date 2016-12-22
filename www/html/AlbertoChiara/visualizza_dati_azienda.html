@@ -78,14 +78,14 @@
 <ons-page ng-controller="datiAziendaController">
 <link rel="stylesheet" href="css/inserimentoDatiAzienda.css">
  <ons-toolbar modifier="material noshadow">
-      <div class="left" ng-app="">
+      <div class="left">
 		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
           <ons-icon icon="md-menu"></ons-icon>
         </ons-toolbar-button>
       </div>
       <div class="center">My Company</div>
       <div class="right">       
-        <ons-toolbar-button modifier="material" ng-click="showButton=true">
+        <ons-toolbar-button modifier="material" ng-click="showButton=!showButton">
           <ons-icon icon="md-edit"></ons-icon>
         </ons-toolbar-button>
       </div>
@@ -108,13 +108,13 @@
 	
 	<div class="name"><p ng-hide="showButton"><strong>Note</strong>: {{azienda[0].note}}</p></div>
 	<div class="name"><p ng-show="showButton"><strong>Note</strong>: <input class="text-input--underbar" ng-model="azienda[0].note"></p></div>
+	<ons-button modifier="large" class="search-button" ng-click="saveChanges(azienda[0]); myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')" ng-show="showButton">Save changes</ons-button>
 </div>
 
-<ons-button modifier="large" class="search-button" ng-click="saveChanges(azienda[0]); myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')" ng-show="showButton">Save changes</ons-button>
 
-        <ons-list-header>Locations</ons-list-header>
+        <ons-list-header ng-show="!showButton">Locations</ons-list-header>
 
-        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-if="azienda[0].idAzienda==sede.azienda.idAzienda") ng-click="selezionaSede(sede)">
+        <ons-list-item ng-show="!showButton" modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-if="azienda[0].idAzienda==sede.azienda.idAzienda") ng-click="selezionaSede(sede)">
             <div class="list-item-content">
           	<div class="name">
                	{{sede.denominazioneSede}}
@@ -124,7 +124,7 @@
               </div>           
            </div>
         </ons-list-item>
-         <ons-list-item modifier="chevron tappable" class="list-item-container" ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')">
+         <ons-list-item ng-show="!showButton" modifier="chevron tappable" class="list-item-container" ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')">
             <div class="list-item-content">
           	<div class="name">
                Add a location
@@ -135,7 +135,7 @@
         </ons-list-item>
 	</ons-list>
 </ons-list>
-	<ons-fab position="right bottom">
+	<ons-fab ng-show="!showButton" position="right bottom">
       <ons-ripple></ons-ripple>
       <ons-icon icon="md-edit"></ons-icon>
     </ons-fab>

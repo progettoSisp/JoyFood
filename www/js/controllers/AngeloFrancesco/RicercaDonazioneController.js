@@ -75,7 +75,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		          };
 		        $http(settings)
 		            .then(function(response) {
-		            	ricercaService.saveRicerca(response);
+		            	ricercaService.saveRicerca(response.data);
 		            	$scope.dialog.hide();
 		            	myNavigator.pushPage("html/AngeloFrancesco/risultati_ricerca_donazione.html")
 		            }

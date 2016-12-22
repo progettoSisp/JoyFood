@@ -1,7 +1,5 @@
 myApp.controller('datiAziendaController', function($scope,$http, remoteAppService, remoteApiService,donazioniService,userService) {
 
-	ons.ready(function() {
-
 		$scope.azienda={};
 		console.log("inserimentoDatiAziendaController");
 		$scope.sedi=[];
@@ -20,17 +18,7 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 			donazioniService.setSede(sede);
 			myNavigator.pushPage("html/AlbertoChiara/visualizza_dati_sede.html");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 		$scope.inputDisabilitato = true;
 		$scope.salvaDisabilitato = true;
     	$scope.modificaDisabilitato = false;
@@ -49,119 +37,6 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 	    $scope.nat2LivFromDB = 'Nat2LivA2';
 	    $scope.nat1LivSelezionata = $scope.nat1LivFromDB;
 	    $scope.nat2LivSelezionata = $scope.nat2LivFromDB;
-
-	
-//		remoteApiService.getAzienda().then(function(response) {
-//			
-//			$scope.a = response;
-//			console.log('Azienda:');
-//			console.log($scope.a);
-//			
-//			
-//			
-//				$scope.denominazione = response.data.denominazione;
-//				$scope.cf = response.data.cf;
-//				$scope.sedeLegale = response.data.sedeLegale;
-//				$scope.stato = response.data.stato;
-//		
-//	});
-
-		remoteAppService.getNatGiud1lvl().then(function(response) {
-
-
-			$scope.n1 = response;
-			console.log('Nature 1 Livello:');
-			console.log($scope.n1);
-
-			$scope.nat1liv= [];
-			angular.forEach($scope.n1,function(value){
-				$scope.nat1liv.push(value.descrizione);
-			});
-		});
-
-		remoteAppService.getNatGiud2lvl().then(function(response) {
-
-			$scope.n2 = response;
-			console.log('Nature 2 Livello:');
-			console.log($scope.n2);
-
-			$scope.nat2liv= [];
-			angular.forEach($scope.n2,function(value){
-				var nuova_nat_2_liv = {};
-				nuova_nat_2_liv['descnat1liv']=value.natGiud1lvl.descrizione;
-				nuova_nat_2_liv['descrizione']=value.descrizione;
-				$scope.nat2liv.push(nuova_nat_2_liv);
-
-			});
-
-			$scope.nat2livVisualizzate = [];
-			angular.forEach($scope.nat2liv,function(value, key){
-
-				if(value.descnat1liv==='Nat1LivA')
-					$scope.nat2livVisualizzate.push(value.descrizione);
-			});
-
-		});
-
-
-
-
-
-		$scope.toggleGroup1 = function(group1) {
-			if ($scope.isGroupShown1(group1)) {
-				$scope.shownGroup1 = null;
-			} else {
-				$scope.shownGroup1 = group1;
-			}
-		};
-
-		$scope.toggleGroup2 = function(group2) {
-		
-				if ($scope.isGroupShown2(group2)) {
-					$scope.shownGroup2 = null;
-				} else {
-					$scope.shownGroup2 = group2;
-				}
-	
-		};
-
-
-		$scope.isGroupShown1 = function(group1) {
-			return $scope.shownGroup1 === group1;
-		};
-
-		$scope.isGroupShown2 = function(group2) {
-			return $scope.shownGroup2 === group2;
-		};
-
-
-
-
-
-		$scope.click1Livello=function(descrizione){
-
-			
-			$scope.nat1livRiempito = true;
-			$scope.nat2livRiempito = false;
-			$scope.nat1LivSelezionata = descrizione;
-
-			$scope.nat2livVisualizzate = [];
-			angular.forEach($scope.nat2liv,function(value, key){
-
-				if(descrizione==value.descnat1liv)
-					$scope.nat2livVisualizzate.push(value.descrizione);
-			});
-		    $scope.nat2LivFromDB = false;
-
-
-		};
-
-
-		$scope.click2Livello=function(descrizione){
-			$scope.nat2LivSelezionata = descrizione;
-			$scope.nat2livRiempito = true;
-		}
-
 
 		
 	    $scope.clickModifica=function(){
@@ -188,9 +63,42 @@ myApp.controller('datiAziendaController', function($scope,$http, remoteAppServic
 	   	  });
 	    };
 	    
-	  
+	
+	$scope.saveChanges= function(azienda){
+		console.log("idAzienda: "+azienda.idAzienda);
+		console.log("CF: "+azienda.cf);
+		console.log("denominazione: "+azienda.denominazione);
+		console.log("statoAzienda: "+azienda.statoAzienda.idStatoAzienda);
+		console.log("tipoAzienda: "+azienda.tipoAzienda.idTipoAzienda);
+		console.log("sedeLegale: "+azienda.sedeLegale);
+		console.log("note: "+azienda.note);
+		console.log("natGiur: "+azienda.natGiud1lvl.id);
 
-	});	 
+		var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://joyfoodamministratore-sisp.rhcloud.com/api/updateAzienda",
+				"method": "POST",
+				"headers": {
+					"content-type": "application/x-www-form-urlencoded",
+					"cache-control": "no-cache",
+				},
+				"data": "cf="+ azienda.cf+
+					"&denominazione="+ azienda.denominazione+
+					"&statoAzienda="+azienda.statoAzienda.idStatoAzienda+
+					"&tipoAzienda="+azienda.tipoAzienda.idTipoAzienda+
+					"&sedeLegale="+azienda.sedeLegale+
+					"&note="+azienda.note+
+					"&codNaturaGiuridica1lvl="+azienda.natGiud1lvl.id+
+					"&codAzienda="+azienda.idAzienda
+				}
+		$http(settings).done(function (response) {
+			console.log(response);
+			ons.notification.alert('Your profile has been saved correctly');
+		});
+		};
+	
+	
 });
 
 

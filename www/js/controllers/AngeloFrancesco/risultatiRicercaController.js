@@ -1,22 +1,17 @@
-myApp.controller('risultatiRicercaController', function($scope,$http, ricercaService) {
-
+myApp.controller('risultatiRicercaController', function($scope,$http, ricercaService,donazioniService) {
 	
-	 array=[];
-	 console.log(donazioneService.getDonazione());
-console.log("risultatiRicercaController");
-
-
-  $scope.carrelli =ricercaService.getRicerca();
-
-
- 
-
-
- 
-// $scope.changeView=function(carrello){
-//  donazioneService.saveDonazione(carrello);
-//  console.log(carrello.idCarrello);
-  //myNavigator.pushPage("html/SilviaVincenzo/dettaglio_prodotto.html");
- //}
-
+  $scope.carrelli=[];
+  
+  $scope.init=function(){
+	  $scope.carrelli =ricercaService.getRicerca();
+	  console.log($scope.carrelli);
+  }
+  
+  $scope.changeView=function(carrello){	
+		donazioniService.setDonazioni(carrello);
+	    myNavigator.pushPage("html/AngeloFrancesco/dettaglio_donazione.html");
+	}   
+  
+  $scope.init();
+  
 });

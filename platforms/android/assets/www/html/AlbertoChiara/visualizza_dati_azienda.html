@@ -85,24 +85,36 @@
       </div>
       <div class="center">My Company</div>
       <div class="right">       
-        <ons-toolbar-button modifier="material">
+        <ons-toolbar-button modifier="material" ng-click="showButton=!showButton">
           <ons-icon icon="md-edit"></ons-icon>
         </ons-toolbar-button>
       </div>
     </ons-toolbar>
 <div style="padding-left: 15px; padding-top:30px;">
-	<div class="name" style="text-align:center;"><h2>{{azienda[0].denominazione}}</h2></div>
+	<div class="name" style="text-align:center;" ng-hide="showButton"><h2>{{azienda[0].denominazione}}</h2></div>
+	<div class="name" style="text-align:center;" ng-show="showButton"><h2><input class="text-input--underbar" ng-model="azienda[0].denominazione"></h2></div>
+	
+	<div class="name" style="text-align:center;" ng-show="showButton"><h2><input class="text-input--underbar" ng-model="azienda[0].sedeLegale"></h2></div>
+	
 	<div class="location" style="text-align:center;">
-		<h3><i class="fa fa-map-marker"></i>  {{azienda[0].sedeLegale}}</h3>
+		<h3 ng-hide="showButton"><i class="fa fa-map-marker" ></i>  {{azienda[0].sedeLegale}}</h3>
 	</div>
-	<div class="name"><p><strong>Natura giuridica</strong>: {{azienda[0].natGiud1lvl.descrizione}}</p></div>
-	<div class="name"><p><strong>Tipo azienda</strong>:{{azienda[0].tipoAzienda.descrizione}}</p></div>
-	<div class="name"><p><strong>Tax</strong>: {{azienda[0].cf}}</p></div>
-	<div class="name"><p><strong>Description</strong>: {{azienda[0].note}}</p></div>
+	<div class="name"><p ng-hide="showButton"><strong>Legal type</strong>: {{azienda[0].natGiud1lvl.descrizione}}</p></div>
+	
+	<div class="name"><p ng-hide="showButton"><strong>Description</strong>:{{azienda[0].tipoAzienda.descrizione}}</p></div>
+	
+	<div class="name"><p ng-hide="showButton"><strong>Tax</strong>: {{azienda[0].cf}}</p></div>
+	<div class="name"><p ng-show="showButton"><strong>Tax</strong>: <input class="text-input--underbar" ng-model="azienda[0].cf"></p></div>
+	
+	<div class="name"><p ng-hide="showButton"><strong>Note</strong>: {{azienda[0].note}}</p></div>
+	<div class="name"><p ng-show="showButton"><strong>Note</strong>: <input class="text-input--underbar" ng-model="azienda[0].note"></p></div>
+	<ons-button modifier="large" class="search-button" ng-click="saveChanges(azienda[0]); myNavigator.pushPage('html/AlbertoChiara/visualizza_dati_azienda.html')" ng-show="showButton">Save changes</ons-button>
 </div>
-        <ons-list-header>Locations</ons-list-header>
 
-        <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-if="azienda[0].idAzienda==sede.azienda.idAzienda") ng-click="selezionaSede(sede)">
+
+        <ons-list-header ng-show="!showButton">Locations</ons-list-header>
+
+        <ons-list-item ng-show="!showButton" modifier="chevron tappable" class="list-item-container"  ng-repeat="sede in sedi" ng-if="azienda[0].idAzienda==sede.azienda.idAzienda") ng-click="selezionaSede(sede)">
             <div class="list-item-content">
           	<div class="name">
                	{{sede.denominazioneSede}}
@@ -112,7 +124,7 @@
               </div>           
            </div>
         </ons-list-item>
-         <ons-list-item modifier="chevron tappable" class="list-item-container" ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')">
+         <ons-list-item ng-show="!showButton" modifier="chevron tappable" class="list-item-container" ng-click="myNavigator.pushPage('html/AlbertoChiara/inserimento_dati_sede.html')">
             <div class="list-item-content">
           	<div class="name">
                Add a location
@@ -123,6 +135,10 @@
         </ons-list-item>
 	</ons-list>
 </ons-list>
+	<ons-fab ng-show="!showButton" position="right bottom">
+      <ons-ripple></ons-ripple>
+      <ons-icon icon="md-edit"></ons-icon>
+    </ons-fab>
   </ons-page>
   
   
