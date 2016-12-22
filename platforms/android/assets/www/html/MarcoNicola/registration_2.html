@@ -24,7 +24,7 @@
 	
 	
 			<span style="font-size: 10px; color: red;"
-				ng-show="!user2.dataNascita && inviato2">Insert date of birth</span>
+				ng-show="!user2.dataNascita && inviato2" ng-model="">Insert date of birth</span>
 	
 	
 			<div class="form-row" style="padding-top: 10px;">
@@ -35,7 +35,7 @@
 				<ul class="list">
 					<li class="list__item list__item--tappable"><label
 						class="radio-button radio-button--list-item"> <input
-							type="radio" name="genere" value="m" checked="checked" ng-model="user2.genere">
+							type="radio" name="genere" value="M" checked="checked" ng-model="user2.genere">
 							<div
 								class="radio-button__checkmark radio-button--list-item__checkmark"></div>
 							<ons-icon icon="fa-male" size="15px" fixed-width="false"
@@ -44,7 +44,7 @@
 					</label></li>
 					<li class="list__item list__item--tappable"><label
 						class="radio-button radio-button--list-item"> <input
-							type="radio" name="genere" value="f" ng-model="user2.genere">
+							type="radio" name="genere" value="F" ng-model="user2.genere">
 							<div
 								class="radio-button__checkmark radio-button--list-item__checkmark"></div>
 							<ons-icon icon="fa-female" size="15px" fixed-width="false"
@@ -56,6 +56,23 @@
 				<input name="comune" type="text" ng-model="user2.comuneNascita"
 					class="text-input--underbar width-full"
 					placeholder="&#xf015; Birthplace" value=""
+					style="font-family: Arial, FontAwesome" required> <span
+					style="font-size: 10px; color: red;"
+					ng-show="!user2.comuneNascita && inviato2">Required field</span>
+			</div>
+			<div class="form-row">
+				<input name="comune" type="text" ng-model="user2.comune"
+					class="text-input--underbar width-full"
+					placeholder="&#xf015; City" value=""
+					style="font-family: Arial, FontAwesome" required> <span
+					style="font-size: 10px; color: red;"
+					ng-show="!user2.comuneNascita && inviato2">Required field</span>
+	
+			</div>
+			<div class="form-row">
+				<input name="comune" type="text" ng-model="user2.indirizzo"
+					class="text-input--underbar width-full"
+					placeholder="&#xf015; Address" value=""
 					style="font-family: Arial, FontAwesome" required> <span
 					style="font-size: 10px; color: red;"
 					ng-show="!user2.comuneNascita && inviato2">Required field</span>

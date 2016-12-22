@@ -17,63 +17,29 @@
 		ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
 
 	<ul class="list">
-		<li class="list__item">
-		<textarea readonly
-				class="textarea textarea--transparent"
-				style="width: 70%; height: 100px; margin-top: 4px;"
-				placeholder="Nome"></textarea> 
-		<textarea readonly ng-model="prodotto.nome"
-				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;">
-		</textarea>
+		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Nome</label> 
+		<textarea readonly ng-model="prodotto.nome" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea>
 		</li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea readonly
-				class="textarea textarea--transparent"
-				style="width: 70%; height: 100px; margin-top: 4px;"
-				placeholder="Descrizione"></textarea> 
-				<br>
-				<textarea readonly
-				ng-model="prodotto.descrizione"
-				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
+		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Descrizione</label> <br>
+		<textarea readonly ng-model="prodotto.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
 	</ul> 
 	<ul class="list">
-		<li class="list__item"><textarea readonly
-				class="textarea textarea--transparent"
-				style="width: 70%; height: 100px; margin-top: 4px;"
-				placeholder="Classificazione"></textarea> <textarea readonly
-				ng-model="prodotto.classificazione.descrizione"
-				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
+		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Classificazione</label> 
+		<textarea ng-model="prodotto.classificazione.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea readonly
-				class="textarea textarea--transparent"
-				style="width: 70%; height: 100px; margin-top: 4px;"
-				placeholder="Categoria"></textarea> <textarea readonly
-				ng-model="prodotto.sottoCategoria.categoria.descrizione"
-				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
+		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Categoria</label> 
+		<textarea readonly ng-model="prodotto.sottoCategoria.categoria.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea readonly
-				class="textarea textarea--transparent"
-				style="width: 70%; height: 100px; margin-top: 4px;"
-				placeholder="Sottocategoria"></textarea> <textarea readonly
-				ng-model="prodotto.sottoCategoria.descrizione"
-				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
+		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Sottocategoria</label>
+		 <textarea readonly ng-model="prodotto.sottoCategoria.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
 	</ul>
 	<ul class="list">
-		<li class="list__item"><textarea readonly
-				class="textarea textarea--transparent"
-				style="width: 70%; height: 100px; margin-top: 4px;"
-				placeholder="Tipo"></textarea> <textarea readonly
-				ng-model="prodotto.tipo.descrizione"
-				class="textarea textarea--transparent"
-				style="width: 100%; height: 100px; margin-top: 4px;"></textarea></li>
+		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Tipo</label> 
+		<textarea readonly ng-model="prodotto.tipo.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100% ; margin-top: 4px;"></textarea></li>
 	</ul>
 </div>
 <br>

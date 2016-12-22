@@ -113,8 +113,6 @@
                         console.log(data);
                             db.transaction(function(transaction) {
                                 for(var i=0;i<data.length;i++){
-                                	console.log(data[i].id);
-                                	console.log(data[i].categoria.id);
                                     transaction.executeSql('INSERT INTO SottoCategoria VALUES (?,?,?)', [data[i].id, data[i].categoria.id,data[i].descrizione]);
                                 }
 

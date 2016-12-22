@@ -84,8 +84,7 @@
 	src="js/controllers/AndreaGianmarco/ListaDonazioniController.js"></script>
 <script
 	src="js/controllers/AngeloFrancesco/RicercaDonazioneController.js"></script>
-<script
-	src="js/controllers/AngeloFrancesco/dettaglioDonazioneController.js"></script>
+
 	
 <script
 	src="js/controllers/SilviaVincenzo/InserimentoNuovoProdottoController.js"></script>
@@ -183,14 +182,14 @@
 			</ons-list-item>
 		</ons-list> <br>
 		<ons-list class="bottom-menu-list"> 
-			<ons-list-item ng-if="!view" class="bottom-menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/inserimento_dati_azienda.html');">
+			<ons-list-item ng-if="!view && user.tipoUtente.idTipoUtente!=1" class="bottom-menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AlbertoChiara/inserimento_dati_azienda.html');">
 				Become donor 
 			</ons-list-item> 
 			<ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu();  slidingMenu.setMainPage('html/AndreaGianmarco/impostazioni.html');">
 				Settings </ons-list-item> 
 			<ons-list-item class="bottom-menu-item"	ng-click="slidingMenu.closeMenu(); slidingMenu.setMainPage('html/SilviaVincenzo/termini.html')">
 				Policy </ons-list-item> 
-			<ons-list-item class="bottom-menu-item" ng-click="slidingMenu.closeMenu();"> 
+			<ons-list-item class="bottom-menu-item" ng-click="logout();"> 
 				<ons-icon icon="fa-sign-out"></ons-icon> Esci 
 			</ons-list-item> 
 		</ons-list> 

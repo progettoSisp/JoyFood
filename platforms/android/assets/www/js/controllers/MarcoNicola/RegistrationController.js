@@ -133,15 +133,13 @@ myApp.controller('registrationController', function(registrationService,$scope,$
 											 "statoNascita": "Italia",
 											 "provinciaNascita": "MI",
 											 "comuneNascita": user2.comuneNascita,
-											 "dataNascita": user2.dataNascita,
+											 "dataNascita": new Date(user2.dataNascita).getTime(),
 											 "provinciaResidenza": "MB",
 											 "capNascita": "20826",
-											 "comuneResidenza": "Misinto",
-											 "indirizzoResidenza": "Via G. Garibaldi 29",
+											 "comuneResidenza": user2.comune,
+											 "indirizzoResidenza": user2.indirizzo,
 											 "capResidenza": "20826",
 											 "telefono": user2.telefono,
-											 "statoUtente": "1",
-											 "tipoUtente": "1"
 										 }
 								 }
 								 console.log(settings);

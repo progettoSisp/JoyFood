@@ -43,7 +43,7 @@
  
  </ons-list> 
  
- <ons-list ng-if="!richieste">
+  <ons-list ng-if="!richieste || richieste.lenght==0">
  <ons-list-item	 class="list-item-container"> 
 <div class="list-item-left">
 
@@ -51,7 +51,7 @@
 <div class="list-item-right" >
 	<div class="list-item-content">
 		<div class="name">
-			Not requests found
+			No data has been found
 		</div>
 
 		<div>

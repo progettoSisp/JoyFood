@@ -1,0 +1,70 @@
+
+<link rel="stylesheet" href="css/profile.css">
+<ons-page ng-controller="dettaglioUtenteController"> 
+<ons-toolbar modifier="material noshadow">
+      <div class="left" ng-app="">
+		<ons-toolbar-button modifier="material" ng-click="slidingMenu.openMenu();">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Profile</div>
+      <div class="right">       
+        <ons-toolbar-button modifier="material" ng-click="showButton=true">
+          <ons-icon icon="md-edit"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+<div class="profile-card">
+
+	<img src="images/icon-user.png" class="profile-image">
+	<div class="profile-name">{{user.username}}</div>
+	<div class="profile-id">{{user.email}}</div>
+	<div class="profile-desc">Registration date:
+		{{user.dataAttivazione}}</div>
+</div>
+
+<ons-list modifier="inset" style="margin-top: 10px"> <ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Name</strong> : {{user.nome}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Name</strong> : <input class="text-input--underbar" ng-model="user.nome"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Surname</strong> : {{user.cognome}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Surname</strong> : <input class="text-input--underbar" ng-model="user.cognome"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Date of birth</strong> : {{user.dataNascita}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Date of birth</strong> : <input class="text-input--underbar" ng-model="user.dataNascita"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Sex</strong> : {{user.sesso}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Sex</strong> : <input class="text-input--underbar" ng-model="user.sesso"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Tax
+	Code</strong> : {{user.codFiscale}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Tax
+	Code</strong> : <input class="text-input--underbar" ng-model="user.codFiscale"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>City of residence</strong> : {{user.comuneResidenza}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>City of residence</strong> : <input class="text-input--underbar" ng-model="user.comuneResidenza"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Email</strong> : {{user.email}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Email</strong> : <input class="text-input--underbar" ng-model="user.email"> </ons-list-item>
+
+<ons-list-item style="text-transform: uppercase" ng-hide="showButton">
+<strong>Telephone</strong> : {{user.telefono}} </ons-list-item> 
+<ons-list-item style="text-transform: uppercase" ng-show="showButton">
+<strong>Telephone</strong> : <input class="text-input--underbar" ng-model="user.telefono"> </ons-list-item>
+
+<ons-button modifier="large" class="search-button" ng-click="saveChanges(user); myNavigator.pushPage('html/AndreaGianmarco/dati_utente.html')" ng-show="showButton">Save changes</ons-button>
+
+</ons-page>

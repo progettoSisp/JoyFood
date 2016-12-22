@@ -87,35 +87,17 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 }
 </style>
 <ons-page ng-controller="ricercaProdottoController">
-
- <ons-toolbar style="height: 56px;">
-<div class="navigation-bar navigation-bar--material">
-	<div class="navigation-bar__left navigation-bar--material__left">
-		<span class="toolbar-button toolbar-button--material"> 
-			<ons-back-button var="back"></ons-back-button>
-		</span>
-	</div>
-	<div class="navigation-bar__center navigation-bar--material__center">
-		Ricerca Prodotto</div>
-		<div class="navigation-bar__right navigation-bar--material__right">
-		<span class="toolbar-button toolbar-button--material"> <i
-			class="zmdi zmdi-search" ng-click="ricercaAvanzata()"></i>
-		</span>
-	</div>
-</div>
-</ons-toolbar>
 <ons-toolbar modifier="material noshadow">
       		<div class="left">
 		<ons-toolbar-button modifier="material" >
           <ons-back-button></ons-back-button>
         </ons-toolbar-button>
       </div>
-      <div class="center">Search product</div>
-      <div class="right">
-         
+      <div class="center">Products</div>
+      <div class="right" style="padding-right:5px;" ng-click="ricercaAvanzata()">
+        <ons-icon icon="md-search"></ons-icon>
       </div>
-    </ons-toolbar>
-<br>
+</ons-toolbar>
 <div ng-show="opzioniRicerca">
 	<input type="search" value="" placeholder="Search" class="search-input">
 	<br>
@@ -305,7 +287,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 }
 </style>
     	<ons-dialog var="dialog" modifier="material" cancelable>
-    <div style="padding: 0 22px 22px 22px">
+    <div style="padding: 0 22px 22px 22px background-color:#ff">
       <p style="font-weight: 500;" >{{selezione.nome}}</p>
       <p style="opacity: 0.6; font-size: 80%;">Quantit&agrave;</p>
       <div>

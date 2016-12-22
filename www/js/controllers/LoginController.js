@@ -69,6 +69,11 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
            ,function error(response) {
             console.log(response);
             	$scope.dialog.hide();
+            	if(response.status==400){
+            		 ons.notification.alert('Wrong username or password');						
+            	}else{
+            		 ons.notification.alert('Error, could not connect to the remote server');					
+            	}
             });
     }
 
