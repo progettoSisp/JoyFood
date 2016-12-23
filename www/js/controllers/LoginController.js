@@ -47,7 +47,8 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
                      	userService.saveSedi(response.data);
                      });	
                      $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda").then(function(response) {
-        	        	 userService.saveAzienda(response.data);
+                    	 console.log(response.data);
+                    	 userService.saveAzienda(response.data);
         	         },function(response) {
         	        	 console.log(response);
         	         });	

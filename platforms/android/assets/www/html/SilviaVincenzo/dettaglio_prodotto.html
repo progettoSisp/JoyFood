@@ -1,4 +1,56 @@
 <ons-page ng-controller="dettaglioProdottoController">
+<style>
+.to-wrapper {
+  line-height: 1;
+  height: 62px;
+  padding: 10px;
+}
+
+.to-image {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.to-name {
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.to-email {
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.text-input {
+  margin-top: 4px;
+}
+
+.textarea {
+  margin-top: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.list-item-content {
+  margin-left: 10px;
+  margin-right: 30px;
+}
+
+</style>
 <ons-toolbar modifier="material noshadow">
       		<div class="left">
 		<ons-toolbar-button modifier="material" >
@@ -6,42 +58,73 @@
         </ons-toolbar-button>
       </div>
       <div class="center">Product</div>
-      <div class="right">
-         
+      <div class="right">   
       </div>
     </ons-toolbar>
-    
-<div class="login-form">
-
-	<img align="middle" width="300" height="300"
-		ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
-
-	<ul class="list">
-		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Nome</label> 
-		<textarea readonly ng-model="prodotto.nome" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea>
-		</li>
-	</ul>
-	<ul class="list">
-		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Descrizione</label> <br>
-		<textarea readonly ng-model="prodotto.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
-	</ul> 
-	<ul class="list">
-		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Classificazione</label> 
-		<textarea ng-model="prodotto.classificazione.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
-	</ul>
-	<ul class="list">
-		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Categoria</label> 
-		<textarea readonly ng-model="prodotto.sottoCategoria.categoria.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
-	</ul>
-	<ul class="list">
-		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Sottocategoria</label>
-		 <textarea readonly ng-model="prodotto.sottoCategoria.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100%; margin-top: 4px;"></textarea></li>
-	</ul>
-	<ul class="list">
-		<li class="list__item"><label class="textarea textarea--transparent" style="width: 70%; height: 100%; margin-top: 4px; color: #A9A9A9">Tipo</label> 
-		<textarea readonly ng-model="prodotto.tipo.descrizione" class="textarea textarea--transparent" style="width: 100%; height: 100% ; margin-top: 4px;"></textarea></li>
-	</ul>
-</div>
-<br>
-<br />
+	
+	<ons-list>
+		<ons-list-item class="list-item-container">
+            <img align="middle" width="100%" height: auto; ng-src="data:image/JPEG;base64,{{prodotto.immagine}}">
+        </ons-list-item>
+        <ons-list-item class="list-item-container">
+            <div class="list-item-content">
+          	<div class="name">
+   				Nome
+           </div>
+           <div class="desc">
+   				{{prodotto.nome}}
+           </div>
+           </div>
+        </ons-list-item>
+        <ons-list-item class="list-item-container">
+            <div class="list-item-content">
+          	<div class="name">
+   				Descrizione
+           </div>
+           <div class="desc">
+   				{{prodotto.descrizione}}
+           </div>
+           </div>
+        </ons-list-item>
+        <ons-list-item class="list-item-container">
+            <div class="list-item-content">
+          	<div class="name">
+   				Classificazione
+           </div>
+           <div class="desc">
+   				{{prodotto.classificazione.descrizione}}
+           </div>
+           </div>
+        </ons-list-item>
+        <ons-list-item class="list-item-container">
+            <div class="list-item-content">
+	          	<div class="name">
+	   				Categoria
+	           </div>
+	           <div class="desc">
+	   				{{prodotto.sottoCategoria.categoria.descrizione}}
+	           </div>
+           </div>
+        </ons-list-item>
+        <ons-list-item class="list-item-container">
+            <div class="list-item-content">
+          	<div class="name">
+   				Sottocategoria
+           </div>
+           <div class="desc">
+   				{{prodotto.sottoCategoria.descrizione}}
+           </div>
+           </div>
+        </ons-list-item>
+        <ons-list-item class="list-item-container">
+            <div class="list-item-content">
+          	<div class="name">
+   				Tipo
+           </div>
+           <div class="desc">
+   				{{prodotto.tipo.descrizione}}
+           </div>
+           </div>
+        </ons-list-item>         
+	</ons-list>
 </ons-page>

@@ -7,12 +7,9 @@ myApp.controller('inserimentoDatiSedeController', function($scope,$http,remoteAp
 
 
 		$scope.clickAggiungi=function(nuovaSede){
-
+			console.log(nuovaSede);
 			$scope.aggiungiDisabilitato=true;
 			$scope.campoDisabilitato=true;
-
-
-			//GEOLOCALIZZAZIONE
 			var latitudine;
 			var longitudine;
 			var indirizzopergoogle = nuovaSede.comuneSede + " " + nuovaSede.indirizzoSede;
@@ -29,35 +26,10 @@ myApp.controller('inserimentoDatiSedeController', function($scope,$http,remoteAp
 					console.log("Longitudine = "+longitudine);
 				}
 			});
-
-			//LOGIN LO FACCIO QUA PER NON PASSARE DALLA PAGINA DI LOGIN
-			var username = "utente.donatore";
-			var password = "sisp";
-			remoteApiService.login(username,password).then(function (user) {
-				console.log('LOGIN EFFETTUATO nella pagina InserimentoDatiSede');
-
-				nuovaSede.codAzienda=3;
-				nuovaSede.latitudine= latitudine;
-				nuovaSede.longitudine= longitudine;
-				
-			
-
-
-
-				//INSERT SUL DB:
-				remoteApiService.insertSede(nuovaSede).then(function(response) {
+			remoteApiService.insertSede(nuovaSede).then(function(response) {
 					
-					console.log('Inserimento nuova sede effettuato');
-				});
-
-				ons.notification.alert({
-					title: 'JoyFood',
-					message: 'Sede inserita'
-				});
-
-
+				console.log('Inserimento nuova sede effettuato');
 			});
-
 		};
 	});
 });

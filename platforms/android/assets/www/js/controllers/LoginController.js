@@ -5,26 +5,24 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
 	var data;
 	var db; 
 	$scope.dialog;
+	$scope.field1;
+	$scope.field2;
+	
 	ons.ready(function() {
-       console.log("YEAU");
        ons.createDialog('loader.html',{parentScope: $scope}).then(function(dialog) {
   		 $scope.dialog=dialog;
   	 	});
-      });
-	
-	
-	  this.toString= function(value){
-	         var str="";
-	              $.each(value, function(idx2,val2) {
-	                   str=str+ idx2 + "=" + val2+"&";
-	              });
-	              return str.substr(0, str.length-1);
-	     }
-	
-	$scope.field1;
-	$scope.field2;
+    });	
+	  
+	this.toString= function(value){
+		var str="";
+		$.each(value, function(idx2,val2) {
+			str=str+ idx2 + "=" + val2+"&";
+		});
+		return str.substr(0, str.length-1);
+	}
+
     $scope.login= function(){
-    	console.log("login");
     	$scope.dialog.show();
         username=$scope.field1;
         password=$scope.field2; 
@@ -37,37 +35,29 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
           },
           "data": "user="+username+"&password="+password
           };
-        $http(settings)
-            .then(function(response) {
-                if(response.headers('X-AUTH-TOKEN')){
-                    console.log(response.headers('X-AUTH-TOKEN'));
-                     user=response.data;
-                     user.token=response.headers('X-AUTH-TOKEN');
-                     userService.setUser(user);
-                     if(user.tipoUtente.idTipoUtente==1){
-                     $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente")
-                     .then(function(response) {
+        $http(settings).then(function(response) {
+        	if(response.headers('X-AUTH-TOKEN')){
+        		console.log(response.headers('X-AUTH-TOKEN'));
+        		user=response.data;
+        		user.token=response.headers('X-AUTH-TOKEN');
+        		userService.setUser(user);
+        		if(user.tipoUtente.idTipoUtente==1){
+        			$http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/sediUtente").then(function(response) {
                     	console.log(response);
                      	userService.saveSedi(response.data);
                      });	
-                     $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda")
-        	         .then(function(response) {
+                     $http.get("https://joyfoodamministratore-sisp.rhcloud.com/api/azienda").then(function(response) {
         	        	 userService.saveAzienda(response.data);
         	         },function(response) {
         	        	 console.log(response);
         	         });	
-                     }
-                     console.log("USER");
-                      console.log(userService.getUser(user));
-                      localDbService.Init();
-                      filtriService.Init();
-                     $scope.dialog.hide();
-                      myNavigator.resetToPage("slidingmenu.html");
-                     
-                }
-            }
-           ,function error(response) {
-            console.log(response);
+        		}
+        		localDbService.Init();
+        		filtriService.Init();
+        		$scope.dialog.hide();
+        		myNavigator.resetToPage("slidingmenu.html");    
+        	}
+        },function error(response) {
             	$scope.dialog.hide();
             	if(response.status==400){
             		 ons.notification.alert('Wrong username or password');						
@@ -75,14 +65,6 @@ myApp.controller('loginController', function($scope,$http,remoteApiService,local
             		 ons.notification.alert('Error, could not connect to the remote server');					
             	}
             });
-    }
-
-    $scope.toSting= function(value){
-     var str="";
-          $.each(value, function(idx2,val2) {
-               str=str+ idx2 + "=" + val2+"&";
-          });
-          return str.substr(0, str.length-1);
     }
 
 });

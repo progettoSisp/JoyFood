@@ -1,27 +1,25 @@
 <ons-page ng-controller="homeController" modifier="material">
-<ons-toolbar ng-if="!view" modifier="material noshadow">
-      <div class="left">
-        <ons-toolbar-button modifier="material">
-          <span class="toolbar-button toolbar-button--material"	ng-click="slidingMenu.openMenu();"> 
-          	<i class="zmdi zmdi-menu"></i>
-		</span>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">Main</div>
-      <div class="right">       
-      </div>
+	<ons-toolbar ng-if="!view"  modifier="material noshadow">
+		<div class="left">
+			<ons-toolbar-button modifier="material">
+				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();"> 
+					<i class="zmdi zmdi-menu"></i>
+				</span>
+			</ons-toolbar-button>
+		</div>
+		<div class="center" >Main</div>
+		<div class="right"></div>
     </ons-toolbar>
-    <ons-toolbar ng-if="view" modifier="material noshadow">
-      <div class="left">
-        <ons-toolbar-button modifier="material">
-          <span class="toolbar-button toolbar-button--material"	ng-click="slidingMenu.openMenu();"> 
-          	<i class="zmdi zmdi-menu"></i>
-		</span>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">Donator main</div>
-      <div class="right">       
-      </div>
+    <ons-toolbar ng-if="view"  modifier="material noshadow">
+		<div class="left">
+			<ons-toolbar-button modifier="material">
+				<span class="toolbar-button toolbar-button--material" ng-click="slidingMenu.openMenu();"> 
+					<i class="zmdi zmdi-menu"></i>
+				</span>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">Donator Main</div>
+		<div class="right"></div>
     </ons-toolbar>
     <div id="map_canvas" style="paddint-top:15px; height: 90%; width: 100%; border: 1px solid gray"></div>
     <div class="tab-bar ons-tab-bar__footer">
@@ -31,19 +29,19 @@
 	        		<ons-icon icon="fa-home" class="tab-icon ons-icon "></ons-icon>
 	      		</button>
       	</ons-tab>
-      	<ons-tab page="timeline.html" class="tab-bar__item">
+      	<ons-tab class="tab-bar__item">
       		<input type="radio" style="display: none">
       		<button class="tab-bar__button">
         		<div class="notification reply-notification" ons-tab-inactive=""></div>
         			<ons-icon icon="fa-inbox" class="tab-icon ons-icon " ng-click="slidingMenu.closeMenu(); inbox()"></ons-icon>
       		</button>
       	</ons-tab>
-		<ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
+		<ons-tab class="tab-bar__item"><input type="radio" style="display: none">
 			<button class="tab-bar__button">
 				<ons-icon icon="fa-upload" class="tab-icon ons-icon " ng-click="slidingMenu.closeMenu(); outbox()"></ons-icon>
 			</button>
 		</ons-tab>
-      	<ons-tab page="timeline.html" class="tab-bar__item"><input type="radio" style="display: none">
+      	<ons-tab ng-if="user.tipoUtente.idTipoUtente==1" class="tab-bar__item"><input type="radio" style="display: none">
 			<button ng-if="!view" class="tab-bar__button" ng-click="changeView();">
 				<ons-icon icon="fa-exchange" class="changeIcon tab-icon ons-icon "></ons-icon>
 			</button>
@@ -52,4 +50,4 @@
       		</button>
       	</ons-tab>
     </div>    
-  </ons-page>
+</ons-page>

@@ -9,3 +9,9 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+#loader-generico .dialog-container {
+  -webkit-box-shadow: none;
+  background: transparent !important;
+  box-shadow: none;
+}

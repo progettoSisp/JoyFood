@@ -15,7 +15,7 @@ myApp.controller('dettaglioDonazioneController', function(prodottoService,donazi
 		
 		$timeout(function(){
 			console.log("time");
-	    	 var latlng = new google.maps.LatLng($scope.donazione.sede.longitudine, $scope.donazione.sede.latitudine);
+	    	 var latlng = new google.maps.LatLng($scope.donazione.sede.latitudine,$scope.donazione.sede.longitudine);
 	         var myOptions = {
 	             zoom: 12,
 	             center: latlng,
@@ -26,13 +26,10 @@ myApp.controller('dettaglioDonazioneController', function(prodottoService,donazi
 	        $scope.overlay1 = new google.maps.OverlayView();
 	        $scope.overlay1.draw = function() {}; // empty function required
 	        $scope.overlay1.setMap($scope.map1);
-	        var point = new google.maps.Point($scope.donazione.sede.longitudine, $scope.donazione.sede.latitudine );
-	        var coordinates = $scope.overlay1.getProjection().fromContainerPixelToLatLng(point);
 	        var marker = new google.maps.Marker({
-	            position: coordinates,
+	            position: {lat: $scope.donazione.sede.latitudine, lng: $scope.donazione.sede.longitudine},
 	            map: $scope.map1
 	        });
-	        $scope.map1.setCenter({lat: $scope.donazione.sede.longitudine, lng: $scope.donazione.sede.latitudine}); 
 		},100);
 		
 		$scope.changeView=function(prodotto){

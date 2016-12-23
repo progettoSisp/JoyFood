@@ -47,7 +47,7 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 	      });
 	
 	$scope.ricerca=function(){
-		$scope.dialog.show();
+		$scope.$parent.dialog.show();
 		$scope.valori=$("form.ricerca-form").serialize();
 		var request = {	
 				'address': $scope.indirizzo
@@ -76,12 +76,12 @@ myApp.controller('ricercaDonazioneController', function($scope,$http,localDbServ
 		        $http(settings)
 		            .then(function(response) {
 		            	ricercaService.saveRicerca(response.data);
-		            	$scope.dialog.hide();
+		            	$scope.$parent.dialog.hide();
 		            	myNavigator.pushPage("html/AngeloFrancesco/risultati_ricerca_donazione.html")
 		            }
 		           ,function error(response) {
 		        	   console.log(response);
-		        	   $scope.dialog.hide();
+		        	   $scope.$parent.dialog.hide();
 		           });
 	}
 });
