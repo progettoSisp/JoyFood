@@ -10,17 +10,17 @@
       </div>
     </ons-toolbar>
 <ons-list>
-        <ons-list-item ng-repeat="richiesta in richieste"  ng-if="(richiesta.dataAccettazione)" class="list-item-container" >
+        <ons-list-item ng-repeat="richiesta in richieste" modifier="chevron" ng-click="dettaglioDonazione(richiesta.id)"  ng-if="(richiesta.dataAccettazione)" class="list-item-container" >
           <ons-row >
             <ons-col>
               <div class="name">
                 <b>{{richiesta.titolo}} {{richiesta.utente}} </b>
               </div>
               <div class="name">
-                	 <i class="fa fa-calendar"></i> {{richiesta.dataAccettazione | date:"dd/MM/yyyy HH:mm"}}
+                	 <i class="fa fa-calendar-check-o"></i> {{richiesta.dataAccettazione | date:"dd/MM/yyyy HH:mm"}}
               </div>
               <div class="name" ng-if="richiesta.dataRitiro">
-                	 <i class="fa fa-calendar"></i> {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
+                	 <i class="fa fa-truck"></i> {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
               </div>
               <div class="location">
                 <i class="fa fa-map-marker"></i> {{richiesta.sede}}

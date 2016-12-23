@@ -25,8 +25,8 @@ myApp.controller('inserimentoDatiAziendaController', function($scope,$http,userS
 				        	 var user=userService.getUser();
 				        	 user.tipoUtente.idTipoUtente=1;
 				        	 userService.setUser(user);
+				        	 $scope.$parent.dialog.hide();
 				        	 ons.notification.alert('Company inserted correctly').then(function(ok) {
-				        		 $scope.$parent.dialog.hide();
 						         $scope.inviato=true;
 				           		 myNavigator.resetToPage("slidingmenu.html");
 				        	 });

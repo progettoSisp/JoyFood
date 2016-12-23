@@ -30,7 +30,7 @@ myApp.controller('datiSedeController', function($scope,$http,donazioniService,$t
 	
 	$timeout(function(){
 		console.log("time");
-    	 var latlng = new google.maps.LatLng(donazioniService.getSede().longitudine, donazioniService.getSede().latitudine);
+    	 var latlng = new google.maps.LatLng(donazioniService.getSede().latitudine,donazioniService.getSede().longitudine);
          var myOptions = {
              zoom: 12,
              center: latlng,
@@ -41,13 +41,10 @@ myApp.controller('datiSedeController', function($scope,$http,donazioniService,$t
         $scope.overlay1 = new google.maps.OverlayView();
         $scope.overlay1.draw = function() {}; // empty function required
         $scope.overlay1.setMap($scope.map1);
-        var point = new google.maps.Point(donazioniService.getSede().longitudine, donazioniService.getSede().latitudine );
-        var coordinates = $scope.overlay1.getProjection().fromContainerPixelToLatLng(point);
         var marker = new google.maps.Marker({
-            position: coordinates,
+            position: {lat: donazioniService.getSede().latitudine,lng:donazioniService.getSede().longitudine},
             map: $scope.map1
         });
-        $scope.map1.setCenter({lat: donazioniService.getSede().longitudine, lng: donazioniService.getSede().latitudine}); 
 	},100);
 	
 

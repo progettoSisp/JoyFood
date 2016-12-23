@@ -10,7 +10,7 @@
       </div>
     </ons-toolbar>
 <ons-list>
-        <ons-list-item ng-repeat="richiesta in richieste" ng-if="!richiesta.dataAccettazione" class="list-item-container" >
+        <ons-list-item ng-repeat="richiesta in richieste" modifier="chevron" ng-if="!richiesta.dataAccettazione"  ng-click="dettaglioDonazione(richiesta.id)" class="list-item-container" >
           <ons-row >
             <ons-col>
               <div class="name">

@@ -14,8 +14,9 @@ myApp.controller('inserimentoRichiestaController', function($scope,$http,donazio
 	$scope.init();
 	
     $scope.saveRequest=function(){
+    	 $scope.$parent.dialog.show();
     	var str="idCarrello="+$scope.donazione.idCarrello+
-    	"&dataRitiro="+$scope.dataRitiro+
+    	"&dataRitiro="+$scope.dataRitiro.getTime()+
     	"&descrizione="+$scope.descrizione;
     	angular.forEach($scope.donazione.carrelloProdottos, function(value, key) {
 			if(value.selezione>0){
@@ -34,12 +35,17 @@ myApp.controller('inserimentoRichiestaController', function($scope,$http,donazio
 				},
 				"data": str
 		};
-		$http(settings)
-        .then(function(response) {
-              console.log("ok");
-         },function(response) {
-        	 console.log("Errore");
-        });
+		$http(settings).then(function(response) {
+			$scope.$parent.dialog.hide();
+			ons.notification.alert('Request inserted correctly').then(function(ok) {		 
+		         $scope.inviato=true;
+          		 myNavigator.resetToPage("slidingmenu.html");
+       	 	});
+		},function error(response) {
+	       	$scope.inviato=false;
+	       	$scope.$parent.dialog.hide();
+	       	ons.notification.alert('Error, could not connect to the remote server');					
+		});
 	}
     
     $scope.changeView=function(prodotto){

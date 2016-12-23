@@ -14,10 +14,13 @@
           <ons-row >
             <ons-col>
               <div class="name">
-                <b>{{richiesta.titolo}} {{richiesta.utente}} </b>
+               	<i class="fa fa-user"></i> <b> {{richiesta.utente}} </b>
+              </div>
+              <div class="name">
+                 <b>{{richiesta.titolo}}</b>
               </div>
               <div class="name" ng-if="richiesta.dataRitiro">
-                	 <i class="fa fa-calendar"></i> {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
+                	 <i class="fa fa-truck"></i> {{richiesta.dataRitiro | date:"dd/MM/yyyy HH:mm"}}
               </div> 
               <div class="location">
                 <i class="fa fa-map-marker"></i> {{richiesta.sede}}
@@ -31,11 +34,10 @@
               <br>
             </ons-col>
             <ons-col width="80px">
-            	<button class="button button--material--flat">View</button>
+            	<button class="button button--material--flat" ng-click="dettaglioDonazione(richiesta.id)">View</button>
             	<br>
-            	<button class="button button--material--flat">Accept</button>
+            	<button class="button button--material--flat" ng-click="accettaRichiesta(richiesta.id)">Accept</button>
             	<br>
-            	<button class="button button--material--flat">Reject</button>
             </ons-col>
           </ons-row>
         </ons-list-item>

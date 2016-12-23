@@ -6,6 +6,7 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
 	var sedi;
 	var geocoder = new google.maps.Geocoder();
 	$scope.map;
+	$scope.user;
     $scope.markers = [];
     $scope.markerId = 1;
     $scope.sedi;
@@ -14,12 +15,9 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
     var openMarker;
     
 	$scope.init = function () {
+		$scope.user=userService.getUser();
 		$scope.view=userService.getView();
-		$http.post("http://joyfoodamministratore-sisp.rhcloud.com/api/listRichiesta")
-		.then(function(response) {
-			console.log(response.data);
-			richiestaService.saveRichiesta(JSON.parse(response.data));
-		});
+		
 		
 		$http.post("http://joyfoodamministratore-sisp.rhcloud.com/api/listRichiesteRicevute")
 		.then(function(response) {
@@ -93,12 +91,8 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
             			console.log(data[i]);
             			if(data[i].longitudine && data[i].latitudine ){
             				console.log(data[i].longitudine+" "+data[i].latitudine);
-            				console.log(point);
-            				  var point = new google.maps.Point(data[i].longitudine, data[i].latitudine);
-            		            var coordinates = $scope.overlay.getProjection().fromContainerPixelToLatLng(point);
-
             		            var marker = new google.maps.Marker({
-            		                position: coordinates,
+            		                position: {lat: data[i].latitudine, lng: data[i].longitudine},
             		                map: $scope.map
             		            });
             		            marker.id = $scope.markerId;
