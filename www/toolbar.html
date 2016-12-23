@@ -1,0 +1,14 @@
+<ons-template id="toolbar.html">
+<ons-toolbar  modifier="material noshadow">
+	<div class="left">
+		<ons-toolbar-button modifier="material">
+			<span class="toolbar-button toolbar-button--material"	ng-click="slidingMenu.openMenu();"> 
+				<i class="zmdi zmdi-menu"></i>
+			</span>
+		</ons-toolbar-button>
+	</div>
+	<div class="center" ng-if="!view">Main</div><div class="center" ng-if="view">Donator main</div>
+	<div class="right">       
+	</div>
+    </ons-toolbar>
+</ons-template>

@@ -88,7 +88,7 @@
         <ons-list-item modifier="chevron tappable" class="list-item-container"  ng-repeat="prodotto in prodotti" ng-click="changeView(prodotto)">
             <div class="list-item-content">
           	<div class="name">
-               	{{prodotto.descrizione}}
+               	<p>{{prodotto.descrizione}} </p><p> {{prodotto.pezzi}} X {{prodotto.quantita}}{{prodotto.unitaDiMisura.descrizione}}</p>
                	              </div>
               <div class="location">
                  

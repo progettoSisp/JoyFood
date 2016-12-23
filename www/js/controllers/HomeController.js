@@ -12,6 +12,7 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
     $scope.view;
     $scope.markerWindow=[];
     var openMarker;
+    
 	$scope.init = function () {
 		$scope.view=userService.getView();
 		$http.post("http://joyfoodamministratore-sisp.rhcloud.com/api/listRichiesta")
@@ -67,16 +68,8 @@ myApp.controller('homeController', function($scope,$http, $timeout,remoteAppServ
     	          'Timestamp: '         + position.timestamp                + '\n');
     	}; 
 
-    	// onError Callback receives a PositionError object
-    	//
-    	function onError(error) {
-    	   console.log('code: '    + error.code    + '\n' +
-    	          'message: ' + error.message + '\n');
-    	}
-
      //Map initialization
 	$timeout(function(){
-
         var latlng = new google.maps.LatLng(45.484150, 9.200465);
         var myOptions = {
             zoom: 12,

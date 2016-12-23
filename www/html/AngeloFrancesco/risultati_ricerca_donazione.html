@@ -12,7 +12,7 @@
     </ons-toolbar>
 <ons-list>
 	 <ons-list-header>Donations</ons-list-header>
-        <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container"  ng-click="changeView(carrello);">
+        <ons-list-item ng-repeat="carrello in carrelli" modifier="chevron" class="list-item-container" ng-if="date<carrello.dataFine"  ng-click="changeView(carrello);">
           <ons-row >
             <ons-col width="95px"  ng-if="carrello.immagine">
               <img ng-src="data:image/JPEG;base64,{{carrello.immagine}}">
