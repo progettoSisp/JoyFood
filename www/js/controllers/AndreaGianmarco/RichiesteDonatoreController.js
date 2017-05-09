@@ -46,7 +46,7 @@ myApp.controller('richiesteDonatoreController', function($scope,$http,prodottoSe
 		          "headers": {
 		            "content-type": "application/x-www-form-urlencoded",
 		          },
-		          "data": "id="+id+"&dataAccettazione"+date.getTime()
+		          "data": "id="+id+"&dataAccettazione="+date
 		          };
 		        $http(settings).then(function(response) {
 		        	$scope.$parent.dialog.hide();
