@@ -1,13 +1,14 @@
 <style>
 
-
 .list-item-container {
   line-height: 1;
   font-size: 14px;
   padding: 15px 0px 15px 15px;
 }
 
-
+.dialog-container.dialog-container--material{
+padding: 20px;
+}
 
 input[type="search"].search-input::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -86,8 +87,10 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   pointer-events: none;
 }
 </style>
-<ons-page ng-controller="ricercaProdottoController">
+<ons-page ng-controller="ricercaProdottoController"> 
+
 <ons-toolbar modifier="material noshadow">
+
       		<div class="left">
 		<ons-toolbar-button modifier="material" >
           <ons-back-button></ons-back-button>
