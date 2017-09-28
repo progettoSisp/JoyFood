@@ -10,7 +10,7 @@
       <div class="right">       
       </div>
     </ons-toolbar>
-   <form id="myForm">
+   <form id="myForm" name="myForm" novalidate>
 	<div class="formarea">
 		<div class="form-row">
 			<input id="denominazione" name="denominazione" ng-model="nuovaAzienda.denominazione" ng-minlength="3" type="text"
@@ -36,7 +36,7 @@
 		</div>
 		<br>
 		<div class="form-row">
-        	<ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-model="checkboxTutela" ng-disabled="campoDisabilitato" ng-checked="statoCheckbox">&nbsp; Accept terms and conditions</ons-input>
+        	<ons-input type="checkbox" id="checkboxTutela" name="checkboxTutela" ng-model="checkTutela" required>&nbsp; Accept terms and conditions</ons-input>
     	</div>
     	<div class="form-row">
 			<input id="note" name="note" ng-model="nuovaAzienda.note" type="text"
@@ -47,7 +47,7 @@
 		<div class="form-row">
 		<br />
 		</div>
-		<ons-button modifier="large" class="login-button" ng-click="clickAggiungi(nuovaAzienda)">Insert</ons-button>
+		<ons-button modifier="large" class="login-button" ng-disabled="!checkTutela || !nuovaAzienda.denominazione || !nuovaAzienda.sedeLegale || !nuovaAzienda.CF" ng-click="clickAggiungi(nuovaAzienda)">Insert</ons-button>
 		<br />
 		<ons-button modifier="large" class="login-button" ng-click="reset()">Reset</ons-button>
 		</div>
